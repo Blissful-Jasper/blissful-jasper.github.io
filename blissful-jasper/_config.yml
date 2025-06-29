@@ -6,6 +6,7 @@ description: >- # this means to ignore newlines until "baseurl:"
  研究热带波动以及热带降水变率.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blissful-jasper.github.io"
+theme: minima
 
 # Author information
 author:
