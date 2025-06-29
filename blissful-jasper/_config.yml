@@ -1,0 +1,10 @@
+title: "Xianpu Ji"
+author: "Xianpu Ji"
+email: "your.email@domain.com"
+description: "研究热带波动以及热带降水变率"
+url: "https://blissful-jasper.github.io"
+baseurl: ""
+theme: jekyll-theme-slate
+markdown: kramdown
+kramdown:
+  input: GFM
