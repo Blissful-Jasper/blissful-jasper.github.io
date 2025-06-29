@@ -1,0 +1,22 @@
+# =============================================================================
+# 📄 _config_dev.yml - 开发环境配置
+# =============================================================================
+# Development configuration
+url: "http://localhost:4000"
+baseurl: ""
+
+# Development settings
+incremental: true
+livereload: true
+open_url: true
+
+# Show drafts and future posts
+show_drafts: true
+future: true
+
+# Development plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-livereload
