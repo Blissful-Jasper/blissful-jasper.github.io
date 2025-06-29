@@ -1,10 +1,75 @@
+# Site settings
 title: "Xianpu Ji"
-author: "Xianpu Ji"
-email: "your.email@domain.com"
-description: "研究热带波动以及热带降水变率"
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  A beautiful academic website built with Jekyll.
+ 研究热带波动以及热带降水变率.
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blissful-jasper.github.io"
-baseurl: ""
-theme: jekyll-theme-slate
+
+# Author information
+author:
+  name: Your Name
+  title: PhD Student / Researcher
+  affiliation: Your University
+  email: your-email@example.com
+
+# Build settings
 markdown: kramdown
 kramdown:
   input: GFM
+highlighter: rouge
+permalink: pretty
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+# Social media usernames (replace with your own)
+twitter_username: yourusername
+github_username: yourusername
+linkedin_username: yourusername
+scholar_username: your-scholar-id
+orcid_username: 0000-0000-0000-0000
+
+# Google Analytics
+google_analytics: UA-XXXXXXXX-X
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
