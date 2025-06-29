@@ -6,6 +6,7 @@ gem "base64"
 gem "bigdecimal"   # ✅ 新增这一行
 
 gem "minima", "~> 2.5"
+
 gem "faraday-retry"
 
 group :jekyll_plugins do
