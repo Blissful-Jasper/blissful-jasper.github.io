@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<div class="home">
+  <!-- Profile Section -->
+  <div class="profile-section">
+    <div class="profile-container">
+      <div class="profile-image">
+        <img src="{{ site.baseurl }}/assets/img/profile.jpg" alt="{{ site.author.name }}" class="profile-img">
+      </div>
+      <div class="profile-info">
+        <h1 class="profile-name">{{ site.author.name }}</h1>
+        <p class="profile-title">{{ site.author.title }}</p>
+        <p class="profile-affiliation">{{ site.author.affiliation }}</p>
+        
+        <div class="profile-bio">
+          <p>Write your biography here. Tell the world about yourself. You can describe your research interests, academic background, and current projects. This is a great place to highlight your expertise and passion for your field.</p>
+          
+          <p>Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing the profile property of the YAML header.</p>
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          {% if site.email %}
+          <a href="mailto:{{ site.email }}" title="Email"><i class="fas fa-envelope"></i></a>
+          {% endif %}
+          {% if site.scholar_username %}
+          <a href="https://scholar.google.com/citations?user={{ site.scholar_username }}" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+          {% endif %}
+          {% if site.github_username %}
+          <a href="https://github.com/{{ site.github_username }}" title="GitHub"><i class="fab fa-github"></i></a>
+          {% endif %}
+          {% if site.twitter_username %}
+          <a href="https://twitter.com/{{ site.twitter_username }}" title="Twitter"><i class="fab fa-twitter"></i></a>
+          {% endif %}
+          {% if site.linkedin_username %}
+          <a href="https://linkedin.com/in/{{ site.linkedin_username }}" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          {% endif %}
+          {% if site.orcid_username %}
+          <a href="https://orcid.org/{{ site.orcid_username }}" title="ORCID"><i class="ai ai-orcid"></i></a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Research Interests Section -->
+  <div class="research-section">
+    <h2 class="section-title">Research Interests</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <h3>Machine Learning</h3>
+        <p>Developing novel algorithms for deep learning applications in computer vision and natural language processing.</p>
+      </div>
+      <div class="research-card">
+        <h3>Data Science</h3>
+        <p>Applying statistical methods and computational techniques to extract insights from large-scale datasets.</p>
+      </div>
+      <div class="research-card">
+        <h3>Artificial Intelligence</h3>
+        <p>Exploring the intersection of AI and human-computer interaction to create more intuitive systems.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Selected Publications Section -->
+  <div class="publications-section">
+    <h2 class="section-title">Selected Publications</h2>
+    <div class="publication-list">
+      <div class="publication-item">
+        <div class="publication-title">Title of Your Amazing Research Paper</div>
+        <div class="publication-authors"><strong>Your Name</strong>, Co-Author A, Co-Author B</div>
+        <div class="publication-venue">Conference/Journal Name, 2024</div>
+        <div class="publication-links">
+          <a href="#" class="pub-link">PDF</a>
+          <a href="#" class="pub-link">Code</a>
+          <a href="#" class="pub-link">Slides</a>
+        </div>
+      </div>
+      
+      <div class="publication-item">
+        <div class="publication-title">Another Important Contribution to Science</div>
+        <div class="publication-authors"><strong>Your Name</strong>, Collaborator C</div>
+        <div class="publication-venue">Another Venue, 2023</div>
+        <div class="publication-links">
+          <a href="#" class="pub-link">PDF</a>
+          <a href="#" class="pub-link">Code</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="view-all">
+      <a href="{{ site.baseurl }}/publications/" class="btn-primary">View All Publications</a>
+    </div>
+  </div>
+
+  <!-- Latest Posts Section -->
+  <div class="posts-section">
+    <h2 class="section-title">Latest Posts</h2>
+    <div class="post-list">
+      {% for post in site.posts limit:3 %}
+      <div class="post-item">
+        <div class="post-date">{{ post.date | date: "%B %d, %Y" }}</div>
+        <h3 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h3>
+        <div class="post-excerpt">{{ post.excerpt }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    
+    <div class="view-all">
+      <a href="{{ site.baseurl }}/blog/" class="btn-primary">View All Posts</a>
+    </div>
+  </div>
+</div>
