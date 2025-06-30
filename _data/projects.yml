@@ -1,0 +1,21 @@
+# =============================================================================
+- title: "Smart Healthcare System"
+  description: "Developing AI-powered healthcare solutions for early disease detection and personalized treatment recommendations."
+  tags: ["AI", "Healthcare", "Machine Learning"]
+  status: "active"
+  funding: "NSF Grant #12345"
+  image: "/assets/img/project1.jpg"
+  
+- title: "Natural Language Understanding"
+  description: "Research on advanced NLP techniques for better human-computer interaction and automated text analysis."
+  tags: ["NLP", "Deep Learning", "AI"]
+  status: "active"
+  funding: "Industry Partnership"
+  image: "/assets/img/project2.jpg"
+  
+- title: "Sustainable Computing"
+  description: "Investigating energy-efficient computing methods and green AI algorithms for environmental sustainability."
+  tags: ["Green AI", "Optimization", "Sustainability"]
+  status: "completed"
+  funding: "EPA Grant #67890"
+  image: "/assets/img/project3.jpg"

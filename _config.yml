@@ -1,0 +1,44 @@
+title: "Xianpu Ji"
+email: xianpuji@hhu.edu.cn
+description: >-
+  研究热带波动以及热带降水变率.
+baseurl: "" 
+url: "https://blissful-jasper.github.io"
+theme: minima
+
+author:
+  name: Xianpu Ji
+  title: PhD Candidate in Marine Science
+  affiliation: Hohai University
+  email:  xianpuji@hhu.edu.cn
+
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
+permalink: pretty
+paginate: 5
+paginate_path: "/blog/page:num/"
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# 不手动设置 layout，交由 theme: minima 自动处理
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
