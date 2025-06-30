@@ -1,21 +1,17 @@
-# Site settings
 title: "Xianpu Ji"
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  A beautiful academic website built with Jekyll.
- 研究热带波动以及热带降水变率.
-baseurl: "" # the subpath of your site, e.g. /blog
+email: xianpuji@hhu.edu.cn
+description: >-
+  研究热带波动以及热带降水变率.
+baseurl: "" 
 url: "https://blissful-jasper.github.io"
 theme: minima
 
-# Author information
 author:
-  name: Your Name
-  title: PhD Student / Researcher
-  affiliation: Your University
-  email: your-email@example.com
+  name: Xianpu Ji
+  title: PhD Candidate in Marine Science
+  affiliation: Hohai University
+  email:  xianpuji@hhu.edu.cn
 
-# Build settings
 markdown: kramdown
 kramdown:
   input: GFM
@@ -24,44 +20,19 @@ permalink: pretty
 paginate: 5
 paginate_path: "/blog/page:num/"
 
-# Social media usernames (replace with your own)
-twitter_username: yourusername
-github_username: yourusername
-linkedin_username: yourusername
-scholar_username: your-scholar-id
-orcid_username: 0000-0000-0000-0000
-
-# Google Analytics
-google_analytics: UA-XXXXXXXX-X
-
-# Collections
-collections:
-  projects:
-    output: true
-    permalink: /:collection/:name/
-
-# Defaults
-defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: true
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "page"
-
-# Plugin settings
 plugins:
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
 
-# Exclude from processing
+collections:
+  projects:
+    output: true
+    permalink: /:collection/:name/
+
+# 不手动设置 layout，交由 theme: minima 自动处理
+
 exclude:
   - .sass-cache/
   - .jekyll-cache/
@@ -69,8 +40,5 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  - vendor/
   - README.md
