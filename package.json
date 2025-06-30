@@ -1,0 +1,28 @@
+# =============================================================================
+# 📄 package.json - Node.js 依赖 (可选)
+# =============================================================================
+{
+  "name": "academic-jekyll-site",
+  "version": "1.0.0",
+  "description": "Academic website built with Jekyll",
+  "scripts": {
+    "dev": "bundle exec jekyll serve --livereload",
+    "build": "bundle exec jekyll build",
+    "deploy": "bundle exec jekyll build && gh-pages -d _site"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/academic-website.git"
+  },
+  "keywords": [
+    "jekyll",
+    "academic",
+    "website",
+    "portfolio"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
