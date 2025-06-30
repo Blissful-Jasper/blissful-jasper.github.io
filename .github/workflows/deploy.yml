@@ -1,35 +1,28 @@
-# =============================================================================
-# 📄 .github/workflows/deploy.yml - GitHub Actions 自动部署
-# =============================================================================
-name: Deploy Jekyll Site
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+      - main  # 或 master，取决于你的默认分支
+
+permissions:
+  contents: write  # 必须！
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 3.0
-        bundler-cache: true
-        
-    - name: Build Jekyll
-      run: |
-        bundle exec jekyll build
-        
-    - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main'
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+
+      - run: bundle install
+      - run: bundle exec jekyll build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
