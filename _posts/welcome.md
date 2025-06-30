@@ -1,18 +1,8 @@
-# =============================================================================
-# 📄 _posts/2024-01-15-welcome-post.markdown - 示例博客文章
-# =============================================================================
----
-layout: post
-title:  "Welcome to My Academic Website!"
-date:   2024-01-15 10:00:00 -0500
-categories: updates
----
+# Welcome to My Academic Website!
 
 Welcome to my new academic website! I'm excited to share this platform where I'll be posting updates about my research, teaching, and other academic activities.
 
 ## What You'll Find Here
-
-This website serves as a comprehensive hub for my academic work:
 
 - **Research Projects**: Detailed information about my current and past research
 - **Publications**: Complete list of my papers, patents, and other scholarly work

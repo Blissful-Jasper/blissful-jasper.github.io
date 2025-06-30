@@ -1,0 +1,186 @@
+/* Extracted styles from HTML files */
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    padding: 2.5rem;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #eee;
+}
+
+.profile-info h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.profile-info .title {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.bio {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #3498db;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: #2980b9;
+}
+
+.sidebar {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.news-item, .post-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.news-date, .post-date {
+    font-size: 12px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.news-content, .post-title {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.post-title {
+    font-weight: bold;
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+.post-title:hover {
+    color: #3498db;
+}
+
+.research-section {
+    margin-bottom: 40px;
+}
+
+.research-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.research-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    transition: transform 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: auto;
+}
+
+.research-card h3 {
+    margin-bottom: 15px; /* 增加标题与摘要之间的间隔 */
+    color: #228be6; /* 突出标题颜色 */
+}
+
+.research-card p {
+    margin-bottom: 20px; /* 增加摘要与按钮之间的间隔 */
+    line-height: 1.8; /* 提升文字可读性 */
+}
+
+.research-card .btn-primary {
+    margin-top: 10px; /* 确保按钮与文字间距舒适 */
+}
+
+/* Code block styles for markdown */
+
+.markdown-body pre {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.markdown-body code {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #e74c3c;
+}
+
+.markdown-body pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.markdown-body p img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+

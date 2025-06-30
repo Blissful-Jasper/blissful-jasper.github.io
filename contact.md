@@ -1,9 +1,5 @@
----
-layout: page
-title: "Contact"
-permalink: /contact/
----
+# 联系方式
 
-📧 Email: your.email@domain.com  
-💻 GitHub: [Blissful-Jasper](https://github.com/Blissful-Jasper)  
-🧾 ORCID: [0000-0001-7891-8848](https://orcid.org/0000-0001-7891-8848)
+- ✉️ Email: xianpuji@hhu.edu.cn
+- 💻 GitHub: [Blissful-Jasper](https://github.com/Blissful-Jasper)
+- 🆔 ORCID: [0009-0001-5197-4804](https://orcid.org/0009-0001-5197-4804)

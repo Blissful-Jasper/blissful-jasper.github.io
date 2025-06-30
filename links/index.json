@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Philosophies and concerns about ENSO",
+    "date": "",
+    "summary": "ENSO 相关理念与关注点。",
+    "file": "https://iri.columbia.edu/",
+    "group": "ENSO & 气候现象",
+    "images": []
+  },
+  {
+    "title": "GFDL Dry spectral idealized model",
+    "date": "",
+    "summary": "GFDL 干理想谱模式。",
+    "file": "https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/",
+    "group": "数值模式与流体模拟",
+    "images": ["img/gfdl.png"]
+  },
+  {
+    "title": "notes on regression and time series analysis",
+    "date": "",
+    "summary": "回归与时间序列分析笔记。",
+    "file": "https://people.duke.edu/~rnau/411home.htm",
+    "group": "数据与课程",
+    "images": []
+  }
+]

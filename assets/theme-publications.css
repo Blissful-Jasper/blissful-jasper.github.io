@@ -1,0 +1,32 @@
+/* Publications 页面专属样式 */
+.publications-section, .markdown-body.publications {
+  background: var(--bg-secondary);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+.publication-list {
+  margin-top: 1.5rem;
+}
+.publication-item {
+  background: var(--bg-primary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+  padding: 1.2rem 1.2rem 0.8rem 1.2rem;
+  margin-bottom: 1.2rem;
+}
+.publication-title a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.08em;
+}
+.publication-authors {
+  color: #666;
+  font-size: 0.98em;
+}
+.publication-venue {
+  color: #888;
+  font-size: 0.95em;
+}

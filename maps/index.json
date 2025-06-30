@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Precipitation from TRMM and GPM",
+    "date": "",
+    "summary": "TRMM与GPM卫星降水数据。",
+    "file": "https://gpm.nasa.gov/data-access/downloads/trmm",
+    "group": "降水与雷电",
+    "images": ["img/trmm.png"]
+  },
+  {
+    "title": "Windy",
+    "date": "",
+    "summary": "全球风场与气象可视化。",
+    "file": "https://www.windy.com/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "CPC MJO",
+    "date": "",
+    "summary": "CPC MJO监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml",
+    "group": "MJO 与环流监测",
+    "images": []
+  }
+]

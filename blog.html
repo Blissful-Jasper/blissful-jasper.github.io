@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog 博客文章</title>
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="stylesheet" href="assets/theme-blog.css">
+  
+
+</head>
+<body>
+<div class="markdown-body blog-page" style="background:var(--bg-primary);box-shadow:none;padding:2rem;max-width:1100px;margin:2rem auto 2rem auto;">
+  <h2 style="margin-bottom:1.5rem;">Blog 博客文章</h2>
+  <div id="blog-main-list"></div>
+</div>
+<script>
+// 自动渲染 blog 目录下所有 md 文件为卡片，支持图片自动编号
+fetch('blog/index.json')
+  .then(res => res.json())
+  .then(posts => {
+    const container = document.getElementById('blog-main-list');
+    container.innerHTML = posts.map(post => {
+      let imgHtml = '';
+      if (post.images && post.images.length > 0) {
+        imgHtml = post.images.map((img, idx) => `
+          <div class="auto-card-img-container">
+            <img src="${img}" class="auto-card-img" alt="图${idx+1}">
+            <div class="auto-card-img-caption">图${idx+1}</div>
+          </div>
+        `).join('');
+      }
+      return `
+        <div class="auto-card" style="background: var(--bg-secondary); border-radius: 8px; padding: 1.5rem; box-shadow: var(--shadow-md); max-width: 900px; margin: 0 auto 2rem auto;">
+          <div class="auto-card-title" style="font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 0.5rem;">${post.title}</div>
+          <div class="auto-card-date" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">${post.date||''}</div>
+          <div class="auto-card-summary" style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 1rem;">${post.summary||''}</div>
+          ${imgHtml}
+          <a href="#${post.file}" class="auto-card-link" style="text-decoration: none; color: var(--primary-color); font-weight: 500; display: inline-block; margin-top: 1rem;">阅读全文</a>
+        </div>
+      `;
+    }).join('');
+    
+    // 绑定点击跳转
+    container.querySelectorAll('.auto-card-link').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          location.hash = href;
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
