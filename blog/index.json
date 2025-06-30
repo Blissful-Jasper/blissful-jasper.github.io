@@ -1,0 +1,37 @@
+[
+  {
+    "title": "欢迎来到我的博客",
+    "date": "2025-06-29",
+    "summary": "这是我的第一篇博文，未来将分享我在热带波动、大气科学研究中的一些经验与见解。",
+    "file": "blog/2025-06-29-welcome.md",
+    "images": []
+  },
+  {
+    "title": "Kelvin波与热带降水",
+    "date": "2024-06-01",
+    "summary": "Kelvin波是热带大气中最重要的波动之一，对热带降水的时空分布有重要影响。本文介绍Kelvin波的基本动力学机制、观测特征及其与热带降水变率的关系。",
+    "file": "blog/kelvin-waves.md",
+    "images": ["img/kelvin1.png", "img/kelvin2.png"]
+  },
+  {
+    "title": "CMIP6模式评估与气候变化",
+    "date": "2024-06-02",
+    "summary": "CMIP6是当前国际上最先进的气候模式集合。本文介绍CMIP6模式在热带波动模拟中的表现、评估方法及其在未来气候变化研究中的应用。",
+    "file": "blog/cmip6-evaluation.md",
+    "images": []
+  },
+  {
+    "title": "深度学习在气象中的应用",
+    "date": "2024-06-03",
+    "summary": "近年来，深度学习在气象领域取得了显著进展。本文综述深度学习在降水预报、气象要素识别、极端天气检测等方面的最新应用。",
+    "file": "blog/dl-meteorology.md",
+    "images": ["img/dl1.jpg"]
+  },
+  {
+    "title": "Jekyll建站与部署实践",
+    "date": "2024-06-10",
+    "summary": "本篇介绍如何使用Jekyll和GitHub Pages快速搭建学术博客，包括环境准备、分支管理、部署流程等详细步骤。",
+    "file": "blog/create-site-jekyll.md",
+    "images": []
+  }
+]

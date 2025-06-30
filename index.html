@@ -1,145 +1,534 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Welcome | Xianpu Ji</title>
-<meta name="generator" content="Jekyll v4.2.2" />
-<meta property="og:title" content="Welcome" />
-<meta name="author" content="Xianpu Ji" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="研究热带波动以及热带降水变率." />
-<meta property="og:description" content="研究热带波动以及热带降水变率." />
-<link rel="canonical" href="https://blissful-jasper.github.io/" />
-<meta property="og:url" content="https://blissful-jasper.github.io/" />
-<meta property="og:site_name" content="Xianpu Ji" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Welcome" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Xianpu Ji"},"description":"研究热带波动以及热带降水变率.","headline":"Welcome","name":"Xianpu Ji","url":"https://blissful-jasper.github.io/"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
-  <!-- Academicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
-  
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Blog Template - Al-folio Style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="assets/theme-home.css">
+    <link rel="stylesheet" href="assets/theme-about.css">
+    <link rel="stylesheet" href="assets/theme-research.css">
+    <link rel="stylesheet" href="assets/theme-publications.css">
+    <link rel="stylesheet" href="assets/theme-blog.css">
+    <link rel="stylesheet" href="assets/theme-contact.css">
+    <link rel="stylesheet" href="assets/theme-links.css">
+    <link rel="stylesheet" href="assets/theme-maps.css">
+    <link rel="stylesheet" href="assets/theme-spa.css">
+    <link rel="stylesheet" href="assets/extracted-styles.css">
 </head>
-<body><header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/">Xianpu Ji</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger">
-          <a class="page-link" href="/">About</a>
-          <a class="page-link" href="/publications/">Publications</a>
-          <a class="page-link" href="/projects/">Projects</a>
-          <a class="page-link" href="/blog/">Blog</a>
-          <a class="page-link" href="/cv/">CV</a>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">Xianpu Ji</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#maps">Maps</a></li>
+            </ul>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon" id="themeIcon"></i>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="container">
+      <div class="main-content" style="display: grid; grid-template-columns: 1fr 320px; gap: 40px; padding: 40px 0;">
+        <div class="content" id="spa-content" style="background: #fff; max-width: 900px; margin: 0 auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(44,62,80,0.06); padding: 32px 24px;">
+          <!-- SPA主内容区，初始加载home.html或about.html，可自动切换 -->
+          <!-- 主页内容卡片化布局，风格与about.html一致 -->
+<div style="max-width:900px;margin:0 auto;padding:0 0 2rem 0;">
+  <!-- 个人信息卡片 -->
+  <div class="profile-section" style="text-align:center;margin-bottom:2.5rem;padding:2.5rem 2.5rem 2rem 2.5rem;background:linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);border-radius:0.5rem;box-shadow:0 4px 16px rgba(44,62,80,0.10);">
+    <img src="assets/profile.JPG" alt="Profile" class="profile-img">
+    <div class="profile-info">
+      <h1 style="font-size:2.5rem;margin-bottom:0.5rem;color:var(--text-primary);font-weight:700;">Xianpu Ji</h1>
+      <div class="profile-title" style="font-size:1.2rem;color:var(--text-secondary);margin-bottom:1.5rem;font-weight:500;">PhD Student, Ocean College, Hohai University</div>
+      <div class="profile-bio" style="font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;">热带大气动力学博士生，关注对流耦合赤道波、热带降水变率及其在气候模式中的模拟。也致力于深度学习与数值模式在热带天气系统研究中的应用。</div>
+      <div class="social-links" style="display:flex;justify-content:center;gap:1rem;margin-bottom:2rem;">
+        <a href="mailto:xianpuji@hhu.edu.cn" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Blissful-Jasper" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.researchgate.net/profile/Xianpu-Ji" title="ResearchGate" target="_blank"><i class="fab fa-researchgate"></i></a>
+        <a href="https://orcid.org/0009-0001-5197-4804" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
+      </div>
+      <div class="profile-contact" style="margin-top:1.2rem;font-size:1rem;color:var(--text-secondary);display:flex;justify-content:center;gap:2rem;">
+        <span><i class="fas fa-map-marker-alt"></i> Ocean College, Hohai University</span>
+        <span><i class="fas fa-phone"></i> +86 17551575179</span>
+        <span><i class="fas fa-envelope"></i> xianpuji@hhu.edu.cn</span>
+      </div>
+    </div>
+  </div>
+  <!-- 研究兴趣卡片 -->
+  <div class="research-section" style="background:#fff;border-radius:0.5rem;border:1px solid #e0e4ea;padding:1.2rem 1.2rem 1rem 1.2rem;margin-bottom:1.2rem;max-width:1000px;margin-left:auto;margin-right:auto;">
+    <h2 style="font-size:1.2em;color:#2c3e50;border-bottom:1px solid #3498db;padding-bottom:0.15em;margin-bottom:0.7rem;">研究兴趣 Research Interests</h2>
+    <div class="bio" style="margin-bottom:0.7rem;font-size:0.98em;">我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。</div>
+    <div class="research-grid" style="gap:4px;width:100%;max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:1.2rem;">
+      <div class="research-card" style="background:#f8f9fa;padding:8px 12px 6px 12px;border-radius:10px;border-left:3px solid #3498db;width:100%;box-sizing:border-box;min-height:auto;margin-bottom:10px;">
+        <h3 style="color:#2c3e50;margin-bottom:2px;font-size:0.98em;">Kelvin波与热带降水</h3>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <p style="color:#555;line-height:1.3;font-size:0.82em;margin-bottom:0.1em;margin-right:1em;flex:1;">Kelvin波是热带大气中最重要的波动之一，对热带降水的时空分布有重要影响。</p>
+          <a href="#blog/kelvin-waves.md" class="btn-primary" style="background:rgba(52,152,219,0.18);color:#236fa1;font-weight:500;border-radius:4px;padding:0.3em 0.9em;font-size:0.78em;margin-bottom:0;white-space:nowrap;">阅读文章</a>
         </div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <div class="main-container">
-          <div class="content">
-            <div class="home"><h1 class="page-heading">Welcome</h1><p>欢迎访问我的学术主页！请通过导航栏查看研究方向、论文和联系信息。</p>
+      </div>
+      <div class="research-card" style="background:#f8f9fa;padding:8px 12px 6px 12px;border-radius:10px;border-left:3px solid #3498db;width:100%;box-sizing:border-box;min-height:auto;margin-bottom:10px;">
+        <h3 style="color:#2c3e50;margin-bottom:2px;font-size:0.98em;">CMIP6模式评估与气候变化</h3>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <p style="color:#555;line-height:1.3;font-size:0.82em;margin-bottom:0.1em;margin-right:1em;flex:1;">CMIP6模式为理解和预测未来热带气候变化提供了重要工具。</p>
+          <a href="#blog/cmip6-evaluation.md" class="btn-primary" style="background:rgba(52,152,219,0.18);color:#236fa1;font-weight:500;border-radius:4px;padding:0.3em 0.9em;font-size:0.78em;margin-bottom:0;white-space:nowrap;">阅读文章</a>
+        </div>
+      </div>
+      <div class="research-card" style="background:#f8f9fa;padding:8px 12px 6px 12px;border-radius:10px;border-left:3px solid #3498db;width:100%;box-sizing:border-box;min-height:auto;margin-bottom:10px;">
+        <h3 style="color:#2c3e50;margin-bottom:2px;font-size:0.98em;">深度学习在气象中的应用</h3>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <p style="color:#555;line-height:1.3;font-size:0.82em;margin-bottom:0.1em;margin-right:1em;flex:1;">深度学习为气象科学带来了新的机遇，提升了降水等要素的智能预测能力。</p>
+          <a href="#blog/dl-meteorology.md" class="btn-primary" style="background:rgba(52,152,219,0.18);color:#236fa1;font-weight:500;border-radius:4px;padding:0.3em 0.9em;font-size:0.78em;margin-bottom:0;white-space:nowrap;">阅读文章</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 已发表论文卡片 -->
+  <div class="publications-section" style="background:var(--bg-secondary);border-radius:0.5rem;box-shadow:0 2px 8px rgba(44,62,80,0.06);padding:2.5rem 2.5rem 2rem 2.5rem;margin-bottom:2.2rem;">
+    <h2 style="font-size:1.6em;color:#2c3e50;border-bottom:1px solid #3498db;padding-bottom:0.2em;margin-bottom:1.2rem;">已发表论文 Selected Publications</h2>
+    <div class="publication-list">
+      <div class="publication-item" style="background:#f8f9fa;padding:20px;margin-bottom:15px;border-radius:8px;border-left:4px solid #e74c3c;">
+        <div class="publication-title" style="font-weight:bold;color:#2c3e50;margin-bottom:5px;"><a href="https://doi.org/10.1016/j.atmosres.2025.108214" class="pub-link" target="_blank">Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models</a></div>
+        <div class="publication-authors" style="color:#7f8c8d;margin-bottom:5px;"><strong>Ji, X.</strong>, Feng, T., Huang, P., Cheng, X., Qin, J., Yang, B.</div>
+        <div class="publication-venue" style="color:#27ae60;font-style:italic;">Atmospheric Research, 2025</div>
+      </div>
+      <div class="publication-item" style="background:#f8f9fa;padding:20px;margin-bottom:15px;border-radius:8px;border-left:4px solid #e74c3c;">
+        <div class="publication-title" style="font-weight:bold;color:#2c3e50;margin-bottom:5px;"><a href="https://doi.org/10.3390/rs16162871" class="pub-link" target="_blank">Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images</a></div>
+        <div class="publication-authors" style="color:#7f8c8d;margin-bottom:5px;"><strong>Ji, X.</strong>, Song X, Guo A, Liu K, Cao H, Feng T.</div>
+        <div class="publication-venue" style="color:#27ae60;font-style:italic;">Remote Sensing, 2024</div>
+      </div>
+      <div class="publication-item" style="background:#f8f9fa;padding:20px;margin-bottom:15px;border-radius:8px;border-left:4px solid #e74c3c;">
+        <div class="publication-title" style="font-weight:bold;color:#2c3e50;margin-bottom:5px;"><a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" class="pub-link" target="_blank">Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans</a></div>
+        <div class="publication-authors" style="color:#7f8c8d;margin-bottom:5px;"><strong>Ji, X.</strong>, Sha Y, Feng T, Li J.</div>
+        <div class="publication-venue" style="color:#27ae60;font-style:italic;">Journal of Xiamen University (Natural Science), 2024</div>
+      </div>
+    </div>
+  </div>
+  <!-- 技能卡片 -->
+  <div class="skills-section" style="background:var(--bg-secondary);border-radius:0.5rem;box-shadow:0 2px 8px rgba(44,62,80,0.06);padding:2.5rem 2.5rem 2rem 2.5rem;">
+    <div class="section-title" style="font-size:1.2rem;font-weight:600;margin-bottom:1rem;"><i class="fas fa-tools"></i> 技能 Skills</div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;">
+      <div onclick="window.open('https://www.python.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-python"></i> Python</div>
+      <div onclick="window.open('https://pytorch.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-python"></i> PyTorch</div>
+      <div onclick="window.open('https://www.tensorflow.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-python"></i> TensorFlow</div>
+      <div onclick="window.open('https://www.r-project.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-r-project"></i> R</div>
+      <div onclick="window.open('https://www.latex-project.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fas fa-file-alt"></i> LaTeX</div>
+      <div onclick="window.open('https://www.unidata.ucar.edu/software/netcdf/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fas fa-database"></i> NetCDF</div>
+      <div onclick="window.open('https://www.wrf-model.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fas fa-cloud"></i> WRF Model</div>
+      <div onclick="window.open('https://www.git-scm.com/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-git-alt"></i> Git</div>
+    </div>
+  </div>
 </div>
-
+        </div>
+        <aside class="sidebar" style="background: #f8f9fa; padding: 30px; border-radius: 8px; height: fit-content; max-width: 360px; min-width: 260px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+          <div>
+            <h3 style="margin-bottom: 20px; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">📰 News</h3>
+            <div id="sidebar-news-list"></div>
           </div>
-          
-          <aside class="sidebar"><!-- News Section -->
-<div class="sidebar-section">
-  <h3 class="sidebar-title">
-    <i class="fas fa-newspaper"></i> News
-  </h3>
-  <div class="news-list">
-    <div class="news-item">
-      <div class="news-date">Jan 15, 2024</div>
-      <div class="news-content">Started new research project on AI ethics! 🤖</div>
-    </div>
-    <div class="news-item">
-      <div class="news-date">Dec 20, 2023</div>
-      <div class="news-content">Paper accepted at top-tier conference! 🎉</div>
-    </div>
-    <div class="news-item">
-      <div class="news-date">Nov 15, 2023</div>
-      <div class="news-content">Gave keynote at academic symposium.</div>
-    </div>
-    <div class="news-item">
-      <div class="news-date">Oct 30, 2023</div>
-      <div class="news-content">Received research grant for ML project.</div>
-    </div>
-  </div>
-</div>
-
-<!-- Recent Posts Section -->
-<div class="sidebar-section">
-  <h3 class="sidebar-title">
-    <i class="fas fa-blog"></i> Recent Posts
-  </h3>
-  <div class="recent-posts">
-    
-  </div>
-</div>
-
-<!-- Quick Links Section -->
-<div class="sidebar-section">
-  <h3 class="sidebar-title">
-    <i class="fas fa-link"></i> Quick Links
-  </h3>
-  <div class="quick-links">
-    
-    
-    
-    <a href="/assets/cv.pdf" class="quick-link">
-      <i class="fas fa-file-pdf"></i> Download CV
-    </a>
-  </div>
-</div>
-</aside>
+          <div style="margin-top: 30px;">
+            <h3 style="margin-bottom: 20px; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;">📝 Latest Posts</h3>
+            <div id="sidebar-latest-posts"></div>
+          </div>
+        </aside>
+      </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Xianpu Ji. Powered by Jekyll and GitHub Pages.</p>
         </div>
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+// SPA导航映射
+const navMap = {
+  about: 'about.html',
+  research: 'research.html',
+  publications: 'publications.html',
+  blog: 'blog.html',
+  contact: 'contact.html',
+  links: 'links.html',
+  maps: 'maps.html'
+};
+// 动态加载内容
+function loadContent(file) {
+  const contentDiv = document.getElementById('spa-content');
+  if (file.endsWith('.html')) {
+    fetch(file)
+      .then(res => res.text())
+      .then(html => {
+        contentDiv.innerHTML = html;
+        if (file === 'blog.html') renderBlogList();
+        if (file === 'links.html') renderLinksMainList();
+        if (file === 'maps.html') renderMapsMainList();
+        fixFooterPosition();
+      });
+    return;
+  }
+  if (file.endsWith('.md')) {
+    fetch(file)
+      .then(res => res.text())
+      .then(md => {
+        contentDiv.innerHTML = `<div class='markdown-body' style='margin:2rem auto;max-width:700px;background:var(--bg-secondary);border-radius:var(--radius);box-shadow:var(--shadow-md);padding:2.5rem 2.5rem 2rem 2.5rem;'>${marked.parse(md.replace(/^---[\s\S]*?---\s*/,''))}</div>`;
+        fixFooterPosition();
+      });
+  }
+}
+// 监听 hash 跳转
+window.addEventListener('hashchange', function() {
+  const hash = decodeURIComponent(location.hash.replace(/^#/, ''));
+  if (navMap[hash]) loadContent(navMap[hash]);
+  else if (hash.endsWith('.md')) loadContent('blog/' + hash.replace(/^blog\//, ''));
+});
+document.addEventListener('DOMContentLoaded', function() {
+  // 默认加载主页
+  if (!location.hash || !navMap[location.hash.replace('#','')]) {
+    loadContent('about.html');
+  } else {
+    const hash = location.hash.replace('#','');
+    if (navMap[hash]) loadContent(navMap[hash]);
+  }
+  // 绑定导航点击
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href').replace('#', '');
+      if (navMap[href]) {
+        e.preventDefault();
+        loadContent(navMap[href]);
+        location.hash = '#' + href;
+      }
+    });
+  });
+});
+// 自动渲染 blog 目录下所有 md 文件为卡片
+function renderBlogList() {
+  const blogListDiv = document.getElementById('blog-main-list');
+  if (!blogListDiv) return;
+  fetch('blog/index.json') // 需由构建脚本生成 md 文件索引
+    .then(res => res.json())
+    .then(posts => {
+      blogListDiv.innerHTML = posts.map(post => `
+        <div class="blog-card" style="background:var(--bg-secondary);border-radius:12px;padding:2rem 2.5rem 1.5rem 2.5rem;min-width:320px;max-width:900px;margin-bottom:2rem;position:relative;border:1px solid #e0e4ea;">
+          <h3 style="font-size:1.3em;margin-bottom:0.5em;">${post.title}</h3>
+          <div style="color:#888;font-size:0.98em;margin-bottom:0.7em;">${post.date||''}</div>
+          <div style="margin-bottom:1em;">${post.summary||''}</div>
+          <a href="#${post.file}" class="btn-primary" style="margin-top:10px;background:#f2f6fa;color:#3498db;font-weight:600;border-radius:6px;padding:0.5em 1.2em;transition:background 0.2s;">阅读全文</a>
+        </div>
+      `).join('');
+      // 绑定点击跳转
+      blogListDiv.querySelectorAll('.btn-primary').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            location.hash = href;
+          }
+        });
+      });
+    });
+}
+// News/Latest Posts 自动推送（改为仅依赖 blog/index.json）
+function renderSidebarNews() {
+  fetch('blog/index.json')
+    .then(res => res.json())
+    .then(posts => {
+      // 按时间降序，取最新5条
+      const sorted = posts.sort((a, b) => b.date.localeCompare(a.date));
+      const latestNews = sorted.slice(0, 5);
+      const newsList = document.getElementById('sidebar-news-list');
+      newsList.innerHTML = latestNews.map(item => `
+        <div class="news-item">
+          <div class="news-date">${item.date}</div>
+          <div class="news-content"><a href="#${item.file}" style="color:#3498db;">${item.title}</a></div>
+        </div>
+      `).join('');
+    });
+}
+function renderSidebarLatestPosts() {
+  fetch('blog/index.json')
+    .then(res => res.json())
+    .then(posts => {
+      const sorted = posts.sort((a, b) => b.date.localeCompare(a.date));
+      const latestList = sorted.slice(0, 4).map(post => `
+        <div class="post-item">
+          <div class="post-date">${post.date||''}</div>
+          <a href="#${post.file}" class="post-title">${post.title}</a>
+          <div class="post-summary">${post.summary||''}</div>
+        </div>
+      `).join('');
+      document.getElementById('sidebar-latest-posts').innerHTML = latestList;
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  renderSidebarNews();
+  renderSidebarLatestPosts();
+});
+// 主题切换
+const themeToggle = document.getElementById('themeToggle');
+const themeIcon = document.getElementById('themeIcon');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+function setTheme(dark) {
+    if (dark) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.className = 'fas fa-moon';
+    }
+}
+setTheme(localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && prefersDark));
+themeToggle.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    setTheme(!isDark);
+    localStorage.setItem('theme', !isDark ? 'dark' : 'light');
+});
+// 移动端菜单
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.getElementById('navLinks');
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            navLinks.classList.remove('active');
+        }
+    });
+});
 
-  <div class="wrapper">
+// 其他页面内容加载后也调用 fixFooterPosition
+function fixFooterPosition() {
+  setTimeout(() => {
+    const main = document.querySelector('main');
+    const footer = document.querySelector('footer');
+    if (main && footer) {
+      footer.style.position = 'static';
+      footer.style.marginTop = '40px';
+      // 若内容高度不足，footer吸底
+      if (document.body.scrollHeight < window.innerHeight) {
+        footer.style.position = 'fixed';
+        footer.style.left = 0;
+        footer.style.right = 0;
+        footer.style.bottom = 0;
+        footer.style.marginTop = 0;
+      }
+    }
+  }, 200);
+}
 
-    <h2 class="footer-heading">Xianpu Ji</h2>
+// Links 主内容填充
+function renderLinksMainList() {
+  const container = document.getElementById('links-main-list');
+  if (!container) return;
+  // 动态加载 links.html 里的 mainLinksData
+  fetch('links.html')
+    .then(res => res.text())
+    .then(html => {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+      const dataTag = temp.querySelector('#mainLinksData');
+      let mainLinks = [];
+      if (dataTag) {
+        try {
+          mainLinks = JSON.parse(dataTag.textContent);
+        } catch {}
+      }
+      container.innerHTML = `${mainLinks.map((group, gi) => `
+        <div class="link-card" style='background:var(--bg-secondary);border-radius:12px;padding:2rem 2.5rem 1.5rem 2.5rem;min-width:320px;max-width:900px;flex:1 1 700px;margin-bottom:2rem;position:relative;display:flex;flex-direction:column;border:1px solid #e0e4ea;'>
+          <h3 style='font-size:1.25rem;color:var(--primary-color);margin-bottom:1.2rem;font-weight:600;letter-spacing:0.5px;'>${group.group}</h3>
+          <ul style='list-style:none;padding:0;margin:0;'>
+            ${group.links.map((link, li) => `<li style='margin-bottom:1.1rem;'><a href='${link.url}' target='_blank' class='ext-link' data-gi='${gi}' data-li='${li}' style='color:var(--secondary-color);font-size:1.08rem;font-weight:500;word-break:break-all;display:inline-block;'><i class='fas fa-link' style='margin-right:9px;'></i>${link.name}</a><div class='link-desc' style='margin-top:0.5rem;'></div></li>`).join('')}
+          </ul>
+        </div>
+      `).join('')}`;
+      setTimeout(() => {
+        container.querySelectorAll('.ext-link').forEach(a => {
+          const url = a.getAttribute('href');
+          const descDiv = a.parentElement.querySelector('.link-desc');
+          descDiv.innerHTML = '<span style="color:#888;font-size:0.98em;">加载中...</span>';
+          fetchLinkMeta(url, descDiv);
+          a.addEventListener('click', function(e) {
+            window.open(url, '_blank');
+          });
+        });
+      }, 100);
+    });
+}
+// Maps 主内容填充
+function renderMapsMainList() {
+  const container = document.getElementById('maps-main-list');
+  if (!container) return;
+  // 动态加载 maps.html 里的 mapsLinksData
+  fetch('maps.html')
+    .then(res => res.text())
+    .then(html => {
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+      const dataTag = temp.querySelector('#mapsLinksData');
+      let mapsLinks = [];
+      if (dataTag) {
+        try {
+          mapsLinks = JSON.parse(dataTag.textContent);
+        } catch {}
+      }
+      container.innerHTML = `${mapsLinks.map((group, gi) => `
+        <div class="link-card" style='background:var(--bg-secondary);border-radius:12px;padding:2rem 2.5rem 1.5rem 2.5rem;min-width:320px;max-width:900px;flex:1 1 700px;margin-bottom:2rem;position:relative;display:flex;flex-direction:column;border:1px solid #e0e4ea;'>
+          <h3 style='font-size:1.25rem;color:var(--primary-color);margin-bottom:1.2rem;font-weight:600;letter-spacing:0.5px;'>${group.group}</h3>
+          <ul style='list-style:none;padding:0;margin:0;'>
+            ${group.links.map((link, li) => `<li style='margin-bottom:1.1rem;'><a href='${link.url}' target='_blank' class='ext-link' data-gi='${gi}' data-li='${li}' style='color:var(--secondary-color);font-size:1.08rem;font-weight:500;word-break:break-all;display:inline-block;'><i class='fas fa-link' style='margin-right:9px;'></i>${link.name}</a><div class='link-desc' style='margin-top:0.5rem;'></div></li>`).join('')}
+          </ul>
+        </div>
+      `).join('')}`;
+      setTimeout(() => {
+        container.querySelectorAll('.ext-link').forEach(a => {
+          const url = a.getAttribute('href');
+          const descDiv = a.parentElement.querySelector('.link-desc');
+          descDiv.innerHTML = '<span style="color:#888;font-size:0.98em;">加载中...</span>';
+          fetchLinkMeta(url, descDiv);
+          a.addEventListener('click', function(e) {
+            window.open(url, '_blank');
+          });
+        });
+      }, 100);
+    });
+}
+// 右上角添加 Maps 页面
+const mapsLi = document.createElement('li');
+const mapsA = document.createElement('a');
+mapsA.href = '#maps';
+mapsA.textContent = 'Maps';
+mapsLi.appendChild(mapsA);
+navLinksUl.appendChild(mapsLi);
+// hash 跳转拦截
+window.addEventListener('hashchange', function() {
+  if (location.hash === '#maps') {
+    renderMapsMainList();
+  }
+});
+// 抓取网页 meta description 或 favicon/logo
+function fetchLinkMeta(url, descDiv) {
+  // 先尝试 fetch meta description
+  fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
+    .then(res => res.json())
+    .then(data => {
+      const html = data.contents;
+      let desc = '';
+      let img = '';
+      // 提取 meta description
+      const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i) || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["'][^>]*>/i);
+      if (descMatch) desc = descMatch[1];
+      // 提取 og:image
+      const imgMatch = html.match(/<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["'][^>]*>/i);
+      if (imgMatch) img = imgMatch[1];
+      // 提取 favicon
+      if (!img) {
+        const favMatch = html.match(/<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href=["']([^"']+)["'][^>]*>/i);
+        if (favMatch) {
+          let favUrl = favMatch[1];
+          if (!favUrl.startsWith('http')) {
+            try {
+              const u = new URL(url);
+              favUrl = u.origin + (favUrl.startsWith('/') ? favUrl : '/' + favUrl);
+            } catch {}
+          }
+          img = favUrl;
+        }
+      }
+      let htmlStr = '';
+      if (img) htmlStr += `<img src='${img}' alt='logo' style='max-width:60px;max-height:60px;display:block;margin-bottom:0.5em;border-radius:8px;'>`;
+      if (desc) htmlStr += `<div style='color:#666;font-size:0.98em;'>${desc}</div>`;
+      if (!desc && !img) htmlStr = `<span style='color:#aaa;font-size:0.98em;'>暂无简介/图片</span>`;
+      descDiv.innerHTML = htmlStr;
+    })
+    .catch(() => {
+      descDiv.innerHTML = `<span style='color:#aaa;font-size:0.98em;'>暂无简介/图片</span>`;
+    });
+}
+document.addEventListener('DOMContentLoaded', function() {
+  // Enhance links with descriptions or images
+  document.querySelectorAll('.markdown-body a').forEach(link => {
+    const url = link.href;
+    const descDiv = document.createElement('div');
+    descDiv.style.marginTop = '0.5rem';
+    descDiv.style.color = '#666';
+    descDiv.style.fontSize = '0.9em';
+    link.parentElement.appendChild(descDiv);
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">Xianpu Ji</li><li><a class="u-email" href="mailto:xianpuji@hhu.edu.cn">xianpuji@hhu.edu.cn</a></li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>研究热带波动以及热带降水变率.</p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
-    </div>
-
-  </div>
-
-</footer>
+    fetchLinkMeta(url, descDiv);
+  });
+});
+  </script>
+  <style>
+/* markdown-body 样式同步 test2.html */
+.markdown-body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #333;
+  padding: 40px 32px;
+  border-radius: 12px;
+  border: 1px solid #e0e4ea;
+  margin-bottom: 48px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  color: #2c3e50;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+.markdown-body h1 { font-size: 2.2em; border-bottom: 2px solid #3498db; padding-bottom: 0.3em; }
+.markdown-body h2 { font-size: 1.6em; border-bottom: 1px solid #3498db; padding-bottom: 0.2em; }
+.markdown-body h3 { font-size: 1.2em; }
+.markdown-body ul, .markdown-body ol { margin: 1em 0 1em 2em; }
+.markdown-body a { color: #3498db; text-decoration: none; transition: color 0.2s; }
+.markdown-body a:hover { color: #2980b9; text-decoration: underline; }
+.markdown-body blockquote {
+  border-left: 4px solid #3498db;
+  background: #f8f9fa;
+  color: #555;
+  margin: 1em 0;
+  padding: 0.8em 1.2em;
+  border-radius: 4px;
+}
+.markdown-body code, .markdown-body pre {
+  background: #f4f4f4;
+  color: #e74c3c;
+  border-radius: 3px;
+  padding: 2px 6px;
+  font-size: 0.98em;
+}
+.markdown-body pre {
+  padding: 12px;
+  overflow-x: auto;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  margin: 1em 0;
+  width: 100%;
+}
+.markdown-body th, .markdown-body td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+}
+.markdown-body th {
+  background: #f8f9fa;
+  color: #2c3e50;
+}
+  </style>
 </body>
-
 </html>
