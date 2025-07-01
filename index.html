@@ -50,19 +50,19 @@
           <!-- 主页内容卡片化布局，风格与about.html一致 -->
 <div style="max-width:900px;margin:0 auto;padding:0 0 2rem 0;">
   <!-- 个人信息卡片 -->
-  <div class="profile-section" style="text-align:center;margin-bottom:2.5rem;padding:2.5rem 2.5rem 2rem 2.5rem;background:linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);border-radius:0.5rem;box-shadow:0 4px 16px rgba(44,62,80,0.10);">
+  <div class="profile-section">
     <img src="assets/profile.JPG" alt="Profile" class="profile-img">
     <div class="profile-info">
-      <h1 style="font-size:2.5rem;margin-bottom:0.5rem;color:var(--text-primary);font-weight:700;">Xianpu Ji</h1>
-      <div class="profile-title" style="font-size:1.2rem;color:var(--text-secondary);margin-bottom:1.5rem;font-weight:500;">PhD Student, Ocean College, Hohai University</div>
-      <div class="profile-bio" style="font-size:1rem;line-height:1.8;color:var(--text-secondary);margin-bottom:2rem;max-width:600px;margin-left:auto;margin-right:auto;">热带大气动力学博士生，关注对流耦合赤道波、热带降水变率及其在气候模式中的模拟。也致力于深度学习与数值模式在热带天气系统研究中的应用。</div>
-      <div class="social-links" style="display:flex;justify-content:center;gap:1rem;margin-bottom:2rem;">
+      <h1 class="profile-name">Xianpu Ji</h1>
+      <div class="profile-title">PhD Student, Ocean College, Hohai University</div>
+      <div class="profile-bio">热带大气动力学博士生，关注对流耦合赤道波、热带降水变率及其在气候模式中的模拟。也致力于深度学习与数值模式在热带天气系统研究中的应用。</div>
+      <div class="social-links">
         <a href="mailto:xianpuji@hhu.edu.cn" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
         <a href="https://github.com/Blissful-Jasper" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://www.researchgate.net/profile/Xianpu-Ji" title="ResearchGate" target="_blank"><i class="fab fa-researchgate"></i></a>
         <a href="https://orcid.org/0009-0001-5197-4804" title="ORCID" target="_blank"><i class="fab fa-orcid"></i></a>
       </div>
-      <div class="profile-contact" style="margin-top:1.2rem;font-size:1rem;color:var(--text-secondary);display:flex;justify-content:center;gap:2rem;">
+      <div class="profile-contact">
         <span><i class="fas fa-map-marker-alt"></i> Ocean College, Hohai University</span>
         <span><i class="fas fa-phone"></i> +86 17551575179</span>
         <span><i class="fas fa-envelope"></i> xianpuji@hhu.edu.cn</span>
@@ -70,66 +70,70 @@
     </div>
   </div>
   <!-- 研究兴趣卡片 -->
-  <div class="research-section" style="background:#fff;border-radius:0.5rem;border:1px solid #e0e4ea;padding:1.2rem 1.2rem 1rem 1.2rem;margin-bottom:1.2rem;max-width:1000px;margin-left:auto;margin-right:auto;">
-    <h2 style="font-size:1.2em;color:#2c3e50;border-bottom:1px solid #3498db;padding-bottom:0.15em;margin-bottom:0.7rem;">研究兴趣 Research Interests</h2>
-    <div class="bio" style="margin-bottom:0.7rem;font-size:0.98em;">我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。</div>
-    <div class="research-grid" style="gap:4px;width:100%;max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:1.2rem;">
-      <div class="research-card" style="background:#f8f9fa;padding:8px 12px 6px 12px;border-radius:10px;border-left:3px solid #3498db;width:100%;box-sizing:border-box;min-height:auto;margin-bottom:10px;">
-        <h3 style="color:#2c3e50;margin-bottom:2px;font-size:0.98em;">Kelvin波与热带降水</h3>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <p style="color:#555;line-height:1.3;font-size:0.82em;margin-bottom:0.1em;margin-right:1em;flex:1;">Kelvin波是热带大气中最重要的波动之一，对热带降水的时空分布有重要影响。</p>
-          <a href="#blog/kelvin-waves.md" class="btn-primary" style="background:rgba(52,152,219,0.18);color:#236fa1;font-weight:500;border-radius:4px;padding:0.3em 0.9em;font-size:0.78em;margin-bottom:0;white-space:nowrap;">阅读文章</a>
+  <div class="research-section">
+    <h2 class="research-title">研究兴趣 Research Interests</h2>
+    <div >
+      
+      我的研究方向包括热带波动（Kelvin waves, MRG waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。
+      也关注深度学习在气象与降水预报中的创新应用。
+    </div>
+    <div class="research-grid">
+      <div class="research-card">
+        <h3 class="research-card-title">Kelvin波与热带降水</h3>
+        <div class="research-card-content">
+          <p>Kelvin波是热带大气中最重要的波动之一，对热带降水的时空分布有重要影响。</p>
+          <a href="#blog/kelvin-waves.md" class="btn-primary">阅读文章</a>
         </div>
       </div>
-      <div class="research-card" style="background:#f8f9fa;padding:8px 12px 6px 12px;border-radius:10px;border-left:3px solid #3498db;width:100%;box-sizing:border-box;min-height:auto;margin-bottom:10px;">
-        <h3 style="color:#2c3e50;margin-bottom:2px;font-size:0.98em;">CMIP6模式评估与气候变化</h3>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <p style="color:#555;line-height:1.3;font-size:0.82em;margin-bottom:0.1em;margin-right:1em;flex:1;">CMIP6模式为理解和预测未来热带气候变化提供了重要工具。</p>
-          <a href="#blog/cmip6-evaluation.md" class="btn-primary" style="background:rgba(52,152,219,0.18);color:#236fa1;font-weight:500;border-radius:4px;padding:0.3em 0.9em;font-size:0.78em;margin-bottom:0;white-space:nowrap;">阅读文章</a>
+      <div class="research-card">
+        <h3 class="research-card-title">CMIP6模式评估与气候变化</h3>
+        <div class="research-card-content">
+          <p>CMIP6模式为理解和预测未来热带气候变化提供了重要工具。</p>
+          <a href="#blog/cmip6-evaluation.md" class="btn-primary">阅读文章</a>
         </div>
       </div>
-      <div class="research-card" style="background:#f8f9fa;padding:8px 12px 6px 12px;border-radius:10px;border-left:3px solid #3498db;width:100%;box-sizing:border-box;min-height:auto;margin-bottom:10px;">
-        <h3 style="color:#2c3e50;margin-bottom:2px;font-size:0.98em;">深度学习在气象中的应用</h3>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <p style="color:#555;line-height:1.3;font-size:0.82em;margin-bottom:0.1em;margin-right:1em;flex:1;">深度学习为气象科学带来了新的机遇，提升了降水等要素的智能预测能力。</p>
-          <a href="#blog/dl-meteorology.md" class="btn-primary" style="background:rgba(52,152,219,0.18);color:#236fa1;font-weight:500;border-radius:4px;padding:0.3em 0.9em;font-size:0.78em;margin-bottom:0;white-space:nowrap;">阅读文章</a>
+      <div class="research-card">
+        <h3 class="research-card-title">深度学习在气象中的应用</h3>
+        <div class="research-card-content">
+          <p>深度学习为气象科学带来了新的机遇，提升了降水等要素的智能预测能力。</p>
+          <a href="#blog/dl-meteorology.md" class="btn-primary">阅读文章</a>
         </div>
       </div>
     </div>
   </div>
   <!-- 已发表论文卡片 -->
-  <div class="publications-section" style="background:var(--bg-secondary);border-radius:0.5rem;box-shadow:0 2px 8px rgba(44,62,80,0.06);padding:2.5rem 2.5rem 2rem 2.5rem;margin-bottom:2.2rem;">
-    <h2 style="font-size:1.6em;color:#2c3e50;border-bottom:1px solid #3498db;padding-bottom:0.2em;margin-bottom:1.2rem;">已发表论文 Selected Publications</h2>
+  <div class="publications-section">
+    <h2 class="publications-title">已发表论文 Selected Publications</h2>
     <div class="publication-list">
-      <div class="publication-item" style="background:#f8f9fa;padding:20px;margin-bottom:15px;border-radius:8px;border-left:4px solid #e74c3c;">
-        <div class="publication-title" style="font-weight:bold;color:#2c3e50;margin-bottom:5px;"><a href="https://doi.org/10.1016/j.atmosres.2025.108214" class="pub-link" target="_blank">Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models</a></div>
-        <div class="publication-authors" style="color:#7f8c8d;margin-bottom:5px;"><strong>Ji, X.</strong>, Feng, T., Huang, P., Cheng, X., Qin, J., Yang, B.</div>
-        <div class="publication-venue" style="color:#27ae60;font-style:italic;">Atmospheric Research, 2025</div>
+      <div class="publication-item">
+        <div class="publication-title"><a href="https://doi.org/10.1016/j.atmosres.2025.108214" class="pub-link" target="_blank">Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models</a></div>
+        <div class="publication-authors"><strong>Ji, X.</strong>, Feng, T., Huang, P., Cheng, X., Qin, J., Yang, B.</div>
+        <div class="publication-venue">Atmospheric Research, 2025</div>
       </div>
-      <div class="publication-item" style="background:#f8f9fa;padding:20px;margin-bottom:15px;border-radius:8px;border-left:4px solid #e74c3c;">
-        <div class="publication-title" style="font-weight:bold;color:#2c3e50;margin-bottom:5px;"><a href="https://doi.org/10.3390/rs16162871" class="pub-link" target="_blank">Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images</a></div>
-        <div class="publication-authors" style="color:#7f8c8d;margin-bottom:5px;"><strong>Ji, X.</strong>, Song X, Guo A, Liu K, Cao H, Feng T.</div>
-        <div class="publication-venue" style="color:#27ae60;font-style:italic;">Remote Sensing, 2024</div>
+      <div class="publication-item">
+        <div class="publication-title"><a href="https://doi.org/10.3390/rs16162871" class="pub-link" target="_blank">Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images</a></div>
+        <div class="publication-authors"><strong>Ji, X.</strong>, Song X, Guo A, Liu K, Cao H, Feng T.</div>
+        <div class="publication-venue">Remote Sensing, 2024</div>
       </div>
-      <div class="publication-item" style="background:#f8f9fa;padding:20px;margin-bottom:15px;border-radius:8px;border-left:4px solid #e74c3c;">
-        <div class="publication-title" style="font-weight:bold;color:#2c3e50;margin-bottom:5px;"><a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" class="pub-link" target="_blank">Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans</a></div>
-        <div class="publication-authors" style="color:#7f8c8d;margin-bottom:5px;"><strong>Ji, X.</strong>, Sha Y, Feng T, Li J.</div>
-        <div class="publication-venue" style="color:#27ae60;font-style:italic;">Journal of Xiamen University (Natural Science), 2024</div>
+      <div class="publication-item">
+        <div class="publication-title"><a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" class="pub-link" target="_blank">Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans</a></div>
+        <div class="publication-authors"><strong>Ji, X.</strong>, Sha Y, Feng T, Li J.</div>
+        <div class="publication-venue">Journal of Xiamen University (Natural Science), 2024</div>
       </div>
     </div>
   </div>
   <!-- 技能卡片 -->
-  <div class="skills-section" style="background:var(--bg-secondary);border-radius:0.5rem;box-shadow:0 2px 8px rgba(44,62,80,0.06);padding:2.5rem 2.5rem 2rem 2.5rem;">
-    <div class="section-title" style="font-size:1.2rem;font-weight:600;margin-bottom:1rem;"><i class="fas fa-tools"></i> 技能 Skills</div>
-    <div style="display:flex;flex-wrap:wrap;gap:20px;">
-      <div onclick="window.open('https://www.python.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-python"></i> Python</div>
-      <div onclick="window.open('https://pytorch.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-python"></i> PyTorch</div>
-      <div onclick="window.open('https://www.tensorflow.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-python"></i> TensorFlow</div>
-      <div onclick="window.open('https://www.r-project.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-r-project"></i> R</div>
-      <div onclick="window.open('https://www.latex-project.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fas fa-file-alt"></i> LaTeX</div>
-      <div onclick="window.open('https://www.unidata.ucar.edu/software/netcdf/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fas fa-database"></i> NetCDF</div>
-      <div onclick="window.open('https://www.wrf-model.org/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fas fa-cloud"></i> WRF Model</div>
-      <div onclick="window.open('https://www.git-scm.com/', '_blank')" style="background:#f8f9fa;padding:18px 28px;border-radius:8px;box-shadow:0 2px 5px rgba(0,0,0,0.07);font-size:16px;cursor:pointer;"><i class="fab fa-git-alt"></i> Git</div>
+  <div class="skills-section">
+    <div class="section-title"><i class="fas fa-tools"></i> 技能 Skills</div>
+    <div class="skills-grid">
+      <div class="skill-card" onclick="window.open('https://www.python.org/', '_blank')"><i class="fab fa-python"></i> Python</div>
+      <div class="skill-card" onclick="window.open('https://pytorch.org/', '_blank')"><i class="fab fa-python"></i> PyTorch</div>
+      <div class="skill-card" onclick="window.open('https://www.tensorflow.org/', '_blank')"><i class="fab fa-python"></i> TensorFlow</div>
+      <div class="skill-card" onclick="window.open('https://www.r-project.org/', '_blank')"><i class="fab fa-r-project"></i> R</div>
+      <div class="skill-card" onclick="window.open('https://www.latex-project.org/', '_blank')"><i class="fas fa-file-alt"></i> LaTeX</div>
+      <div class="skill-card" onclick="window.open('https://www.unidata.ucar.edu/software/netcdf/', '_blank')"><i class="fas fa-database"></i> NetCDF</div>
+      <div class="skill-card" onclick="window.open('https://www.wrf-model.org/', '_blank')"><i class="fas fa-cloud"></i> WRF Model</div>
+      <div class="skill-card" onclick="window.open('https://www.git-scm.com/', '_blank')"><i class="fab fa-git-alt"></i> Git</div>
     </div>
   </div>
 </div>
