@@ -1,6 +1,6 @@
-# =============================================================================
+# ===========================================
 # 📄 README.md - 项目说明文件
-# =============================================================================
+# ===========================================
 
 # Academic Jekyll Website
 
@@ -27,15 +27,14 @@ A beautiful, responsive academic website built with Jekyll. Perfect for professo
 
 2. **Clone and Setup**
    ```bash
-   git clone https://github.com/yourusername/academic-website.git
-   cd academic-website
+   git clone https://github.com/Blissful-Jasper/blissful-jasper.github.io.git
+   cd blissful-jasper.github.io
    bundle install
    ```
 
 3. **Customize**
    - Edit `_config.yml` with your information
    - Replace `assets/img/profile.jpg` with your photo
-   - Update the data files in `_data/` folder
    - Customize pages in the root directory
 
 4. **Run Locally**
@@ -58,22 +57,9 @@ Edit `_config.yml` to update:
 - Social media links
 - Site configuration
 
-### Research & Publications
-- Add publications to `_data/publications.yml`
-- Add research projects to `_data/projects.yml`
-- Include PDFs in `assets/papers/`
-
-### Teaching
-- Update courses in `_data/teaching.yml`
-- Add syllabi to `assets/teaching/`
-
-### News & Updates
-- Add news items to `_data/news.yml`
-- Create blog posts in `_posts/`
 
 ### Styling
 - Modify colors and fonts in `assets/main.scss`
-- Add custom styles in `_sass/custom.scss`
 
 ## File Structure
 
@@ -90,7 +76,6 @@ academic-website/
 ├── _layouts/           # Page templates
 ├── _includes/          # Reusable components
 ├── _posts/            # Blog posts
-├── _data/             # Data files (YAML)
 ├── _sass/             # Custom stylesheets
 └── assets/            # Images, CSS, JS
 ```
