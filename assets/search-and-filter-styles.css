@@ -1,0 +1,224 @@
+/* 标签过滤和搜索功能样式 */
+
+/* 搜索结果无结果状态 */
+.no-results {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: var(--text-muted);
+}
+
+.no-results p {
+  margin: var(--spacing-xs) 0;
+}
+
+/* 标签过滤状态 */
+.filter-status {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.filter-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.filter-info i {
+  color: var(--secondary-color);
+}
+
+.clear-filter-btn {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-left: auto;
+}
+
+.clear-filter-btn:hover {
+  background: #c0392b;
+  transform: translateY(-1px);
+}
+
+/* 标签样式增强 */
+.tag, .blog-tag {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 2px var(--spacing-xs);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+  margin: 2px;
+}
+
+.tag:hover, .blog-tag:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.tag.tag-active, .blog-tag.tag-active {
+  background: var(--secondary-color);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+/* 标签云样式 */
+.tag-cloud {
+  margin: var(--spacing-lg) 0;
+  text-align: center;
+}
+
+.tag-cloud-item {
+  display: inline-block;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-md);
+  margin: var(--spacing-xs);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid var(--border-light);
+}
+
+.tag-cloud-item:hover {
+  background: var(--secondary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.tag-cloud-item small {
+  opacity: 0.7;
+  font-weight: normal;
+}
+
+/* 博客文章卡片过滤状态 */
+.blog-post-card.tag-filtered {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+}
+
+/* 搜索组件在移动端的优化 */
+@media (max-width: 768px) {
+  .filter-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+  }
+  
+  .clear-filter-btn {
+    margin-left: 0;
+    align-self: flex-end;
+  }
+  
+  .tag-cloud {
+    text-align: left;
+  }
+  
+  .search-box input {
+    font-size: 16px; /* 防止iOS放大 */
+  }
+}
+
+/* 博客文章页面的标签样式 */
+.post-tags, .blog-post-tags {
+  margin: var(--spacing-lg) 0;
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--border-light);
+}
+
+.post-tags h5, .blog-post-tags h5 {
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.post-tags .tag, .blog-post-tags .blog-tag {
+  font-size: 0.85rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  margin-right: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 搜索建议/自动完成样式 */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: var(--spacing-sm) var(--spacing-md);
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-light);
+  transition: background 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background: var(--bg-secondary);
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-text {
+  font-weight: 500;
+}
+
+.suggestion-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.search-results, .filter-status {
+  animation: fadeInUp 0.3s ease;
+}
+
+/* 打印样式优化 */
+@media print {
+  .search-component,
+  .filter-status,
+  .tag-cloud,
+  .reading-progress-container,
+  .reading-navigation,
+  .table-of-contents {
+    display: none !important;
+  }
+}

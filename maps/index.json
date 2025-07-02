@@ -1,26 +1,322 @@
 [
   {
-    "title": "Precipitation from TRMM and GPM",
+    "title": "Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)",
     "date": "",
-    "summary": "TRMM与GPM卫星降水数据。",
+    "summary": "TRMM和GPM的降水数据。",
     "file": "https://gpm.nasa.gov/data-access/downloads/trmm",
     "group": "降水与雷电",
-    "images": ["img/trmm.png"]
+    "images": []
+  },
+  {
+    "title": "Global Lightning Map",
+    "date": "",
+    "summary": "全球雷电地图。",
+    "file": "https://www.blitzortung.org/en/live_lightning_maps.php",
+    "group": "降水与雷电",
+    "images": []
+  },
+  {
+    "title": "USAID precipitation monitoring",
+    "date": "",
+    "summary": "USAID降水监测。",
+    "file": "https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb",
+    "group": "降水与雷电",
+    "images": []
   },
   {
     "title": "Windy",
     "date": "",
-    "summary": "全球风场与气象可视化。",
+    "summary": "实时风场和天气数据。",
     "file": "https://www.windy.com/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "RAMMB Colostate",
+    "date": "",
+    "summary": "RAMMB科罗拉多州立大学卫星数据。",
+    "file": "https://rammb-slider.cira.colostate.edu/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "RealEarth Wisconsin-Madison",
+    "date": "",
+    "summary": "威斯康星大学麦迪逊分校的实时地球数据。",
+    "file": "https://realearth.ssec.wisc.edu/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "Meteologix",
+    "date": "",
+    "summary": "气象和气候数据可视化平台。",
+    "file": "https://meteologix.com/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "EUMETSAT (METEOSAT 0 and 41.5 Degrees)",
+    "date": "",
+    "summary": "欧洲气象卫星组织的气象数据。",
+    "file": "https://www.eumetsat.int/our-satellites",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "MIMIC-TPW ver.2 (Total Precipitable Water)",
+    "date": "",
+    "summary": "全球可降水水汽总量的实时数据。",
+    "file": "https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "Indian Ocean Tropical Cyclones (CIMSS)",
+    "date": "",
+    "summary": "印度洋热带气旋的实时监测数据。",
+    "file": "https://tropic.ssec.wisc.edu/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "Real time Indian Ocean satellite NRL",
+    "date": "",
+    "summary": "印度洋地区的实时卫星数据。",
+    "file": "https://www.nrlmry.navy.mil/TC.html",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "Remote Sensing Systems",
+    "date": "",
+    "summary": "遥感系统公司的气象数据。",
+    "file": "https://www.remss.com/",
+    "group": "卫星与风场",
+    "images": []
+  },
+  {
+    "title": "NASA Worldview Earth data",
+    "date": "",
+    "summary": "NASA的全球视野地球数据。",
+    "file": "https://worldview.earthdata.nasa.gov/",
     "group": "卫星与风场",
     "images": []
   },
   {
     "title": "CPC MJO",
     "date": "",
-    "summary": "CPC MJO监测。",
+    "summary": "CPC的MJO监测数据。",
     "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml",
     "group": "MJO 与环流监测",
+    "images": []
+  },
+  {
+    "title": "CPC - Dynamical Model MJO Forecast",
+    "date": "",
+    "summary": "CPC的动力学模型MJO预报。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model",
+    "group": "MJO 与环流监测",
+    "images": []
+  },
+  {
+    "title": "Carl Schreck - MJO RMM index",
+    "date": "",
+    "summary": "Carl Schreck提供的MJO RMM指数。",
+    "file": "https://ncics.org/portfolio/monitor/mjo/",
+    "group": "MJO 与环流监测",
+    "images": []
+  },
+  {
+    "title": "Michael Ventrice - MJO RMM index",
+    "date": "",
+    "summary": "Michael Ventrice提供的MJO RMM指数。",
+    "file": "https://mikeventrice.weebly.com/mjo.html",
+    "group": "MJO 与环流监测",
+    "images": []
+  },
+  {
+    "title": "Kyle Marcritchie - MJO RMM index",
+    "date": "",
+    "summary": "Kyle Marcritchie提供的MJO RMM指数。",
+    "file": "https://www.kylemacritchie.com/mjo/",
+    "group": "MJO 与环流监测",
+    "images": []
+  },
+  {
+    "title": "Global Tropics Benefits/Hazards",
+    "date": "",
+    "summary": "全球热带地区的气候影响和灾害监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php",
+    "group": "气候灾害与早期预警",
+    "images": []
+  },
+  {
+    "title": "Famine Early Warning System Network (FEWS NET)",
+    "date": "",
+    "summary": "饥荒早期预警系统网络。",
+    "file": "https://fews.net/",
+    "group": "气候灾害与早期预警",
+    "images": []
+  },
+  {
+    "title": "Climate Hazards Group - US Santa Barbara",
+    "date": "",
+    "summary": "加州大学圣巴巴拉分校气候灾害组的数据。",
+    "file": "https://www.chc.ucsb.edu/data",
+    "group": "气候灾害与早期预警",
+    "images": []
+  },
+  {
+    "title": "Indian Ocean Weather and Climate",
+    "date": "",
+    "summary": "印度洋地区的天气和气候数据。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml",
+    "group": "非洲与印度洋气候",
+    "images": []
+  },
+  {
+    "title": "NCEP MODEL FORECASTS FOR INDIAN OCEAN",
+    "date": "",
+    "summary": "NCEP针对印度洋的模型预报。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml",
+    "group": "非洲与印度洋气候",
+    "images": []
+  },
+  {
+    "title": "Africa Weather and Climate",
+    "date": "",
+    "summary": "非洲地区的天气和气候数据。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml",
+    "group": "非洲与印度洋气候",
+    "images": []
+  },
+  {
+    "title": "CPC - El Nino Southeren Oscillation",
+    "date": "",
+    "summary": "CPC的厄尔尼诺南方涛动监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "ENSO - CPC Diagnostic Discussion",
+    "date": "",
+    "summary": "CPC的ENSO诊断讨论。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "CPC - ENSO weekly PPT",
+    "date": "",
+    "summary": "CPC的ENSO每周降水量监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO",
+    "date": "",
+    "summary": "太平洋海洋环境实验室的TAO数据。",
+    "file": "https://www.pmel.noaa.gov/tao/",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "IRI 925 hPa Monthly wind vector anomaly",
+    "date": "",
+    "summary": "IRI提供的925 hPa每月风矢量异常数据。",
+    "file": "https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "Monsoon Online",
+    "date": "",
+    "summary": "季风在线监测平台。",
+    "file": "https://mol.tropmet.res.in/",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "CPC - Global Monsoon",
+    "date": "",
+    "summary": "CPC的全球季风监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "CPC - Blocking",
+    "date": "",
+    "summary": "CPC的阻塞高压监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "CPC - Africa InterTropical Front (IFT)",
+    "date": "",
+    "summary": "CPC的非洲热带辐合带监测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml",
+    "group": "ENSO/季风/ITCZ",
+    "images": []
+  },
+  {
+    "title": "Naujokat @ Free Berlin Univ",
+    "date": "",
+    "summary": "自由柏林大学的QBO监测。",
+    "file": "https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html",
+    "group": "QBO",
+    "images": []
+  },
+  {
+    "title": "Lubis @ university of Leipzig",
+    "date": "",
+    "summary": "莱比锡大学的QBO监测。",
+    "file": "https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/",
+    "group": "QBO",
+    "images": []
+  },
+  {
+    "title": "Reading university",
+    "date": "",
+    "summary": "雷丁大学的QBO监测。",
+    "file": "http://ugamp.nerc.ac.uk/hot/ajh/qbo.html",
+    "group": "QBO",
+    "images": []
+  },
+  {
+    "title": "CPC QBO",
+    "date": "",
+    "summary": "CPC的QBO监测数据。",
+    "file": "https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index",
+    "group": "QBO",
+    "images": []
+  },
+  {
+    "title": "CPC - Outlook and Monthly reports",
+    "date": "",
+    "summary": "CPC的气候展望和月度报告。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/expert_assessment/",
+    "group": "其他气候监测",
+    "images": []
+  },
+  {
+    "title": "NCEP SST",
+    "date": "",
+    "summary": "NCEP的海表温度监测。",
+    "file": "https://polar.ncep.noaa.gov/sst/ophi/",
+    "group": "其他气候监测",
+    "images": []
+  },
+  {
+    "title": "nullschool",
+    "date": "",
+    "summary": "全球气候数据可视化平台。",
+    "file": "https://earth.nullschool.net/",
+    "group": "其他气候监测",
     "images": []
   }
 ]

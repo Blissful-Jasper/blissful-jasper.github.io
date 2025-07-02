@@ -1,174 +1,3112 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>学术与工具链接</title>
-  <link rel="stylesheet" href="assets/main.css">
-  <link rel="stylesheet" href="assets/theme-links.css">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Useful Links | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Useful Links" />
+<meta name="author" content="Xianpu Ji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A curated collection of valuable resources for research and learning" />
+<meta property="og:description" content="A curated collection of valuable resources for research and learning" />
+<link rel="canonical" href="https://blissful-jasper.github.io/links.html" />
+<meta property="og:url" content="https://blissful-jasper.github.io/links.html" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Useful Links" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Xianpu Ji"},"description":"A curated collection of valuable resources for research and learning","headline":"Useful Links","url":"https://blissful-jasper.github.io/links.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="markdown-body links-page" style="background:var(--bg-primary);box-shadow:none;padding:2rem;max-width:1100px;margin:2rem auto 2rem auto;">
-  <h2 style="margin-bottom:1.5rem;">学术与工具链接</h2>
-  <div id="links-main-list"></div>
-</div>
-<script type="application/json" id="mainLinksData">
-[
-  {
-    "group": "ENSO & 气候现象",
-    "links": [
-      { "name": "Philosophies and concerns about ENSO", "url": "https://iri.columbia.edu/" },
-      { "name": "Why do we care about El Niño and La Niña?", "url": "https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/" },
-      { "name": "Watching for El Niño and La Niña", "url": "https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming" },
-      { "name": "Why are there so many ENSO indexes?", "url": "https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one" },
-      { "name": "How Good Have ENSO Forecasts Been Lately?", "url": "https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately" }
-    ]
-  },
-  {
-    "group": "数值模式与流体模拟",
-    "links": [
-      { "name": "Shallow water model (Matlab, barotropic instability)", "url": "https://www.met.reading.ac.uk/%7Eswrhgnrj/shallow_water_model/" },
-      { "name": "GFDL Dry spectral idealized model", "url": "https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/" },
-      { "name": "GFDL Dry model github", "url": "https://github.com/gchenpu/idealized" },
-      { "name": "GFDL Moist spectral idealized model", "url": "https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/" },
-      { "name": "DART, GeoCAT, and VAPOR sites", "url": "https://www2.cisl.ucar.edu/resources/legacy/spherepack" },
-      { "name": "Misc fluid simulators", "url": "https://matthias-research.github.io/pages/tenMinutePhysics/index.html" }
-    ]
-  },
-  {
-    "group": "数据与课程",
-    "links": [
-      { "name": "notes on regression and time series analysis", "url": "https://people.duke.edu/~rnau/411home.htm" },
-      { "name": "Precipitation datasets", "url": "https://gpm.nasa.gov/data/directory" }
-    ]
-  },
-  {
-    "group": "经典论文与资料",
-    "links": [
-      { "name": "Classic and Historical Papers Papers on Geophysical Fluid Dynamics", "url": "https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html" }
-    ]
-  },
-  {
-    "group": "季节预测与季风",
-    "links": [
-      { "name": "IRI Seasonal Climate Forecast", "url": "https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/" },
-      { "name": "Seasonal Climate Forecast CFSv2", "url": "https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/" },
-      { "name": "World monsoons", "url": "https://worldmonsoons.org/" }
-    ]
-  },
-  {
-    "group": "卫星与波动监测",
-    "links": [
-      { "name": "CIMSS Satellite Blog", "url": "https://cimss.ssec.wisc.edu/satellite-blog/" },
-      { "name": "GOES Geostationary archive", "url": "https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php" },
-      { "name": "Grided Satellite data", "url": "https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro" },
-      { "name": "Sandro Lubis blog for equatorial waves", "url": "https://sandrolubis.wordpress.com/" },
-      { "name": "Carl Scherck tropical waves monitoring", "url": "https://ncics.org/portfolio/monitor/mjo/" },
-      { "name": "Kyle MacRitchie page", "url": "https://www.kylemacritchie.com/" },
-      { "name": "Micheal Ventrice page", "url": "https://mikeventrice.weebly.com/" }
-    ]
-  },
-  {
-    "group": "博客与主页",
-    "links": [
-      { "name": "Cliff Mass blog", "url": "https://cliffmass.blogspot.com/" }
-    ]
-  },
-  {
-    "group": "Python与大气科学",
-    "links": [
-      { "name": "GHCN call and plot", "url": "https://github.com/akrherz/pyIEM" },
-      { "name": "Python for Geosciences Daily (GHCN-D)", "url": "https://github.com/jjrennie/GHCNpy" },
-      { "name": "Collection of Python libraries", "url": "https://pyaos.github.io/packages/?fbclid=IwAR3mk45ythjGm-JLYbphd6AZbJGduYfLu75wOGnzDTbUNQcBYj1BfQX3tCs" }
-    ]
-  },
-  {
-    "group": "非洲气候与干旱",
-    "links": [
-      { "name": "ACMAD", "url": "https://www.acmad.org/" },
-      { "name": "FEWS NET", "url": "https://fews.net/" },
-      { "name": "GCRF African SWIFT ", "url": "https://africanswift.org/" },
-      { "name": "CPC Portal for African", "url": "https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" },
-      { "name": "Seasonal forecasting over Nile", "url": "https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/" }
-    ]
-  },
-  {
-    "group": "波动与物理动画",
-    "links": [
-      { "name": "Collection of animation, videos, interactive plots on sound waves", "url": "https://www.acs.psu.edu/drussell/Demos.html" },
-      { "name": "Atlas of internal solitary waves", "url": "https://www.internalwaveatlas.com/" },
-      { "name": "NSF videos about Fluid dynamics", "url": "https://www.nsf.gov/news/special_reports/physics/index.jsp" },
-      { "name": "Feynmann lectures on Physics", "url": "http://www.feynmanlectures.caltech.edu" },
-      { "name": "One dimensional positive, negative, and zero group velocity", "url": "https://www.youtube.com/watch?v=tlM9vq-bepA" },
-      { "name": "Two dimensional gravity wave", "url": "https://www.youtube.com/watch?v=xf8Y6YYxvew" }
-    ]
-  },
-  {
-    "group": "数学与可视化",
-    "links": [
-      { "name": "DFT vs. FFT jupyter notebook", "url": "https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb" },
-      { "name": "Mike Cohen FFT 视频", "url": "https://www.youtube.com/watch?v=gr3IG81Gl9I&list=PLn0OLiymPak3lrIErlYVnIc3pGTwgt_ml" },
-      { "name": "Infinity is a beautiful concept and it is ruining physics", "url": "https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics" },
-      { "name": "Ten simples rules for better figures", "url": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833" },
-      { "name": "Rainbow color map perception artifacts", "url": "https://www.kennethmoreland.com/color-advice/" },
-      { "name": "Modifying matplotlib colormaps", "url": "https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap" },
-      { "name": "Adjusting the zero in a skewed colormap", "url": "https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap" },
-      { "name": "Adjusting extremes", "url": "https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654" },
-      { "name": "Matplotlib colormap reference", "url": "https://matplotlib.org/stable/tutorials/colors/colormaps.html" },
-      { "name": "Matplotlib colormap examples", "url": "https://matplotlib.org/stable/gallery/color/colormap_reference.html" },
-      { "name": "Matplotlib colormap customization", "url": "https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html" },
-      { "name": "Increasing the white band in the blue-white-red colormap", "url": "https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658" },
-      { "name": "Creating a publication quality-figures", "url": "https://www.nature.com/articles/nmeth.1618" }
-    ]
-  },
-  {
-    "group": "学术写作与资源",
-    "links": [
-      { "name": "The element of style by Strunk and White (pdf)", "url": "https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf" },
-      { "name": "Effective technical writing from PennState", "url": "https://www.e-education.psu.edu/styleforstudents/" },
-      { "name": "Writing in the Sciences (Stanford, Coursera)", "url": "https://www.coursera.org/learn/sciwrite" },
-      { "name": "Academic Phrasebank", "url": "http://www.phrasebank.manchester.ac.uk/" },
-      { "name": "Guid to grammer and writing", "url": "https://guidetogrammar.org/" },
-      { "name": "words with similar rhymes", "url": "https://www.rhymezone.com/" },
-      { "name": "Synonyms", "url": "https://www.thesaurus.com/" },
-      { "name": "On writing and some numerical books", "url": "https://hplgit.github.io/?" },
-      { "name": "Reproducibility problem", "url": "https://www.nature.com/articles/533452a" }
-    ]
-  },
-  {
-    "group": "常用学术/工具/资源",
-    "links": [
-      { "name": "Google Scholar", "url": "https://scholar.google.com/" },
-      { "name": "ResearchGate", "url": "https://www.researchgate.net/profile/Xianpu-Ji" },
-      { "name": "GitHub", "url": "https://github.com/Blissful-Jasper" },
-      { "name": "ORCID", "url": "https://orcid.org/0009-0001-5197-4804" },
-      { "name": "Python 官网", "url": "https://www.python.org/" },
-      { "name": "Deep Learning.ai", "url": "https://www.deeplearning.ai/" }
-    ]
-  }
-]
-</script>
-<script>
-function renderLinksMainList() {
-  const container = document.getElementById('links-main-list');
-  if (!container) return;
-  const dataTag = document.getElementById('mainLinksData');
-  let mainLinks = [];
-  if (dataTag) {
-    try {
-      mainLinks = JSON.parse(dataTag.textContent);
-    } catch {}
-  }
-  container.innerHTML = `${mainLinks.map((group, gi) => `
-    <div class="link-card" style='background:var(--bg-secondary);border-radius:12px;padding:2rem 2.5rem 1.5rem 2.5rem;min-width:320px;max-width:900px;flex:1 1 700px;margin-bottom:2rem;position:relative;display:flex;flex-direction:column;border:1px solid #e0e4ea;'>
-      <h3 style='font-size:1.25rem;color:var(--primary-color);margin-bottom:1.2rem;font-weight:600;letter-spacing:0.5px;'>${group.group}</h3>
-      <ul style='list-style:none;padding:0;margin:0;'>
-        ${group.links.map((link, li) => `<li style='margin-bottom:1.1rem;'><a href='${link.url}' target='_blank' class='ext-link' data-gi='${gi}' data-li='${li}' style='color:var(--secondary-color);font-size:1.08rem;font-weight:500;word-break:break-all;display:inline-block;'><i class='fas fa-link' style='margin-right:9px;'></i>${link.name}</a></li>`).join('')}
-      </ul>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                <span class="logo-text">Xianpu Ji</span>
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+            </ul>
+        </div>
     </div>
-  `).join('')}`;
-}
-document.addEventListener('DOMContentLoaded', renderLinksMainList);
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Useful Links</h1>
+  </header>
+
+  <div class="post-content">
+    <!-- Load modern theme and links-specific styles -->
+<link rel="stylesheet" href="/assets/modern-theme.css">
+<link rel="stylesheet" href="/assets/links-style.css">
+
+<!-- Include the links section -->
+<!-- Links Section -->
+<section class="links-section" id="links">
+  <div class="links-container">
+    <!-- Header -->
+    <div class="links-header">
+      <h2>Useful Resources</h2>
+      <p>A curated collection of valuable links for research, learning, and collaboration</p>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="links-controls">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="linksSearch" placeholder="Search links...">
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-category="all">All</button>
+        
+        
+        <button class="filter-btn" data-category="enso-气候现象">ENSO & 气候现象</button>
+        
+        <button class="filter-btn" data-category="数值模式与流体模拟">数值模式与流体模拟</button>
+        
+        <button class="filter-btn" data-category="数据与课程">数据与课程</button>
+        
+        <button class="filter-btn" data-category="经典论文与资料">经典论文与资料</button>
+        
+        <button class="filter-btn" data-category="季节预测与季风">季节预测与季风</button>
+        
+        <button class="filter-btn" data-category="卫星与波动监测">卫星与波动监测</button>
+        
+        <button class="filter-btn" data-category="博客与主页">博客与主页</button>
+        
+        <button class="filter-btn" data-category="python与大气科学">Python与大气科学</button>
+        
+        <button class="filter-btn" data-category="非洲气候与干旱">非洲气候与干旱</button>
+        
+        <button class="filter-btn" data-category="波动与物理动画">波动与物理动画</button>
+        
+        <button class="filter-btn" data-category="fft-与数据可视化">FFT 与数据可视化</button>
+        
+        <button class="filter-btn" data-category="科学与哲学">科学与哲学</button>
+        
+        <button class="filter-btn" data-category="数据可视化与图形设计">数据可视化与图形设计</button>
+        
+        <button class="filter-btn" data-category="学术写作与资源">学术写作与资源</button>
+        
+        <button class="filter-btn" data-category="常用学术-工具-资源">常用学术/工具/资源</button>
+        
+      </div>
+    </div>
+
+    <!-- Links Content -->
+    <div class="links-content">
+      
+      <div class="links-group" data-category="enso-气候现象">
+        <div class="group-header">
+          <h3 class="group-title">ENSO & 气候现象</h3>
+          <span class="group-count">5 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="philosophies and concerns about enso" data-url="https://iri.columbia.edu/">
+            <div class="link-image">
+              
+                <img src="./links/1.png" alt="Philosophies and concerns about ENSO" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://iri.columbia.edu/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Philosophies and concerns about ENSO</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  iri.columbia.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://iri.columbia.edu/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://iri.columbia.edu/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="why do we care about el niño and la niña?" data-url="https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/">
+            <div class="link-image">
+              
+                <img src="./links/2.png" alt="Why do we care about El Niño and La Niña?" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Why do we care about El Niño and La Niña?</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  iri.columbia.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="watching for el niño and la niña" data-url="https://www.climate.gov/news-features/understanding-climate/watching-el-ni%c3%b1o-and-la-ni%c3%b1a-noaa-adapts-global-warming">
+            <div class="link-image">
+              
+                <img src="./links/3.png" alt="Watching for El Niño and La Niña" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Watching for El Niño and La Niña</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.climate.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="why are there so many enso indexes?" data-url="https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one">
+            <div class="link-image">
+              
+                <img src="./links/4.png" alt="Why are there so many ENSO indexes?" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Why are there so many ENSO indexes?</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.climate.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="how good have enso forecasts been lately?" data-url="https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately">
+            <div class="link-image">
+              
+                <img src="./links/5.png" alt="How Good Have ENSO Forecasts Been Lately?" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">How Good Have ENSO Forecasts Been Lately?</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.climate.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="数值模式与流体模拟">
+        <div class="group-header">
+          <h3 class="group-title">数值模式与流体模拟</h3>
+          <span class="group-count">6 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="shallow water model (matlab, barotropic instability)" data-url="https://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/">
+            <div class="link-image">
+              
+                <img src="./links/2.1.png" alt="Shallow water model (Matlab, barotropic instability)" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Shallow water model (Matlab, barotropic instability)</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.met.reading.ac.uk
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="gfdl dry spectral idealized model" data-url="https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/">
+            <div class="link-image">
+              
+                <img src="./links/2.2.png" alt="GFDL Dry spectral idealized model" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GFDL Dry spectral idealized model</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.gfdl.noaa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="gfdl dry model github" data-url="https://github.com/gchenpu/idealized">
+            <div class="link-image">
+              
+                <img src="./links/2.3.png" alt="GFDL Dry model github" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://github.com/gchenpu/idealized" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GFDL Dry model github</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  github.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://github.com/gchenpu/idealized" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://github.com/gchenpu/idealized">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="gfdl moist spectral idealized model" data-url="https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/">
+            <div class="link-image">
+              
+                <img src="./links/2.4.png" alt="GFDL Moist spectral idealized model" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GFDL Moist spectral idealized model</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.gfdl.noaa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="dart, geocat, and vapor sites" data-url="https://www2.cisl.ucar.edu/resources/legacy/spherepack">
+            <div class="link-image">
+              
+                <img src="./links/2.5.png" alt="DART, GeoCAT, and VAPOR sites" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www2.cisl.ucar.edu/resources/legacy/spherepack" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">DART, GeoCAT, and VAPOR sites</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www2.cisl.ucar.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www2.cisl.ucar.edu/resources/legacy/spherepack" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www2.cisl.ucar.edu/resources/legacy/spherepack">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="misc fluid simulators" data-url="https://matthias-research.github.io/pages/tenminutephysics/index.html">
+            <div class="link-image">
+              
+                <img src="./links/2.6.png" alt="Misc fluid simulators" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://matthias-research.github.io/pages/tenMinutePhysics/index.html" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Misc fluid simulators</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  matthias-research.github.io
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://matthias-research.github.io/pages/tenMinutePhysics/index.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://matthias-research.github.io/pages/tenMinutePhysics/index.html">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="数据与课程">
+        <div class="group-header">
+          <h3 class="group-title">数据与课程</h3>
+          <span class="group-count">2 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="notes on regression and time series analysis" data-url="https://people.duke.edu/~rnau/411home.htm">
+            <div class="link-image">
+              
+                <img src="./links/3.1.png" alt="notes on regression and time series analysis" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://people.duke.edu/~rnau/411home.htm" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">notes on regression and time series analysis</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  people.duke.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://people.duke.edu/~rnau/411home.htm" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://people.duke.edu/~rnau/411home.htm">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="precipitation datasets" data-url="https://gpm.nasa.gov/data/directory">
+            <div class="link-image">
+              
+                <img src="./links/3.2.png" alt="Precipitation datasets" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://gpm.nasa.gov/data/directory" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Precipitation datasets</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  gpm.nasa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://gpm.nasa.gov/data/directory" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://gpm.nasa.gov/data/directory">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="经典论文与资料">
+        <div class="group-header">
+          <h3 class="group-title">经典论文与资料</h3>
+          <span class="group-count">1 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="classic and historical papers papers on geophysical fluid dynamics" data-url="https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html">
+            <div class="link-image">
+              
+                <img src="./links/4.1.png" alt="Classic and Historical Papers Papers on Geophysical Fluid Dynamics" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Classic and Historical Papers Papers on Geophysical Fluid Dynamics</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  empslocal.ex.ac.uk
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="季节预测与季风">
+        <div class="group-header">
+          <h3 class="group-title">季节预测与季风</h3>
+          <span class="group-count">3 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="iri seasonal climate forecast" data-url="https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/">
+            <div class="link-image">
+              
+                <img src="./links/5.1.png" alt="IRI Seasonal Climate Forecast" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">IRI Seasonal Climate Forecast</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  iri.columbia.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="seasonal climate forecast cfsv2" data-url="https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/">
+            <div class="link-image">
+              
+                <img src="./links/5.2.png" alt="Seasonal Climate Forecast CFSv2" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Seasonal Climate Forecast CFSv2</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.cpc.ncep.noaa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="world monsoons" data-url="https://worldmonsoons.org/">
+            <div class="link-image">
+              
+                <img src="./links/5.3.png" alt="World monsoons" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://worldmonsoons.org/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">World monsoons</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  worldmonsoons.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://worldmonsoons.org/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://worldmonsoons.org/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="卫星与波动监测">
+        <div class="group-header">
+          <h3 class="group-title">卫星与波动监测</h3>
+          <span class="group-count">7 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="cimss satellite blog" data-url="https://cimss.ssec.wisc.edu/satellite-blog/">
+            <div class="link-image">
+              
+                <img src="./links/6.1.png" alt="CIMSS Satellite Blog" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://cimss.ssec.wisc.edu/satellite-blog/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">CIMSS Satellite Blog</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  cimss.ssec.wisc.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://cimss.ssec.wisc.edu/satellite-blog/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://cimss.ssec.wisc.edu/satellite-blog/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="goes geostationary archive" data-url="https://www.star.nesdis.noaa.gov/goes/goes16_conus.php">
+            <div class="link-image">
+              
+                <img src="./links/6.2.png" alt="GOES Geostationary archive" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GOES Geostationary archive</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.star.nesdis.noaa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="grided satellite data" data-url="https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro">
+            <div class="link-image">
+              
+                <img src="./links/6.3.png" alt="Grided Satellite data" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Grided Satellite data</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.ncei.noaa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="sandro lubis blog for equatorial waves" data-url="https://sandrolubis.wordpress.com/">
+            <div class="link-image">
+              
+                <img src="./links/6.4.png" alt="Sandro Lubis blog for equatorial waves" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://sandrolubis.wordpress.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Sandro Lubis blog for equatorial waves</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  sandrolubis.wordpress.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://sandrolubis.wordpress.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://sandrolubis.wordpress.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="carl scherck tropical waves monitoring" data-url="https://ncics.org/portfolio/monitor/mjo/">
+            <div class="link-image">
+              
+                <img src="./links/6.5.png" alt="Carl Scherck tropical waves monitoring" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://ncics.org/portfolio/monitor/mjo/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Carl Scherck tropical waves monitoring</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  ncics.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://ncics.org/portfolio/monitor/mjo/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://ncics.org/portfolio/monitor/mjo/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="kyle macritchie page" data-url="https://www.kylemacritchie.com/">
+            <div class="link-image">
+              
+                <img src="./links/6.6.png" alt="Kyle MacRitchie page" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.kylemacritchie.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Kyle MacRitchie page</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.kylemacritchie.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.kylemacritchie.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.kylemacritchie.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="micheal ventrice page" data-url="https://mikeventrice.weebly.com/">
+            <div class="link-image">
+              
+                <img src="./links/6.7.png" alt="Micheal Ventrice page" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://mikeventrice.weebly.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Micheal Ventrice page</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  mikeventrice.weebly.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://mikeventrice.weebly.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://mikeventrice.weebly.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="博客与主页">
+        <div class="group-header">
+          <h3 class="group-title">博客与主页</h3>
+          <span class="group-count">1 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="cliff mass blog" data-url="https://cliffmass.blogspot.com/">
+            <div class="link-image">
+              
+                <img src="./links/7.1.png" alt="Cliff Mass blog" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://cliffmass.blogspot.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Cliff Mass blog</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  cliffmass.blogspot.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://cliffmass.blogspot.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://cliffmass.blogspot.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="python与大气科学">
+        <div class="group-header">
+          <h3 class="group-title">Python与大气科学</h3>
+          <span class="group-count">3 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="ghcn call and plot" data-url="https://github.com/akrherz/pyiem">
+            <div class="link-image">
+              
+                <img src="./links/8.1.png" alt="GHCN call and plot" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://github.com/akrherz/pyIEM" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GHCN call and plot</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  github.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://github.com/akrherz/pyIEM" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://github.com/akrherz/pyIEM">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="python for geosciences daily (ghcn-d)" data-url="https://github.com/jjrennie/ghcnpy">
+            <div class="link-image">
+              
+                <img src="./links/8.2.png" alt="Python for Geosciences Daily (GHCN-D)" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://github.com/jjrennie/GHCNpy" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Python for Geosciences Daily (GHCN-D)</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  github.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://github.com/jjrennie/GHCNpy" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://github.com/jjrennie/GHCNpy">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="collection of python libraries" data-url="https://pyaos.github.io/packages/?fbclid=iwar3mk45ythjgm-jlybphd6azbjgduyflu75wognzdtbunqcbyj1bfqx3tcs">
+            <div class="link-image">
+              
+                <img src="./links/8.3.png" alt="Collection of Python libraries" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://pyaos.github.io/packages/?fbclid=IwAR3mk45ythjGm-JLYbphd6AZbJGduYfLu75wOGnzDTbUNQcBYj1BfQX3tCs" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Collection of Python libraries</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  pyaos.github.io
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://pyaos.github.io/packages/?fbclid=IwAR3mk45ythjGm-JLYbphd6AZbJGduYfLu75wOGnzDTbUNQcBYj1BfQX3tCs" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://pyaos.github.io/packages/?fbclid=IwAR3mk45ythjGm-JLYbphd6AZbJGduYfLu75wOGnzDTbUNQcBYj1BfQX3tCs">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="非洲气候与干旱">
+        <div class="group-header">
+          <h3 class="group-title">非洲气候与干旱</h3>
+          <span class="group-count">5 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="acmad" data-url="https://www.acmad.org/">
+            <div class="link-image">
+              
+                <img src="./links/9.1.png" alt="ACMAD" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.acmad.org/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">ACMAD</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.acmad.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.acmad.org/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.acmad.org/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="fews net" data-url="https://fews.net/">
+            <div class="link-image">
+              
+                <img src="./links/9.2.png" alt="FEWS NET" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://fews.net/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">FEWS NET</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  fews.net
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://fews.net/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://fews.net/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="gcrf african swift" data-url="https://africanswift.org/">
+            <div class="link-image">
+              
+                <img src="./links/9.3.png" alt="GCRF African SWIFT" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://africanswift.org/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GCRF African SWIFT</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  africanswift.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://africanswift.org/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://africanswift.org/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="cpc portal for african" data-url="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml">
+            <div class="link-image">
+              
+                <img src="./links/9.4.png" alt="CPC Portal for African" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">CPC Portal for African</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.cpc.ncep.noaa.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="seasonal forecasting over nile" data-url="https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/">
+            <div class="link-image">
+              
+                <img src="./links/9.5.png" alt="Seasonal forecasting over Nile" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Seasonal forecasting over Nile</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  hrc-sudan.sd
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="波动与物理动画">
+        <div class="group-header">
+          <h3 class="group-title">波动与物理动画</h3>
+          <span class="group-count">6 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="collection of animation, videos, interactive plots on sound waves" data-url="https://www.acs.psu.edu/drussell/demos.html">
+            <div class="link-image">
+              
+                <img src="./links/10.1.png" alt="Collection of animation, videos, interactive plots on sound waves" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.acs.psu.edu/drussell/Demos.html" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Collection of animation, videos, interactive plots on sound waves</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.acs.psu.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.acs.psu.edu/drussell/Demos.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.acs.psu.edu/drussell/Demos.html">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="atlas of internal solitary waves" data-url="https://www.internalwaveatlas.com/">
+            <div class="link-image">
+              
+                <img src="./links/10.2.png" alt="Atlas of internal solitary waves" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.internalwaveatlas.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Atlas of internal solitary waves</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.internalwaveatlas.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.internalwaveatlas.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.internalwaveatlas.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="nsf videos about fluid dynamics" data-url="https://www.nsf.gov/news/special_reports/physics/index.jsp">
+            <div class="link-image">
+              
+                <img src="./links/10.3.png" alt="NSF videos about Fluid dynamics" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.nsf.gov/news/special_reports/physics/index.jsp" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">NSF videos about Fluid dynamics</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.nsf.gov
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.nsf.gov/news/special_reports/physics/index.jsp" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.nsf.gov/news/special_reports/physics/index.jsp">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="feynmann lectures on physics" data-url="http://www.feynmanlectures.caltech.edu">
+            <div class="link-image">
+              
+                <img src="./links/10.4.png" alt="Feynmann lectures on Physics" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="http://www.feynmanlectures.caltech.edu" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Feynmann lectures on Physics</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.feynmanlectures.caltech.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="http://www.feynmanlectures.caltech.edu" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="http://www.feynmanlectures.caltech.edu">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="one dimensional positive, negative, and zero group velocity" data-url="https://www.youtube.com/watch?v=tlm9vq-bepa">
+            <div class="link-image">
+              
+                <img src="./links/10.5.png" alt="One dimensional positive, negative, and zero group velocity" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.youtube.com/watch?v=tlM9vq-bepA" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">One dimensional positive, negative, and zero group velocity</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.youtube.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.youtube.com/watch?v=tlM9vq-bepA" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.youtube.com/watch?v=tlM9vq-bepA">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="two dimensional gravity wave" data-url="https://www.youtube.com/watch?v=xf8y6yyxvew">
+            <div class="link-image">
+              
+                <img src="./links/10.6.png" alt="Two dimensional gravity wave" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.youtube.com/watch?v=xf8Y6YYxvew" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Two dimensional gravity wave</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.youtube.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.youtube.com/watch?v=xf8Y6YYxvew" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.youtube.com/watch?v=xf8Y6YYxvew">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="fft-与数据可视化">
+        <div class="group-header">
+          <h3 class="group-title">FFT 与数据可视化</h3>
+          <span class="group-count">2 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="dft vs. fft jupyter notebook" data-url="https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/understandingthefft.ipynb">
+            <div class="link-image">
+              
+                <img src="./links/11.1.png" alt="DFT vs. FFT jupyter notebook" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">DFT vs. FFT jupyter notebook</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  nbviewer.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="mike cohen fft 视频" data-url="https://www.youtube.com/watch?v=gr3ig81gl9i&list=pln0oliympak3lrierlyvnic3pgtwgt_ml">
+            <div class="link-image">
+              
+                <img src="./links/11.2.png" alt="Mike Cohen FFT 视频" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.youtube.com/watch?v=gr3IG81Gl9I&list=PLn0OLiymPak3lrIErlYVnIc3pGTwgt_ml" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Mike Cohen FFT 视频</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.youtube.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.youtube.com/watch?v=gr3IG81Gl9I&list=PLn0OLiymPak3lrIErlYVnIc3pGTwgt_ml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.youtube.com/watch?v=gr3IG81Gl9I&list=PLn0OLiymPak3lrIErlYVnIc3pGTwgt_ml">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="科学与哲学">
+        <div class="group-header">
+          <h3 class="group-title">科学与哲学</h3>
+          <span class="group-count">1 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="infinity is a beautiful concept and it is ruining physics" data-url="https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics">
+            <div class="link-image">
+              
+                <img src="./links/12.1.png" alt="Infinity is a beautiful concept and it is ruining physics" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Infinity is a beautiful concept and it is ruining physics</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.discovermagazine.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="数据可视化与图形设计">
+        <div class="group-header">
+          <h3 class="group-title">数据可视化与图形设计</h3>
+          <span class="group-count">11 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="ten simple rules for better figures" data-url="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833">
+            <div class="link-image">
+              
+                <img src="./links/13.1.png" alt="Ten simple rules for better figures" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Ten simple rules for better figures</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  journals.plos.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="rainbow color map perception artifacts" data-url="https://www.kennethmoreland.com/color-advice/">
+            <div class="link-image">
+              
+                <img src="./links/13.2.png" alt="Rainbow color map perception artifacts" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.kennethmoreland.com/color-advice/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Rainbow color map perception artifacts</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.kennethmoreland.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.kennethmoreland.com/color-advice/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.kennethmoreland.com/color-advice/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="modifying matplotlib colormaps" data-url="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap">
+            <div class="link-image">
+              
+                <img src="./links/13.3.png" alt="Modifying matplotlib colormaps" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Modifying matplotlib colormaps</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  stackoverflow.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="adjusting the zero in a skewed colormap" data-url="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap">
+            <div class="link-image">
+              
+                <img src="./links/13.4.png" alt="Adjusting the zero in a skewed colormap" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Adjusting the zero in a skewed colormap</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  stackoverflow.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="adjusting extremes" data-url="https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654">
+            <div class="link-image">
+              
+                <img src="./links/13.5.png" alt="Adjusting extremes" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Adjusting extremes</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  stackoverflow.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="matplotlib colormap reference" data-url="https://matplotlib.org/stable/tutorials/colors/colormaps.html">
+            <div class="link-image">
+              
+                <img src="./links/13.6.png" alt="Matplotlib colormap reference" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Matplotlib colormap reference</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  matplotlib.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://matplotlib.org/stable/tutorials/colors/colormaps.html">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="matplotlib colormap examples" data-url="https://matplotlib.org/stable/gallery/color/colormap_reference.html">
+            <div class="link-image">
+              
+                <img src="./links/13.7.png" alt="Matplotlib colormap examples" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://matplotlib.org/stable/gallery/color/colormap_reference.html" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Matplotlib colormap examples</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  matplotlib.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://matplotlib.org/stable/gallery/color/colormap_reference.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://matplotlib.org/stable/gallery/color/colormap_reference.html">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="matplotlib colormap customization" data-url="https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html">
+            <div class="link-image">
+              
+                <img src="./links/13.8.png" alt="Matplotlib colormap customization" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Matplotlib colormap customization</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  matplotlib.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="increasing the white band in the blue-white-red colormap" data-url="https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658">
+            <div class="link-image">
+              
+                <img src="./links/13.9.png" alt="Increasing the white band in the blue-white-red colormap" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Increasing the white band in the blue-white-red colormap</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  gist.github.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="creating publication quality figures" data-url="https://www.nature.com/articles/nmeth.1618">
+            <div class="link-image">
+              
+                <img src="./links/13.10.png" alt="Creating publication quality figures" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.nature.com/articles/nmeth.1618" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Creating publication quality figures</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.nature.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.nature.com/articles/nmeth.1618" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.nature.com/articles/nmeth.1618">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="ncl color cmaps" data-url="https://www.ncl.ucar.edu/document/graphics/color_table_gallery.shtml">
+            <div class="link-image">
+              
+                <img src="./links/ncl_color_cmaps.png" alt="NCL color cmaps" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">NCL color cmaps</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.ncl.ucar.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="学术写作与资源">
+        <div class="group-header">
+          <h3 class="group-title">学术写作与资源</h3>
+          <span class="group-count">9 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="the element of style by strunk and white (pdf)" data-url="https://faculty.washington.edu/heagerty/courses/b572/public/strunkwhite.pdf">
+            <div class="link-image">
+              
+                <img src="./links/14.1.png" alt="The element of style by Strunk and White (pdf)" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">The element of style by Strunk and White (pdf)</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  faculty.washington.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="effective technical writing from pennstate" data-url="https://www.e-education.psu.edu/styleforstudents/">
+            <div class="link-image">
+              
+                <img src="./links/14.2.png" alt="Effective technical writing from PennState" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.e-education.psu.edu/styleforstudents/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Effective technical writing from PennState</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.e-education.psu.edu
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.e-education.psu.edu/styleforstudents/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.e-education.psu.edu/styleforstudents/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="writing in the sciences (stanford, coursera)" data-url="https://www.coursera.org/learn/sciwrite">
+            <div class="link-image">
+              
+                <img src="./links/14.3.png" alt="Writing in the Sciences (Stanford, Coursera)" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.coursera.org/learn/sciwrite" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Writing in the Sciences (Stanford, Coursera)</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.coursera.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.coursera.org/learn/sciwrite" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.coursera.org/learn/sciwrite">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="academic phrasebank" data-url="http://www.phrasebank.manchester.ac.uk/">
+            <div class="link-image">
+              
+                <img src="./links/14.4.png" alt="Academic Phrasebank" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="http://www.phrasebank.manchester.ac.uk/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Academic Phrasebank</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.phrasebank.manchester.ac.uk
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="http://www.phrasebank.manchester.ac.uk/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="http://www.phrasebank.manchester.ac.uk/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="guide to grammar and writing" data-url="https://guidetogrammar.org/">
+            <div class="link-image">
+              
+                <img src="./links/14.5.png" alt="Guide to grammar and writing" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://guidetogrammar.org/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Guide to grammar and writing</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  guidetogrammar.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://guidetogrammar.org/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://guidetogrammar.org/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="words with similar rhymes" data-url="https://www.rhymezone.com/">
+            <div class="link-image">
+              
+                <img src="./links/14.6.png" alt="Words with similar rhymes" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.rhymezone.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Words with similar rhymes</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.rhymezone.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.rhymezone.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.rhymezone.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="synonyms" data-url="https://www.thesaurus.com/">
+            <div class="link-image">
+              
+                <img src="./links/14.7.png" alt="Synonyms" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.thesaurus.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Synonyms</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.thesaurus.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.thesaurus.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.thesaurus.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="on writing and some numerical books" data-url="https://hplgit.github.io/">
+            <div class="link-image">
+              
+                <img src="./links/14.8.png" alt="On writing and some numerical books" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://hplgit.github.io/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">On writing and some numerical books</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  hplgit.github.io
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://hplgit.github.io/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://hplgit.github.io/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="reproducibility problem" data-url="https://www.nature.com/articles/533452a">
+            <div class="link-image">
+              
+                <img src="./links/14.9.png" alt="Reproducibility problem" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.nature.com/articles/533452a" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Reproducibility problem</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.nature.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.nature.com/articles/533452a" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.nature.com/articles/533452a">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="links-group" data-category="常用学术-工具-资源">
+        <div class="group-header">
+          <h3 class="group-title">常用学术/工具/资源</h3>
+          <span class="group-count">6 links</span>
+        </div>
+        
+        <div class="links-grid">
+          
+          <div class="link-card" data-title="google scholar" data-url="https://scholar.google.com/">
+            <div class="link-image">
+              
+                <img src="./links/15.1.png" alt="Google Scholar" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Google Scholar</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  scholar.google.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://scholar.google.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://scholar.google.com/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="researchgate" data-url="https://www.researchgate.net/profile/xianpu-ji">
+            <div class="link-image">
+              
+                <img src="./links/15.2.png" alt="ResearchGate" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">ResearchGate</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.researchgate.net
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.researchgate.net/profile/Xianpu-Ji">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="github" data-url="https://github.com/blissful-jasper">
+            <div class="link-image">
+              
+                <img src="./links/15.3.png" alt="GitHub" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">GitHub</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  github.com
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://github.com/Blissful-Jasper">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="orcid" data-url="https://orcid.org/0009-0001-5197-4804">
+            <div class="link-image">
+              
+                <img src="./links/15.4.png" alt="ORCID" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">ORCID</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  orcid.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://orcid.org/0009-0001-5197-4804">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="python 官网" data-url="https://www.python.org/">
+            <div class="link-image">
+              
+                <img src="./links/15.5.png" alt="Python 官网" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.python.org/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Python 官网</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.python.org
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.python.org/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.python.org/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="link-card" data-title="deep learning.ai" data-url="https://www.deeplearning.ai/">
+            <div class="link-image">
+              
+                <img src="./links/15.6.png" alt="Deep Learning.ai" loading="lazy">
+              
+              <div class="link-overlay">
+                <a href="https://www.deeplearning.ai/" target="_blank" rel="noopener" class="link-visit">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit
+                </a>
+              </div>
+            </div>
+            
+            <div class="link-content">
+              <h4 class="link-title">Deep Learning.ai</h4>
+              
+              
+              <div class="link-meta">
+                <span class="link-domain">
+                  <i class="fas fa-link"></i>
+                  www.deeplearning.ai
+                </span>
+                
+              </div>
+              
+              <div class="link-actions">
+                <a href="https://www.deeplearning.ai/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-external-link-alt"></i>
+                  Visit Site
+                </a>
+                <button class="btn-secondary copy-link" data-url="https://www.deeplearning.ai/">
+                  <i class="fas fa-copy"></i>
+                  Copy
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Statistics -->
+    <div class="links-stats">
+      <div class="stat-item">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Total Links</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15</span>
+        <span class="stat-label">Categories</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" id="visibleLinks">-</span>
+        <span class="stat-label">Showing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('linksSearch');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const linkCards = document.querySelectorAll('.link-card');
+  const linksGroups = document.querySelectorAll('.links-group');
+  const visibleLinksCount = document.getElementById('visibleLinks');
+
+  // Search functionality
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    filterAndSearch();
+  });
+
+  // Filter functionality
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      filterAndSearch();
+    });
+  });
+
+  // Combined filter and search
+  function filterAndSearch() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+    let visibleCount = 0;
+
+    linksGroups.forEach(group => {
+      const groupCategory = group.dataset.category;
+      let hasVisibleCards = false;
+
+      // Show/hide group based on category filter
+      if (activeCategory === 'all' || activeCategory === groupCategory) {
+        const cards = group.querySelectorAll('.link-card');
+        
+        cards.forEach(card => {
+          const title = card.dataset.title;
+          const url = card.dataset.url;
+          const matchesSearch = title.includes(searchTerm) || url.includes(searchTerm);
+          
+          if (matchesSearch) {
+            card.style.display = 'block';
+            hasVisibleCards = true;
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        group.style.display = hasVisibleCards ? 'block' : 'none';
+      } else {
+        group.style.display = 'none';
+      }
+    });
+
+    visibleLinksCount.textContent = visibleCount;
+  }
+
+  // Copy link functionality
+  document.querySelectorAll('.copy-link').forEach(button => {
+    button.addEventListener('click', function() {
+      const url = this.dataset.url;
+      navigator.clipboard.writeText(url).then(() => {
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        this.classList.add('copied');
+        
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.classList.remove('copied');
+        }, 2000);
+      }).catch(() => {
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = url;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        this.classList.add('copied');
+        
+        setTimeout(() => {
+          this.innerHTML = originalText;
+          this.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  });
+
+  // Initial count
+  filterAndSearch();
+});
 </script>
-</body>
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-02</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
 </html>

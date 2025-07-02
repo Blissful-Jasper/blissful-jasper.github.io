@@ -1,0 +1,442 @@
+/* About Section 现代化样式 */
+
+.about-section {
+  background: var(--bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.section-header {
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.section-title i {
+  color: var(--primary-color);
+  font-size: var(--text-3xl);
+}
+
+.profile-card {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: var(--bg-primary);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--bg-gradient);
+}
+
+.profile-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  padding: 3rem;
+  align-items: start;
+}
+
+/* 头像部分 */
+.profile-image-wrapper {
+  position: sticky;
+  top: 2rem;
+}
+
+.profile-image {
+  position: relative;
+  text-align: center;
+}
+
+.profile-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--bg-secondary);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+  margin-bottom: 1rem;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+}
+
+.profile-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-gradient);
+  color: var(--text-white);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  box-shadow: var(--shadow-md);
+}
+
+/* 个人信息部分 */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.profile-header {
+  text-align: left;
+}
+
+.profile-name {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profile-title {
+  font-size: var(--text-2xl);
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.profile-position {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  padding: 1rem 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--primary-color);
+}
+
+.profile-position i {
+  color: var(--primary-color);
+  font-size: var(--text-xl);
+}
+
+.profile-description {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+}
+
+.profile-description::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--bg-gradient);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.profile-description p {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* 研究兴趣 */
+.research-interests h3,
+.contact-info h3,
+.social-section h3 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.research-interests h3::before {
+  content: '🔬';
+  font-size: var(--text-lg);
+}
+
+.contact-info h3::before {
+  content: '📞';
+  font-size: var(--text-lg);
+}
+
+.social-section h3::before {
+  content: '🌐';
+  font-size: var(--text-lg);
+}
+
+.interests-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.interests-tags .tag {
+  background: var(--bg-gradient);
+  color: var(--text-white);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-xl);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.interests-tags .tag:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* 联系信息 */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+}
+
+.contact-icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--bg-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contact-label {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.contact-value {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* 社交链接 */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: var(--transition);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link i {
+  font-size: var(--text-2xl);
+  transition: var(--transition);
+}
+
+.social-link span {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.social-link.email:hover {
+  background: #ea4335;
+  color: var(--text-white);
+  transform: translateY(-3px);
+}
+
+.social-link.github:hover {
+  background: #333;
+  color: var(--text-white);
+  transform: translateY(-3px);
+}
+
+.social-link.researchgate:hover {
+  background: #0cb;
+  color: var(--text-white);
+  transform: translateY(-3px);
+}
+
+.social-link.orcid:hover {
+  background: #a6ce39;
+  color: var(--text-white);
+  transform: translateY(-3px);
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .profile-section {
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .profile-avatar {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .profile-image-wrapper {
+    position: static;
+  }
+  
+  .profile-header {
+    text-align: center;
+  }
+  
+  .profile-name {
+    font-size: var(--text-3xl);
+  }
+  
+  .profile-title {
+    font-size: var(--text-xl);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .social-links {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-section {
+    padding: 1rem;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .social-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .social-link {
+    padding: 1rem 0.5rem;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+  
+  .interests-tags {
+    justify-content: center;
+  }
+}

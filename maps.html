@@ -1,170 +1,2611 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>实时地图与气候监测</title>
-  <link rel="stylesheet" href="assets/main.css">
-  <link rel="stylesheet" href="assets/theme-links.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Interactive Maps | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Interactive Maps" />
+<meta name="author" content="Xianpu Ji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Explore real-time weather, satellite imagery, and oceanographic data" />
+<meta property="og:description" content="Explore real-time weather, satellite imagery, and oceanographic data" />
+<link rel="canonical" href="https://blissful-jasper.github.io/maps.html" />
+<meta property="og:url" content="https://blissful-jasper.github.io/maps.html" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Interactive Maps" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Xianpu Ji"},"description":"Explore real-time weather, satellite imagery, and oceanographic data","headline":"Interactive Maps","url":"https://blissful-jasper.github.io/maps.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
-<div class="markdown-body links-page" style="background:var(--bg-primary);box-shadow:none;padding:2rem;max-width:1100px;margin:2rem auto 2rem auto;">
-  <h2 style="margin-bottom:1.5rem;">实时地图与气候监测</h2>
-  <div id="maps-main-list"></div>
-</div>
-<script type="application/json" id="mapsLinksData">
-[
-  {
-    "group": "降水与雷电",
-    "links": [
-      { "name": "Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)", "url": "https://gpm.nasa.gov/data-access/downloads/trmm" },
-      { "name": "Global Lightning Map", "url": "https://www.blitzortung.org/en/live_lightning_maps.php" },
-      { "name": "USAID precipitation monitoring", "url": "https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb" }
-    ]
-  },
-  {
-    "group": "卫星与风场",
-    "links": [
-      { "name": "Windy", "url": "https://www.windy.com/" },
-      { "name": "RAMMB Colostate", "url": "https://rammb-slider.cira.colostate.edu/" },
-      { "name": "RealEarth Wisconsin-Madison", "url": "https://realearth.ssec.wisc.edu/" },
-      { "name": "Meteologix", "url": "https://meteologix.com/" },
-      { "name": "EUMETSAT (METEOSAT 0 and 41.5 Degrees)", "url": "https://www.eumetsat.int/our-satellites" },
-      { "name": "MIMIC-TPW ver.2 (Total Precipitable Water)", "url": "https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html" },
-      { "name": "Indian Ocean Tropical Cyclones (CIMSS)", "url": "https://tropic.ssec.wisc.edu/" },
-      { "name": "Real time Indian Ocean satellite NRL", "url": "https://www.nrlmry.navy.mil/TC.html" },
-      { "name": "Remote Sensing Systems", "url": "https://www.remss.com/" },
-      { "name": "NASA Worldview Earth data", "url": "https://worldview.earthdata.nasa.gov/" }
-    ]
-  },
-  {
-    "group": "MJO 与环流监测",
-    "links": [
-      { "name": "CPC MJO", "url": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml" },
-      { "name": "CPC - Dynamical Model MJO Forecast", "url": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model" },
-      { "name": "Carl Schreck - MJO RMM index", "url": "https://ncics.org/portfolio/monitor/mjo/" },
-      { "name": "Michael Ventrice - MJO RMM index", "url": "https://mikeventrice.weebly.com/mjo.html" },
-      { "name": "Kyle Marcritchie - MJO RMM index", "url": "https://www.kylemacritchie.com/mjo/" }
-    ]
-  },
-  {
-    "group": "气候灾害与早期预警",
-    "links": [
-      { "name": "Global Tropics Benefits/Hazards", "url": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php" },
-      { "name": "Famine Early Warning System Network (FEWS NET)", "url": "https://fews.net/" },
-      { "name": "Climate Hazards Group - US Santa Barbara", "url": "https://www.chc.ucsb.edu/data" }
-    ]
-  },
-  {
-    "group": "非洲与印度洋气候",
-    "links": [
-      { "name": "Indian Ocean Weather and Climate", "url": "https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml" },
-      { "name": "NCEP MODEL FORECASTS FOR INDIAN OCEAN", "url": "https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml" },
-      { "name": "Africa Weather and Climate", "url": "https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" }
-    ]
-  },
-  {
-    "group": "ENSO/季风/ITCZ",
-    "links": [
-      { "name": "CPC - El Nino Southeren Oscillation", "url": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml" },
-      { "name": "ENSO - CPC Diagnostic Discussion", "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/" },
-      { "name": "CPC - ENSO weekly PPT", "url": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly" },
-      { "name": "Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO", "url": "https://www.pmel.noaa.gov/tao/" },
-      { "name": "IRI 925 hPa Monthly wind vector anomaly", "url": "https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html" },
-      { "name": "Monsoon Online", "url": "https://mol.tropmet.res.in/" },
-      { "name": "CPC - Global Monsoon", "url": "https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/" },
-      { "name": "CPC - Blocking", "url": "https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material" },
-      { "name": "CPC - Africa InterTropical Front (IFT)", "url": "https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml" }
-    ]
-  },
-  {
-    "group": "QBO",
-    "links": [
-      { "name": "Naujokat @ Free Berlin Univ", "url": "https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html" },
-      { "name": "Lubis @ university of Leipzig", "url": "https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/" },
-      { "name": "Reading university", "url": "http://ugamp.nerc.ac.uk/hot/ajh/qbo.html" },
-      { "name": "CPC QBO", "url": "https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index" }
-    ]
-  },
-  {
-    "group": "其他气候监测",
-    "links": [
-      { "name": "CPC - Outlook and Monthly reports", "url": "https://www.cpc.ncep.noaa.gov/products/expert_assessment/" },
-      { "name": "NCEP SST", "url": "https://polar.ncep.noaa.gov/sst/ophi/" },
-      { "name": "nullschool", "url": "https://earth.nullschool.net/" }
-    ]
-  }
-]
-</script>
-<script>
-// Maps 主内容填充，风格与 links.html 一致
-function renderMapsMainList() {
-  const container = document.getElementById('maps-main-list');
-  if (!container) return;
-  const dataTag = document.getElementById('mapsLinksData');
-  let mapsLinks = [];
-  if (dataTag) {
-    try {
-      mapsLinks = JSON.parse(dataTag.textContent);
-    } catch {}
-  }
-  container.innerHTML = `${mapsLinks.map((group, gi) => `
-    <div class="link-card" style='background:var(--bg-secondary);border-radius:12px;padding:2rem 2.5rem 1.5rem 2.5rem;min-width:320px;max-width:900px;flex:1 1 700px;margin-bottom:2rem;position:relative;display:flex;flex-direction:column;border:1px solid #e0e4ea;'>
-      <h3 style='font-size:1.25rem;color:var(--primary-color);margin-bottom:1.2rem;font-weight:600;letter-spacing:0.5px;'>${group.group}</h3>
-      <ul style='list-style:none;padding:0;margin:0;'>
-        ${group.links.map((link, li) => `<li style='margin-bottom:1.1rem;'><a href='${link.url}' target='_blank' class='ext-link' data-gi='${gi}' data-li='${li}' style='color:var(--secondary-color);font-size:1.08rem;font-weight:500;word-break:break-all;display:inline-block;'><i class='fas fa-link' style='margin-right:9px;'></i>${link.name}</a><div class='link-desc' style='margin-top:0.5rem;'></div></li>`).join('')}
-      </ul>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                <span class="logo-text">Xianpu Ji</span>
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+            </ul>
+        </div>
     </div>
-  `).join('')}`;
-  setTimeout(() => {
-    container.querySelectorAll('.ext-link').forEach(a => {
-      const url = a.getAttribute('href');
-      const descDiv = a.parentElement.querySelector('.link-desc');
-      descDiv.innerHTML = '<span style="color:#888;font-size:0.98em;">加载中...</span>';
-      fetchLinkMeta(url, descDiv);
-      a.addEventListener('click', function(e) {
-        window.open(url, '_blank');
-      });
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Interactive Maps</h1>
+  </header>
+
+  <div class="post-content">
+    <!-- Load modern theme and maps-specific styles -->
+<link rel="stylesheet" href="/assets/modern-theme.css">
+<link rel="stylesheet" href="/assets/maps-style.css">
+
+<!-- Include the maps section -->
+<!-- Maps Section -->
+<section class="maps-section" id="maps">
+  <div class="maps-container">
+    <!-- Header -->
+    <div class="maps-header">
+      <h2>Interactive Maps</h2>
+      <p>Explore real-time weather, satellite imagery, and oceanographic data through interactive maps</p>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="maps-controls">
+      <div class="search-box">
+        <i class="fas fa-search"></i>
+        <input type="text" id="mapsSearch" placeholder="Search maps...">
+      </div>
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="grid">
+          <i class="fas fa-th"></i>
+          Grid
+        </button>
+        <button class="view-btn" data-view="list">
+          <i class="fas fa-list"></i>
+          List
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Filter -->
+    <div class="category-filters">
+      <button class="category-btn active" data-category="all">All Maps</button>
+      
+      
+      <button class="category-btn" data-category="降水与雷电">降水与雷电</button>
+      
+      <button class="category-btn" data-category="卫星与风场">卫星与风场</button>
+      
+      <button class="category-btn" data-category="mjo-与环流监测">MJO 与环流监测</button>
+      
+      <button class="category-btn" data-category="气候灾害与早期预警">气候灾害与早期预警</button>
+      
+      <button class="category-btn" data-category="非洲与印度洋气候">非洲与印度洋气候</button>
+      
+      <button class="category-btn" data-category="enso-季风-itcz">ENSO/季风/ITCZ</button>
+      
+      <button class="category-btn" data-category="qbo">QBO</button>
+      
+      <button class="category-btn" data-category="其他气候监测">其他气候监测</button>
+      
+    </div>
+
+    <!-- Maps Content -->
+    <div class="maps-content" id="mapsGrid">
+      
+      <div class="maps-group" data-category="降水与雷电">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            降水与雷电
+          </h3>
+          <span class="group-count">3 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="precipitation from trmm (3hr, 24hr, 72hr, weekly) and gpm (30 min)" data-category="降水与雷电">
+            <div class="map-preview">
+              
+                <img src="./maps/1.png" alt="Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://gpm.nasa.gov/data-access/downloads/trmm" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    nasa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://gpm.nasa.gov/data-access/downloads/trmm" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://gpm.nasa.gov/data-access/downloads/trmm" data-title="Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://gpm.nasa.gov/data-access/downloads/trmm" data-title="Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="global lightning map" data-category="降水与雷电">
+            <div class="map-preview">
+              
+                <img src="./maps/2.png" alt="Global Lightning Map" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.blitzortung.org/en/live_lightning_maps.php" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Global Lightning Map</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    blitzortung
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.blitzortung.org/en/live_lightning_maps.php" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.blitzortung.org/en/live_lightning_maps.php" data-title="Global Lightning Map">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.blitzortung.org/en/live_lightning_maps.php" data-title="Global Lightning Map">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="usaid precipitation monitoring" data-category="降水与雷电">
+            <div class="map-preview">
+              
+                <img src="./maps/3.png" alt="USAID precipitation monitoring" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">USAID precipitation monitoring</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    usgs
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb" data-title="USAID precipitation monitoring">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb" data-title="USAID precipitation monitoring">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="卫星与风场">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            卫星与风场
+          </h3>
+          <span class="group-count">10 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="windy" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/4.png" alt="Windy" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.windy.com/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Windy</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    windy
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.windy.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.windy.com/" data-title="Windy">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.windy.com/" data-title="Windy">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="rammb colostate" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/5.png" alt="RAMMB Colostate" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://rammb-slider.cira.colostate.edu/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">RAMMB Colostate</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    colostate
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://rammb-slider.cira.colostate.edu/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://rammb-slider.cira.colostate.edu/" data-title="RAMMB Colostate">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://rammb-slider.cira.colostate.edu/" data-title="RAMMB Colostate">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="realearth wisconsin-madison" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/6.png" alt="RealEarth Wisconsin-Madison" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://realearth.ssec.wisc.edu/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">RealEarth Wisconsin-Madison</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    wisc
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://realearth.ssec.wisc.edu/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://realearth.ssec.wisc.edu/" data-title="RealEarth Wisconsin-Madison">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://realearth.ssec.wisc.edu/" data-title="RealEarth Wisconsin-Madison">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="meteologix" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/7.png" alt="Meteologix" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://meteologix.com/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Meteologix</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    meteologix
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://meteologix.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://meteologix.com/" data-title="Meteologix">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://meteologix.com/" data-title="Meteologix">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="eumetsat (meteosat 0 and 41.5 degrees)" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/8.png" alt="EUMETSAT (METEOSAT 0 and 41.5 Degrees)" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.eumetsat.int/our-satellites" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">EUMETSAT (METEOSAT 0 and 41.5 Degrees)</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    eumetsat
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.eumetsat.int/our-satellites" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.eumetsat.int/our-satellites" data-title="EUMETSAT (METEOSAT 0 and 41.5 Degrees)">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.eumetsat.int/our-satellites" data-title="EUMETSAT (METEOSAT 0 and 41.5 Degrees)">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="mimic-tpw ver.2 (total precipitable water)" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/9.png" alt="MIMIC-TPW ver.2 (Total Precipitable Water)" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">MIMIC-TPW ver.2 (Total Precipitable Water)</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    wisc
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html" data-title="MIMIC-TPW ver.2 (Total Precipitable Water)">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html" data-title="MIMIC-TPW ver.2 (Total Precipitable Water)">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="indian ocean tropical cyclones (cimss)" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/10.png" alt="Indian Ocean Tropical Cyclones (CIMSS)" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://tropic.ssec.wisc.edu/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Indian Ocean Tropical Cyclones (CIMSS)</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    wisc
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://tropic.ssec.wisc.edu/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://tropic.ssec.wisc.edu/" data-title="Indian Ocean Tropical Cyclones (CIMSS)">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://tropic.ssec.wisc.edu/" data-title="Indian Ocean Tropical Cyclones (CIMSS)">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="real time indian ocean satellite nrl" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/11.png" alt="Real time Indian Ocean satellite NRL" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.nrlmry.navy.mil/TC.html" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Real time Indian Ocean satellite NRL</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    navy
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.nrlmry.navy.mil/TC.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.nrlmry.navy.mil/TC.html" data-title="Real time Indian Ocean satellite NRL">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.nrlmry.navy.mil/TC.html" data-title="Real time Indian Ocean satellite NRL">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="remote sensing systems" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/12.png" alt="Remote Sensing Systems" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.remss.com/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Remote Sensing Systems</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    remss
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.remss.com/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.remss.com/" data-title="Remote Sensing Systems">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.remss.com/" data-title="Remote Sensing Systems">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="nasa worldview earth data" data-category="卫星与风场">
+            <div class="map-preview">
+              
+                <img src="./maps/13.png" alt="NASA Worldview Earth data" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://worldview.earthdata.nasa.gov/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">NASA Worldview Earth data</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    nasa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://worldview.earthdata.nasa.gov/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://worldview.earthdata.nasa.gov/" data-title="NASA Worldview Earth data">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://worldview.earthdata.nasa.gov/" data-title="NASA Worldview Earth data">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="mjo-与环流监测">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            MJO 与环流监测
+          </h3>
+          <span class="group-count">5 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="cpc mjo" data-category="mjo-与环流监测">
+            <div class="map-preview">
+              
+                <img src="./maps/14.png" alt="CPC MJO" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC MJO</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml" data-title="CPC MJO">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml" data-title="CPC MJO">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="cpc - dynamical model mjo forecast" data-category="mjo-与环流监测">
+            <div class="map-preview">
+              
+                <img src="./maps/15.png" alt="CPC - Dynamical Model MJO Forecast" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - Dynamical Model MJO Forecast</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model" data-title="CPC - Dynamical Model MJO Forecast">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model" data-title="CPC - Dynamical Model MJO Forecast">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="carl schreck - mjo rmm index" data-category="mjo-与环流监测">
+            <div class="map-preview">
+              
+                <img src="./maps/16.png" alt="Carl Schreck - MJO RMM index" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://ncics.org/portfolio/monitor/mjo/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Carl Schreck - MJO RMM index</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    ncics
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://ncics.org/portfolio/monitor/mjo/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://ncics.org/portfolio/monitor/mjo/" data-title="Carl Schreck - MJO RMM index">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://ncics.org/portfolio/monitor/mjo/" data-title="Carl Schreck - MJO RMM index">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="michael ventrice - mjo rmm index" data-category="mjo-与环流监测">
+            <div class="map-preview">
+              
+                <img src="./maps/17.png" alt="Michael Ventrice - MJO RMM index" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://mikeventrice.weebly.com/mjo.html" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Michael Ventrice - MJO RMM index</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    weebly
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://mikeventrice.weebly.com/mjo.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://mikeventrice.weebly.com/mjo.html" data-title="Michael Ventrice - MJO RMM index">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://mikeventrice.weebly.com/mjo.html" data-title="Michael Ventrice - MJO RMM index">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="kyle marcritchie - mjo rmm index" data-category="mjo-与环流监测">
+            <div class="map-preview">
+              
+                <img src="./maps/18.png" alt="Kyle Marcritchie - MJO RMM index" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.kylemacritchie.com/mjo/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Kyle Marcritchie - MJO RMM index</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    kylemacritchie
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.kylemacritchie.com/mjo/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.kylemacritchie.com/mjo/" data-title="Kyle Marcritchie - MJO RMM index">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.kylemacritchie.com/mjo/" data-title="Kyle Marcritchie - MJO RMM index">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="气候灾害与早期预警">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            气候灾害与早期预警
+          </h3>
+          <span class="group-count">3 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="global tropics benefits/hazards" data-category="气候灾害与早期预警">
+            <div class="map-preview">
+              
+                <img src="./maps/19.png" alt="Global Tropics Benefits/Hazards" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Global Tropics Benefits/Hazards</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php" data-title="Global Tropics Benefits/Hazards">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php" data-title="Global Tropics Benefits/Hazards">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="famine early warning system network (fews net)" data-category="气候灾害与早期预警">
+            <div class="map-preview">
+              
+                <img src="./maps/20.png" alt="Famine Early Warning System Network (FEWS NET)" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://fews.net/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Famine Early Warning System Network (FEWS NET)</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    fews
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://fews.net/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://fews.net/" data-title="Famine Early Warning System Network (FEWS NET)">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://fews.net/" data-title="Famine Early Warning System Network (FEWS NET)">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="climate hazards group - us santa barbara" data-category="气候灾害与早期预警">
+            <div class="map-preview">
+              
+                <img src="./maps/21.png" alt="Climate Hazards Group - US Santa Barbara" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.chc.ucsb.edu/data" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Climate Hazards Group - US Santa Barbara</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    ucsb
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.chc.ucsb.edu/data" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.chc.ucsb.edu/data" data-title="Climate Hazards Group - US Santa Barbara">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.chc.ucsb.edu/data" data-title="Climate Hazards Group - US Santa Barbara">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="非洲与印度洋气候">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            非洲与印度洋气候
+          </h3>
+          <span class="group-count">3 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="indian ocean weather and climate" data-category="非洲与印度洋气候">
+            <div class="map-preview">
+              
+                <img src="./maps/22.png" alt="Indian Ocean Weather and Climate" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Indian Ocean Weather and Climate</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml" data-title="Indian Ocean Weather and Climate">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml" data-title="Indian Ocean Weather and Climate">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="ncep model forecasts for indian ocean" data-category="非洲与印度洋气候">
+            <div class="map-preview">
+              
+                <img src="./maps/23.png" alt="NCEP MODEL FORECASTS FOR INDIAN OCEAN" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">NCEP MODEL FORECASTS FOR INDIAN OCEAN</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml" data-title="NCEP MODEL FORECASTS FOR INDIAN OCEAN">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml" data-title="NCEP MODEL FORECASTS FOR INDIAN OCEAN">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="africa weather and climate" data-category="非洲与印度洋气候">
+            <div class="map-preview">
+              
+                <img src="./maps/24.png" alt="Africa Weather and Climate" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Africa Weather and Climate</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" data-title="Africa Weather and Climate">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml" data-title="Africa Weather and Climate">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="enso-季风-itcz">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            ENSO/季风/ITCZ
+          </h3>
+          <span class="group-count">9 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="cpc - el nino southeren oscillation" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/25.png" alt="CPC - El Nino Southeren Oscillation" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - El Nino Southeren Oscillation</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml" data-title="CPC - El Nino Southeren Oscillation">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml" data-title="CPC - El Nino Southeren Oscillation">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="enso - cpc diagnostic discussion" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/26.png" alt="ENSO - CPC Diagnostic Discussion" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">ENSO - CPC Diagnostic Discussion</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/" data-title="ENSO - CPC Diagnostic Discussion">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/" data-title="ENSO - CPC Diagnostic Discussion">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="cpc - enso weekly ppt" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/27.png" alt="CPC - ENSO weekly PPT" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - ENSO weekly PPT</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly" data-title="CPC - ENSO weekly PPT">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly" data-title="CPC - ENSO weekly PPT">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="pacific marine enviromental laboratory (pmel) noaa - tao" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/28.png" alt="Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.pmel.noaa.gov/tao/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.pmel.noaa.gov/tao/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.pmel.noaa.gov/tao/" data-title="Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.pmel.noaa.gov/tao/" data-title="Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="iri 925 hpa monthly wind vector anomaly" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/29.png" alt="IRI 925 hPa Monthly wind vector anomaly" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">IRI 925 hPa Monthly wind vector anomaly</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    columbia
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html" data-title="IRI 925 hPa Monthly wind vector anomaly">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html" data-title="IRI 925 hPa Monthly wind vector anomaly">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="monsoon online" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/30.png" alt="Monsoon Online" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://mol.tropmet.res.in/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Monsoon Online</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    res
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://mol.tropmet.res.in/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://mol.tropmet.res.in/" data-title="Monsoon Online">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://mol.tropmet.res.in/" data-title="Monsoon Online">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="cpc - global monsoon" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/31.png" alt="CPC - Global Monsoon" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - Global Monsoon</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/" data-title="CPC - Global Monsoon">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/" data-title="CPC - Global Monsoon">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="cpc - blocking" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/32.png" alt="CPC - Blocking" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - Blocking</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material" data-title="CPC - Blocking">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material" data-title="CPC - Blocking">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="cpc - africa intertropical front (ift)" data-category="enso-季风-itcz">
+            <div class="map-preview">
+              
+                <img src="./maps/33.png" alt="CPC - Africa InterTropical Front (IFT)" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - Africa InterTropical Front (IFT)</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml" data-title="CPC - Africa InterTropical Front (IFT)">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml" data-title="CPC - Africa InterTropical Front (IFT)">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="qbo">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            QBO
+          </h3>
+          <span class="group-count">3 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="naujokat @ free berlin univ" data-category="qbo">
+            <div class="map-preview">
+              
+                <img src="./maps/34.png" alt="Naujokat @ Free Berlin Univ" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Naujokat @ Free Berlin Univ</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    fu-berlin
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html" data-title="Naujokat @ Free Berlin Univ">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html" data-title="Naujokat @ Free Berlin Univ">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="lubis @ university of leipzig" data-category="qbo">
+            <div class="map-preview">
+              
+                <img src="./maps/35.png" alt="Lubis @ university of Leipzig" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">Lubis @ university of Leipzig</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    wordpress
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/" data-title="Lubis @ university of Leipzig">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/" data-title="Lubis @ university of Leipzig">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="cpc qbo" data-category="qbo">
+            <div class="map-preview">
+              
+                <img src="./maps/36.png" alt="CPC QBO" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC QBO</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index" data-title="CPC QBO">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index" data-title="CPC QBO">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="maps-group" data-category="其他气候监测">
+        <div class="group-header">
+          <h3 class="group-title">
+            <i class="fas fa-layer-group"></i>
+            其他气候监测
+          </h3>
+          <span class="group-count">3 maps</span>
+        </div>
+        
+        <div class="maps-grid">
+          
+          <div class="map-card" data-title="cpc - outlook and monthly reports" data-category="其他气候监测">
+            <div class="map-preview">
+              
+                <img src="./maps/37.png" alt="CPC - Outlook and Monthly reports" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://www.cpc.ncep.noaa.gov/products/expert_assessment/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">CPC - Outlook and Monthly reports</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://www.cpc.ncep.noaa.gov/products/expert_assessment/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://www.cpc.ncep.noaa.gov/products/expert_assessment/" data-title="CPC - Outlook and Monthly reports">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://www.cpc.ncep.noaa.gov/products/expert_assessment/" data-title="CPC - Outlook and Monthly reports">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="ncep sst" data-category="其他气候监测">
+            <div class="map-preview">
+              
+                <img src="./maps/38.png" alt="NCEP SST" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://polar.ncep.noaa.gov/sst/ophi/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">NCEP SST</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    noaa
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://polar.ncep.noaa.gov/sst/ophi/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://polar.ncep.noaa.gov/sst/ophi/" data-title="NCEP SST">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://polar.ncep.noaa.gov/sst/ophi/" data-title="NCEP SST">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="map-card" data-title="nullschool" data-category="其他气候监测">
+            <div class="map-preview">
+              
+                <img src="./maps/39.png" alt="nullschool" loading="lazy">
+              
+              <div class="map-overlay">
+                <a href="https://earth.nullschool.net/" target="_blank" rel="noopener" class="map-launch">
+                  <i class="fas fa-external-link-alt"></i>
+                  Launch Map
+                </a>
+              </div>
+              <div class="map-badges">
+                <span class="real-time-badge">
+                  <i class="fas fa-wifi"></i>
+                  Real-time
+                </span>
+              </div>
+            </div>
+            
+            <div class="map-content">
+              <h4 class="map-title">nullschool</h4>
+              
+              
+              <div class="map-meta">
+                <div class="map-source">
+                  <i class="fas fa-server"></i>
+                  <span class="source-name">
+                    nullschool
+                  </span>
+                </div>
+                
+              </div>
+              
+              
+              
+              <div class="map-actions">
+                <a href="https://earth.nullschool.net/" target="_blank" rel="noopener" class="btn-primary">
+                  <i class="fas fa-play"></i>
+                  Open Map
+                </a>
+                <button class="btn-secondary bookmark-btn" data-url="https://earth.nullschool.net/" data-title="nullschool">
+                  <i class="fas fa-bookmark"></i>
+                  Save
+                </button>
+                <button class="btn-secondary share-btn" data-url="https://earth.nullschool.net/" data-title="nullschool">
+                  <i class="fas fa-share"></i>
+                  Share
+                </button>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- Popular Maps Section -->
+    <div class="popular-maps">
+      <h3 class="popular-title">
+        <i class="fas fa-fire"></i>
+        Popular Maps
+      </h3>
+      <div class="popular-grid">
+        <!-- This would be dynamically populated with most accessed maps -->
+        <div class="popular-item">
+          <i class="fas fa-wind"></i>
+          <span>Windy - Wind & Weather</span>
+        </div>
+        <div class="popular-item">
+          <i class="fas fa-satellite"></i>
+          <span>Real Earth - Satellite</span>
+        </div>
+        <div class="popular-item">
+          <i class="fas fa-cloud-rain"></i>
+          <span>Global Precipitation</span>
+        </div>
+        <div class="popular-item">
+          <i class="fas fa-bolt"></i>
+          <span>Lightning Activity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="maps-stats">
+      <div class="stat-card">
+        <span class="stat-number">0</span>
+        <span class="stat-label">Total Maps</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">8</span>
+        <span class="stat-label">Categories</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="visibleMaps">-</span>
+        <span class="stat-label">Showing</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="bookmarkedCount">0</span>
+        <span class="stat-label">Bookmarked</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('mapsSearch');
+  const categoryButtons = document.querySelectorAll('.category-btn');
+  const viewButtons = document.querySelectorAll('.view-btn');
+  const mapsGrid = document.getElementById('mapsGrid');
+  const mapCards = document.querySelectorAll('.map-card');
+  const mapsGroups = document.querySelectorAll('.maps-group');
+  const visibleMapsCount = document.getElementById('visibleMaps');
+  const bookmarkedCount = document.getElementById('bookmarkedCount');
+
+  // Load bookmarks from localStorage
+  let bookmarks = JSON.parse(localStorage.getItem('mapBookmarks') || '[]');
+  updateBookmarkUI();
+
+  // Search functionality
+  searchInput.addEventListener('input', function() {
+    filterMaps();
+  });
+
+  // Category filter
+  categoryButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      categoryButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      filterMaps();
     });
-  }, 100);
-}
-// 抓取网页 meta description 或 favicon/logo
-function fetchLinkMeta(url, descDiv) {
-  fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`)
-    .then(res => res.json())
-    .then(data => {
-      const html = data.contents;
-      let desc = '';
-      let img = '';
-      const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["'][^>]*>/i) || html.match(/<meta[^>]*content=["']([^"']+)["'][^>]*name=["']description["'][^>]*>/i);
-      if (descMatch) desc = descMatch[1];
-      const imgMatch = html.match(/<meta[^>]*property=["']og:image["'][^>]*content=["']([^"']+)["'][^>]*>/i);
-      if (imgMatch) img = imgMatch[1];
-      if (!img) {
-        const favMatch = html.match(/<link[^>]*rel=["'](?:shortcut )?icon["'][^>]*href=["']([^"']+)["'][^>]*>/i);
-        if (favMatch) {
-          let favUrl = favMatch[1];
-          if (!favUrl.startsWith('http')) {
-            try {
-              const u = new URL(url);
-              favUrl = u.origin + (favUrl.startsWith('/') ? favUrl : '/' + favUrl);
-            } catch {}
+  });
+
+  // View toggle
+  viewButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      viewButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+      
+      const view = this.dataset.view;
+      mapsGrid.className = view === 'list' ? 'maps-content list-view' : 'maps-content';
+    });
+  });
+
+  // Filter maps function
+  function filterMaps() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const activeCategory = document.querySelector('.category-btn.active').dataset.category;
+    let visibleCount = 0;
+
+    mapsGroups.forEach(group => {
+      const groupCategory = group.dataset.category;
+      let hasVisibleMaps = false;
+
+      if (activeCategory === 'all' || activeCategory === groupCategory) {
+        const cards = group.querySelectorAll('.map-card');
+        
+        cards.forEach(card => {
+          const title = card.dataset.title;
+          const category = card.dataset.category;
+          const matchesSearch = title.includes(searchTerm);
+          
+          if (matchesSearch) {
+            card.style.display = 'block';
+            hasVisibleMaps = true;
+            visibleCount++;
+          } else {
+            card.style.display = 'none';
           }
-          img = favUrl;
-        }
+        });
+        
+        group.style.display = hasVisibleMaps ? 'block' : 'none';
+      } else {
+        group.style.display = 'none';
       }
-      let htmlStr = '';
-      if (img) htmlStr += `<img src='${img}' alt='logo' style='max-width:60px;max-height:60px;display:block;margin-bottom:0.5em;border-radius:8px;'>`;
-      if (desc) htmlStr += `<div style='color:#666;font-size:0.98em;'>${desc}</div>`;
-      if (!desc && !img) htmlStr = `<span style='color:#aaa;font-size:0.98em;'>暂无简介/图片</span>`;
-      descDiv.innerHTML = htmlStr;
-    })
-    .catch(() => {
-      descDiv.innerHTML = `<span style='color:#aaa;font-size:0.98em;'>暂无简介/图片</span>`;
     });
-}
-document.addEventListener('DOMContentLoaded', renderMapsMainList);
+
+    visibleMapsCount.textContent = visibleCount;
+  }
+
+  // Bookmark functionality
+  document.querySelectorAll('.bookmark-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const url = this.dataset.url;
+      const title = this.dataset.title;
+      const bookmark = { url, title };
+
+      const index = bookmarks.findIndex(b => b.url === url);
+      if (index === -1) {
+        bookmarks.push(bookmark);
+        this.classList.add('bookmarked');
+        this.innerHTML = '<i class="fas fa-bookmark"></i> Saved';
+      } else {
+        bookmarks.splice(index, 1);
+        this.classList.remove('bookmarked');
+        this.innerHTML = '<i class="fas fa-bookmark"></i> Save';
+      }
+
+      localStorage.setItem('mapBookmarks', JSON.stringify(bookmarks));
+      updateBookmarkUI();
+    });
+  });
+
+  // Share functionality
+  document.querySelectorAll('.share-btn').forEach(button => {
+    button.addEventListener('click', function() {
+      const url = this.dataset.url;
+      const title = this.dataset.title;
+
+      if (navigator.share) {
+        navigator.share({
+          title: title,
+          url: url
+        });
+      } else {
+        // Fallback: copy to clipboard
+        navigator.clipboard.writeText(url).then(() => {
+          showNotification('Link copied to clipboard!');
+        });
+      }
+    });
+  });
+
+  function updateBookmarkUI() {
+    bookmarkedCount.textContent = bookmarks.length;
+    
+    document.querySelectorAll('.bookmark-btn').forEach(button => {
+      const url = button.dataset.url;
+      const isBookmarked = bookmarks.some(b => b.url === url);
+      
+      if (isBookmarked) {
+        button.classList.add('bookmarked');
+        button.innerHTML = '<i class="fas fa-bookmark"></i> Saved';
+      } else {
+        button.classList.remove('bookmarked');
+        button.innerHTML = '<i class="fas fa-bookmark"></i> Save';
+      }
+    });
+  }
+
+  function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.className = 'notification';
+    notification.textContent = message;
+    
+    Object.assign(notification.style, {
+      position: 'fixed',
+      top: '2rem',
+      right: '2rem',
+      background: 'var(--primary-color)',
+      color: 'white',
+      padding: '1rem 1.5rem',
+      borderRadius: '10px',
+      boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
+      zIndex: '9999',
+      transform: 'translateX(100px)',
+      opacity: '0',
+      transition: 'all 0.3s ease'
+    });
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.style.transform = 'translateX(0)';
+      notification.style.opacity = '1';
+    }, 100);
+    
+    setTimeout(() => {
+      notification.style.transform = 'translateX(100px)';
+      notification.style.opacity = '0';
+      setTimeout(() => {
+        document.body.removeChild(notification);
+      }, 300);
+    }, 3000);
+  }
+
+  // Initial filter
+  filterMaps();
+});
 </script>
-</body>
+
+
+  </div>
+</article>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-02</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
 </html>

@@ -1,0 +1,99 @@
+// 主色与暗色主题变量
+$primary-color: #3498db;
+$bg-primary: #fff;
+$bg-secondary: #f8f9fa;
+$text-main: #222;
+$text-muted: #888;
+$shadow-md: 0 4px 24px 0 rgba(44,62,80,0.10);
+
+html {
+  --primary-color: #{$primary-color};
+  --bg-primary: #{$bg-primary};
+  --bg-secondary: #{$bg-secondary};
+  --text-main: #{$text-main};
+  --text-muted: #{$text-muted};
+  --shadow-md: #{$shadow-md};
+}
+
+html[data-theme='dark'] {
+  --bg-primary: #23272f;
+  --bg-secondary: #2d323c;
+  --primary-color: #4fa3ff;
+  --text-main: #e6e6e6;
+  --text-muted: #b0b0b0;
+  --shadow-md: 0 4px 24px 0 rgba(44,62,80,0.30);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-main);
+  font-family: 'Inter', 'JetBrains Mono', 'Microsoft YaHei', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+
+.content {
+  flex: 1 1 0;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  background: var(--bg-primary);
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow-md);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+  margin: 2.5rem auto;
+  max-width: 900px;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+/* 页脚固定底部布局 */
+html, body {
+  height: 100%;
+}
+main.container {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+  margin-top: 0 !important;
+}
+
+/* 主页照片缩小 */
+.profile-img {
+  max-width: 180px;
+  max-height: 180px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(44,62,80,0.10);
+}
+
+.links-section {
+  min-height: 40vh;
+  /* 你可以根据实际情况调整这个高度 */
+}
+
+// 其他卡片、按钮、导航等样式可继续补充
