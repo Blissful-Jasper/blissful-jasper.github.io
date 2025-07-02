@@ -5,34 +5,75 @@ title:
 
 <!-- Load modern theme and section-specific styles -->
 <link rel="stylesheet" href="assets/modern-theme.css">
+{% if site.page_sections.about %}
 <link rel="stylesheet" href="assets/about-styles.css">
+{% endif %}
+{% if site.page_sections.research %}
 <link rel="stylesheet" href="assets/research-styles.css">
+{% endif %}
+{% if site.page_sections.publications %}
 <link rel="stylesheet" href="assets/publications-styles.css">
+{% endif %}
+{% if site.page_sections.contact %}
 <link rel="stylesheet" href="assets/contact-styles.css">
+{% endif %}
+{% if site.page_sections.journals %}
 <link rel="stylesheet" href="assets/doi-styles.css">
 <link rel="stylesheet" href="assets/journals-styles.css">
+{% endif %}
 
 <!-- About section - 个人信息 -->
+{% if site.page_sections.about %}
 <div class="section-wrapper">
   {% include about-section.html %}
 </div>
+{% endif %}
 
 <!-- Research section - 研究兴趣 -->
+{% if site.page_sections.research %}
 <div class="section-wrapper">
   {% include research-section.html %}
 </div>
+{% endif %}
 
 <!-- Publications section - 发表论文 -->
+{% if site.page_sections.publications %}
 <div class="section-wrapper">
   {% include publications-section.html %}
 </div>
+{% endif %}
 
 <!-- Academic Journals section - 学术前沿 -->
+{% if site.page_sections.journals %}
 <div class="section-wrapper">
   {% include journals-section.html %}
 </div>
+{% endif %}
+
+<!-- Blog section - 博客 -->
+{% if site.page_sections.blog %}
+<div class="section-wrapper">
+  {% include blog-section.html %}
+</div>
+{% endif %}
+
+<!-- Links section - 链接 -->
+{% if site.page_sections.links %}
+<div class="section-wrapper">
+  {% include links-section.html %}
+</div>
+{% endif %}
+
+<!-- Maps section - 地图 -->
+{% if site.page_sections.maps %}
+<div class="section-wrapper">
+  {% include maps-section.html %}
+</div>
+{% endif %}
 
 <!-- Contact section - 联系方式 -->
+{% if site.page_sections.contact %}
 <div class="section-wrapper">
   {% include contact-section.html %}
 </div>
+{% endif %}

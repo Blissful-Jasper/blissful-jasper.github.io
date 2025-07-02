@@ -4,6 +4,18 @@ title: Blog
 permalink: /blog.html
 ---
 
+{% unless site.page_sections.blog %}
+<link rel="stylesheet" href="assets/page-disabled-styles.css">
+<div class="page-disabled-notice">
+  <div class="notice-content">
+    <h2>页面暂时关闭</h2>
+    <p>Blog 页面当前已在配置中禁用。</p>
+    <p>如需启用此页面，请在 _config.yml 中设置 blog: true</p>
+    <a href="/" class="back-home-btn">返回主页</a>
+  </div>
+</div>
+{% else %}
+
 <link rel="stylesheet" href="assets/blog-page-style.css">
 
 <!-- Hero Section -->
@@ -565,3 +577,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- Blog Image Enhancement Script -->
 <script src="assets/blog-image-enhancer.js"></script>
+
+{% endunless %}

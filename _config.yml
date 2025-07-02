@@ -35,6 +35,18 @@ collections:
     output: true
     permalink: /:collection/:name/
 
+# 页面板块显示控制
+# 注释掉任何一行即可隐藏对应的板块
+page_sections:
+  about: true
+  research: true # 测试：暂时禁用research页面
+  publications: true # 暂时隐藏论文发表板块
+  journals: true
+  blog: true
+  links: true
+  maps: true
+  contact: true
+
 # 不手动设置 layout，交由 theme: minima 自动处理
 
 exclude:
