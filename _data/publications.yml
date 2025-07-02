@@ -1,27 +1,20 @@
 # =============================================================================
-- title: "Deep Learning Approaches for Natural Language Processing"
-  authors: "Your Name, Co-Author A, Co-Author B"
-  venue: "International Conference on Machine Learning (ICML)"
-  year: 2024
-  type: "conference"
-  pdf: "/assets/papers/paper1.pdf"
-  code: "https://github.com/yourusername/project1"
-  slides: "/assets/slides/icml2024.pdf"
-  abstract: "This paper presents novel deep learning approaches for natural language processing tasks..."
+# Publications
+# =============================================================================
 
-- title: "Efficient Algorithms for Large-Scale Data Processing"
-  authors: "Co-Author C, Your Name, Co-Author D"
-  venue: "Journal of Machine Learning Research (JMLR)"
-  year: 2023
-  type: "journal"
-  pdf: "/assets/papers/paper2.pdf"
-  code: "https://github.com/yourusername/project2"
-  abstract: "We propose efficient algorithms that can handle large-scale data processing..."
-
-- title: "AI Applications in Healthcare: A Comprehensive Study"
-  authors: "Your Name, Medical Collaborator, Co-Author E"
-  venue: "Nature Machine Intelligence"
-  year: 2023
-  type: "journal"
-  pdf: "/assets/papers/paper3.pdf"
-  abstract: "This comprehensive study examines various AI applications in healthcare..."
+- year: 2025
+  papers:
+    - title: Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models
+      authors: Ji, X., Feng, T., Huang, P., Cheng, X., Qin, J., Yang, B.
+      journal: Atmospheric Research
+      link: https://doi.org/10.1016/j.atmosres.2025.108214
+- year: 2024
+  papers:
+    - title: Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images
+      authors: Ji, X., Song X, Guo A, Liu K, Cao H, Feng T.
+      journal: Remote Sensing
+      link: https://doi.org/10.3390/rs16162871
+    - title: Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans
+      authors: Ji, X., Sha Y, Feng T, Li J.
+      journal: Journal of Xiamen University (Natural Science)
+      link: https://doi.org/10.6043/j.issn.0438-0479.202310026

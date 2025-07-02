@@ -1,0 +1,42 @@
+- title: "Create a Jekyll Site"
+  date: "2025-06-29"
+  summary: "如何创建一个新的 Jekyll 网站。"
+  file: "blog/create-site-jekyll.md"
+  images: ["/assets/images/blog/change.png"]
+  tags: ["Jekyll", "GitHub Pages", "建站", "博客"]
+  category: "技术"
+- title: "Deep Learning in Meteorology"
+  date: "2024-12-15"
+  summary: "深度学习在气象领域的应用。"
+  file: "blog/dl-meteorology.md"
+  images: ["/assets/images/blog/remotesensing.png"]
+  tags: ["深度学习", "机器学习", "气象预报", "人工智能"]
+  category: "科研"
+- title: "CMIP6 Evaluation and Climate Change"
+  date: "2025-06-29"
+  summary: "CMIP6 模型评估与气候变化。"
+  file: "blog/cmip6-evaluation.md"
+  images: ["/assets/images/blog/cckws.png"]
+  tags: ["CMIP6", "气候模式", "模式评估", "气候变化"]
+  category: "科研"
+- title: "MRG Waves and Tropical Precipitation"
+  date: "2025-06-29"
+  summary: "MRG 波与热带降水的关系。"
+  file: "blog/MRG-waves.md"
+  images: ["/assets/images/blog/MRG.png"]
+  tags: ["MRG波", "热带气象", "降水", "大气动力学"]
+  category: "科研"
+- title: "Welcome to My Blog"
+  date: "2025-06-29"
+  summary: "欢迎来到我的博客，分享研究经验与见解。"
+  file: "blog/2025-06-29-welcome.md"
+  images: ["/assets/images/blog/scale.png"]
+  tags: ["欢迎", "博客", "介绍"]
+  category: "杂谈"
+- title: "Python-添加小地图"
+  date: "2025-06-29"
+  summary: "在Python项目中添加小地图功能。"
+  file: "blog/2024-01-01-Map_add_figure.md"
+  images: ["assets/images/blog/ShangHai_map_add.png"]
+  tags: ["Python", "小地图"]
+  category: "绘图"

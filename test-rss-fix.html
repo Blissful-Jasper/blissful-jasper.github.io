@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS解析器测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success {
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+            color: #721c24;
+        }
+        .loading {
+            background-color: #fff3cd;
+            border-color: #ffeaa7;
+            color: #856404;
+        }
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>RSS解析器命名空间修复测试</h1>
+    
+    <div id="test-results">
+        <div class="test-item loading">
+            <h3>正在测试RSS解析器...</h3>
+            <p>测试命名空间标签（如dc:creator）的解析是否正常</p>
+        </div>
+    </div>
+
+    <script src="assets/rss-parser.js"></script>
+    <script>
+        async function testRSSParser() {
+            const resultsDiv = document.getElementById('test-results');
+            resultsDiv.innerHTML = '';
+
+            // 测试的RSS源
+            const testFeeds = [
+                {
+                    name: 'Nature (可能包含 dc:creator)',
+                    url: 'https://www.nature.com/nature.rss'
+                },
+                {
+                    name: 'Science (可能包含命名空间标签)',
+                    url: 'https://www.science.org/action/showFeed?type=axatoc&feed=rss&jc=science'
+                }
+            ];
+
+            const parser = new RSSParser(true); // 启用调试模式
+
+            for (const feed of testFeeds) {
+                const testDiv = document.createElement('div');
+                testDiv.className = 'test-item loading';
+                testDiv.innerHTML = `
+                    <h3>测试: ${feed.name}</h3>
+                    <p>URL: ${feed.url}</p>
+                    <p>状态: 正在解析...</p>
+                `;
+                resultsDiv.appendChild(testDiv);
+
+                try {
+                    console.log(`Testing ${feed.name}...`);
+                    const articles = await parser.parseRSS(feed.url);
+                    
+                    testDiv.className = 'test-item success';
+                    testDiv.innerHTML = `
+                        <h3>✅ 测试成功: ${feed.name}</h3>
+                        <p>URL: ${feed.url}</p>
+                        <p>解析到 ${articles.length} 篇文章</p>
+                        <details>
+                            <summary>查看前3篇文章详情</summary>
+                            <pre>${JSON.stringify(articles.slice(0, 3), null, 2)}</pre>
+                        </details>
+                    `;
+                    
+                    console.log(`✅ ${feed.name}: 成功解析 ${articles.length} 篇文章`);
+                    
+                } catch (error) {
+                    testDiv.className = 'test-item error';
+                    testDiv.innerHTML = `
+                        <h3>❌ 测试失败: ${feed.name}</h3>
+                        <p>URL: ${feed.url}</p>
+                        <p>错误: ${error.message}</p>
+                        <details>
+                            <summary>查看详细错误信息</summary>
+                            <pre>${error.stack}</pre>
+                        </details>
+                    `;
+                    
+                    console.error(`❌ ${feed.name}: 解析失败`, error);
+                }
+            }
+
+            // 添加总结
+            const summaryDiv = document.createElement('div');
+            summaryDiv.className = 'test-item';
+            summaryDiv.innerHTML = `
+                <h3>测试完成</h3>
+                <p>请查看浏览器控制台以获取详细的调试信息</p>
+                <p>如果没有出现 "querySelector: 'dc:creator' is not a valid selector" 错误，说明修复成功！</p>
+            `;
+            resultsDiv.appendChild(summaryDiv);
+        }
+
+        // 页面加载后开始测试
+        document.addEventListener('DOMContentLoaded', testRSSParser);
+    </script>
+</body>
+</html>

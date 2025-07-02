@@ -1,0 +1,14 @@
+- name: About
+  url: /#about
+- name: Research
+  url: /research.html
+- name: Publications
+  url: /publications.html
+- name: Blog
+  url: /blog.html
+- name: Contact
+  url: /contact.html
+- name: Links
+  url: /links.html
+- name: Maps
+  url: /maps.html

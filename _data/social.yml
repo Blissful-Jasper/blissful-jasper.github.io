@@ -1,0 +1,12 @@
+- title: Email
+  url: mailto:xianpuji@hhu.edu.cn
+  icon: fas fa-envelope
+- title: GitHub
+  url: https://github.com/Blissful-Jasper
+  icon: fab fa-github
+- title: ResearchGate
+  url: https://www.researchgate.net/profile/Xianpu-Ji
+  icon: fab fa-researchgate
+- title: ORCID
+  url: https://orcid.org/0009-0001-5197-4804
+  icon: fab fa-orcid

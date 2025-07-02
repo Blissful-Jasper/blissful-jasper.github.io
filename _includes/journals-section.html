@@ -1,0 +1,180 @@
+<!-- Academic Journals Section -->
+<link rel="stylesheet" href="assets/journals-styles.css">
+
+<!-- Load RSS Parser and AI Summary Service -->
+<script src="assets/rss-parser.js"></script>
+<script src="assets/ai-summary-service.js"></script>
+<script src="assets/journal-manager-enhanced.js"></script>
+<script src="assets/journals-init.js"></script>
+
+<!-- Journal Data for JavaScript -->
+<script>
+    // 传递期刊数据给JavaScript
+    window.journalsData = {{ site.data.journals.journals | jsonify }};
+</script>
+
+<section class="journals-section" id="journals">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header text-center">
+      <h2 class="section-title">
+        <i class="fas fa-newspaper"></i>
+        学术前沿
+      </h2>
+      <p class="section-subtitle">追踪顶级期刊最新研究动态，获取前沿科学洞察</p>
+      
+      <!-- Journal Filter Tags -->
+      <div class="journal-filters">
+        <button class="filter-btn active" data-category="all">
+          <i class="fas fa-globe"></i>
+          全部期刊
+        </button>
+        <button class="filter-btn" data-category="multidisciplinary">
+          <i class="fas fa-atom"></i>
+          综合性
+        </button>
+        <button class="filter-btn" data-category="geoscience">
+          <i class="fas fa-mountain"></i>
+          地球科学
+        </button>
+        <button class="filter-btn" data-category="geophysics">
+          <i class="fas fa-wave-square"></i>
+          地球物理
+        </button>
+        <button class="filter-btn" data-category="climate">
+          <i class="fas fa-thermometer-half"></i>
+          气候科学
+        </button>
+        <button class="filter-btn" data-category="atmospheric">
+          <i class="fas fa-cloud"></i>
+          大气科学
+        </button>
+        </button>
+        <button class="filter-btn" data-category="news">
+          <i class="fas fa-newspaper"></i>
+          科学新闻
+        </button>
+      </div>
+    </div>
+
+    <!-- Journals Grid -->
+    <div class="journals-grid" id="journalsGrid">
+      {% for journal in site.data.journals.journals %}
+      <div class="journal-card" data-category="{{ journal.category }}">
+        <!-- Journal Header -->
+        <div class="journal-header" style="--journal-color: {{ journal.color }}">
+          <div class="journal-icon">
+            <i class="{{ journal.icon }}"></i>
+          </div>
+          <div class="journal-info">
+            <h3 class="journal-name">{{ journal.name }}</h3>
+            <p class="journal-description">{{ journal.description }}</p>
+            <div class="journal-meta">
+              <span class="impact-factor">
+                <i class="fas fa-star"></i>
+                IF: {{ journal.impact_factor }}
+              </span>
+              <span class="journal-category">{{ journal.category }}</span>
+            </div>
+          </div>
+          <div class="journal-actions">
+            <a href="{{ journal.homepage }}" target="_blank" rel="noopener" class="journal-link" title="访问期刊主页">
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+            <button class="refresh-btn" onclick="refreshJournal('{{ journal.name }}')" title="刷新文章">
+              <i class="fas fa-sync-alt"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Articles List -->
+        <div class="articles-list" id="articles-{{ journal.name | slugify }}">
+          <div class="loading-state">
+            <div class="loading-spinner"></div>
+            <span>加载最新文章...</span>
+          </div>
+        </div>
+
+        <!-- Show More Button -->
+        <div class="journal-footer">
+          <button class="show-more-btn" onclick="loadMoreArticles('{{ journal.name }}')">
+            <i class="fas fa-chevron-down"></i>
+            查看更多文章
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Statistics Overview -->
+    <div class="journals-stats">
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-newspaper"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number" id="totalArticles">-</span>
+          <span class="stat-label">最新文章</span>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-journal-whills"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number">{{ site.data.journals.journals.size }}</span>
+          <span class="stat-label">追踪期刊</span>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number" id="aiSummaries">-</span>
+          <span class="stat-label">AI总结</span>
+        </div>
+      </div>
+      
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="stat-info">
+          <span class="stat-number" id="lastUpdate">-</span>
+          <span class="stat-label">最后更新</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Summary Modal -->
+    <div class="ai-summary-modal" id="aiSummaryModal" style="display: none;">
+      <div class="modal-backdrop" onclick="closeAiSummary()"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>
+            <i class="fas fa-robot"></i>
+            AI 研究洞察
+          </h3>
+          <button class="modal-close" onclick="closeAiSummary()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="aiSummaryContent">
+          <!-- AI summary content will be loaded here -->
+        </div>
+        <div class="modal-footer">
+          <button class="btn-secondary" onclick="closeAiSummary()">关闭</button>
+          <button class="btn-primary" onclick="regenerateAiSummary()">
+            <i class="fas fa-sync-alt"></i>
+            重新生成
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

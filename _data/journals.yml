@@ -1,0 +1,154 @@
+# Academic Journals RSS Feeds Configuration
+# 地球科学学术期刊RSS订阅配置
+
+journals:
+  # 综合性期刊（包含地球科学内容）
+  - name: "Nature"
+    fullname: "Nature"
+    description: "International journal of science (含地球科学领域)"
+    rss_url: "https://www.nature.com/nature.rss"
+    homepage: "https://www.nature.com/"
+    impact_factor: 69.504
+    category: "multidisciplinary"
+    color: "#2c5aa0"
+    icon: "fas fa-globe"
+    geoscience_relevance: "high"
+    
+  - name: "Science"
+    fullname: "Science"
+    description: "American Association for the Advancement of Science (含地球科学领域)"
+    rss_url: "https://www.science.org/action/showFeed?type=axatoc&feed=rss&jc=science"
+    homepage: "https://www.science.org/"
+    impact_factor: 63.714
+    category: "multidisciplinary" 
+    color: "#d32f2f"
+    icon: "fas fa-globe-americas"
+    geoscience_relevance: "high"
+    
+  - name: "Science Advances"
+    fullname: "Science Advances"
+    description: "Multidisciplinary open access journal (含地球科学、海洋科学内容)"
+    rss_url: "https://www.science.org/action/showFeed?type=etoc&feed=rss&jc=sciadv"
+    homepage: "https://www.science.org/journal/sciadv"
+    impact_factor: 14.957
+    category: "multidisciplinary"
+    color: "#e91e63"
+    icon: "fas fa-rocket"
+    geoscience_relevance: "high"
+    
+  # 地球科学专业期刊
+  - name: "Nature Geoscience"
+    fullname: "Nature Geoscience"
+    description: "Earth and planetary sciences"
+    rss_url: "https://www.nature.com/ngeo.rss"
+    homepage: "https://www.nature.com/ngeo/"
+    impact_factor: 18.3
+    category: "geoscience"
+    color: "#8d6e63"
+    icon: "fas fa-mountain"
+    geoscience_relevance: "core"
+    
+  - name: "Earth and Planetary Science Letters"
+    fullname: "Earth and Planetary Science Letters"
+    description: "Leading journal for solid earth geoscience"
+    rss_url: "https://rss.sciencedirect.com/publication/science/0012821X"
+    homepage: "https://www.sciencedirect.com/journal/earth-and-planetary-science-letters"
+    impact_factor: 5.3
+    category: "geoscience"
+    color: "#795548"
+    icon: "fas fa-globe"
+    geoscience_relevance: "core"
+    
+  - name: "Geophysical Research Letters"
+    fullname: "Geophysical Research Letters"
+    description: "Rapid publication of geophysical research"
+    rss_url: "https://agupubs.onlinelibrary.wiley.com/action/showFeed?jc=19448007&type=etoc&feed=rss"
+    homepage: "https://agupubs.onlinelibrary.wiley.com/journal/19448007"
+    impact_factor: 5.2
+    category: "geophysics"
+    color: "#ff6f00"
+    icon: "fas fa-wave-square"
+    geoscience_relevance: "core"
+    
+  - name: "JGR: Atmospheres"
+    fullname: "Journal of Geophysical Research: Atmospheres"
+    description: "Atmospheric sciences and meteorology research"
+    rss_url: "https://agupubs.onlinelibrary.wiley.com/action/showFeed?jc=21698996&type=etoc&feed=rss"
+    homepage: "https://agupubs.onlinelibrary.wiley.com/journal/21698996"
+    impact_factor: 4.4
+    category: "atmospheric"
+    color: "#03a9f4"
+    icon: "fas fa-wind"
+    geoscience_relevance: "core"
+    
+  - name: "Reviews of Geophysics"
+    fullname: "Reviews of Geophysics"
+    description: "Comprehensive reviews in geophysics"
+    rss_url: "https://agupubs.onlinelibrary.wiley.com/action/showFeed?jc=19422466&type=etoc&feed=rss"
+    homepage: "https://agupubs.onlinelibrary.wiley.com/journal/19422466"
+    impact_factor: 25.2
+    category: "geophysics"
+    color: "#9c27b0"
+    icon: "fas fa-globe"
+    geoscience_relevance: "core"
+    
+  # 大气科学期刊
+  - name: "Atmospheric Chemistry and Physics"
+    fullname: "Atmospheric Chemistry and Physics"
+    description: "Open access atmospheric science journal"
+    rss_url: "https://acp.copernicus.org/xml/rss2_0.xml"
+    homepage: "https://acp.copernicus.org/"
+    impact_factor: 6.3
+    category: "atmospheric"
+    color: "#2196f3"
+    icon: "fas fa-wind"
+    geoscience_relevance: "core"
+    
+  # 气候与环境地球科学
+  - name: "Nature Climate Change"
+    fullname: "Nature Climate Change"
+    description: "Climate science and policy"
+    rss_url: "https://www.nature.com/nclimate.rss"
+    homepage: "https://www.nature.com/nclimate/"
+    impact_factor: 30.7
+    category: "climate"
+    color: "#388e3c"
+    icon: "fas fa-thermometer-half"
+    geoscience_relevance: "core"
+    
+  - name: "Climate Dynamics"
+    fullname: "Climate Dynamics"
+    description: "Climate system dynamics and climate modeling"
+    rss_url: "https://link.springer.com/search.rss?facet-content-type=Article&facet-journal-id=382&channel-name=Climate%20Dynamics"
+    homepage: "https://link.springer.com/journal/382"
+    impact_factor: 4.6
+    category: "climate"
+    color: "#4caf50"
+    icon: "fas fa-cloud-sun"
+    geoscience_relevance: "core"
+    
+
+
+# AI总结配置
+ai_summary:
+  enabled: true
+  provider: "deepseek"  # deepseek, openai, claude, gemini
+  api_url: "https://api.deepseek.com"
+  api_key: "sk-dc3ff3328d0f419f91d4d50def473298"
+  model: "deepseek-chat"
+  max_length: 300
+  language: "zh-CN"
+  focus: "geoscience"  # 专注地球科学内容
+  
+# 显示配置
+display:
+  articles_per_journal: 5
+  max_abstract_length: 200
+  show_images: true
+  cache_duration: 3600  # 1小时缓存
+  geoscience_filter: true  # 启用地球科学内容过滤
+  
+# 更新频率
+update_frequency:
+  check_interval: "daily"  # daily, weekly, manual
+  auto_summary: true

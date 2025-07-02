@@ -1,625 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Academic Blog Template - Al-folio Style</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+---
+layout: default
+title: "Modern Style Test"
+permalink: /test/
+---
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
+<style>
+/* Test page specific styles */
+.test-section {
+    padding: 2rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+</style>
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+<div class="test-section">
+    <h1>Modern Theme Test Page</h1>
+    <p>This page demonstrates the modern styling and components we've implemented.</p>
+</div>
 
-        /* Header */
-        header {
-            background: #fff;
-            padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
+<div class="test-section">
+    <h2>Typography</h2>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <p>This is a paragraph with <a href="#">a link</a> and some <code>inline code</code>.</p>
+    <blockquote>
+        <p>This is a blockquote to demonstrate styling.</p>
+    </blockquote>
+</div>
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #3498db;
-        }
-
-        /* Main Content */
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 300px;
-            gap: 40px;
-            padding: 40px 0;
-        }
-
-        .content {
-            background: #fff;
-        }
-
-        .profile-section {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .profile-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid #eee;
-        }
-
-        .profile-info h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .profile-info .title {
-            font-size: 18px;
-            color: #7f8c8d;
-            margin-bottom: 20px;
-        }
-
-        .bio {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .social-links a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: #3498db;
-            color: white;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .social-links a:hover {
-            background: #2980b9;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
-            height: fit-content;
-        }
-
-        .sidebar h3 {
-            margin-bottom: 20px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .news-item, .post-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .news-date, .post-date {
-            font-size: 12px;
-            color: #7f8c8d;
-            margin-bottom: 5px;
-        }
-
-        .news-content, .post-title {
-            font-size: 14px;
-            color: #2c3e50;
-        }
-
-        .post-title {
-            font-weight: bold;
-            text-decoration: none;
-            color: #2c3e50;
-        }
-
-        .post-title:hover {
-            color: #3498db;
-        }
-
-        /* Research Section */
-        .research-section {
-            margin-bottom: 40px;
-        }
-
-        .research-section h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-        }
-
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .research-card {
-            background: #f8f9fa;
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
-            transition: transform 0.3s;
-        }
-
-        .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .research-card h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .research-card p {
-            color: #555;
-            line-height: 1.6;
-        }
-
-        /* Publications Section */
-        .publications-section {
-            margin-bottom: 40px;
-        }
-
-        .publication-item {
-            background: #f8f9fa;
-            padding: 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .publication-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .publication-authors {
-            color: #7f8c8d;
-            margin-bottom: 5px;
-        }
-
-        .publication-venue {
-            color: #27ae60;
-            font-style: italic;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 60px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .profile-img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        /* File Structure Display */
-        .file-structure {
-            background: #f4f4f4;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-        }
-
-        .file-structure h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-
-        .file-tree {
-            line-height: 1.8;
-        }
-
-        .file-tree .folder {
-            color: #3498db;
-            font-weight: bold;
-        }
-
-        .file-tree .file {
-            color: #27ae60;
-        }
-
-        .download-section {
-            background: #ecf0f1;
-            padding: 30px;
-            border-radius: 8px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .download-btn {
-            background: #3498db;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin: 10px;
-            transition: background 0.3s;
-        }
-
-        .download-btn:hover {
-            background: #2980b9;
-        }
-
-        /* New Styles for Home Section */
-        .home {
-            margin-bottom: 40px;
-        }
-
-        .profile-container {
-            display: flex;
-            align-items: flex-start;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .profile-image {
-            flex-shrink: 0;
-        }
-
-        .profile-info {
-            min-width: 250px;
-        }
-
-        .profile-name {
-            font-size: 28px;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-
-        .profile-title {
-            font-size: 18px;
-            color: #7f8c8d;
-            margin-bottom: 10px;
-        }
-
-        .profile-affiliation {
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-
-        .profile-bio {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 30px;
-        }
-
-        .publication-list {
-            margin-top: 20px;
-        }
-
-        .publication-links {
-            margin-top: 10px;
-        }
-
-        .pub-link {
-            display: inline-block;
-            margin-right: 10px;
-            font-size: 14px;
-            color: #3498db;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .pub-link:hover {
-            color: #2980b9;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn-primary:hover {
-            background: #2980b9;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav class="container">
-            <div class="logo">Your Name</div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container">
-      <div class="main-content">
-        <div class="content">
-          <div class="home">
-            <!-- Profile Section -->
-            <div class="profile-section">
-              <div class="profile-container" style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap; justify-content: center;">
-                <div class="profile-image">
-                  <img src="assets/img/profile.JPG" alt="Your Name" class="profile-img">
-                </div>
-                <div class="profile-info" style="min-width: 250px;">
-                  <h1 class="profile-name">Your Name</h1>
-                  <p class="profile-title">PhD Student | Researcher | Academic</p>
-                  <p class="profile-affiliation">Your University / Institute</p>
-                  <div class="profile-bio">
-                    <p>Write your biography here. Tell the world about yourself. You can describe your research interests, academic background, and current projects. This is a great place to highlight your expertise and passion for your field.</p>
-                    <p>Put your address / P.O. box / other info right below your picture. 你可以根据需要自定义这些内容。</p>
-                  </div>
-                  <!-- Social Links -->
-                  <div class="social-links">
-                    <a href="mailto:your@email.com" title="Email">✉</a>
-                    <a href="#" title="Google Scholar">📚</a>
-                    <a href="#" title="GitHub">🐙</a>
-                    <a href="#" title="Twitter">🐦</a>
-                    <a href="#" title="LinkedIn">💼</a>
-                    <a href="#" title="ORCID">🆔</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Research Interests Section -->
-            <div class="research-section">
-              <h2 class="section-title">Research Interests</h2>
-              <div class="research-grid">
-                <div class="research-card">
-                  <h3>Machine Learning</h3>
-                  <p>Developing novel algorithms for deep learning applications in computer vision and natural language processing.</p>
-                </div>
-                <div class="research-card">
-                  <h3>Data Science</h3>
-                  <p>Applying statistical methods and computational techniques to extract insights from large-scale datasets.</p>
-                </div>
-                <div class="research-card">
-                  <h3>Artificial Intelligence</h3>
-                  <p>Exploring the intersection of AI and human-computer interaction to create more intuitive systems.</p>
-                </div>
-              </div>
-            </div>
-            <!-- Selected Publications Section -->
-            <div class="publications-section">
-              <h2 class="section-title">Selected Publications</h2>
-              <div class="publication-list">
-                <div class="publication-item">
-                  <div class="publication-title">Title of Your Amazing Research Paper</div>
-                  <div class="publication-authors"><strong>Your Name</strong>, Co-Author A, Co-Author B</div>
-                  <div class="publication-venue">Conference/Journal Name, 2024</div>
-                  <div class="publication-links">
-                    <a href="#" class="pub-link">PDF</a>
-                    <a href="#" class="pub-link">Code</a>
-                    <a href="#" class="pub-link">Slides</a>
-                  </div>
-                </div>
-                <div class="publication-item">
-                  <div class="publication-title">Another Important Contribution to Science</div>
-                  <div class="publication-authors"><strong>Your Name</strong>, Collaborator C</div>
-                  <div class="publication-venue">Another Venue, 2023</div>
-                  <div class="publication-links">
-                    <a href="#" class="pub-link">PDF</a>
-                    <a href="#" class="pub-link">Code</a>
-                  </div>
-                </div>
-              </div>
-              <div class="view-all" style="margin-top: 20px;">
-                <a href="#" class="btn-primary">View All Publications</a>
-              </div>
-            </div>
-            <!-- Latest Posts Section -->
-            <div class="posts-section">
-              <h2 class="section-title">Latest Posts</h2>
-              <div class="post-list">
-                <div class="post-item">
-                  <div class="post-date">Mar 26, 2024</div>
-                  <h3 class="post-title"><a href="#">Understanding Deep Learning Architectures</a></h3>
-                  <div class="post-excerpt">A brief introduction to deep learning model structures and their applications.</div>
-                </div>
-                <div class="post-item">
-                  <div class="post-date">Mar 15, 2024</div>
-                  <h3 class="post-title"><a href="#">Research Methodology in AI</a></h3>
-                  <div class="post-excerpt">Discussing best practices for conducting research in artificial intelligence.</div>
-                </div>
-                <div class="post-item">
-                  <div class="post-date">Feb 28, 2024</div>
-                  <h3 class="post-title"><a href="#">Academic Writing Tips</a></h3>
-                  <div class="post-excerpt">Tips and tricks for writing effective academic papers.</div>
-                </div>
-              </div>
-              <div class="view-all" style="margin-top: 20px;">
-                <a href="#" class="btn-primary">View All Posts</a>
-              </div>
-            </div>
-            <!-- Download Section -->
-            <div class="download-section">
-              <h3>🚀 Ready to Build Your Academic Website?</h3>
-              <p>Download the complete Jekyll template files below and upload to your GitHub repository.</p>
-              <button class="download-btn" id="download-template-btn">📦 Download Jekyll Template</button>
-              <button class="download-btn" id="download-config-btn">⚙️ Download Config Files</button>
-              <p style="margin-top: 20px; font-size: 14px; color: #7f8c8d;">
-                Files include: Jekyll layouts, CSS styles, JavaScript, sample posts, and configuration files ready for GitHub Pages deployment.
-              </p>
-            </div>
-          </div>
+<div class="test-section">
+    <h2>Cards and Components</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 2rem 0;">
+        <div class="card">
+            <h3>Test Card 1</h3>
+            <p>This is a test card to demonstrate the modern card styling with hover effects.</p>
+            <button class="btn btn-primary">Primary Button</button>
         </div>
-        <aside class="sidebar">
-          <!-- 保留原有侧边栏内容 -->
-          <div>
-            <h3>📰 News</h3>
-            <div class="news-item">
-              <div class="news-date">Jan 15, 2024</div>
-              <div class="news-content">Started new research project on AI ethics! 🤖</div>
-            </div>
-            <div class="news-item">
-              <div class="news-date">Dec 20, 2023</div>
-              <div class="news-content">Paper accepted at top-tier conference! 🎉</div>
-            </div>
-            <div class="news-item">
-              <div class="news-date">Nov 15, 2023</div>
-              <div class="news-content">Gave keynote at academic symposium.</div>
-            </div>
-          </div>
-          <div style="margin-top: 30px;">
-            <h3>📝 Latest Posts</h3>
-            <div class="post-item">
-              <div class="post-date">Mar 26, 2024</div>
-              <a href="#" class="post-title">Understanding Deep Learning Architectures</a>
-            </div>
-            <div class="post-item">
-              <div class="post-date">Mar 15, 2024</div>
-              <a href="#" class="post-title">Research Methodology in AI</a>
-            </div>
-            <div class="post-item">
-              <div class="post-date">Feb 28, 2024</div>
-              <a href="#" class="post-title">Academic Writing Tips</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Your Name. Powered by Jekyll and GitHub Pages.</p>
+        <div class="card">
+            <h3>Test Card 2</h3>
+            <p>Another test card with different content to show consistency.</p>
+            <button class="btn btn-secondary">Secondary Button</button>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+<div class="test-section">
+    <h2>Form Elements</h2>
+    <form class="test-form">
+        <div class="form-group">
+            <label for="test-input">Test Input:</label>
+            <input type="text" id="test-input" class="form-input" placeholder="Enter text here" required>
+        </div>
+        <div class="form-group">
+            <label for="test-email">Email:</label>
+            <input type="email" id="test-email" class="form-input" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+            <label for="test-textarea">Message:</label>
+            <textarea id="test-textarea" class="form-textarea" rows="4" placeholder="Your message here" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Form</button>
+    </form>
+</div>
 
-        // 下载按钮友好提示，避免未定义函数报错
-        document.getElementById('download-template-btn').addEventListener('click', function() {
-            alert('模板下载功能暂未开放。如需实现，请补充相关JS逻辑。');
-        });
-        document.getElementById('download-config-btn').addEventListener('click', function() {
-            alert('配置文件下载功能暂未开放。如需实现，请补充相关JS逻辑。');
-        });
+<div class="test-section">
+    <h2>Skills Demo</h2>
+    <div class="skills-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <div class="skill-item" data-skill="test1">
+            <div class="skill-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <span class="skill-name">Test Skill 1</span>
+            <div class="skill-level">
+                <div class="skill-bar" data-level="85"></div>
+            </div>
+        </div>
+        <div class="skill-item" data-skill="test2">
+            <div class="skill-icon">
+                <i class="fas fa-database"></i>
+            </div>
+            <span class="skill-name">Test Skill 2</span>
+            <div class="skill-level">
+                <div class="skill-bar" data-level="70"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
-        // Add some interactive features
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add hover effects to research cards
-            const researchCards = document.querySelectorAll('.research-card');
-            researchCards.forEach(card => {
-                card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-5px) scale(1.02)';
-                });
-                card.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-            // Add click animation to download buttons
-            const downloadButtons = document.querySelectorAll('.download-btn');
-            downloadButtons.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.98)';
-                    setTimeout(() => {
-                        this.style.transform = 'scale(1)';
-                    }, 150);
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+<div class="test-section">
+    <h2>Interactive Elements</h2>
+    <p>Test tooltip: <span data-tooltip="This is a tooltip!">Hover over me</span></p>
+    <div style="margin: 1rem 0;">
+        <span class="tag">Tag 1</span>
+        <span class="tag">Tag 2</span>
+        <span class="tag">Tag 3</span>
+    </div>
+    <div style="margin: 1rem 0;">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search test items...">
+            <div class="results-count">3 results</div>
+        </div>
+        <div class="searchable-item">Searchable Item 1</div>
+        <div class="searchable-item">Searchable Item 2</div>
+        <div class="searchable-item">Another Test Item</div>
+    </div>
+</div>
+
+<script>
+// Initialize test page
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Test page loaded with modern theme');
+    
+    // Test skill bar animation
+    const skillBars = document.querySelectorAll('.skill-bar');
+    skillBars.forEach(bar => {
+        const level = bar.getAttribute('data-level');
+        setTimeout(() => {
+            bar.style.width = level + '%';
+        }, 500);
+    });
+});
+</script>

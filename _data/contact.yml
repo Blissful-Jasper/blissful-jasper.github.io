@@ -1,0 +1,19 @@
+# 联系方式数据
+- icon: fas fa-map-marker-alt
+  text: Hohai University
+- icon: fas fa-phone
+  text: +86 17551575179
+- icon: fas fa-envelope
+  text: xianpuji@hhu.edu.cn
+- icon: fas fa-link
+  text: GitHub
+  link: https://github.com/Blissful-Jasper
+  link_text: GitHub Profile
+- icon: fas fa-id-card
+  text: ORCID
+  link: https://orcid.org/0009-0001-5197-4804
+  link_text: ORCID Profile
+- icon: fas fa-graduation-cap
+  text: ResearchGate
+  link: https://www.researchgate.net/profile/Xianpu-Ji
+  link_text: ResearchGate Profile

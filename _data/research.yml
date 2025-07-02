@@ -1,0 +1,9 @@
+- title: Kelvin波与热带降水
+  description: Kelvin波是热带大气中最重要的波动之一，对热带降水的时空分布有重要影响。
+  link: blog-post.html?file=blog/kelvin-waves.md
+- title: CMIP6模式评估与气候变化
+  description: CMIP6模式为理解和预测未来热带气候变化提供了重要工具。
+  link: blog-post.html?file=blog/cmip6-evaluation.md
+- title: 深度学习在气象中的应用
+  description: 深度学习为气象科学带来了新的机遇，提升了降水等要素的智能预测能力。
+  link: blog-post.html?file=blog/dl-meteorology.md

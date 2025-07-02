@@ -1,0 +1,173 @@
+- group: 降水与雷电
+  links:
+    - name: Precipitation from TRMM (3Hr, 24Hr, 72Hr, weekly) and GPM (30 Min)
+      url: https://gpm.nasa.gov/data-access/downloads/trmm
+      images:
+         - ./maps/1.png
+    - name: Global Lightning Map
+      url: https://www.blitzortung.org/en/live_lightning_maps.php
+      images:
+         - ./maps/2.png
+    - name: USAID precipitation monitoring
+      url: https://earlywarning.usgs.gov/fews/ewx_lite/index.html?region=gb
+      images:
+         - ./maps/3.png
+- group: 卫星与风场
+  links:
+    - name: Windy
+      url: https://www.windy.com/
+      images:
+         - ./maps/4.png
+    - name: RAMMB Colostate
+      url: https://rammb-slider.cira.colostate.edu/
+      images:
+         - ./maps/5.png
+    - name: RealEarth Wisconsin-Madison
+      url: https://realearth.ssec.wisc.edu/
+      images:
+         - ./maps/6.png
+    - name: Meteologix
+      url: https://meteologix.com/
+      images:
+         - ./maps/7.png
+    - name: EUMETSAT (METEOSAT 0 and 41.5 Degrees)
+      url: https://www.eumetsat.int/our-satellites
+      images:
+         - ./maps/8.png
+    - name: MIMIC-TPW ver.2 (Total Precipitable Water)
+      url: https://tropic.ssec.wisc.edu/real-time/mimic-tpw/global2/main.html
+      images:
+         - ./maps/9.png
+    - name: Indian Ocean Tropical Cyclones (CIMSS)
+      url: https://tropic.ssec.wisc.edu/
+      images:
+         - ./maps/10.png
+    - name: Real time Indian Ocean satellite NRL
+      url: https://www.nrlmry.navy.mil/TC.html
+      images:
+         - ./maps/11.png
+    - name: Remote Sensing Systems
+      url: https://www.remss.com/
+      images:
+         - ./maps/12.png
+    - name: NASA Worldview Earth data
+      url: https://worldview.earthdata.nasa.gov/
+      images:
+         - ./maps/13.png
+- group: MJO 与环流监测
+  links:
+    - name: CPC MJO
+      url: https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml
+      images:
+         - ./maps/14.png
+    - name: CPC - Dynamical Model MJO Forecast
+      url: https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/mjo.shtml#model
+      images:
+          - ./maps/15.png
+    - name: Carl Schreck - MJO RMM index
+      url: https://ncics.org/portfolio/monitor/mjo/
+      images:
+          - ./maps/16.png
+    - name: Michael Ventrice - MJO RMM index
+      url: https://mikeventrice.weebly.com/mjo.html
+      images:
+          - ./maps/17.png
+    - name: Kyle Marcritchie - MJO RMM index
+      url: https://www.kylemacritchie.com/mjo/
+      images:
+          - ./maps/18.png
+- group: 气候灾害与早期预警
+  links:
+    - name: Global Tropics Benefits/Hazards
+      url: https://www.cpc.ncep.noaa.gov/products/precip/CWlink/ghazards/index.php
+      images:
+          - ./maps/19.png
+    - name: Famine Early Warning System Network (FEWS NET)
+      url: https://fews.net/
+      images:
+          - ./maps/20.png
+    - name: Climate Hazards Group - US Santa Barbara
+      url: https://www.chc.ucsb.edu/data
+      images:
+          - ./maps/21.png
+- group: 非洲与印度洋气候
+  links:
+    - name: Indian Ocean Weather and Climate
+      url: https://www.cpc.ncep.noaa.gov/products/international/indian/indian.shtml
+      images:
+          - ./maps/22.png
+    - name: NCEP MODEL FORECASTS FOR INDIAN OCEAN
+      url: https://www.cpc.ncep.noaa.gov/products/international/cpci/data/00/fcsts_indian.shtml
+      images:
+          - ./maps/23.png
+    - name: Africa Weather and Climate
+      url: https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml
+      images:
+          - ./maps/24.png
+- group: ENSO/季风/ITCZ
+  links:
+    - name: CPC - El Nino Southeren Oscillation
+      url: https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml
+      images:
+         - ./maps/25.png
+    - name: ENSO - CPC Diagnostic Discussion
+      url: https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/
+      images:
+         - ./maps/26.png
+    - name: CPC - ENSO weekly PPT
+      url: https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/enso.shtml#weekly
+      images:
+          - ./maps/27.png
+    - name: Pacific Marine Enviromental Laboratory (PMEL) NOAA - TAO
+      url: https://www.pmel.noaa.gov/tao/
+      images:
+          - ./maps/28.png
+    - name: IRI 925 hPa Monthly wind vector anomaly
+      url: https://iridl.ldeo.columbia.edu/maproom/ENSO/Surface_Wind/925hPa_Anom.html
+      images:
+          - ./maps/29.png
+    - name: Monsoon Online
+      url: https://mol.tropmet.res.in/
+      images:
+          - ./maps/30.png
+    - name: CPC - Global Monsoon
+      url: https://www.cpc.ncep.noaa.gov/products/Global_Monsoons/
+      images:
+          - ./maps/31.png
+    - name: CPC - Blocking
+      url: https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/block.shtml#educational_material
+      images:
+          - ./maps/32.png
+    - name: CPC - Africa InterTropical Front (IFT)
+      url: https://www.cpc.ncep.noaa.gov/products/international/itf/itcz.shtml
+      images:
+          - ./maps/33.png
+- group: QBO
+  links:
+    - name: Naujokat @ Free Berlin Univ
+      url: https://www.geo.fu-berlin.de/en/met/ag/strat/produkte/qbo/index.html
+      images:
+          - ./maps/34.png
+    - name: Lubis @ university of Leipzig
+      url: https://sandrolubis.wordpress.com/qbo-monitoring-1953-present/
+      images:
+          - ./maps/35.png
+    - name: CPC QBO
+      url: https://www.cpc.ncep.noaa.gov/data/indices/qbo.u50.index
+      images:
+          - ./maps/36.png
+- group: 其他气候监测
+  links:
+    - name: CPC - Outlook and Monthly reports
+      url: https://www.cpc.ncep.noaa.gov/products/expert_assessment/
+      images:
+          - ./maps/37.png
+    - name: NCEP SST
+      url: https://polar.ncep.noaa.gov/sst/ophi/
+      images:
+          - ./maps/38.png
+
+    - name: nullschool
+      url: https://earth.nullschool.net/
+      images:
+          - ./maps/39.png

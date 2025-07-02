@@ -1,7 +1,7 @@
 title: "Xianpu Ji"
 email: xianpuji@hhu.edu.cn
 description: >-
-  研究热带波动以及热带降水变率.
+      我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。
 baseurl: "" 
 url: "https://blissful-jasper.github.io"
 theme: minima
@@ -25,6 +25,10 @@ plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
 
 collections:
   projects:
@@ -34,6 +38,7 @@ collections:
 # 不手动设置 layout，交由 theme: minima 自动处理
 
 exclude:
+  - assets/main.css
   - .sass-cache/
   - .jekyll-cache/
   - gemfiles/

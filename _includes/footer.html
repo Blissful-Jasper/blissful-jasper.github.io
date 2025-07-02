@@ -1,39 +1,54 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author.name | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-          </li>
-          {%- if site.email -%}
-          <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          {%- endif -%}
+<footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">{{ site.data.footer.description | default: "Academic & Research Portfolio" }}</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
         </ul>
       </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          {% for link in site.data.footer.links %}
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer" class="external-link" title="{{ link.name }}">
+              <i class="fas fa-{{ link.icon | default: 'external-link-alt' }}"></i>
+              {{ link.name }}
+            </a>
+          {% endfor %}
+        </div>
       </div>
     </div>
-
+    
     <div class="footer-bottom">
-      <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name | default: site.title }}. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          {{ site.data.footer.copyright | default: "&copy; 2024 Xianpu Ji. All rights reserved." | markdownify }}
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: {{ "now" | date: "%Y-%m-%d" }}</span>
+        </div>
+      </div>
     </div>
-
   </div>
-
 </footer>
