@@ -101,6 +101,35 @@ bundle exec jekyll serve --config _config.yml,_config_dev.yml
 bundle exec jekyll serve --livereload --incremental
 ```
 
+### 项目清理
+保持项目目录干净整洁：
+```bash
+# 完整清理 (推荐)
+./cleanup.sh
+# Windows: .\cleanup.ps1
+
+# 预览将要清理的文件
+./cleanup.sh --dry-run
+# Windows: .\cleanup.ps1 -DryRun
+
+# 深度清理 (包括构建缓存)
+./cleanup.sh --deep
+# Windows: .\cleanup.ps1 -Deep
+
+# 快速清理 (仅临时文件)
+./scripts/quick-clean.sh
+# Windows: .\scripts\quick-clean.ps1
+
+# 设置自动清理 (Git Hook)
+./scripts/install-hooks.sh
+```
+
+清理内容包括：
+- 开发报告和日志文件 (`*_REPORT.md`, `*_LOG*.md`)
+- 测试和调试文件 (`*test*.html`, `*debug*.html`)
+- 临时文件 (`*.tmp`, `*.bak`, `*~`)
+- 空的备份目录
+
 ## 📁 项目结构
 
 ```
@@ -186,6 +215,69 @@ bundle exec jekyll build
 
 # 将 _site/ 目录内容部署到服务器
 ```
+
+## 🧹 自动清理系统
+
+本项目集成了智能自动清理系统，帮助保持目录干净整洁，提高开发效率。
+
+### 🚀 一键配置
+```bash
+# Linux/macOS - 快速配置
+./scripts/setup-auto-cleanup.sh
+
+# Windows PowerShell - 快速配置  
+.\scripts\setup-auto-cleanup.ps1 -QuickSetup
+
+# Windows批处理 - 立即清理
+.\scripts\auto-cleanup.bat cleanup-now
+```
+
+### 🤖 自动监控清理
+```bash
+# 启动文件监控模式
+./scripts/auto-cleanup.sh --watch          # Linux/macOS
+.\scripts\auto-cleanup.ps1 -Watch          # Windows PowerShell
+
+# 后台服务模式
+./scripts/auto-cleanup.sh --daemon         # Linux/macOS
+.\scripts\auto-cleanup.ps1 -Daemon         # Windows PowerShell
+
+# 立即清理一次
+./scripts/auto-cleanup.sh --cleanup-now    # Linux/macOS
+.\scripts\auto-cleanup.ps1 -CleanupNow     # Windows PowerShell
+```
+
+### 🧠 智能清理模式
+```bash
+# 多种清理模式 (需要Bash环境)
+./scripts/smart-cleanup.sh --cleanup-now standard  # 标准清理
+./scripts/smart-cleanup.sh --cleanup-now build     # 构建清理
+./scripts/smart-cleanup.sh --cleanup-now dev       # 开发清理
+./scripts/smart-cleanup.sh --cleanup-now deep      # 深度清理
+
+# 查看清理统计
+./scripts/smart-cleanup.sh --stats
+
+# 监控模式
+./scripts/smart-cleanup.sh --watch build
+```
+
+### 📊 清理内容
+- **临时文件**: `*.log`, `*.tmp`, `*~`, `.DS_Store`, `Thumbs.db`
+- **编辑器文件**: `*.swp`, `*.swo`, `.jekyll-metadata`
+- **构建缓存**: `_site/*`, `.sass-cache/*`, `.jekyll-cache/*`
+- **开发文件**: `*.pid`, `*.lock.tmp`, `debug.log`
+- **报告文件**: `*_REPORT.md`, `*_LOG*.md`, `*_COMPLETE*.md`
+
+### ⚙️ 高级功能
+- **智能监控**: 检测文件变化后自动清理
+- **多种模式**: 标准、构建、开发、深度清理
+- **配置文件**: 自定义清理规则和行为
+- **统计功能**: 跟踪清理历史和性能
+- **备份支持**: 清理前可选创建备份
+- **Git集成**: pre-commit hook自动清理
+
+更多详细说明请查看: [scripts/README.md](scripts/README.md)
 
 ## 🔧 配置选项
 
