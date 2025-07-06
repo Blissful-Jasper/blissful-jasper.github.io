@@ -1,0 +1,228 @@
+---
+layout: page
+title: Journals
+permalink: /journals-subscription.html
+---
+
+<link rel="stylesheet" href="assets/journals-modern.css">
+
+<div class="journals-container">
+  <!-- Header Section -->
+  <div class="journals-header">
+    <div class="header-content">
+      <h1 class="page-title">
+        <i class="fas fa-journal-whills"></i>
+        期刊订阅
+      </h1>
+      <p class="page-subtitle">地球科学与大气科学领域的顶级期刊</p>
+      <p class="page-description">
+        跟踪最新研究动态，获取前沿科学资讯
+      </p>
+    </div>
+  </div>
+
+  <!-- Search and Filter -->
+  <div class="search-filter-section">
+    <div class="search-container">
+      <input type="text" id="journalSearch" placeholder="搜索期刊..." class="search-input">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="filter-controls">
+      <button class="filter-btn active" data-category="all">全部</button>
+      <button class="filter-btn" data-category="climate">气候科学</button>
+      <button class="filter-btn" data-category="atmospheric">大气科学</button>
+      <button class="filter-btn" data-category="ocean">海洋科学</button>
+      <button class="filter-btn" data-category="earth">地球科学</button>
+      <button class="filter-btn" data-category="modeling">数值模拟</button>
+    </div>
+  </div>
+
+  <!-- Journal Stats -->
+  <div class="journal-stats">
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-book"></i>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">35</span>
+        <span class="stat-label">订阅期刊</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-globe"></i>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">6</span>
+        <span class="stat-label">学科领域</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">25+</span>
+        <span class="stat-label">影响因子>5</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-rss"></i>
+      </div>
+      <div class="stat-content">
+        <span class="stat-number">RSS</span>
+        <span class="stat-label">实时更新</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Journals Grid -->
+  <div class="journals-grid">
+    {% for category in site.data.journal_subscriptions %}
+      <div class="category-section">
+        <h2 class="category-title">
+          <i class="{{ category.icon }}"></i>
+          {{ category.title }}
+        </h2>
+        <p class="category-description">{{ category.description }}</p>
+        
+        <div class="journals-row">
+          {% for journal in category.journals %}
+            <div class="journal-card" data-category="{{ category.id }}">
+              <div class="journal-header">
+                <div class="journal-logo">
+                  {% if journal.logo %}
+                    <img src="{{ journal.logo }}" alt="{{ journal.title }}">
+                  {% else %}
+                    <i class="fas fa-book-open"></i>
+                  {% endif %}
+                </div>
+                <div class="journal-title-section">
+                  <h3 class="journal-title">{{ journal.title }}</h3>
+                  <p class="journal-publisher">{{ journal.publisher }}</p>
+                </div>
+                <div class="journal-metrics">
+                  {% if journal.impact_factor %}
+                    <div class="metric-badge if-badge">
+                      <span class="metric-label">IF</span>
+                      <span class="metric-value">{{ journal.impact_factor }}</span>
+                    </div>
+                  {% endif %}
+                  {% if journal.quartile %}
+                    <div class="metric-badge quartile-badge q{{ journal.quartile }}">
+                      <span class="metric-value">Q{{ journal.quartile }}</span>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              
+              <div class="journal-content">
+                <p class="journal-description">{{ journal.description }}</p>
+                
+                {% if journal.keywords %}
+                  <div class="journal-keywords">
+                    {% for keyword in journal.keywords %}
+                      <span class="keyword-tag">{{ keyword }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+              
+              <div class="journal-footer">
+                <div class="journal-meta">
+                  <span class="meta-item">
+                    <i class="fas fa-calendar"></i>
+                    {{ journal.frequency | default: "Monthly" }}
+                  </span>
+                  <span class="meta-item">
+                    <i class="fas fa-language"></i>
+                    {{ journal.language | default: "English" }}
+                  </span>
+                  {% if journal.open_access %}
+                    <span class="meta-item access-open">
+                      <i class="fas fa-unlock"></i>
+                      开放获取
+                    </span>
+                  {% endif %}
+                </div>
+                <div class="journal-actions">
+                  <a href="{{ journal.website }}" target="_blank" class="action-btn primary">
+                    <i class="fas fa-external-link-alt"></i>
+                    官网
+                  </a>
+                  {% if journal.rss %}
+                    <a href="{{ journal.rss }}" target="_blank" class="action-btn secondary">
+                      <i class="fas fa-rss"></i>
+                      RSS
+                    </a>
+                  {% endif %}
+                  {% if journal.twitter %}
+                    <a href="{{ journal.twitter }}" target="_blank" class="action-btn secondary">
+                      <i class="fab fa-twitter"></i>
+                      Twitter
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Subscription Notice -->
+  <div class="subscription-notice">
+    <div class="notice-content">
+      <h3>订阅说明</h3>
+      <p>本页面展示的期刊信息仅供学术研究参考。请通过官方渠道获取最新的期刊信息和文章内容。</p>
+      <p>如需添加新的期刊订阅，请联系管理员或提交GitHub Issue。</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// Search functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('journalSearch');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const journalCards = document.querySelectorAll('.journal-card');
+  
+  // Search functionality
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    journalCards.forEach(card => {
+      const title = card.querySelector('.journal-title').textContent.toLowerCase();
+      const description = card.querySelector('.journal-description').textContent.toLowerCase();
+      const keywords = Array.from(card.querySelectorAll('.keyword-tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+      
+      if (title.includes(searchTerm) || description.includes(searchTerm) || keywords.includes(searchTerm)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+  
+  // Filter functionality
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const category = this.dataset.category;
+      
+      // Update active button
+      filterButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter cards
+      journalCards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>

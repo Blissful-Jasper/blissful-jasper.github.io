@@ -1,0 +1,83 @@
+- id: research
+  title: 科研工作
+  description: 大气科学研究的日常工作和重要时刻
+  photos:
+    - title: 数据分析工作
+      description: 在实验室进行气候数据分析和处理
+      image: /pictures/DSC_1667.JPG
+      location: 河海大学，中国
+      date: 2023-08-30
+      camera: Canon EOS
+      tags: [数据分析, 实验室, 科研工作]
+
+- id: fieldwork
+  title: 野外科考
+  description: 实地科学考察和数据收集工作
+  photos:
+    - title: 气象站维护
+      description: 对野外自动气象站进行例行维护和检查
+      image: /pictures/DSC_1573.jpg
+      location: 野外观测点
+      date: 2024-01-25
+      camera: Canon EOS
+      tags: [野外科考, 气象站, 维护]
+      
+    - title: 环境监测
+      description: 对当地大气环境进行实时监测
+      image: /pictures/DSC_1682.jpg
+      location: 监测站
+      date: 2024-01-30
+      camera: Canon EOS
+      tags: [环境监测, 大气科学, 实时数据]
+
+- id: conference
+  title: 学术会议
+  description: 参加国内外学术会议和交流活动
+  photos:
+    - title: 国际学术会议
+      description: 在国际大气科学会议上展示研究成果
+      image: /pictures/DSC_1354.jpg
+      location: 会议中心
+      date: 2024-06-15
+      camera: Canon EOS
+      tags: [国际会议, 学术展示, 交流]
+      
+    - title: 学术交流
+      description: 与国际同行进行深入的学术交流
+      image: /pictures/DSC_1361.jpg
+      location: 会议现场
+      date: 2024-05-13
+      camera: Canon EOS
+      tags: [学术交流, 国际合作, 讨论]
+
+- id: lab
+  title: 实验室生活
+  description: 日常科研工作和实验室环境
+  photos:
+    - title: 团队讨论
+      description: 与导师和同学讨论研究方案
+      image: /pictures/DSC_1545.jpg
+      location: 河海大学，中国
+      date: 2023-07-28
+      camera: Canon EOS
+      tags: [团队合作, 学术讨论, 实验室]
+    
+    - title: 服务器维护
+      description: 维护实验室高性能计算服务器
+      image: /pictures/DSC_1652.jpg
+      location: 河海大学，中国
+      date: 2023-06-15
+      camera: Canon EOS
+      tags: [服务器, 计算, 技术维护]
+
+- id: nature
+  title: 自然风光
+  description: 科研路上遇见的美丽风景
+  photos:
+    - title: 南海日出
+      description: 在南海科考船上拍摄的壮丽日出
+      image: /pictures/DSC_1398.jpg
+      location: 南海，中国
+      date: 2023-06-21
+      camera: Canon EOS
+      tags: [日出, 南海, 自然风光]

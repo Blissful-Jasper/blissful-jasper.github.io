@@ -1,0 +1,113 @@
+# Jekyll Academic Template Configuration
+
+# 网站基本信息
+title: "Your Name"
+subtitle: "Academic Homepage"
+description: "Modern Jekyll template for academic websites with dark mode support"
+url: "https://yourusername.github.io"
+baseurl: "/jekyll-academic-template"
+
+# 个人信息
+author:
+  name: "Your Name"
+  email: "your.email@university.edu"
+  affiliation: "Your University"
+  department: "Department of Computer Science"
+  position: "PhD Student / Researcher"
+  bio: "Your research interests and brief bio"
+
+# 社交媒体链接
+social:
+  github: yourusername
+  linkedin: yourprofile
+  twitter: yourusername
+  orcid: 0000-0000-0000-0000
+  scholar: your-google-scholar-id
+  researchgate: your-researchgate-profile
+
+# 网站功能设置
+features:
+  analytics: true
+  comments: false
+  search: true
+  dark_mode: true
+  reading_progress: true
+
+# 页面部分设置
+page_sections:
+  about:
+    enabled: true
+    title: "About"
+  research:
+    enabled: true
+    title: "Research"
+  publications:
+    enabled: true
+    title: "Publications"
+  blog:
+    enabled: true
+    title: "Blog"
+  gallery:
+    enabled: true
+    title: "Gallery"
+  contact:
+    enabled: true
+    title: "Contact"
+
+# Jekyll 设置
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# 插件
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# 排除文件
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 集合设置
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# 默认设置
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# 分页设置
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# SEO 设置
+google_analytics: # 你的 Google Analytics ID
+google_site_verification: # 你的 Google 站点验证码
+
+# 主题设置
+theme_config:
+  default_theme: "blue"
+  default_mode: "light"
+  available_themes:
+    - blue
+    - purple
+    - warm
+    - cool
+    - sunset

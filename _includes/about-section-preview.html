@@ -1,0 +1,55 @@
+{% comment %}
+  About Section Preview for Homepage
+  - Simplified version showing key highlights
+{% endcomment %}
+
+<div class="section-card">
+  <div class="section-header with-gradient">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">
+          <i class="{{ site.page_sections.about.icon | default: 'fas fa-user' }}"></i>
+        </span>
+        {{ site.page_sections.about.title | default: "About Me" }}
+      </h2>
+      <p class="section-subtitle">{{ site.page_sections.about.subtitle | default: "Research & Academic Profile" }}</p>
+    </div>
+  </div>
+  
+  <div class="section-preview">
+    <div class="container">
+      <div class="preview-grid">
+        <div class="preview-card">
+          <h3>研究领域</h3>
+          <p>{{ site.page_sections.about.research_areas | default: "气象学、气候动力学、数值模拟" }}</p>
+          <div class="preview-meta">
+            <span class="preview-tag">Research</span>
+          </div>
+        </div>
+        
+        <div class="preview-card">
+          <h3>学术背景</h3>
+          <p>{{ site.page_sections.about.education | default: "专注于大气科学与气候变化研究" }}</p>
+          <div class="preview-meta">
+            <span class="preview-tag">Education</span>
+          </div>
+        </div>
+        
+        <div class="preview-card">
+          <h3>当前研究</h3>
+          <p>{{ site.page_sections.about.current_work | default: "CMIP6模型评估、MRG波动力学机制" }}</p>
+          <div class="preview-meta">
+            <span class="preview-tag">Current</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="view-more-section">
+    <a href="/about.html" class="view-more-btn">
+      <span>了解更多</span>
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>

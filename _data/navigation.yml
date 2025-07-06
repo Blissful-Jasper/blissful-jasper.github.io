@@ -1,14 +1,18 @@
 - name: About
   url: /#about
 - name: Research
-  url: /research.html
+  url: /research/
 - name: Publications
-  url: /publications.html
+  url: /publications/
 - name: Blog
   url: /blog.html
-- name: Contact
-  url: /contact.html
+- name: Journals
+  url: /journals.html
+- name: Gallery
+  url: /gallery.html
 - name: Links
   url: /links.html
-- name: Maps
-  url: /maps.html
+# - name: Maps
+#   url: /maps.html
+- name: Contact
+  url: /contact/

@@ -12,3 +12,28 @@ Gemfile.lock
 *.swp
 *.swo
 *~
+_config_secure.yml
+
+# ============================================================================
+# Custom ignore rules for cleanup
+# Log and temporary files
+*_LOG*.md
+# RSS logs and fix logs
+RSS_*.md
+# Test and preview html
+test*.html
+preview.html
+# Generated page html (keep markdown sources)
+about.html
+contact.html
+publications.html
+research.html
+links.html
+maps.html
+blog.html
+blog-post.html
+# Local scripts not needed
+convert-md-to-html.js
+genBlogIndex.js
+# VSCode settings
+.vscode/

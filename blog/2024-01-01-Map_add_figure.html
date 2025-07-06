@@ -1,0 +1,728 @@
+---
+layout: post
+title: "Python绘图：在地图上添加小地图"
+date: 2024-01-01
+categories: [技术, 绘图]
+tags: [Python, 地图, 可视化, cartopy]
+---
+
+# Python绘图：在地图上添加小地图
+
+在科学研究中，我们经常需要在大范围的地图上添加小地图来突出显示研究区域。本文将介绍如何使用Python的cartopy和matplotlib库来实现这一功能。
+
+## 基本概念
+
+### 什么是小地图（Inset Map）
+
+小地图是一个嵌入在主地图中的小型地图，通常用于：
+
+- **显示研究区域位置**：在大范围地图中标出具体研究区域
+- **提供地理背景**：为读者提供地理位置的参考
+- **增强地图可读性**：帮助读者更好地理解空间关系
+
+### 应用场景
+
+- **科学论文**：在研究区域图中添加位置示意图
+- **数据报告**：在区域分析图中提供全局视角
+- **演示文稿**：增强地图的表达效果
+
+## 技术准备
+
+### 所需库
+
+```python
+import matplotlib.pyplot as plt
+import cartopy.crs as ccrs
+import cartopy.feature as cfeature
+import numpy as np
+from cartopy.mpl.gridliner import LONGITUDE_FORMATTER, LATITUDE_FORMATTER
+import matplotlib.patches as patches
+from matplotlib.patches import Rectangle
+import cartopy.io.shapereader as shpreader
+```
+
+### 安装依赖
+
+```bash
+pip install matplotlib cartopy numpy
+# 如果需要额外的地图数据
+pip install cartopy[plotting]
+```
+
+## 基础实现
+
+### 1. 简单的小地图示例
+
+```python
+def create_basic_inset_map():
+    """
+    创建基础的小地图示例
+    """
+    # 创建主图
+    fig = plt.figure(figsize=(12, 8))
+    
+    # 主地图 - 中国东部区域
+    ax_main = fig.add_subplot(111, projection=ccrs.PlateCarree())
+    ax_main.set_extent([105, 125, 25, 45], ccrs.PlateCarree())
+    
+    # 添加地图特征
+    ax_main.add_feature(cfeature.COASTLINE, linewidth=0.8)
+    ax_main.add_feature(cfeature.BORDERS, linewidth=0.6)
+    ax_main.add_feature(cfeature.RIVERS, alpha=0.6)
+    ax_main.add_feature(cfeature.LAKES, alpha=0.6)
+    
+    # 添加网格
+    gl = ax_main.gridlines(draw_labels=True, alpha=0.5)
+    gl.top_labels = False
+    gl.right_labels = False
+    gl.xformatter = LONGITUDE_FORMATTER
+    gl.yformatter = LATITUDE_FORMATTER
+    
+    # 创建小地图 - 显示整个中国
+    ax_inset = fig.add_axes([0.02, 0.65, 0.3, 0.3], 
+                           projection=ccrs.PlateCarree())
+    ax_inset.set_extent([70, 140, 10, 55], ccrs.PlateCarree())
+    
+    # 添加小地图特征
+    ax_inset.add_feature(cfeature.COASTLINE, linewidth=0.5)
+    ax_inset.add_feature(cfeature.BORDERS, linewidth=0.4)
+    ax_inset.add_feature(cfeature.LAND, color='lightgray', alpha=0.5)
+    ax_inset.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+    
+    # 在小地图上标出主地图的范围
+    rect = patches.Rectangle((105, 25), 20, 20, 
+                           linewidth=2, edgecolor='red', 
+                           facecolor='none', transform=ccrs.PlateCarree())
+    ax_inset.add_patch(rect)
+    
+    # 添加标题
+    ax_main.set_title('中国东部地区详细地图', fontsize=14, pad=20)
+    
+    plt.tight_layout()
+    return fig, ax_main, ax_inset
+
+# 创建地图
+fig, ax_main, ax_inset = create_basic_inset_map()
+plt.show()
+```
+
+### 2. 高级小地图功能
+
+```python
+class InsetMapCreator:
+    """
+    小地图创建器类
+    """
+    
+    def __init__(self, figsize=(12, 10)):
+        self.fig = plt.figure(figsize=figsize)
+        self.ax_main = None
+        self.ax_inset = None
+        
+    def create_main_map(self, extent, projection=ccrs.PlateCarree()):
+        """
+        创建主地图
+        
+        Parameters:
+        -----------
+        extent : list
+            地图范围 [lon_min, lon_max, lat_min, lat_max]
+        projection : cartopy projection
+            地图投影
+        """
+        self.ax_main = self.fig.add_subplot(111, projection=projection)
+        self.ax_main.set_extent(extent, ccrs.PlateCarree())
+        
+        # 添加基本地图特征
+        self.ax_main.add_feature(cfeature.COASTLINE, linewidth=1.0)
+        self.ax_main.add_feature(cfeature.BORDERS, linewidth=0.8)
+        self.ax_main.add_feature(cfeature.RIVERS, alpha=0.6)
+        self.ax_main.add_feature(cfeature.LAKES, alpha=0.6)
+        self.ax_main.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+        self.ax_main.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+        
+        return self.ax_main
+    
+    def add_inset_map(self, position, inset_extent, 
+                     main_extent=None, projection=ccrs.PlateCarree()):
+        """
+        添加小地图
+        
+        Parameters:
+        -----------
+        position : list
+            小地图位置 [x, y, width, height] (相对坐标)
+        inset_extent : list
+            小地图显示范围
+        main_extent : list
+            主地图范围（用于在小地图上标注）
+        projection : cartopy projection
+            小地图投影
+        """
+        self.ax_inset = self.fig.add_axes(position, projection=projection)
+        self.ax_inset.set_extent(inset_extent, ccrs.PlateCarree())
+        
+        # 添加小地图特征
+        self.ax_inset.add_feature(cfeature.COASTLINE, linewidth=0.5)
+        self.ax_inset.add_feature(cfeature.BORDERS, linewidth=0.4)
+        self.ax_inset.add_feature(cfeature.LAND, color='lightgray', alpha=0.5)
+        self.ax_inset.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+        
+        # 标注主地图范围
+        if main_extent:
+            lon_min, lon_max, lat_min, lat_max = main_extent
+            rect = patches.Rectangle((lon_min, lat_min), 
+                                   lon_max - lon_min, 
+                                   lat_max - lat_min,
+                                   linewidth=2, edgecolor='red', 
+                                   facecolor='red', alpha=0.3,
+                                   transform=ccrs.PlateCarree())
+            self.ax_inset.add_patch(rect)
+        
+        return self.ax_inset
+    
+    def add_gridlines(self, ax, **kwargs):
+        """
+        添加网格线
+        """
+        gl = ax.gridlines(draw_labels=True, alpha=0.5, **kwargs)
+        gl.top_labels = False
+        gl.right_labels = False
+        gl.xformatter = LONGITUDE_FORMATTER
+        gl.yformatter = LATITUDE_FORMATTER
+        return gl
+    
+    def add_scale_bar(self, ax, length_km=100, location='lower right'):
+        """
+        添加比例尺
+        """
+        # 这里是一个简化的比例尺实现
+        # 实际应用中可能需要更精确的计算
+        
+        # 根据纬度估算经度距离
+        lat_center = (ax.get_extent()[2] + ax.get_extent()[3]) / 2
+        lon_per_km = 1 / (111.32 * np.cos(np.radians(lat_center)))
+        length_lon = length_km * lon_per_km
+        
+        # 确定比例尺位置
+        extent = ax.get_extent()
+        if location == 'lower right':
+            x_start = extent[1] - length_lon - 0.5
+            y_pos = extent[2] + 0.5
+        elif location == 'lower left':
+            x_start = extent[0] + 0.5
+            y_pos = extent[2] + 0.5
+        else:
+            x_start = extent[0] + 0.5
+            y_pos = extent[2] + 0.5
+        
+        # 绘制比例尺
+        ax.plot([x_start, x_start + length_lon], [y_pos, y_pos], 
+               'k-', linewidth=3, transform=ccrs.PlateCarree())
+        ax.text(x_start + length_lon/2, y_pos + 0.2, f'{length_km} km',
+               ha='center', va='bottom', fontsize=10,
+               transform=ccrs.PlateCarree())
+
+# 使用示例
+def create_advanced_map():
+    """
+    创建高级地图示例
+    """
+    # 创建地图对象
+    map_creator = InsetMapCreator(figsize=(14, 10))
+    
+    # 主地图：长三角地区
+    main_extent = [118, 122, 30, 33]
+    ax_main = map_creator.create_main_map(main_extent)
+    
+    # 添加网格
+    map_creator.add_gridlines(ax_main)
+    
+    # 添加小地图：中国全图
+    inset_extent = [70, 140, 10, 55]
+    ax_inset = map_creator.add_inset_map([0.02, 0.65, 0.3, 0.3], 
+                                       inset_extent, main_extent)
+    
+    # 添加比例尺
+    map_creator.add_scale_bar(ax_main, length_km=50)
+    
+    # 添加标题
+    ax_main.set_title('长江三角洲地区地图', fontsize=16, pad=20)
+    
+    return map_creator.fig
+
+# 创建高级地图
+fig = create_advanced_map()
+plt.show()
+```
+
+## 实际应用案例
+
+### 1. 科研论文中的研究区域图
+
+```python
+def create_research_area_map():
+    """
+    创建科研论文用的研究区域地图
+    """
+    fig = plt.figure(figsize=(12, 8))
+    
+    # 主地图：华南地区
+    ax_main = fig.add_subplot(111, projection=ccrs.PlateCarree())
+    main_extent = [108, 118, 20, 26]
+    ax_main.set_extent(main_extent, ccrs.PlateCarree())
+    
+    # 添加地形特征
+    ax_main.add_feature(cfeature.COASTLINE, linewidth=1.2)
+    ax_main.add_feature(cfeature.BORDERS, linewidth=1.0)
+    ax_main.add_feature(cfeature.RIVERS, linewidth=0.8, alpha=0.6)
+    ax_main.add_feature(cfeature.LAKES, alpha=0.6)
+    
+    # 添加城市点
+    cities = {
+        '广州': (113.26, 23.13),
+        '深圳': (114.06, 22.55),
+        '香港': (114.17, 22.28),
+        '珠海': (113.55, 22.27)
+    }
+    
+    for city, (lon, lat) in cities.items():
+        ax_main.plot(lon, lat, 'ro', markersize=8, transform=ccrs.PlateCarree())
+        ax_main.text(lon + 0.1, lat + 0.1, city, fontsize=10,
+                    transform=ccrs.PlateCarree(), 
+                    bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
+    
+    # 添加研究区域框
+    research_area = patches.Rectangle((113, 22), 2, 2,
+                                    linewidth=3, edgecolor='blue',
+                                    facecolor='blue', alpha=0.2,
+                                    transform=ccrs.PlateCarree())
+    ax_main.add_patch(research_area)
+    
+    # 小地图：中国南部
+    ax_inset = fig.add_axes([0.02, 0.02, 0.35, 0.35], 
+                           projection=ccrs.PlateCarree())
+    ax_inset.set_extent([100, 125, 15, 35], ccrs.PlateCarree())
+    
+    ax_inset.add_feature(cfeature.COASTLINE, linewidth=0.6)
+    ax_inset.add_feature(cfeature.BORDERS, linewidth=0.5)
+    ax_inset.add_feature(cfeature.LAND, color='lightgray', alpha=0.5)
+    ax_inset.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+    
+    # 在小地图上标出主地图范围
+    main_rect = patches.Rectangle((main_extent[0], main_extent[2]),
+                                main_extent[1] - main_extent[0],
+                                main_extent[3] - main_extent[2],
+                                linewidth=2, edgecolor='red',
+                                facecolor='red', alpha=0.3,
+                                transform=ccrs.PlateCarree())
+    ax_inset.add_patch(main_rect)
+    
+    # 添加网格和标签
+    gl = ax_main.gridlines(draw_labels=True, alpha=0.5)
+    gl.top_labels = False
+    gl.right_labels = False
+    gl.xformatter = LONGITUDE_FORMATTER
+    gl.yformatter = LATITUDE_FORMATTER
+    
+    # 添加标题和标注
+    ax_main.set_title('珠江三角洲研究区域', fontsize=16, pad=20)
+    
+    # 添加图例
+    legend_elements = [
+        plt.Line2D([0], [0], marker='o', color='w', markerfacecolor='red', 
+                  markersize=8, label='主要城市'),
+        patches.Patch(facecolor='blue', alpha=0.2, label='研究区域')
+    ]
+    ax_main.legend(handles=legend_elements, loc='upper right')
+    
+    plt.tight_layout()
+    return fig
+
+# 创建研究区域地图
+fig = create_research_area_map()
+plt.show()
+```
+
+### 2. 气象数据可视化
+
+```python
+def create_weather_map_with_inset():
+    """
+    创建带小地图的气象数据可视化
+    """
+    # 模拟气象数据
+    def generate_sample_data():
+        lons = np.linspace(110, 120, 50)
+        lats = np.linspace(30, 40, 40)
+        lon_grid, lat_grid = np.meshgrid(lons, lats)
+        
+        # 模拟温度数据
+        temperature = 20 + 10 * np.sin((lon_grid - 115) * np.pi / 5) * \
+                     np.cos((lat_grid - 35) * np.pi / 5)
+        
+        return lon_grid, lat_grid, temperature
+    
+    # 生成数据
+    lon_grid, lat_grid, temperature = generate_sample_data()
+    
+    fig = plt.figure(figsize=(14, 10))
+    
+    # 主地图
+    ax_main = fig.add_subplot(111, projection=ccrs.PlateCarree())
+    main_extent = [110, 120, 30, 40]
+    ax_main.set_extent(main_extent, ccrs.PlateCarree())
+    
+    # 绘制温度数据
+    contour = ax_main.contourf(lon_grid, lat_grid, temperature, 
+                              levels=20, cmap='RdYlBu_r', alpha=0.8,
+                              transform=ccrs.PlateCarree())
+    
+    # 添加等值线
+    contour_lines = ax_main.contour(lon_grid, lat_grid, temperature,
+                                   levels=10, colors='black', alpha=0.6,
+                                   linewidths=0.8, transform=ccrs.PlateCarree())
+    ax_main.clabel(contour_lines, inline=True, fontsize=8)
+    
+    # 添加地理特征
+    ax_main.add_feature(cfeature.COASTLINE, linewidth=1.0)
+    ax_main.add_feature(cfeature.BORDERS, linewidth=0.8)
+    ax_main.add_feature(cfeature.RIVERS, alpha=0.6)
+    
+    # 添加颜色条
+    cbar = plt.colorbar(contour, ax=ax_main, orientation='vertical', 
+                       pad=0.05, shrink=0.8)
+    cbar.set_label('温度 (°C)', fontsize=12)
+    
+    # 小地图
+    ax_inset = fig.add_axes([0.02, 0.65, 0.25, 0.25], 
+                           projection=ccrs.PlateCarree())
+    ax_inset.set_extent([100, 130, 20, 45], ccrs.PlateCarree())
+    
+    ax_inset.add_feature(cfeature.COASTLINE, linewidth=0.6)
+    ax_inset.add_feature(cfeature.BORDERS, linewidth=0.5)
+    ax_inset.add_feature(cfeature.LAND, color='lightgray', alpha=0.5)
+    ax_inset.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+    
+    # 标注主地图区域
+    main_rect = patches.Rectangle((main_extent[0], main_extent[2]),
+                                main_extent[1] - main_extent[0],
+                                main_extent[3] - main_extent[2],
+                                linewidth=2, edgecolor='red',
+                                facecolor='red', alpha=0.4,
+                                transform=ccrs.PlateCarree())
+    ax_inset.add_patch(main_rect)
+    
+    # 添加网格
+    gl = ax_main.gridlines(draw_labels=True, alpha=0.5)
+    gl.top_labels = False
+    gl.right_labels = False
+    gl.xformatter = LONGITUDE_FORMATTER
+    gl.yformatter = LATITUDE_FORMATTER
+    
+    ax_main.set_title('华中地区气温分布\n2024年1月平均温度', fontsize=14, pad=20)
+    
+    plt.tight_layout()
+    return fig
+
+# 创建气象地图
+fig = create_weather_map_with_inset()
+plt.show()
+```
+
+## 高级技巧
+
+### 1. 多个小地图
+
+```python
+def create_multiple_inset_maps():
+    """
+    创建包含多个小地图的复合地图
+    """
+    fig = plt.figure(figsize=(16, 12))
+    
+    # 主地图：东亚地区
+    ax_main = fig.add_subplot(111, projection=ccrs.PlateCarree())
+    main_extent = [100, 140, 20, 50]
+    ax_main.set_extent(main_extent, ccrs.PlateCarree())
+    
+    ax_main.add_feature(cfeature.COASTLINE)
+    ax_main.add_feature(cfeature.BORDERS)
+    ax_main.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+    ax_main.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+    
+    # 小地图1：全球视角
+    ax_inset1 = fig.add_axes([0.02, 0.7, 0.25, 0.25], 
+                            projection=ccrs.PlateCarree())
+    ax_inset1.set_global()
+    ax_inset1.add_feature(cfeature.COASTLINE, linewidth=0.5)
+    ax_inset1.add_feature(cfeature.LAND, color='lightgray', alpha=0.5)
+    ax_inset1.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+    
+    # 在全球地图上标出东亚区域
+    global_rect = patches.Rectangle((main_extent[0], main_extent[2]),
+                                  main_extent[1] - main_extent[0],
+                                  main_extent[3] - main_extent[2],
+                                  linewidth=2, edgecolor='red',
+                                  facecolor='red', alpha=0.3,
+                                  transform=ccrs.PlateCarree())
+    ax_inset1.add_patch(global_rect)
+    ax_inset1.set_title('全球位置', fontsize=10)
+    
+    # 小地图2：特定区域放大
+    ax_inset2 = fig.add_axes([0.02, 0.4, 0.25, 0.25], 
+                            projection=ccrs.PlateCarree())
+    detail_extent = [115, 125, 35, 42]
+    ax_inset2.set_extent(detail_extent, ccrs.PlateCarree())
+    ax_inset2.add_feature(cfeature.COASTLINE)
+    ax_inset2.add_feature(cfeature.BORDERS)
+    ax_inset2.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+    ax_inset2.set_title('华北地区详图', fontsize=10)
+    
+    # 在主地图上标出详图区域
+    detail_rect = patches.Rectangle((detail_extent[0], detail_extent[2]),
+                                  detail_extent[1] - detail_extent[0],
+                                  detail_extent[3] - detail_extent[2],
+                                  linewidth=2, edgecolor='blue',
+                                  facecolor='blue', alpha=0.2,
+                                  transform=ccrs.PlateCarree())
+    ax_main.add_patch(detail_rect)
+    
+    # 添加网格
+    gl = ax_main.gridlines(draw_labels=True, alpha=0.5)
+    gl.top_labels = False
+    gl.right_labels = False
+    gl.xformatter = LONGITUDE_FORMATTER
+    gl.yformatter = LATITUDE_FORMATTER
+    
+    ax_main.set_title('东亚地区地图', fontsize=16, pad=20)
+    
+    plt.tight_layout()
+    return fig
+
+# 创建多小地图示例
+fig = create_multiple_inset_maps()
+plt.show()
+```
+
+### 2. 交互式小地图
+
+```python
+def create_interactive_inset():
+    """
+    创建可交互的小地图（基础版本）
+    """
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8),
+                                  subplot_kw={'projection': ccrs.PlateCarree()})
+    
+    # 主地图
+    main_extent = [70, 140, 10, 55]
+    ax1.set_extent(main_extent, ccrs.PlateCarree())
+    ax1.add_feature(cfeature.COASTLINE)
+    ax1.add_feature(cfeature.BORDERS)
+    ax1.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+    ax1.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+    ax1.set_title('点击选择区域', fontsize=14)
+    
+    # 详图
+    ax2.set_title('选中区域详图', fontsize=14)
+    
+    # 添加点击事件处理
+    def on_click(event):
+        if event.inaxes == ax1:
+            # 获取点击位置
+            lon, lat = event.xdata, event.ydata
+            if lon is not None and lat is not None:
+                # 设置详图范围（以点击点为中心）
+                margin = 3  # 度
+                detail_extent = [lon - margin, lon + margin, 
+                               lat - margin, lat + margin]
+                
+                # 更新详图
+                ax2.clear()
+                ax2.set_extent(detail_extent, ccrs.PlateCarree())
+                ax2.add_feature(cfeature.COASTLINE)
+                ax2.add_feature(cfeature.BORDERS)
+                ax2.add_feature(cfeature.RIVERS, alpha=0.6)
+                ax2.add_feature(cfeature.LAKES, alpha=0.6)
+                ax2.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+                ax2.set_title(f'详图: {lon:.1f}°E, {lat:.1f}°N', fontsize=14)
+                
+                # 在主图上显示选中区域
+                ax1.clear()
+                ax1.set_extent(main_extent, ccrs.PlateCarree())
+                ax1.add_feature(cfeature.COASTLINE)
+                ax1.add_feature(cfeature.BORDERS)
+                ax1.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+                ax1.add_feature(cfeature.OCEAN, color='lightblue', alpha=0.3)
+                
+                # 添加选中区域框
+                rect = patches.Rectangle((detail_extent[0], detail_extent[2]),
+                                       detail_extent[1] - detail_extent[0],
+                                       detail_extent[3] - detail_extent[2],
+                                       linewidth=2, edgecolor='red',
+                                       facecolor='red', alpha=0.3,
+                                       transform=ccrs.PlateCarree())
+                ax1.add_patch(rect)
+                ax1.set_title('点击选择区域（已选中区域以红框标出）', fontsize=14)
+                
+                plt.draw()
+    
+    # 绑定点击事件
+    fig.canvas.mpl_connect('button_press_event', on_click)
+    
+    return fig
+
+# 创建交互式地图
+fig = create_interactive_inset()
+plt.show()
+```
+
+## 实用函数库
+
+```python
+class MapUtils:
+    """
+    地图工具类
+    """
+    
+    @staticmethod
+    def calculate_extent_from_center(center_lon, center_lat, 
+                                   width_km, height_km):
+        """
+        根据中心点和尺寸计算地图范围
+        """
+        # 简化计算，实际应用中可能需要更精确的投影计算
+        lat_per_km = 1 / 111.32
+        lon_per_km = 1 / (111.32 * np.cos(np.radians(center_lat)))
+        
+        half_width = (width_km / 2) * lon_per_km
+        half_height = (height_km / 2) * lat_per_km
+        
+        return [center_lon - half_width, center_lon + half_width,
+                center_lat - half_height, center_lat + half_height]
+    
+    @staticmethod
+    def add_north_arrow(ax, x=0.95, y=0.95, size=0.05):
+        """
+        添加指北针
+        """
+        # 创建指北针
+        arrow = patches.FancyArrowPatch((x, y-size), (x, y),
+                                      connectionstyle="arc3",
+                                      arrowstyle='->', 
+                                      mutation_scale=20,
+                                      color='black',
+                                      transform=ax.transAxes)
+        ax.add_patch(arrow)
+        ax.text(x+0.01, y-size/2, 'N', fontsize=12, fontweight='bold',
+               ha='left', va='center', transform=ax.transAxes)
+    
+    @staticmethod
+    def add_coordinate_text(ax, lon, lat, text, **kwargs):
+        """
+        在指定坐标添加文本
+        """
+        default_kwargs = {
+            'fontsize': 10,
+            'ha': 'center',
+            'va': 'center',
+            'bbox': dict(boxstyle="round,pad=0.3", 
+                        facecolor="white", alpha=0.8)
+        }
+        default_kwargs.update(kwargs)
+        
+        ax.text(lon, lat, text, transform=ccrs.PlateCarree(), 
+               **default_kwargs)
+
+# 使用工具类的示例
+def create_map_with_utils():
+    """
+    使用工具类创建地图
+    """
+    fig = plt.figure(figsize=(12, 10))
+    
+    # 主地图
+    ax_main = fig.add_subplot(111, projection=ccrs.PlateCarree())
+    
+    # 使用工具函数计算范围
+    center_extent = MapUtils.calculate_extent_from_center(
+        116.4, 39.9, 500, 400  # 北京为中心，500km x 400km
+    )
+    ax_main.set_extent(center_extent, ccrs.PlateCarree())
+    
+    ax_main.add_feature(cfeature.COASTLINE)
+    ax_main.add_feature(cfeature.BORDERS)
+    ax_main.add_feature(cfeature.LAND, color='lightgray', alpha=0.3)
+    
+    # 添加指北针
+    MapUtils.add_north_arrow(ax_main)
+    
+    # 添加标注
+    MapUtils.add_coordinate_text(ax_main, 116.4, 39.9, '北京')
+    MapUtils.add_coordinate_text(ax_main, 117.2, 39.1, '天津')
+    
+    # 添加小地图
+    ax_inset = fig.add_axes([0.02, 0.65, 0.3, 0.3], 
+                           projection=ccrs.PlateCarree())
+    ax_inset.set_extent([100, 130, 30, 50], ccrs.PlateCarree())
+    ax_inset.add_feature(cfeature.COASTLINE, linewidth=0.5)
+    ax_inset.add_feature(cfeature.LAND, color='lightgray', alpha=0.5)
+    
+    # 在小地图上标出主地图范围
+    rect = patches.Rectangle((center_extent[0], center_extent[2]),
+                           center_extent[1] - center_extent[0],
+                           center_extent[3] - center_extent[2],
+                           linewidth=2, edgecolor='red',
+                           facecolor='red', alpha=0.3,
+                           transform=ccrs.PlateCarree())
+    ax_inset.add_patch(rect)
+    
+    ax_main.set_title('华北地区地图（以北京为中心）', fontsize=14, pad=20)
+    
+    plt.tight_layout()
+    return fig
+
+# 创建使用工具类的地图
+fig = create_map_with_utils()
+plt.show()
+```
+
+## 总结
+
+通过本文的介绍，我们学习了如何在Python中创建带有小地图的地图可视化：
+
+### 主要技术要点
+
+1. **基础实现**：使用matplotlib和cartopy创建主地图和小地图
+2. **高级功能**：添加比例尺、指北针、网格线等地图元素
+3. **实际应用**：科研论文、气象数据可视化等场景
+4. **交互功能**：动态更新小地图内容
+
+### 最佳实践
+
+1. **合理布局**：小地图位置不应遮挡主要内容
+2. **清晰标注**：用明显的颜色和线条标出研究区域
+3. **适当简化**：小地图应突出重点，避免过多细节
+4. **一致投影**：确保主地图和小地图使用合适的投影
+
+### 扩展应用
+
+这种技术可以应用于：
+
+- **学术论文**：研究区域位置图
+- **数据报告**：区域分析可视化
+- **科学演示**：增强地图表达效果
+- **Web应用**：交互式地图界面
+
+通过掌握这些技术，您可以创建更加专业和直观的地图可视化作品。
+
+## 参考资源
+
+- [Cartopy官方文档](https://scitools.org.uk/cartopy/docs/latest/)
+- [Matplotlib地图绘制教程](https://matplotlib.org/basemap/)
+- [地理数据可视化最佳实践](https://geovisualization.github.io/)
+
+---
+
+*希望本文对您的地图制作工作有所帮助！如有问题，欢迎在评论区讨论。*

@@ -1,0 +1,42 @@
+<!-- Gallery Section Preview -->
+<div class="section-card">
+  <div class="section-header with-gradient">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">
+          <i class="{{ site.page_sections.gallery.icon | default: 'fas fa-camera' }}"></i>
+        </span>
+        {{ site.page_sections.gallery.title | default: "摄影作品集" }}
+      </h2>
+      <p class="section-subtitle">{{ site.page_sections.gallery.subtitle | default: "记录科研路上的美好瞬间" }}</p>
+    </div>
+  </div>
+  
+  <div class="section-preview">
+    <div class="container">
+      <div class="gallery-preview-grid">
+        {% assign featured_photos = site.data.gallery | map: "photos" | first | slice: 0, 6 %}
+        {% for photo in featured_photos %}
+          <div class="gallery-preview-item">
+            <div class="photo-thumbnail">
+              <img src="{{ photo.image }}" alt="{{ photo.title }}" loading="lazy">
+              <div class="photo-overlay">
+                <div class="photo-info">
+                  <h4>{{ photo.title }}</h4>
+                  <p>{{ photo.description | truncate: 50 }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="view-more-section">
+    <a href="/gallery.html" class="view-more-btn">
+      <span>查看更多作品</span>
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>

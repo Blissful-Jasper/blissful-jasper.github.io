@@ -1,0 +1,81 @@
+<!-- Journals Section Preview -->
+<div class="section-card">
+  <div class="section-header with-gradient">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">
+          <i class="{{ site.page_sections.journals.icon | default: 'fas fa-journal-whills' }}"></i>
+        </span>
+        {{ site.page_sections.journals.title | default: "期刊订阅" }}
+      </h2>
+      <p class="section-subtitle">{{ site.page_sections.journals.subtitle | default: "地球科学与大气科学领域的顶级期刊" }}</p>
+    </div>
+  </div>
+  
+  <div class="section-preview">
+    <div class="container">
+      <div class="journals-stats">
+        <div class="stat-item">
+          <div class="stat-number">{{ site.data.journals.journals | size }}</div>
+          <div class="stat-label">订阅期刊</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">
+            {%- assign climate_journals = 0 -%}
+            {%- for journal in site.data.journals.journals -%}
+              {%- if journal.category == "climate" -%}
+                {%- assign climate_journals = climate_journals | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {{ climate_journals }}
+          </div>
+          <div class="stat-label">气候科学</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">
+            {%- assign core_journals = 0 -%}
+            {%- for journal in site.data.journals.journals -%}
+              {%- if journal.geoscience_relevance == "core" -%}
+                {%- assign core_journals = core_journals | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+            {{ core_journals }}
+          </div>
+          <div class="stat-label">核心期刊</div>
+        </div>
+      </div>
+      
+      <div class="journal-preview-grid">
+        {% for journal in site.data.journals.journals limit: 4 %}
+          <div class="journal-preview-card">
+            <div class="journal-header">
+              <h4>{{ journal.name }}</h4>
+              <span class="journal-category" style="background-color: {{ journal.color }}20; color: {{ journal.color }};">
+                {{ journal.category }}
+              </span>
+            </div>
+            <div class="journal-meta">
+              <span class="impact-factor">IF: {{ journal.impact_factor | default: "N/A" }}</span>
+              <span class="publisher">{{ journal.fullname }}</span>
+            </div>
+            {% if journal.description %}
+              <p class="journal-description">{{ journal.description | truncate: 100 }}</p>
+            {% endif %}
+            <div class="journal-relevance">
+              <span class="relevance-badge relevance-{{ journal.geoscience_relevance }}">
+                {{ journal.geoscience_relevance }}
+              </span>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="view-more-section">
+    <a href="/journals.html" class="view-more-btn">
+      <span>查看全部期刊</span>
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>

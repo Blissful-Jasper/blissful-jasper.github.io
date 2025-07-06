@@ -1,0 +1,62 @@
+<!-- 全站通用功能脚本 -->
+
+<!-- Theme Switcher -->
+<script src="{{ '/assets/theme-switcher.js' | relative_url }}"></script>
+
+<!-- 阅读进度条脚本（在支持的页面加载） -->
+{% if page.layout == 'post' or page.url contains '/blog' or page.url contains '/gallery' or page.url contains '/demo' %}
+<script src="{{ '/assets/blog-reading-progress.js' | relative_url }}"></script>
+{% endif %}
+
+<!-- 访问统计和地图脚本 -->
+<script src="{{ '/assets/analytics-map.js' | relative_url }}"></script>
+
+<script>
+// 全局页面增强
+document.addEventListener('DOMContentLoaded', function() {
+  // 标记当前页面为博客页面（用于阅读进度条）
+  const pageLayout = '{{ page.layout | default: "" }}';
+  const pageUrl = '{{ page.url | default: "" }}';
+  
+  if (pageLayout === 'post' || pageUrl.includes('/blog')) {
+    document.body.classList.add('blog-page');
+  }
+  
+  // 添加页面特定类名
+  if (pageUrl) {
+    const pageClass = pageUrl.replace(/\//g, '-').replace(/\.html$/, '');
+    if (pageClass) {
+      document.body.classList.add('page' + pageClass);
+    }
+  }
+  
+  // 确保访问统计在所有页面显示
+  if (typeof initializeAnalytics === 'function') {
+    initializeAnalytics();
+  }
+  
+  // 添加页面加载动画
+  document.body.classList.add('fade-in');
+});
+
+// 页面性能优化
+window.addEventListener('load', function() {
+  // 标记页面完全加载
+  document.body.classList.add('page-loaded');
+  
+  // 预加载重要资源
+  const preloadLinks = [
+    '/assets/theme-system.css',
+    '/assets/analytics-map.css',
+    '/assets/gallery-page.css'
+  ];
+  
+  preloadLinks.forEach(href => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'style';
+    link.href = href;
+    document.head.appendChild(link);
+  });
+});
+</script>

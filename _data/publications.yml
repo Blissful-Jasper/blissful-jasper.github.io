@@ -7,14 +7,31 @@
     - title: Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models
       authors: Ji, X., Feng, T., Huang, P., Cheng, X., Qin, J., Yang, B.
       journal: Atmospheric Research
-      link: https://doi.org/10.1016/j.atmosres.2025.108214
+      journal_short: Atmos. Res.
+      doi: https://doi.org/10.1016/j.atmosres.2025.108214
+      pdf: /publications/Ji 等 - 2025 - Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models.pdf
+      status: published
+      category: waves
+      abstract: "本研究系统评估了CMIP6气候模式对对流耦合赤道波的模拟能力，重点分析了这些波动对热带降水变率的影响。"
+      
 - year: 2024
   papers:
     - title: Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images
       authors: Ji, X., Song X, Guo A, Liu K, Cao H, Feng T.
       journal: Remote Sensing
-      link: https://doi.org/10.3390/rs16162871
+      journal_short: Remote Sens.
+      doi: https://doi.org/10.3390/rs16162871
+      pdf: /publications/Ji 等 - 2024 - Oceanic Precipitation Nowcasting Using a UNet-Base.pdf
+      status: published
+      category: ai
+      abstract: "基于UNet架构的残差注意力网络，利用实时Himawari-8卫星图像进行海洋降水临近预报的深度学习方法研究。"
+      
     - title: Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans
       authors: Ji, X., Sha Y, Feng T, Li J.
       journal: Journal of Xiamen University (Natural Science)
-      link: https://doi.org/10.6043/j.issn.0438-0479.202310026
+      journal_short: J. Xiamen Univ. (Nat. Sci.)
+      doi: https://doi.org/10.6043/j.issn.0438-0479.202310026
+      pdf: /publications/Paper-2-Regionalization of precipitation and associated atmospheric background environmental characteristics over the tropical oceans.pdf
+      status: published
+      category: precipitation
+      abstract: "针对热带海洋降水的区域化特征及其相关的大气背景环境特征进行深入分析和研究。"

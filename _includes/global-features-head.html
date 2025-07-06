@@ -1,0 +1,40 @@
+<!-- 全站通用功能样式和脚本 -->
+
+<!-- Complete Theme System -->
+<link rel="stylesheet" href="{{ '/assets/theme-system-complete.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/theme-switcher.css' | relative_url }}">
+
+<!-- 阅读进度条样式 -->
+<link rel="stylesheet" href="{{ '/assets/reading-progress.css' | relative_url }}">
+
+<!-- 访问统计和地图样式 -->
+<link rel="stylesheet" href="{{ '/assets/analytics-map.css' | relative_url }}">
+
+<!-- Enhanced Header Styles -->
+<link rel="stylesheet" href="{{ '/assets/header-styles.css' | relative_url }}">
+
+<!-- Modern Homepage Layout -->
+<link rel="stylesheet" href="{{ '/assets/homepage-layout.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/homepage-gallery-journals.css' | relative_url }}">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 确保 Font Awesome 图标可用 -->
+{% unless page.no_fontawesome %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+{% endunless %}
+
+<!-- Theme Initialization Script -->
+<script>
+  // Initialize theme from localStorage before page renders
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'blue';
+    const savedMode = localStorage.getItem('mode') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedMode);
+    document.documentElement.classList.add(`theme-${savedTheme}`);
+  })();
+</script>

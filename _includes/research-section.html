@@ -1,227 +1,273 @@
-<link rel="stylesheet" href="assets/research-styles.css">
-
+<!-- Research Section -->
 <section class="research-section" id="research">
   <div class="container">
-    <div class="section-header text-center mb-8">
+    <!-- Section Header -->
+    <div class="section-header">
       <h2 class="section-title">
-        <i class="fas fa-flask"></i>
-        研究兴趣
+        <span class="title-icon">
+          <i class="fas fa-atom"></i>
+        </span>
+        研究方向
       </h2>
       <p class="section-subtitle">探索热带大气动力学与人工智能的交叉融合</p>
     </div>
     
-    <div class="research-hero card">
-      <div class="research-overview">
-        <div class="overview-content">
-          <h3>研究方向概览</h3>
-          <p class="research-description">
-            我的研究聚焦于热带大气动力学中的波动现象，包括Kelvin波、MJO、MRG波等对流耦合赤道波的动力学机制。
-            特别关注这些波动对热带降水时空变率的调制作用，以及在气候模式（如CMIP6）中的表现特征。
-            同时探索深度学习等人工智能技术在气象预报和气候模拟中的创新应用。
-          </p>
-          
-          <div class="research-stats">
-            <div class="stat-item">
-              <div class="stat-number">3</div>
-              <div class="stat-label">主要研究方向</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">3</div>
-              <div class="stat-label">相关论文</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">5+</div>
-              <div class="stat-label">合作项目</div>
-            </div>
+    <!-- Research Overview -->
+    <div class="research-overview">
+      <div class="unified-card overview-card">
+        <div class="unified-card-content">
+          <div class="overview-text">
+            <h3 class="overview-title">研究愿景</h3>
+            <p class="overview-description">
+              致力于深入理解热带大气动力学机制，探索对流耦合赤道波、热带降水变率等关键科学问题。
+              结合机器学习技术，推动气象预报和气候模拟的创新发展。
+            </p>
           </div>
-        </div>
-        
-        <div class="overview-visual">
-          <div class="research-diagram">
-            <div class="diagram-center">
-              <i class="fas fa-atom"></i>
-              <span>热带大气动力学</span>
+          <div class="overview-stats">
+            <div class="stat-item">
+              <div class="stat-number">3</div>
+              <div class="stat-label">主要方向</div>
             </div>
-            <div class="diagram-node node-1">
-              <i class="fas fa-wave-square"></i>
-              <span>热带波动</span>
+            <div class="stat-item">
+              <div class="stat-number">8</div>
+              <div class="stat-label">发表论文</div>
             </div>
-            <div class="diagram-node node-2">
-              <i class="fas fa-cloud-rain"></i>
-              <span>降水变率</span>
-            </div>
-            <div class="diagram-node node-3">
-              <i class="fas fa-brain"></i>
-              <span>深度学习</span>
+            <div class="stat-item">
+              <div class="stat-number">150+</div>
+              <div class="stat-label">总引用</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
+
+    <!-- Research Areas Grid -->
     <div class="research-areas">
-      <div class="areas-grid">
-        <div class="research-card card animate-fade-in-up">
-          <div class="card-header">
-            <div class="card-icon">
-              <i class="fas fa-wave-square"></i>
-            </div>
-            <div class="card-badge">
-              <span class="badge badge-primary">动力机制</span>
-            </div>
-          </div>
-          
-          <div class="card-body">
-            <h3 class="card-title">MRG波与热带降水</h3>
-            <p class="card-description">
-              MRG波（Mixed Rossby-Gravity waves）是热带大气中最重要的波动之一，对热带降水的时空分布有重要影响。
-              研究聚焦于理解这些波动的传播机制、能量转换过程，以及对降水系统的调制作用。
-            </p>
-            
-            <div class="research-keywords">
-              <span class="tag">MRG波</span>
-              <span class="tag">热带降水</span>
-              <span class="tag">波动传播</span>
-              <span class="tag">能量转换</span>
-            </div>
-          </div>
-          
-          <div class="card-footer">
-            <a href="blog-post.html?file=blog/MRG-waves.md" class="btn btn-primary">
-              <i class="fas fa-book-open"></i>
-              阅读详情
-            </a>
-            <div class="research-progress">
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 75%"></div>
-              </div>
-              <span class="progress-text">研究进展: 75%</span>
-            </div>
-          </div>
-        </div>
+      <div class="unified-grid unified-grid-3">
         
-        <div class="research-card card animate-fade-in-up delay-100">
-          <div class="card-header">
-            <div class="card-icon">
+        <!-- Research Area 1: Tropical Dynamics -->
+        <div class="unified-card research-area-card" data-area="tropical-dynamics">
+          <div class="unified-card-header">
+            <div class="area-icon">
               <i class="fas fa-globe-americas"></i>
             </div>
-            <div class="card-badge">
-              <span class="badge badge-secondary">模式评估</span>
-            </div>
+            <h3 class="unified-card-title">热带大气动力学</h3>
+            <span class="unified-badge">核心方向</span>
           </div>
-          
-          <div class="card-body">
-            <h3 class="card-title">CMIP6模式评估与气候变化</h3>
-            <p class="card-description">
-              CMIP6（第六次国际耦合模式比较计划）为理解和预测未来热带气候变化提供了重要工具。
-              致力于评估这些模式在模拟热带波动方面的性能、偏差来源和不确定性分析。
+          <div class="unified-card-content">
+            <p class="area-description">
+              研究对流耦合赤道波（CCEWs）的产生、传播机制及其对热带天气气候的影响。
+              关注Kelvin波、MJO等重要大气波动的动力学特征。
             </p>
             
-            <div class="research-keywords">
-              <span class="tag">CMIP6</span>
-              <span class="tag">模式评估</span>
-              <span class="tag">气候变化</span>
-              <span class="tag">不确定性</span>
+            <div class="area-highlights">
+              <h4>研究重点</h4>
+              <ul class="highlight-list">
+                <li>
+                  <i class="fas fa-wave-square"></i>
+                  <span>对流耦合赤道波动力学</span>
+                </li>
+                <li>
+                  <i class="fas fa-sync-alt"></i>
+                  <span>季节内振荡（MJO）机制</span>
+                </li>
+                <li>
+                  <i class="fas fa-wind"></i>
+                  <span>热带气旋与波动相互作用</span>
+                </li>
+              </ul>
             </div>
-          </div>
-          
-          <div class="card-footer">
-            <a href="blog-post.html?file=blog/cmip6-evaluation.md" class="btn btn-primary">
-              <i class="fas fa-book-open"></i>
-              阅读详情
-            </a>
-            <div class="research-progress">
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 60%"></div>
+            
+            <div class="area-methods">
+              <h4>研究方法</h4>
+              <div class="method-tags">
+                <span class="unified-tag">观测数据分析</span>
+                <span class="unified-tag">理论建模</span>
+                <span class="unified-tag">数值模拟</span>
               </div>
-              <span class="progress-text">研究进展: 60%</span>
             </div>
           </div>
         </div>
-        
-        <div class="research-card card animate-fade-in-up delay-200">
-          <div class="card-header">
-            <div class="card-icon">
+
+        <!-- Research Area 2: Precipitation Variability -->
+        <div class="unified-card research-area-card" data-area="precipitation">
+          <div class="unified-card-header">
+            <div class="area-icon">
+              <i class="fas fa-cloud-rain"></i>
+            </div>
+            <h3 class="unified-card-title">热带降水变率</h3>
+            <span class="unified-badge">重要方向</span>
+          </div>
+          <div class="unified-card-content">
+            <p class="area-description">
+              探索热带地区降水的时空变化特征，分析其与大气环流、海温异常的关系。
+              研究极端降水事件的形成机制和预测方法。
+            </p>
+            
+            <div class="area-highlights">
+              <h4>研究重点</h4>
+              <ul class="highlight-list">
+                <li>
+                  <i class="fas fa-chart-line"></i>
+                  <span>降水时空变率分析</span>
+                </li>
+                <li>
+                  <i class="fas fa-thermometer-half"></i>
+                  <span>海温-降水相互作用</span>
+                </li>
+                <li>
+                  <i class="fas fa-exclamation-triangle"></i>
+                  <span>极端降水事件机制</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="area-methods">
+              <h4>研究方法</h4>
+              <div class="method-tags">
+                <span class="unified-tag">卫星遥感</span>
+                <span class="unified-tag">统计分析</span>
+                <span class="unified-tag">诊断分析</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Area 3: AI Applications -->
+        <div class="unified-card research-area-card" data-area="ai-applications">
+          <div class="unified-card-header">
+            <div class="area-icon">
               <i class="fas fa-brain"></i>
             </div>
-            <div class="card-badge">
-              <span class="badge badge-accent">AI技术</span>
-            </div>
+            <h3 class="unified-card-title">AI气象应用</h3>
+            <span class="unified-badge">创新方向</span>
           </div>
-          
-          <div class="card-body">
-            <h3 class="card-title">深度学习在气象中的应用</h3>
-            <p class="card-description">
-              深度学习为气象科学带来了革命性机遇，显著提升了降水等要素的智能预测能力。
-              探索将CNN、RNN、Transformer等先进AI技术应用于热带天气系统的预报和分析。
+          <div class="unified-card-content">
+            <p class="area-description">
+              将深度学习、机器学习技术应用于气象预报和气候模拟中。
+              开发智能化的天气预报模型和气候变化评估工具。
             </p>
             
-            <div class="research-keywords">
-              <span class="tag">深度学习</span>
-              <span class="tag">气象预报</span>
-              <span class="tag">人工智能</span>
-              <span class="tag">降水预测</span>
+            <div class="area-highlights">
+              <h4>研究重点</h4>
+              <ul class="highlight-list">
+                <li>
+                  <i class="fas fa-network-wired"></i>
+                  <span>深度学习预报模型</span>
+                </li>
+                <li>
+                  <i class="fas fa-satellite"></i>
+                  <span>遥感数据智能处理</span>
+                </li>
+                <li>
+                  <i class="fas fa-cogs"></i>
+                  <span>模式参数化优化</span>
+                </li>
+              </ul>
             </div>
-          </div>
-          
-          <div class="card-footer">
-            <a href="blog-post.html?file=blog/dl-meteorology.md" class="btn btn-primary">
-              <i class="fas fa-book-open"></i>
-              阅读详情
-            </a>
-            <div class="research-progress">
-              <div class="progress-bar">
-                <div class="progress-fill" style="width: 45%"></div>
+            
+            <div class="area-methods">
+              <h4>技术栈</h4>
+              <div class="method-tags">
+                <span class="unified-tag">Python/TensorFlow</span>
+                <span class="unified-tag">深度学习</span>
+                <span class="unified-tag">数据挖掘</span>
               </div>
-              <span class="progress-text">研究进展: 45%</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    <div class="research-collaboration">
-      <div class="collaboration-card card">
-        <div class="collaboration-header">
-          <h3>
-            <i class="fas fa-handshake"></i>
-            合作与交流
+
+    <!-- Research Timeline -->
+    <div class="research-timeline">
+      <div class="unified-card timeline-card">
+        <div class="unified-card-header">
+          <h3 class="unified-card-title">
+            <i class="fas fa-history"></i>
+            研究历程
           </h3>
-          <p>欢迎学术交流与合作研究</p>
         </div>
-        
-        <div class="collaboration-content">
-          <div class="collaboration-item">
-            <div class="collab-icon">
-              <i class="fas fa-university"></i>
+        <div class="unified-card-content">
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">博士研究阶段</h4>
+                <span class="timeline-date">2020 - 至今</span>
+                <p class="timeline-description">
+                  深入研究热带大气动力学，聚焦对流耦合赤道波的动力学机制，
+                  在顶级期刊发表多篇高质量论文。
+                </p>
+              </div>
             </div>
-            <div class="collab-info">
-              <h4>机构合作</h4>
-              <p>与国内外知名海洋气象研究机构建立合作关系</p>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <i class="fas fa-microscope"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">研究方向拓展</h4>
+                <span class="timeline-date">2022 - 至今</span>
+                <p class="timeline-description">
+                  将研究领域扩展到AI在气象学中的应用，探索深度学习在
+                  天气预报和气候模拟中的潜力。
+                </p>
+              </div>
             </div>
-          </div>
-          
-          <div class="collaboration-item">
-            <div class="collab-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <div class="collab-info">
-              <h4>学术交流</h4>
-              <p>积极参与国际学术会议和研讨会，分享研究成果</p>
-            </div>
-          </div>
-          
-          <div class="collaboration-item">
-            <div class="collab-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <div class="collab-info">
-              <h4>开源贡献</h4>
-              <p>致力于开源科研工具开发，促进学术界共同进步</p>
+            
+            <div class="timeline-item">
+              <div class="timeline-marker">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">未来展望</h4>
+                <span class="timeline-date">2024 - 未来</span>
+                <p class="timeline-description">
+                  继续深化热带气象研究，推动AI技术在气候科学中的
+                  创新应用，为气候变化研究贡献力量。
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Research Collaboration -->
+    <div class="research-collaboration">
+      <div class="unified-card collaboration-card">
+        <div class="unified-card-header">
+          <h3 class="unified-card-title">
+            <i class="fas fa-handshake"></i>
+            合作交流
+          </h3>
+        </div>
+        <div class="unified-card-content">
+          <div class="collaboration-content">
+            <div class="collaboration-text">
+              <p>
+                积极参与国际学术交流与合作，与多个知名研究机构建立了良好的合作关系。
+                欢迎在相关研究领域进行学术交流和合作研究。
+              </p>
+            </div>
+            <div class="collaboration-actions">
+              <a href="#contact" class="unified-btn">
+                <i class="fas fa-envelope"></i>
+                学术合作
+              </a>
+              <a href="/publications.html" class="unified-btn unified-btn-secondary">
+                <i class="fas fa-file-alt"></i>
+                查看论文
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+

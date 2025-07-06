@@ -1,0 +1,70 @@
+{% comment %}
+  Research Section Preview for Homepage
+  - Shows top 3 research areas with brief descriptions
+{% endcomment %}
+
+<div class="section-card">
+  <div class="section-header with-gradient research">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">
+          <i class="{{ site.page_sections.research.icon | default: 'fas fa-microscope' }}"></i>
+        </span>
+        {{ site.page_sections.research.title | default: "Research" }}
+      </h2>
+      <p class="section-subtitle">{{ site.page_sections.research.subtitle | default: "Current Research Areas & Projects" }}</p>
+    </div>
+  </div>
+  
+  <div class="section-preview">
+    <div class="container">
+      <div class="preview-grid">
+        {% if site.data.research %}
+          {% for item in site.data.research limit:3 %}
+          <div class="preview-card">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.description | truncate: 120 }}</p>
+            <div class="preview-meta">
+              <span class="preview-tag">{{ item.category | default: "Research" }}</span>
+              {% if item.year %}
+                <span>{{ item.year }}</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="preview-card">
+            <h3>气候动力学</h3>
+            <p>研究大气环流模式及其对气候变化的影响机制</p>
+            <div class="preview-meta">
+              <span class="preview-tag">Climate</span>
+            </div>
+          </div>
+          
+          <div class="preview-card">
+            <h3>数值模拟</h3>
+            <p>利用CMIP6模型进行气候预测和模式评估</p>
+            <div class="preview-meta">
+              <span class="preview-tag">Modeling</span>
+            </div>
+          </div>
+          
+          <div class="preview-card">
+            <h3>波动分析</h3>
+            <p>MRG波及其在热带降水中的作用机制研究</p>
+            <div class="preview-meta">
+              <span class="preview-tag">Dynamics</span>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="view-more-section">
+    <a href="/research.html" class="view-more-btn">
+      <span>查看所有研究</span>
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>

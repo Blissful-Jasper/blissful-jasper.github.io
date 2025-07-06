@@ -1,206 +1,85 @@
-<!-- Links Section -->
+{% comment %}
+  Links Section
+  - Displays a grid of links from _data/links.yml
+  - Includes filtering by category
+{% endcomment %}
+
+{%- assign links_section = site.page_sections.links -%}
+{% if links_section.enabled %}
 <section class="links-section" id="links">
-  <div class="links-container">
-    <!-- Header -->
-    <div class="links-header">
-      <h2>Useful Resources</h2>
-      <p>A curated collection of valuable links for research, learning, and collaboration</p>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        {% if links_section.icon %}<span class="title-icon"><i class="{{ links_section.icon }}"></i></span>{% endif %}
+        {{ links_section.title | default: "Links" }}
+      </h2>
+      {% if links_section.subtitle %}
+        <p class="section-subtitle">{{ links_section.subtitle }}</p>
+      {% endif %}
     </div>
 
-    <!-- Search and Filter -->
-    <div class="links-controls">
-      <div class="search-box">
-        <i class="fas fa-search"></i>
-        <input type="text" id="linksSearch" placeholder="Search links...">
+    {% if site.data.links and site.data.links.size > 0 %}
+      <div class="unified-filters links-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        {%- for group in site.data.links -%}
+          <button class="filter-btn" data-filter="{{ group.group | slugify }}">{{ group.group }}</button>
+        {%- endfor -%}
       </div>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-category="all">All</button>
-        {% assign categories = site.data.links | map: 'group' | uniq %}
-        {% for category in categories %}
-        <button class="filter-btn" data-category="{{ category | slugify }}">{{ category }}</button>
-        {% endfor %}
-      </div>
-    </div>
 
-    <!-- Links Content -->
-    <div class="links-content">
-      {% for group in site.data.links %}
-      <div class="links-group" data-category="{{ group.group | slugify }}">
-        <div class="group-header">
-          <h3 class="group-title">{{ group.group }}</h3>
-          <span class="group-count">{{ group.links.size }} links</span>
-        </div>
-        
-        <div class="links-grid">
+      <div class="unified-grid unified-grid-3 links-grid">
+        {% for group in site.data.links %}
           {% for link in group.links %}
-          <div class="link-card" data-title="{{ link.name | downcase }}" data-url="{{ link.url | downcase }}">
-            <div class="link-image">
-              {% if link.images and link.images.size > 0 %}
-                <img src="{{ link.images[0] }}" alt="{{ link.name }}" loading="lazy">
-              {% else %}
-                <div class="link-placeholder">
-                  <i class="fas fa-globe"></i>
-                </div>
-              {% endif %}
-              <div class="link-overlay">
-                <a href="{{ link.url }}" target="_blank" rel="noopener" class="link-visit">
-                  <i class="fas fa-external-link-alt"></i>
-                  Visit
-                </a>
-              </div>
-            </div>
-            
-            <div class="link-content">
-              <h4 class="link-title">{{ link.name }}</h4>
-              {% if link.description %}
-                <p class="link-description">{{ link.description }}</p>
-              {% endif %}
-              
-              <div class="link-meta">
-                <span class="link-domain">
-                  <i class="fas fa-link"></i>
-                  {{ link.url | replace: 'https://', '' | replace: 'http://', '' | split: '/' | first }}
-                </span>
-                {% if link.tags %}
-                  <div class="link-tags">
-                    {% for tag in link.tags %}
-                      <span class="tag">{{ tag }}</span>
-                    {% endfor %}
+            <div class="unified-card link-card" data-category="{{ group.group | slugify }}">
+              <div class="card-content">
+                {% if link.images and link.images.size > 0 %}
+                  <div class="card-image">
+                    <img src="{{ link.images[0] }}" alt="{{ link.name }}" loading="lazy" onerror="this.style.display='none'">
                   </div>
                 {% endif %}
-              </div>
-              
-              <div class="link-actions">
-                <a href="{{ link.url }}" target="_blank" rel="noopener" class="btn-primary">
-                  <i class="fas fa-external-link-alt"></i>
-                  Visit Site
-                </a>
-                <button class="btn-secondary copy-link" data-url="{{ link.url }}">
-                  <i class="fas fa-copy"></i>
-                  Copy
-                </button>
+                <h3 class="card-title">
+                  <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
+                </h3>
+                {% if link.description %}
+                  <p class="card-description">{{ link.description }}</p>
+                {% endif %}
+                <div class="card-meta">
+                  <span class="card-category">{{ group.group }}</span>
+                </div>
               </div>
             </div>
-          </div>
           {% endfor %}
-        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-
-    <!-- Statistics -->
-    <div class="links-stats">
-      <div class="stat-item">
-        <span class="stat-number">{{ site.data.links | map: 'links' | map: 'size' | join: ',' | split: ',' | size }}</span>
-        <span class="stat-label">Total Links</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">{{ site.data.links.size }}</span>
-        <span class="stat-label">Categories</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" id="visibleLinks">-</span>
-        <span class="stat-label">Showing</span>
-      </div>
-    </div>
+    {% else %}
+      <p>No links to display.</p>
+    {% endif %}
   </div>
 </section>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('linksSearch');
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const linkCards = document.querySelectorAll('.link-card');
-  const linksGroups = document.querySelectorAll('.links-group');
-  const visibleLinksCount = document.getElementById('visibleLinks');
+  const linksSection = document.querySelector('.links-section');
+  if (!linksSection) return;
 
-  // Search functionality
-  searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
-    filterAndSearch();
-  });
+  const filterButtons = linksSection.querySelectorAll('.filter-btn');
+  const linkCards = linksSection.querySelectorAll('.link-card');
 
-  // Filter functionality
   filterButtons.forEach(button => {
     button.addEventListener('click', function() {
       filterButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
-      filterAndSearch();
-    });
-  });
-
-  // Combined filter and search
-  function filterAndSearch() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
-    let visibleCount = 0;
-
-    linksGroups.forEach(group => {
-      const groupCategory = group.dataset.category;
-      let hasVisibleCards = false;
-
-      // Show/hide group based on category filter
-      if (activeCategory === 'all' || activeCategory === groupCategory) {
-        const cards = group.querySelectorAll('.link-card');
-        
-        cards.forEach(card => {
-          const title = card.dataset.title;
-          const url = card.dataset.url;
-          const matchesSearch = title.includes(searchTerm) || url.includes(searchTerm);
-          
-          if (matchesSearch) {
-            card.style.display = 'block';
-            hasVisibleCards = true;
-            visibleCount++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        
-        group.style.display = hasVisibleCards ? 'block' : 'none';
-      } else {
-        group.style.display = 'none';
-      }
-    });
-
-    visibleLinksCount.textContent = visibleCount;
-  }
-
-  // Copy link functionality
-  document.querySelectorAll('.copy-link').forEach(button => {
-    button.addEventListener('click', function() {
-      const url = this.dataset.url;
-      navigator.clipboard.writeText(url).then(() => {
-        const originalText = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        this.classList.add('copied');
-        
-        setTimeout(() => {
-          this.innerHTML = originalText;
-          this.classList.remove('copied');
-        }, 2000);
-      }).catch(() => {
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = url;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-        
-        const originalText = this.innerHTML;
-        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        this.classList.add('copied');
-        
-        setTimeout(() => {
-          this.innerHTML = originalText;
-          this.classList.remove('copied');
-        }, 2000);
+      
+      const filter = this.getAttribute('data-filter');
+      
+      linkCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
       });
     });
   });
-
-  // Initial count
-  filterAndSearch();
 });
 </script>
+{% endif %}

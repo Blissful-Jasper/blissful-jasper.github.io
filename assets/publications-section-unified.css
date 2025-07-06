@@ -1,0 +1,183 @@
+/* Publications Section 特定样式 - 与统一布局兼容 */
+
+.publications-section .publications-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.publications-section .stats-grid {
+  gap: 1rem;
+}
+
+.publications-section .stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+  border-radius: 12px;
+  border: 1px solid var(--unified-border);
+  transition: all 0.3s ease;
+}
+
+.publications-section .stat-item:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.publications-section .stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #a855f7, #3b82f6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.publications-section .stat-info {
+  flex: 1;
+}
+
+.publications-section .stat-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #a855f7;
+  margin-bottom: 0.2rem;
+}
+
+.publications-section .stat-label {
+  font-size: 0.85rem;
+  color: var(--unified-text-secondary);
+  font-weight: 500;
+}
+
+.publications-section .timeline-container {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+  background: var(--unified-bg-primary);
+  border-radius: var(--unified-border-radius);
+  border: var(--unified-border);
+}
+
+.publications-section .timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, #a855f7, #3b82f6);
+}
+
+.publications-section .timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 4rem;
+}
+
+.publications-section .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: #a855f7;
+  border-radius: 50%;
+  border: 3px solid var(--unified-bg-primary);
+  box-shadow: 0 0 0 3px #a855f7;
+}
+
+.publications-section .timeline-year {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #a855f7;
+  margin-bottom: 0.5rem;
+}
+
+.publications-section .timeline-papers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.publications-section .paper-item {
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+  border-radius: 10px;
+  border: 1px solid var(--unified-border);
+  transition: all 0.3s ease;
+}
+
+.publications-section .paper-item:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.publications-section .paper-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--unified-text-primary);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.publications-section .paper-journal {
+  font-size: 0.8rem;
+  color: var(--unified-text-secondary);
+  font-style: italic;
+}
+
+.publications-section .paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .publications-section .stats-grid {
+    gap: 0.8rem;
+  }
+  
+  .publications-section .stat-item {
+    padding: 0.8rem;
+  }
+  
+  .publications-section .timeline-container {
+    max-height: 300px;
+  }
+  
+  .publications-section .timeline-item {
+    padding-left: 3rem;
+  }
+  
+  .publications-section .timeline-container::before {
+    left: 1.5rem;
+  }
+  
+  .publications-section .timeline-item::before {
+    left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-section .stat-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .publications-section .timeline-container {
+    padding: 0.8rem;
+  }
+}

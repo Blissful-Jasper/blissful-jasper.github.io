@@ -1,0 +1,83 @@
+---
+layout: page
+title: Gallery Validation
+---
+
+<h2>图库验证测试</h2>
+
+<div style="background: #f0f8ff; padding: 15px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #007acc;">
+  <h3>🔍 数据加载检查:</h3>
+  {% if site.data.gallery %}
+    <p>✅ Gallery 数据已加载</p>
+    <p>📂 找到分类数: {{ site.data.gallery.size }}</p>
+    {% assign total_count = 0 %}
+    {% for category in site.data.gallery %}
+      {% assign total_count = total_count | plus: category.photos.size %}
+    {% endfor %}
+    <p>📸 总图片数: {{ total_count }}</p>
+  {% else %}
+    <p>❌ Gallery 数据未找到</p>
+  {% endif %}
+</div>
+
+<div style="background: #fff5f5; padding: 15px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #e53e3e;">
+  <h3>🔗 图片路径测试:</h3>
+  <p>尝试直接访问图片:</p>
+  <ul>
+    <li><a href="/pictures/DSC_1667.JPG" target="_blank">/pictures/DSC_1667.JPG</a></li>
+    <li><a href="/pictures/DSC_1573.jpg" target="_blank">/pictures/DSC_1573.jpg</a></li>
+  </ul>
+</div>
+
+<h3>Gallery.yml 中的所有图片:</h3>
+<ul>
+{% for category in site.data.gallery %}
+  <li><strong>{{ category.title }}</strong>:
+    <ul>
+    {% for photo in category.photos %}
+      <li>{{ photo.title }} - <code>{{ photo.image }}</code></li>
+    {% endfor %}
+    </ul>
+  </li>
+{% endfor %}
+</ul>
+
+<h3>图片显示测试:</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem;">
+{% for category in site.data.gallery %}
+  {% for photo in category.photos %}
+    <div style="border: 1px solid #ddd; padding: 1rem; text-align: center; background: white; border-radius: 8px;">
+      <img src="{{ photo.image }}" 
+           alt="{{ photo.title }}" 
+           style="max-width: 100%; height: 150px; object-fit: cover; border-radius: 4px;"
+           onload="this.style.border='2px solid green'"
+           onerror="this.style.border='2px solid red'; this.alt='❌ 加载失败: {{ photo.image }}'; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvueJh+aXoOazleWKoOi9vTwvdGV4dD48L3N2Zz4=';">
+      <p><strong>{{ photo.title }}</strong></p>
+      <p><small style="color: #666;">{{ photo.image }}</small></p>
+      <p><small style="color: #888;">分类: {{ category.title }}</small></p>
+    </div>
+  {% endfor %}
+{% endfor %}
+</div>
+
+<h3>🔧 直接图片测试 (无YAML数据):</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; margin-top: 20px;">
+  <div style="border: 1px solid #ddd; padding: 1rem; text-align: center; background: white; border-radius: 8px;">
+    <img src="/pictures/DSC_1667.JPG" 
+         alt="直接测试 1" 
+         style="max-width: 100%; height: 150px; object-fit: cover; border-radius: 4px;"
+         onload="this.style.border='2px solid green'"
+         onerror="this.style.border='2px solid red'; this.alt='❌ 直接加载失败';">
+    <p><strong>直接测试 DSC_1667.JPG</strong></p>
+    <p><small>/pictures/DSC_1667.JPG</small></p>
+  </div>
+  <div style="border: 1px solid #ddd; padding: 1rem; text-align: center; background: white; border-radius: 8px;">
+    <img src="/pictures/DSC_1573.jpg" 
+         alt="直接测试 2" 
+         style="max-width: 100%; height: 150px; object-fit: cover; border-radius: 4px;"
+         onload="this.style.border='2px solid green'"
+         onerror="this.style.border='2px solid red'; this.alt='❌ 直接加载失败';">
+    <p><strong>直接测试 DSC_1573.jpg</strong></p>
+    <p><small>/pictures/DSC_1573.jpg</small></p>
+  </div>
+</div>

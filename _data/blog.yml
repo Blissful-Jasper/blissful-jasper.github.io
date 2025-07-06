@@ -1,42 +1,96 @@
 - title: "Create a Jekyll Site"
   date: "2025-06-29"
   summary: "如何创建一个新的 Jekyll 网站。"
-  file: "blog/create-site-jekyll.md"
+  file: "_posts/2025-06-29-create-site-jekyll.md"
   images: ["/assets/images/blog/change.png"]
   tags: ["Jekyll", "GitHub Pages", "建站", "博客"]
   category: "技术"
+  subcategory: "jekyll"
 - title: "Deep Learning in Meteorology"
   date: "2024-12-15"
   summary: "深度学习在气象领域的应用。"
-  file: "blog/dl-meteorology.md"
+  file: "_posts/2024-12-15-dl-meteorology.md"
   images: ["/assets/images/blog/remotesensing.png"]
   tags: ["深度学习", "机器学习", "气象预报", "人工智能"]
   category: "科研"
+  subcategory: "深度学习"
 - title: "CMIP6 Evaluation and Climate Change"
   date: "2025-06-29"
   summary: "CMIP6 模型评估与气候变化。"
-  file: "blog/cmip6-evaluation.md"
+  file: "_posts/2025-06-29-cmip6-evaluation.md"
   images: ["/assets/images/blog/cckws.png"]
   tags: ["CMIP6", "气候模式", "模式评估", "气候变化"]
   category: "科研"
+  subcategory: "气候变化"
 - title: "MRG Waves and Tropical Precipitation"
   date: "2025-06-29"
   summary: "MRG 波与热带降水的关系。"
-  file: "blog/MRG-waves.md"
+  file: "_posts/2025-06-29-MRG-waves.md"
   images: ["/assets/images/blog/MRG.png"]
   tags: ["MRG波", "热带气象", "降水", "大气动力学"]
   category: "科研"
+  subcategory: "大气动力学"
 - title: "Welcome to My Blog"
   date: "2025-06-29"
   summary: "欢迎来到我的博客，分享研究经验与见解。"
-  file: "blog/2025-06-29-welcome.md"
+  file: "_posts/2025-06-29-welcome-to-my-blog.md"
   images: ["/assets/images/blog/scale.png"]
   tags: ["欢迎", "博客", "介绍"]
   category: "杂谈"
+  subcategory: "杂谈"
 - title: "Python-添加小地图"
-  date: "2025-06-29"
+  date: "2024-01-01"
   summary: "在Python项目中添加小地图功能。"
-  file: "blog/2024-01-01-Map_add_figure.md"
-  images: ["assets/images/blog/ShangHai_map_add.png"]
-  tags: ["Python", "小地图"]
-  category: "绘图"
+  file: "_posts/2024-01-01-Map-add-figure.md"
+  images: ["/assets/images/blog/ShangHai_map_add.png"]
+  tags: ["Python", "小地图", "可视化"]
+  category: "技术"
+  subcategory: "绘图"
+- title: "WRF修改geo_em变量"
+  date: "2023-12-31"
+  summary: "WRF模型中修改geo_em.d01.nc文件变量的方法。"
+  file: "_posts/2023-12-31-WRF修改geo_em.md"
+  images: ["/assets/images/blog/wrf_geo.png"]
+  tags: ["WRF", "geo_em", "Fortran", "数值模拟"]
+  category: "技术"
+  subcategory: "wrf"
+- title: "CCEWs对流耦合赤道波"
+  date: "2024-01-04"
+  summary: "对流耦合赤道波的研究和分析方法。"
+  file: "_posts/2024-01-04-CCEWs.md"
+  images: ["/assets/images/blog/ccews.png"]
+  tags: ["CCEWs", "赤道波", "对流", "热带气象"]
+  category: "科研"
+  subcategory: "热带气象"
+- title: "WRF with GFS Data"
+  date: "2024-01-04"
+  summary: "使用GFS数据驱动WRF模型的配置方法。"
+  file: "_posts/2024-01-04-WRF-with-GFS-data.md"
+  images: ["/assets/images/blog/wrf_gfs.png"]
+  tags: ["WRF", "GFS", "数值预报", "气象数据"]
+  category: "技术"
+  subcategory: "wrf"
+- title: "WRF重编译技巧"
+  date: "2024-01-10"
+  summary: "WRF模型重编译过程中的实用技巧和注意事项。"
+  file: "_posts/2024-01-10-Tips-for-WRF-recompile.md"
+  images: ["/assets/images/blog/wrf_compile.png"]
+  tags: ["WRF", "编译", "Fortran", "调试"]
+  category: "技术"
+  subcategory: "wrf"
+- title: "深度学习天气预报"
+  date: "2025-07-01"
+  summary: "深度学习在天气预报中的最新应用和发展。"
+  file: "_posts/2025-07-01-deep-learning-weather-forecast.md"
+  images: ["/assets/images/blog/dl_weather.png"]
+  tags: ["深度学习", "天气预报", "AI", "机器学习"]
+  category: "科研"
+  subcategory: "深度学习"
+- title: "GFS数据处理与可视化"
+  date: "2025-07-03"
+  summary: "全球预报系统（GFS）数据的下载、处理和可视化方法。"
+  file: "_posts/2025-07-03-gfs-data-processing.md"
+  images: ["/assets/images/blog/WRF.png"]
+  tags: ["GFS", "数据处理", "可视化", "气象"]
+  category: "技术"
+  subcategory: "气象数据"

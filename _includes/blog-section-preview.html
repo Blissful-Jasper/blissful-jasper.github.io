@@ -1,0 +1,113 @@
+{% comment %}
+  Blog Section Preview for Homepage
+  - Shows recent blog posts in a compact layout
+{% endcomment %}
+
+<div class="section-card">
+  <div class="section-header with-gradient blog">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">
+          <i class="{{ site.page_sections.blog.icon | default: 'fas fa-feather-alt' }}"></i>
+        </span>
+        {{ site.page_sections.blog.title | default: "Latest Posts" }}
+      </h2>
+      <p class="section-subtitle">{{ site.page_sections.blog.subtitle | default: "Recent Blog Articles & Insights" }}</p>
+    </div>
+  </div>
+  
+  <div class="section-preview">
+    <div class="container">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        {% if site.posts.size > 0 %}
+          {% for post in site.posts limit:3 %}
+          <div class="blog-preview-card" onclick="window.location.href='{{ post.url | relative_url }}'" style="cursor: pointer;">
+            <div class="blog-preview-image">
+              {% if post.image %}
+                <img src="{{ post.image }}" alt="{{ post.title }}">
+              {% else %}
+                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #999;">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+              {% endif %}
+            </div>
+            <div class="blog-preview-content">
+              <h3 class="blog-preview-title">{{ post.title }}</h3>
+              <p class="blog-preview-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+              <div class="blog-preview-meta">
+                <span><i class="far fa-calendar"></i> {{ post.date | date: "%Y-%m-%d" }}</span>
+                {% if post.categories %}
+                  <span><i class="fas fa-tag"></i> {{ post.categories | first }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        {% elsif site.data.blog %}
+          {% for post in site.data.blog limit:3 %}
+          <div class="blog-preview-card" onclick="window.location.href='{{ post.link | default: '/blog.html' }}'" style="cursor: pointer;">
+            <div class="blog-preview-image">
+              {% if post.images and post.images.size > 0 %}
+                <img src="{{ post.images[0] }}" alt="{{ post.title }}">
+              {% else %}
+                <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #999;">
+                  <i class="fas fa-file-alt"></i>
+                </div>
+              {% endif %}
+            </div>
+            <div class="blog-preview-content">
+              <h3 class="blog-preview-title">{{ post.title }}</h3>
+              <p class="blog-preview-excerpt">{{ post.summary | truncate: 100 }}</p>
+              <div class="blog-preview-meta">
+                <span><i class="far fa-calendar"></i> {{ post.date }}</span>
+                {% if post.category %}
+                  <span><i class="fas fa-tag"></i> {{ post.category }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="blog-preview-card" onclick="window.location.href='/blog.html'" style="cursor: pointer;">
+            <div class="blog-preview-image">
+              <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #999;">
+                <i class="fas fa-microscope"></i>
+              </div>
+            </div>
+            <div class="blog-preview-content">
+              <h3 class="blog-preview-title">Deep Learning in Weather Forecasting</h3>
+              <p class="blog-preview-excerpt">探索深度学习在气象预报中的应用前景和挑战...</p>
+              <div class="blog-preview-meta">
+                <span><i class="far fa-calendar"></i> 2024-12-15</span>
+                <span><i class="fas fa-tag"></i> 科研</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="blog-preview-card" onclick="window.location.href='/blog.html'" style="cursor: pointer;">
+            <div class="blog-preview-image">
+              <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f0f0f0; color: #999;">
+                <i class="fas fa-code"></i>
+              </div>
+            </div>
+            <div class="blog-preview-content">
+              <h3 class="blog-preview-title">Creating a Jekyll Academic Website</h3>
+              <p class="blog-preview-excerpt">如何使用Jekyll搭建一个专业的学术个人网站...</p>
+              <div class="blog-preview-meta">
+                <span><i class="far fa-calendar"></i> 2024-11-20</span>
+                <span><i class="fas fa-tag"></i> 技术</span>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="view-more-section">
+    <a href="/blog.html" class="view-more-btn">
+      <span>查看所有文章</span>
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>

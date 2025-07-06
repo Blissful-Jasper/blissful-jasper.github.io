@@ -3,77 +3,123 @@ layout: default
 title: 
 ---
 
-<!-- Load modern theme and section-specific styles -->
-<link rel="stylesheet" href="assets/modern-theme.css">
-{% if site.page_sections.about %}
-<link rel="stylesheet" href="assets/about-styles.css">
-{% endif %}
-{% if site.page_sections.research %}
-<link rel="stylesheet" href="assets/research-styles.css">
-{% endif %}
-{% if site.page_sections.publications %}
-<link rel="stylesheet" href="assets/publications-styles.css">
-{% endif %}
-{% if site.page_sections.contact %}
-<link rel="stylesheet" href="assets/contact-styles.css">
-{% endif %}
-{% if site.page_sections.journals %}
-<link rel="stylesheet" href="assets/doi-styles.css">
-<link rel="stylesheet" href="assets/journals-styles.css">
-{% endif %}
+<!-- 首页专用样式 -->
+<link rel="stylesheet" href="assets/homepage-layout.css">
+<link rel="stylesheet" href="assets/homepage-gallery-journals.css">
 
-<!-- About section - 个人信息 -->
-{% if site.page_sections.about %}
-<div class="section-wrapper">
-  {% include about-section.html %}
+<div class="homepage-container">
+  <!-- About section -->
+  {% if site.page_sections.about.enabled %}
+  <div class="homepage-section">
+    {% include about-section-preview.html %}
+  </div>
+  {% endif %}
+
+  <!-- Research section -->
+  {% if site.page_sections.research.enabled %}
+  <div class="homepage-section">
+    {% include research-section-preview.html %}
+  </div>
+  {% endif %}
+
+  <!-- Publications section -->
+  {% if site.page_sections.publications.enabled %}
+  <div class="homepage-section">
+    {% include publications-section-preview.html %}
+  </div>
+  {% endif %}
+
+  <!-- Blog section -->
+  {% if site.page_sections.blog.enabled %}
+  <div class="homepage-section">
+    {% include blog-section-preview.html %}
+  </div>
+  {% endif %}
+
+  <!-- Gallery section -->
+  {% if site.page_sections.gallery.enabled %}
+  <div class="homepage-section">
+    {% include gallery-section-preview.html %}
+  </div>
+  {% endif %}
+
+  <!-- Journals section -->
+  {% if site.page_sections.journals.enabled %}
+  <div class="homepage-section">
+    {% include journals-section-preview.html %}
+  </div>
+  {% endif %}
+
+  <!-- Contact section -->
+  {% if site.page_sections.contact.enabled %}
+  <div class="homepage-section">
+    <div class="section-card">
+      <div class="section-header with-gradient">
+        <div class="container">
+          <h2 class="section-title">
+            <span class="title-icon">
+              <i class="{{ site.page_sections.contact.icon | default: 'fas fa-envelope' }}"></i>
+            </span>
+            {{ site.page_sections.contact.title | default: "Contact" }}
+          </h2>
+          <p class="section-subtitle">{{ site.page_sections.contact.subtitle | default: "Get in Touch" }}</p>
+        </div>
+      </div>
+      
+      <div class="section-preview">
+        <div class="container">
+          <div class="preview-grid">
+            <div class="preview-card">
+              <h3>Email</h3>
+              <p>{{ site.data.contact.email | default: "contact@example.com" }}</p>
+              <div class="preview-meta">
+                <span class="preview-tag">Primary</span>
+              </div>
+            </div>
+            
+            <div class="preview-card">
+              <h3>Office</h3>
+              <p>{{ site.data.contact.office | default: "Research Building, University" }}</p>
+              <div class="preview-meta">
+                <span class="preview-tag">Location</span>
+              </div>
+            </div>
+            
+            <div class="preview-card">
+              <h3>Research Group</h3>
+              <p>{{ site.data.contact.group | default: "Atmospheric Sciences Lab" }}</p>
+              <div class="preview-meta">
+                <span class="preview-tag">Affiliation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="view-more-section">
+        <a href="/contact.html" class="view-more-btn">
+          <span>联系方式</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
 </div>
-{% endif %}
 
-<!-- Research section - 研究兴趣 -->
-{% if site.page_sections.research %}
-<div class="section-wrapper">
-  {% include research-section.html %}
-</div>
-{% endif %}
-
-<!-- Publications section - 发表论文 -->
-{% if site.page_sections.publications %}
-<div class="section-wrapper">
-  {% include publications-section.html %}
-</div>
-{% endif %}
-
-<!-- Academic Journals section - 学术前沿 -->
-{% if site.page_sections.journals %}
-<div class="section-wrapper">
-  {% include journals-section.html %}
-</div>
-{% endif %}
-
-<!-- Blog section - 博客 -->
-{% if site.page_sections.blog %}
-<div class="section-wrapper">
-  {% include blog-section.html %}
-</div>
-{% endif %}
-
-<!-- Links section - 链接 -->
-{% if site.page_sections.links %}
-<div class="section-wrapper">
-  {% include links-section.html %}
-</div>
-{% endif %}
-
-<!-- Maps section - 地图 -->
-{% if site.page_sections.maps %}
+<!-- Maps section -->
+{% if site.page_sections.maps.enabled %}
 <div class="section-wrapper">
   {% include maps-section.html %}
 </div>
 {% endif %}
 
-<!-- Contact section - 联系方式 -->
-{% if site.page_sections.contact %}
+<!-- Contact section -->
+{% if site.page_sections.contact.enabled %}
 <div class="section-wrapper">
   {% include contact-section.html %}
 </div>
 {% endif %}
+
+<!-- JavaScript文件 -->
+<script src="assets/universal-sections.js"></script>

@@ -1,0 +1,66 @@
+{% comment %}
+  Publications Section Preview for Homepage
+  - Shows recent publications with stats
+{% endcomment %}
+
+<div class="section-card">
+  <div class="section-header with-gradient publications">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="title-icon">
+          <i class="{{ site.page_sections.publications.icon | default: 'fas fa-book' }}"></i>
+        </span>
+        {{ site.page_sections.publications.title | default: "Publications" }}
+      </h2>
+      <p class="section-subtitle">{{ site.page_sections.publications.subtitle | default: "Recent Academic Publications" }}</p>
+      
+      <div class="stats-row">
+        <div class="stat-item">
+          <span class="stat-number">{{ site.data.publications.size | default: "8" }}</span>
+          <span class="stat-label">总发表</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ site.data.publications | where: "year", "2024" | size | default: "3" }}</span>
+          <span class="stat-label">2024年</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ site.data.publications | where: "journal_type", "SCI" | size | default: "5" }}</span>
+          <span class="stat-label">SCI期刊</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="section-preview">
+    <div class="container">
+      <div class="preview-grid">
+        {% if site.data.publications %}
+          {% assign recent_pubs = site.data.publications | sort: "year" | reverse %}
+          {% for pub in recent_pubs limit:3 %}
+          <div class="preview-card">
+            <h3>{{ pub.title | truncate: 80 }}</h3>
+            <p>{{ pub.journal }} {% if pub.year %}({{ pub.year }}){% endif %}</p>
+            <div class="preview-meta">
+              <span class="preview-tag">{{ pub.journal_type | default: "Journal" }}</span>
+              {% if pub.impact_factor %}
+                <span>IF: {{ pub.impact_factor }}</span>
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        {% else %}
+       
+          
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  
+  <div class="view-more-section">
+    <a href="/publications.html" class="view-more-btn">
+      <span>查看全部发表</span>
+      <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+</div>

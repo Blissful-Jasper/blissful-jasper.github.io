@@ -4,7 +4,10 @@
  */
 
 class AISummaryService {
-    constructor() {
+    constructor(cache, provider = 'mock') {
+        this.cache = cache;
+        this.currentProvider = provider;
+        this.apiKey = typeof AI_API_KEY !== 'undefined' ? AI_API_KEY : '';
         this.providers = {
             openai: {
                 endpoint: 'https://api.openai.com/v1/chat/completions',
@@ -24,9 +27,6 @@ class AISummaryService {
             }
         };
         
-        this.currentProvider = 'deepseek'; // 使用DeepSeek作为默认提供商
-        this.apiKey = 'sk-dc3ff3328d0f419f91d4d50def473298';
-        this.cache = new Map();
         this.cacheTimeout = 86400000; // 24 hours
     }
 

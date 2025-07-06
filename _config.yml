@@ -15,10 +15,25 @@ author:
 markdown: kramdown
 kramdown:
   input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: false
+      start_line: 1
 highlighter: rouge
 permalink: pretty
 paginate: 5
 paginate_path: "/blog/page:num/"
+
+# MathJax配置
+mathjax:
+  enable: true
+  combo: "tex-mml-chtml"
+  tags: "ams"
 
 plugins:
   - jekyll-feed
@@ -34,20 +49,106 @@ collections:
   projects:
     output: true
     permalink: /:collection/:name/
+  pages:
+    output: true
+    permalink: /:name/
 
 # 页面板块显示控制
-# 注释掉任何一行即可隐藏对应的板块
 page_sections:
-  about: true
-  research: true # 测试：暂时禁用research页面
-  publications: true # 暂时隐藏论文发表板块
-  journals: true
-  blog: true
-  links: true
-  maps: true
-  contact: true
+  about:
+    enabled: true
+    title: "关于我"
+    subtitle: "热带大气动力学研究者"
+    icon: "fas fa-user"
+  research:
+    enabled: true
+    title: "研究方向"
+    subtitle: "探索热带大气动力学与人工智能的交叉融合"
+    icon: "fas fa-atom"
+  publications:
+    enabled: true
+    title: "学术成果"
+    subtitle: "在国际权威期刊发表的研究论文"
+    icon: "fas fa-scroll"
+  journals:
+    enabled: true
+    title: "期刊订阅"
+    subtitle: "地球科学与大气科学领域的顶级期刊"
+    icon: "fas fa-journal-whills"
+  gallery:
+    enabled: true
+    title: "摄影作品集"
+    subtitle: "记录科研路上的美好瞬间"
+    icon: "fas fa-camera"
+  blog:
+    enabled: true
+    title: "学术博客"
+    subtitle: "研究心得与学术思考"
+    icon: "fas fa-blog"
+  links:
+    enabled: true
+    title: "实用链接"
+    subtitle: "精选的研究、学习和协作资源链接"
+    icon: "fas fa-link"
+  maps:
+    enabled: true
+    title: "研究地图"
+    subtitle: "研究区域与合作网络"
+    icon: "fas fa-map"
+  contact:
+    enabled: true
+    title: "联系方式"
+    subtitle: "学术交流与合作"
+    icon: "fas fa-envelope"
+
+# Section 内容配置
+sections:
+  about:
+    name: "季先朴"
+    title: "博士研究生"
+    affiliation: "河海大学海洋科学系"
+    location: "南京, 中国"
+    bio: "专注于热带大气动力学研究，探索对流耦合赤道波、热带降水变率等关键科学问题。结合机器学习技术，推动气象预报和气候模拟的创新发展。"
+    
+  research:
+    overview: "致力于深入理解热带大气动力学机制，探索对流耦合赤道波、热带降水变率等关键科学问题。结合机器学习技术，推动气象预报和气候模拟的创新发展。"
+    stats:
+      directions: 3
+      papers: 8
+      citations: "150+"
+      
+  publications:
+    stats:
+      total_papers: 8
+      journal_level: "Q1"
+      total_citations: "150+"
+      international_journals: 3
+      
+  contact:
+    email: "xianpuji@hhu.edu.cn"
+    phone: ""
+    address: "河海大学海洋科学系, 南京, 中国"
+    office: ""
 
 # 不手动设置 layout，交由 theme: minima 自动处理
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md
+  - docs/file-conflict-resolution.md
+
+# Include the pictures directory as static files
+include:
+  - pictures
+
+# 安全配置文件，用于存放敏感信息
+# 在 .gitignore 中已被忽略，不会提交到版本库
+# 本地开发时，Jekyll会自动加载此文件
+# 部署时，需要通过环境变量等方式设置
 
 exclude:
   - assets/main.css

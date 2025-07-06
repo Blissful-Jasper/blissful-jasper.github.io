@@ -3,300 +3,314 @@
     - name: Philosophies and concerns about ENSO
       url: https://iri.columbia.edu/
       images:
-        - ./links/1.png
+        - /links/1.png
     - name: Why do we care about El Niño and La Niña?
       url: https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/
       images:
-        - ./links/2.png
+        - /links/2.png
     - name: Watching for El Niño and La Niña
       url: https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming
       images:
-        - ./links/3.png
+        - /links/3.png
     - name: Why are there so many ENSO indexes?
       url: https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one
       images:
-        - ./links/4.png
+        - /links/4.png
     - name: How Good Have ENSO Forecasts Been Lately?
       url: https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately
       images:
-        - ./links/5.png
+        - /links/5.png
+
 - group: 数值模式与流体模拟
   links:
     - name: Shallow water model (Matlab, barotropic instability)
       url: https://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/
       images:
-        - ./links/2.1.png
+        - /links/2.1.png
     - name: GFDL Dry spectral idealized model
       url: https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/
       images:
-        - ./links/2.2.png
+        - /links/2.2.png
     - name: GFDL Dry model github
       url: https://github.com/gchenpu/idealized
       images:
-        - ./links/2.3.png
+        - /links/2.3.png
     - name: GFDL Moist spectral idealized model
       url: https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/
       images:
-        - ./links/2.4.png
+        - /links/2.4.png
     - name: DART, GeoCAT, and VAPOR sites
       url: https://www2.cisl.ucar.edu/resources/legacy/spherepack
       images:
-        - ./links/2.5.png
+        - /links/2.5.png
     - name: Misc fluid simulators
       url: https://matthias-research.github.io/pages/tenMinutePhysics/index.html
       images:
-        - ./links/2.6.png
+        - /links/2.6.png
+
 - group: 数据与课程
   links:
     - name: notes on regression and time series analysis
       url: https://people.duke.edu/~rnau/411home.htm
       images:
-        - ./links/3.1.png
+        - /links/3.1.png
     - name: Precipitation datasets
       url: https://gpm.nasa.gov/data/directory
       images:
-        - ./links/3.2.png
+        - /links/3,2.png
+
 - group: 经典论文与资料
   links:
     - name: Classic and Historical Papers Papers on Geophysical Fluid Dynamics
       url: https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html
       images:
-        - ./links/4.1.png
+        - /links/4.1.png
+
 - group: 季节预测与季风
   links:
     - name: IRI Seasonal Climate Forecast
       url: https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/
       images:
-        - ./links/5.1.png
+        - /links/5.1.png
     - name: Seasonal Climate Forecast CFSv2
       url: https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/
       images:
-        - ./links/5.2.png
+        - /links/5.2.png
     - name: World monsoons
       url: https://worldmonsoons.org/
       images:
-        - ./links/5.3.png
+        - /links/5.3.png
+
 - group: 卫星与波动监测
   links:
     - name: CIMSS Satellite Blog
       url: https://cimss.ssec.wisc.edu/satellite-blog/
       images:
-        - ./links/6.1.png
+        - /links/6.1.png
     - name: GOES Geostationary archive
       url: https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php
       images:
-        - ./links/6.2.png
+        - /links/6.2.png
     - name: Grided Satellite data
       url: https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro
       images:
-        - ./links/6.3.png
+        - /links/6.3.png
     - name: Sandro Lubis blog for equatorial waves
       url: https://sandrolubis.wordpress.com/
       images:
-        - ./links/6.4.png
+        - /links/6.4.png
     - name: Carl Scherck tropical waves monitoring
       url: https://ncics.org/portfolio/monitor/mjo/
       images:
-        - ./links/6.5.png
+        - /links/6.5.png
     - name: Kyle MacRitchie page
       url: https://www.kylemacritchie.com/
       images:
-        - ./links/6.6.png
+        - /links/6.6.png
     - name: Micheal Ventrice page
       url: https://mikeventrice.weebly.com/
       images:
-        - ./links/6.7.png
+        - /links/6.7.png
+
 - group: 博客与主页
   links:
     - name: Cliff Mass blog
       url: https://cliffmass.blogspot.com/
       images:
-        - ./links/7.1.png
+        - /links/7.1.png
+
 - group: Python与大气科学
   links:
     - name: GHCN call and plot
       url: https://github.com/akrherz/pyIEM
       images:
-        - ./links/8.1.png
+        - /links/8.1.png
     - name: Python for Geosciences Daily (GHCN-D)
       url: https://github.com/jjrennie/GHCNpy
       images:
-        - ./links/8.2.png
+        - /links/8.2.png
     - name: Collection of Python libraries
       url: https://pyaos.github.io/packages/?fbclid=IwAR3mk45ythjGm-JLYbphd6AZbJGduYfLu75wOGnzDTbUNQcBYj1BfQX3tCs
       images:
-        - ./links/8.3.png
+        - /links/8.3.png
+
 - group: 非洲气候与干旱
   links:
     - name: ACMAD
       url: https://www.acmad.org/
       images:
-        - ./links/9.1.png
+        - /links/9.1.png
     - name: FEWS NET
       url: https://fews.net/
       images:
-        - ./links/9.2.png
+        - /links/9.2.png
     - name: GCRF African SWIFT
       url: https://africanswift.org/
       images:
-        - ./links/9.3.png
+        - /links/9.3.png
     - name: CPC Portal for African
       url: https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml
       images:
-        - ./links/9.4.png
+        - /links/9.4.png
     - name: Seasonal forecasting over Nile
       url: https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/
       images:
-        - ./links/9.5.png
+        - /links/9.5.png
+
 - group: 波动与物理动画
   links:
     - name: Collection of animation, videos, interactive plots on sound waves
       url: https://www.acs.psu.edu/drussell/Demos.html
       images:
-        - ./links/10.1.png
+        - /links/10.1.png
     - name: Atlas of internal solitary waves
       url: https://www.internalwaveatlas.com/
       images:
-        - ./links/10.2.png
+        - /links/10.2.png
     - name: NSF videos about Fluid dynamics
       url: https://www.nsf.gov/news/special_reports/physics/index.jsp
       images:
-        - ./links/10.3.png
+        - /links/10.3.png
     - name: Feynmann lectures on Physics
       url: http://www.feynmanlectures.caltech.edu
       images:
-        - ./links/10.4.png
+        - /links/10.4.png
     - name: One dimensional positive, negative, and zero group velocity
       url: https://www.youtube.com/watch?v=tlM9vq-bepA
       images:
-        - ./links/10.5.png
+        - /links/10.5.png
     - name: Two dimensional gravity wave
       url: https://www.youtube.com/watch?v=xf8Y6YYxvew
       images:
-        - ./links/10.6.png
+        - /links/10.6.png
+
 - group: FFT 与数据可视化
   links:
     - name: DFT vs. FFT jupyter notebook
       url: https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb
       images:
-        - ./links/11.1.png
+        - /links/11.1.png
     - name: Mike Cohen FFT 视频
       url: https://www.youtube.com/watch?v=gr3IG81Gl9I&list=PLn0OLiymPak3lrIErlYVnIc3pGTwgt_ml
       images:
-        - ./links/11.2.png
+        - /links/11.2.png
+
 - group: 科学与哲学
   links:
     - name: Infinity is a beautiful concept and it is ruining physics
       url: https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics
       images:
-        - ./links/12.1.png
+        - /links/12.1.png
+
 - group: 数据可视化与图形设计
   links:
     - name: Ten simple rules for better figures
       url: https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833
       images:
-        - ./links/13.1.png
+        - /links/13.1.png
     - name: Rainbow color map perception artifacts
       url: https://www.kennethmoreland.com/color-advice/
       images:
-        - ./links/13.2.png
+        - /links/13.2.png
     - name: Modifying matplotlib colormaps
       url: https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap
       images:
-        - ./links/13.3.png
+        - /links/13.3.png
     - name: Adjusting the zero in a skewed colormap
       url: https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap
       images:
-        - ./links/13.4.png
+        - /links/13.4.png
     - name: Adjusting extremes
       url: https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654
       images:
-        - ./links/13.5.png
+        - /links/13.5.png
     - name: Matplotlib colormap reference
       url: https://matplotlib.org/stable/tutorials/colors/colormaps.html
       images:
-        - ./links/13.6.png
+        - /links/13.6.png
     - name: Matplotlib colormap examples
       url: https://matplotlib.org/stable/gallery/color/colormap_reference.html
       images:
-        - ./links/13.7.png
+        - /links/13.7.png
     - name: Matplotlib colormap customization
       url: https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html
       images:
-        - ./links/13.8.png
+        - /links/13.8.png
     - name: Increasing the white band in the blue-white-red colormap
       url: https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658
       images:
-        - ./links/13.9.png
+        - /links/13.9.png
     - name: Creating publication quality figures
       url: https://www.nature.com/articles/nmeth.1618
       images:
-        - ./links/13.10.png
+        - /links/13.10.png
     - name: NCL color cmaps
       url: https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml
       images:
-        - ./links/ncl_color_cmaps.png
+        - /links/ncl_color_cmaps.png
+
 - group: 学术写作与资源
   links:
     - name: The element of style by Strunk and White (pdf)
       url: https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf
       images:
-        - ./links/14.1.png
+        - /links/14.1.png
     - name: Effective technical writing from PennState
       url: https://www.e-education.psu.edu/styleforstudents/
       images:
-        - ./links/14.2.png
+        - /links/14.2.png
     - name: Writing in the Sciences (Stanford, Coursera)
       url: https://www.coursera.org/learn/sciwrite
       images:
-        - ./links/14.3.png
+        - /links/14.3.png
     - name: Academic Phrasebank
       url: http://www.phrasebank.manchester.ac.uk/
       images:
-        - ./links/14.4.png
+        - /links/14.4.png
     - name: Guide to grammar and writing
       url: https://guidetogrammar.org/
       images:
-        - ./links/14.5.png
+        - /links/14.5.png
     - name: Words with similar rhymes
       url: https://www.rhymezone.com/
       images:
-        - ./links/14.6.png
+        - /links/14.6.png
     - name: Synonyms
       url: https://www.thesaurus.com/
       images:
-        - ./links/14.7.png
+        - /links/14.7.png
     - name: On writing and some numerical books
       url: https://hplgit.github.io/
       images:
-        - ./links/14.8.png
+        - /links/14.8.png
     - name: Reproducibility problem
       url: https://www.nature.com/articles/533452a
       images:
-        - ./links/14.9.png
+        - /links/14.9.png
+
 - group: 常用学术/工具/资源
   links:
     - name: Google Scholar
       url: https://scholar.google.com/
       images:
-        - ./links/15.1.png
+        - /links/15.1.png
     - name: ResearchGate
       url: https://www.researchgate.net/profile/Xianpu-Ji
       images:
-        - ./links/15.2.png
+        - /links/15.2.png
     - name: GitHub
       url: https://github.com/Blissful-Jasper
       images:
-        - ./links/15.3.png
+        - /links/15.3.png
     - name: ORCID
       url: https://orcid.org/0009-0001-5197-4804
       images:
-        - ./links/15.4.png
+        - /links/15.4.png
     - name: Python 官网
       url: https://www.python.org/
       images:
-        - ./links/15.5.png
+        - /links/15.5.png
     - name: Deep Learning.ai
       url: https://www.deeplearning.ai/
       images:
-        - ./links/15.6.png
+        - /links/15.6.png

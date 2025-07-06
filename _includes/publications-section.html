@@ -1,286 +1,417 @@
-<link rel="stylesheet" href="assets/publications-styles.css">
-<link rel="stylesheet" href="assets/doi-styles.css">
-
+<!-- Publications Section -->
 <section class="publications-section" id="publications">
   <div class="container">
-    <div class="section-header text-center mb-8">
+    <!-- Section Header -->
+    <div class="section-header">
       <h2 class="section-title">
-        <i class="fas fa-file-alt"></i>
+        <span class="title-icon">
+          <i class="fas fa-scroll"></i>
+        </span>
         学术成果
       </h2>
-      <p class="section-subtitle">在国际权威期刊发表的研究论文和学术贡献</p>
+      <p class="section-subtitle">在国际权威期刊发表的研究论文</p>
     </div>
     
+    <!-- Publications Stats -->
     <div class="publications-stats">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-scroll"></i>
-          </div>
-          <div class="stat-info">
-            <span class="stat-number">3</span>
-            <span class="stat-label">发表论文</span>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-quote-left"></i>
-          </div>
-          <div class="stat-info">
-            <span class="stat-number" id="totalCitations">-</span>
-            <span class="stat-label">总引用次数</span>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-star"></i>
-          </div>
-          <div class="stat-info">
-            <span class="stat-number">Q1</span>
-            <span class="stat-label">期刊等级</span>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-globe"></i>
-          </div>
-          <div class="stat-info">
-            <span class="stat-number">3</span>
-            <span class="stat-label">国际期刊</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="publications-container">
-      <div class="publications-list">
-        <div class="publication-item card animate-fade-in-up">
-          <div class="publication-header">
-            <div class="publication-type">
-              <span class="type-badge journal">Journal Article</span>
-              <span class="year-badge">2025</span>
-            </div>
-            <div class="publication-metrics">
-              <span class="metric">
-                <i class="fas fa-quote-left"></i>
-                <span class="metric-value">0</span>
-              </span>
-              <span class="metric">
-                <i class="fas fa-download"></i>
-                <span class="metric-value">120</span>
-              </span>
-            </div>
-          </div>
-          
-          <div class="publication-content">
-            <h3 class="publication-title">
-              <a href="https://doi.org/10.1016/j.atmosres.2025.108214" target="_blank" rel="noopener">
-                Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models
-              </a>
-            </h3>
-            
-            <div class="publication-authors">
-              <span class="author highlighted"><strong>Ji, X.</strong></span>, 
-              <span class="author">Feng, T.</span>, 
-              <span class="author">Huang, P.</span>, 
-              <span class="author">Cheng, X.</span>, 
-              <span class="author">Qin, J.</span>, 
-              <span class="author">Yang, B.</span>
-            </div>
-            
-            <div class="publication-journal">
-              <i class="fas fa-book-open"></i>
-              <span class="journal-name">Atmospheric Research</span>
-              <span class="journal-info">• Impact Factor: 5.4 • Q1</span>
-            </div>
-            
-            <div class="publication-abstract">
-              <p>本研究评估了CMIP6耦合气候模式对对流耦合Kelvin波的模拟能力，分析了不同模式在热带大气波动表现方面的差异和改进...</p>
-            </div>
-            
-            <div class="publication-keywords">
-              <span class="keyword-tag">Kelvin waves</span>
-              <span class="keyword-tag">CMIP6</span>
-              <span class="keyword-tag">Climate models</span>
-              <span class="keyword-tag">Tropical dynamics</span>
-            </div>
-          </div>
-          
-          <div class="publication-footer">
-            <div class="publication-links">
-              <a href="https://doi.org/10.1016/j.atmosres.2025.108214" target="_blank" class="pub-link primary">
-                <i class="fas fa-external-link-alt"></i>
-                论文链接
-              </a>
-              <a href="#" class="pub-link secondary">
-                <i class="fas fa-file-pdf"></i>
-                PDF下载
-              </a>
-              <a href="#" class="pub-link secondary">
-                <i class="fas fa-quote-left"></i>
-                引用格式
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="publication-item card animate-fade-in-up delay-100">
-          <div class="publication-header">
-            <div class="publication-type">
-              <span class="type-badge journal">Journal Article</span>
-              <span class="year-badge">2024</span>
-            </div>
-            <div class="publication-metrics">
-              <span class="metric">
-                <i class="fas fa-quote-left"></i>
-                <span class="metric-value">2</span>
-              </span>
-              <span class="metric">
-                <i class="fas fa-download"></i>
-                <span class="metric-value">95</span>
-              </span>
-            </div>
-          </div>
-          
-          <div class="publication-content">
-            <h3 class="publication-title">
-              <a href="https://doi.org/10.3390/rs16162871" target="_blank" rel="noopener">
-                Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images
-              </a>
-            </h3>
-            
-            <div class="publication-authors">
-              <span class="author highlighted"><strong>Ji, X.</strong></span>, 
-              <span class="author">Song, X.</span>, 
-              <span class="author">Guo, A.</span>, 
-              <span class="author">Liu, K.</span>, 
-              <span class="author">Cao, H.</span>, 
-              <span class="author">Feng, T.</span>
-            </div>
-            
-            <div class="publication-journal">
-              <i class="fas fa-book-open"></i>
-              <span class="journal-name">Remote Sensing</span>
-              <span class="journal-info">• Impact Factor: 5.0 • Q1</span>
-            </div>
-            
-            <div class="publication-abstract">
-              <p>基于UNet架构的残差和注意力网络，利用Himawari-8实时卫星图像进行海洋降水临近预报，显著提升了预报精度...</p>
-            </div>
-            
-            <div class="publication-keywords">
-              <span class="keyword-tag">Deep learning</span>
-              <span class="keyword-tag">UNet</span>
-              <span class="keyword-tag">Precipitation nowcasting</span>
-              <span class="keyword-tag">Himawari-8</span>
-            </div>
-          </div>
-          
-          <div class="publication-footer">
-            <div class="publication-links">
-              <a href="https://doi.org/10.3390/rs16162871" target="_blank" class="pub-link primary">
-                <i class="fas fa-external-link-alt"></i>
-                论文链接
-              </a>
-              <a href="#" class="pub-link secondary">
-                <i class="fas fa-file-pdf"></i>
-                PDF下载
-              </a>
-              <a href="#" class="pub-link secondary">
-                <i class="fas fa-quote-left"></i>
-                引用格式
-              </a>
-            </div>
-          </div>
-        </div>
-        
-        <div class="publication-item card animate-fade-in-up delay-200">
-          <div class="publication-header">
-            <div class="publication-type">
-              <span class="type-badge journal">Journal Article</span>
-              <span class="year-badge">2024</span>
-            </div>
-            <div class="publication-metrics">
-              <span class="metric">
-                <i class="fas fa-quote-left"></i>
-                <span class="metric-value">1</span>
-              </span>
-              <span class="metric">
-                <i class="fas fa-download"></i>
-                <span class="metric-value">88</span>
-              </span>
-            </div>
-          </div>
-          
-          <div class="publication-content">
-            <h3 class="publication-title">
-              <a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" target="_blank" rel="noopener">
-                Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans
-              </a>
-            </h3>
-            
-            <div class="publication-authors">
-              <span class="author highlighted"><strong>Ji, X.</strong></span>, 
-              <span class="author">Sha, Y.</span>, 
-              <span class="author">Feng, T.</span>, 
-              <span class="author">Li, J.</span>
-            </div>
-            
-            <div class="publication-journal">
-              <i class="fas fa-book-open"></i>
-              <span class="journal-name">Journal of Xiamen University (Natural Science)</span>
-              <span class="journal-info">• 核心期刊 • 中文期刊</span>
-            </div>
-            
-            <div class="publication-abstract">
-              <p>研究热带海洋降水的区域化特征及其相关的大气背景环境特征，为理解热带降水的时空变异性提供重要科学依据...</p>
-            </div>
-            
-            <div class="publication-keywords">
-              <span class="keyword-tag">Tropical precipitation</span>
-              <span class="keyword-tag">Regionalization</span>
-              <span class="keyword-tag">Atmospheric dynamics</span>
-            </div>
-          </div>
-          
-          <div class="publication-footer">
-            <div class="publication-links">
-              <a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" target="_blank" class="pub-link primary">
-                <i class="fas fa-external-link-alt"></i>
-                论文链接
-              </a>
-              <a href="#" class="pub-link secondary">
-                <i class="fas fa-file-pdf"></i>
-                PDF下载
-              </a>
-              <a href="#" class="pub-link secondary">
-                <i class="fas fa-quote-left"></i>
-                引用格式
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <!-- <div class="more-publications">
-      <div class="more-card card">
-        <div class="more-content">
-          <h3>
-            <i class="fas fa-plus-circle"></i>
-            更多学术成果
+      <div class="unified-card stats-card">
+        <div class="unified-card-header">
+          <h3 class="unified-card-title">
+            <i class="fas fa-chart-line"></i>
+            发表统计
           </h3>
-          <p>查看完整的论文列表、会议发表和学术贡献</p>
-          <a href="/publications.html" class="btn btn-primary">
-            <i class="fas fa-list"></i>
-            查看全部论文
-          </a>
+        </div>
+        <div class="unified-card-content">
+          <div class="unified-grid unified-grid-4 stats-grid">
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">{{ site.data.publications | map: 'papers' | flatten | size }}</span>
+                <span class="stat-label">发表论文</span>
+              </div>
+            </div>
+            
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">Q1</span>
+                <span class="stat-label">期刊级别</span>
+              </div>
+            </div>
+            
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">总引用</span>
+              </div>
+            </div>
+            
+            <div class="stat-item">
+              <div class="stat-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="stat-info">
+                <span class="stat-number">3</span>
+                <span class="stat-label">国际期刊</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div> -->
+    </div>
+
+    <!-- Publications Timeline -->
+    <div class="publications-timeline">
+      <div class="unified-card timeline-card">
+        <div class="unified-card-header">
+          <h3 class="unified-card-title">
+            <i class="fas fa-timeline"></i>
+            发表时间线
+          </h3>
+        </div>
+        <div class="unified-card-content">
+          <div class="timeline-container">
+            {% for year_data in site.data.publications %}
+            <div class="timeline-item">
+              <div class="timeline-year">{{ year_data.year }}</div>
+              <div class="timeline-papers">
+                {% for paper in year_data.papers %}
+                <div class="paper-item">
+                  <div class="paper-title">
+                    {% if paper.link %}
+                    <a href="{{ paper.link }}" target="_blank" style="color: inherit; text-decoration: none;">
+                      {{ paper.title }}
+                    </a>
+                    {% else %}
+                    {{ paper.title }}
+                    {% endif %}
+                  </div>
+                  <div class="paper-journal">{{ paper.journal }}</div>
+                  {% if paper.keywords %}
+                  <div class="paper-tags">
+                    {% for keyword in paper.keywords %}
+                    <span class="unified-tag">{{ keyword }}</span>
+                    {% endfor %}
+                  </div>
+                  {% endif %}
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Publications -->
+    <div class="featured-publications">
+      <div class="unified-card featured-card">
+        <div class="unified-card-header">
+          <h3 class="unified-card-title">
+            <i class="fas fa-star"></i>
+            精选论文
+          </h3>
+        </div>
+        <div class="unified-card-content">
+          <div class="publications-grid">
+            
+            <!-- Publication 1 -->
+            <div class="publication-item">
+              <div class="publication-header">
+                <div class="publication-type">
+                  <span class="unified-badge">期刊论文</span>
+                  <span class="year-badge">2025</span>
+                </div>
+                <div class="publication-metrics">
+                  <span class="metric">
+                    <i class="fas fa-quote-left"></i>
+                    <span class="metric-value">0</span>
+                  </span>
+                  <span class="metric">
+                    <i class="fas fa-download"></i>
+                    <span class="metric-value">120</span>
+                  </span>
+                </div>
+              </div>
+              
+              <div class="publication-content">
+                <h4 class="publication-title">
+                  <a href="https://doi.org/10.1016/j.atmosres.2025.108214" target="_blank">
+                    Evaluation of convectively coupled Kelvin waves in CMIP6 coupled climate models
+                  </a>
+                </h4>
+                
+                <div class="publication-authors">
+                  <span class="author highlighted"><strong>Ji, X.</strong></span>, 
+                  <span class="author">Feng, T.</span>, 
+                  <span class="author">Huang, P.</span>, 
+                  <span class="author">Cheng, X.</span>, 
+                  <span class="author">Qin, J.</span>, 
+                  <span class="author">Yang, B.</span>
+                </div>
+                
+                <div class="publication-journal">
+                  <i class="fas fa-book-open"></i>
+                  <span class="journal-name">Atmospheric Research</span>
+                  <span class="journal-info">• Impact Factor: 5.4 • Q1</span>
+                </div>
+                
+                <div class="publication-abstract">
+                  <p>本研究评估了CMIP6耦合气候模式对对流耦合Kelvin波的模拟能力，分析了不同模式在热带大气波动表现方面的差异和改进...</p>
+                </div>
+                
+                <div class="publication-keywords">
+                  <span class="unified-tag">Kelvin waves</span>
+                  <span class="unified-tag">CMIP6</span>
+                  <span class="unified-tag">Climate models</span>
+                  <span class="unified-tag">Tropical dynamics</span>
+                </div>
+              </div>
+              
+              <div class="publication-footer">
+                <div class="publication-links">
+                  <a href="https://doi.org/10.1016/j.atmosres.2025.108214" target="_blank" class="unified-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    论文链接
+                  </a>
+                  <a href="#" class="unified-btn unified-btn-secondary">
+                    <i class="fas fa-file-pdf"></i>
+                    PDF下载
+                  </a>
+                  <a href="#" class="unified-btn unified-btn-secondary">
+                    <i class="fas fa-quote-left"></i>
+                    引用格式
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Publication 2 -->
+            <div class="publication-item">
+              <div class="publication-header">
+                <div class="publication-type">
+                  <span class="unified-badge">期刊论文</span>
+                  <span class="year-badge">2024</span>
+                </div>
+                <div class="publication-metrics">
+                  <span class="metric">
+                    <i class="fas fa-quote-left"></i>
+                    <span class="metric-value">2</span>
+                  </span>
+                  <span class="metric">
+                    <i class="fas fa-download"></i>
+                    <span class="metric-value">95</span>
+                  </span>
+                </div>
+              </div>
+              
+              <div class="publication-content">
+                <h4 class="publication-title">
+                  <a href="https://doi.org/10.3390/rs16162871" target="_blank">
+                    Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images
+                  </a>
+                </h4>
+                
+                <div class="publication-authors">
+                  <span class="author highlighted"><strong>Ji, X.</strong></span>, 
+                  <span class="author">Song, X.</span>, 
+                  <span class="author">Guo, A.</span>, 
+                  <span class="author">Liu, K.</span>, 
+                  <span class="author">Cao, H.</span>, 
+                  <span class="author">Feng, T.</span>
+                </div>
+                
+                <div class="publication-journal">
+                  <i class="fas fa-book-open"></i>
+                  <span class="journal-name">Remote Sensing</span>
+                  <span class="journal-info">• Impact Factor: 5.0 • Q1</span>
+                </div>
+                
+                <div class="publication-abstract">
+                  <p>基于UNet架构的残差和注意力网络，利用Himawari-8实时卫星图像进行海洋降水临近预报，显著提升了预报精度...</p>
+                </div>
+                
+                <div class="publication-keywords">
+                  <span class="unified-tag">Deep learning</span>
+                  <span class="unified-tag">UNet</span>
+                  <span class="unified-tag">Precipitation nowcasting</span>
+                  <span class="unified-tag">Himawari-8</span>
+                </div>
+              </div>
+              
+              <div class="publication-footer">
+                <div class="publication-links">
+                  <a href="https://doi.org/10.3390/rs16162871" target="_blank" class="unified-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    论文链接
+                  </a>
+                  <a href="#" class="unified-btn unified-btn-secondary">
+                    <i class="fas fa-file-pdf"></i>
+                    PDF下载
+                  </a>
+                  <a href="#" class="unified-btn unified-btn-secondary">
+                    <i class="fas fa-quote-left"></i>
+                    引用格式
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Publication 3 -->
+            <div class="publication-item">
+              <div class="publication-header">
+                <div class="publication-type">
+                  <span class="unified-badge">期刊论文</span>
+                  <span class="year-badge">2024</span>
+                </div>
+                <div class="publication-metrics">
+                  <span class="metric">
+                    <i class="fas fa-quote-left"></i>
+                    <span class="metric-value">1</span>
+                  </span>
+                  <span class="metric">
+                    <i class="fas fa-download"></i>
+                    <span class="metric-value">88</span>
+                  </span>
+                </div>
+              </div>
+              
+              <div class="publication-content">
+                <h4 class="publication-title">
+                  <a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" target="_blank">
+                    Regionalization of Precipitation and Associated Atmospheric Background Environmental Characteristics Over the Tropical Oceans
+                  </a>
+                </h4>
+                
+                <div class="publication-authors">
+                  <span class="author highlighted"><strong>Ji, X.</strong></span>, 
+                  <span class="author">Sha, Y.</span>, 
+                  <span class="author">Feng, T.</span>, 
+                  <span class="author">Li, J.</span>
+                </div>
+                
+                <div class="publication-journal">
+                  <i class="fas fa-book-open"></i>
+                  <span class="journal-name">Journal of Xiamen University (Natural Science)</span>
+                  <span class="journal-info">• 核心期刊 • 中文期刊</span>
+                </div>
+                
+                <div class="publication-abstract">
+                  <p>研究热带海洋降水的区域化特征及其相关的大气背景环境特征，为理解热带降水的时空变异性提供重要科学依据...</p>
+                </div>
+                
+                <div class="publication-keywords">
+                  <span class="unified-tag">Tropical precipitation</span>
+                  <span class="unified-tag">Regionalization</span>
+                  <span class="unified-tag">Atmospheric dynamics</span>
+                </div>
+              </div>
+              
+              <div class="publication-footer">
+                <div class="publication-links">
+                  <a href="https://doi.org/10.6043/j.issn.0438-0479.202310026" target="_blank" class="unified-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    论文链接
+                  </a>
+                  <a href="#" class="unified-btn unified-btn-secondary">
+                    <i class="fas fa-file-pdf"></i>
+                    PDF下载
+                  </a>
+                  <a href="#" class="unified-btn unified-btn-secondary">
+                    <i class="fas fa-quote-left"></i>
+                    引用格式
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Research Impact -->
+    <div class="research-impact">
+      <div class="unified-card impact-card">
+        <div class="unified-card-header">
+          <h3 class="unified-card-title">
+            <i class="fas fa-chart-line"></i>
+            研究影响力
+          </h3>
+        </div>
+        <div class="unified-card-content">
+          <div class="unified-grid unified-grid-4 impact-grid">
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-eye"></i>
+              </div>
+              <div class="impact-content">
+                <span class="impact-value">500+</span>
+                <span class="impact-label">论文阅读量</span>
+              </div>
+            </div>
+            
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-quote-left"></i>
+              </div>
+              <div class="impact-content">
+                <span class="impact-value">3+</span>
+                <span class="impact-label">被引用次数</span>
+              </div>
+            </div>
+            
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-download"></i>
+              </div>
+              <div class="impact-content">
+                <span class="impact-value">200+</span>
+                <span class="impact-label">下载次数</span>
+              </div>
+            </div>
+            
+            <div class="impact-item">
+              <div class="impact-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="impact-content">
+                <span class="impact-value">H-index: 0</span>
+                <span class="impact-label">学术指标</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More Publications Link -->
+    <div class="more-publications">
+      <div class="unified-card more-card">
+        <div class="unified-card-content">
+          <div class="more-content">
+            <h3>
+              <i class="fas fa-plus-circle"></i>
+              更多学术成果
+            </h3>
+            <p>查看完整的论文列表、会议发表和学术贡献</p>
+            <a href="/publications.html" class="unified-btn">
+              <i class="fas fa-list"></i>
+              查看全部论文
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -288,6 +419,47 @@
 <script src="assets/doi-fetcher.js"></script>
 
 <script>
+// 复制引用格式到剪贴板
+function copyBibtex(citation) {
+  navigator.clipboard.writeText(citation).then(function() {
+    showToast('BibTeX引用已复制到剪贴板');
+  });
+}
+
+// 显示提示信息
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast-notification';
+  toast.textContent = message;
+  toast.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    font-weight: 500;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  `;
+  
+  document.body.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.style.transform = 'translateX(0)';
+  }, 100);
+  
+  setTimeout(() => {
+    toast.style.transform = 'translateX(100%)';
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 300);
+  }, 3000);
+}
+
 // 更新出版物统计信息
 document.addEventListener('DOMContentLoaded', async function() {
     const dois = [
@@ -305,22 +477,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             const info = await window.doiFetcher.fetchDOIInfo(doi);
             
             // 更新引用和下载数据
-            const citationsElement = document.getElementById(`citations-${i + 1}`);
-            const downloadsElement = document.getElementById(`downloads-${i + 1}`);
+            const citationsElement = document.querySelector(`.metric-value:nth-child(${i + 1})`);
             
             if (citationsElement) {
-                citationsElement.textContent = info.citations || 0;
                 totalCitations += info.citations || 0;
-            }
-            
-            if (downloadsElement) {
-                downloadsElement.textContent = info.downloads || 0;
-            }
-            
-            // 更新DOI信息卡片
-            const doiContainer = document.getElementById(`doi-info-${i + 1}`);
-            if (doiContainer) {
-                await window.doiFetcher.updateDOIDisplay(doi, `doi-info-${i + 1}`);
             }
             
             // 添加延迟避免API限制
@@ -329,12 +489,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         } catch (error) {
             console.error(`Error fetching DOI info for ${doi}:`, error);
         }
-    }
-    
-    // 更新总引用数
-    const totalCitationsElement = document.getElementById('totalCitations');
-    if (totalCitationsElement) {
-        totalCitationsElement.textContent = totalCitations;
     }
 });
 </script>

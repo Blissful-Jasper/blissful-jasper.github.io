@@ -1,349 +1,306 @@
-<!-- Maps Section -->
+{% comment %}
+  Maps Section - Enhanced with better visual design
+{% endcomment %}
+
+{%- assign maps_section = site.page_sections.maps -%}
+{% if maps_section.enabled %}
 <section class="maps-section" id="maps">
-  <div class="maps-container">
-    <!-- Header -->
-    <div class="maps-header">
-      <h2>Interactive Maps</h2>
-      <p>Explore real-time weather, satellite imagery, and oceanographic data through interactive maps</p>
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">
+        {% if maps_section.icon %}<span class="title-icon"><i class="{{ maps_section.icon }}"></i></span>{% endif %}
+        {{ maps_section.title | default: "Maps" }}
+      </h2>
+      {% if maps_section.subtitle %}
+        <p class="section-subtitle">{{ maps_section.subtitle }}</p>
+      {% endif %}
     </div>
 
-    <!-- Search and Filter -->
-    <div class="maps-controls">
-      <div class="search-box">
-        <i class="fas fa-search"></i>
-        <input type="text" id="mapsSearch" placeholder="Search maps...">
+    {% if site.data.maps and site.data.maps.size > 0 %}
+      <div class="unified-filters maps-filters">
+        <button class="filter-btn active" data-filter="all">All Categories</button>
+        {%- for group in site.data.maps -%}
+          <button class="filter-btn" data-filter="{{ group.group | slugify }}">{{ group.group }}</button>
+        {%- endfor -%}
       </div>
-      <div class="view-toggle">
-        <button class="view-btn active" data-view="grid">
-          <i class="fas fa-th"></i>
-          Grid
-        </button>
-        <button class="view-btn" data-view="list">
-          <i class="fas fa-list"></i>
-          List
-        </button>
-      </div>
-    </div>
 
-    <!-- Category Filter -->
-    <div class="category-filters">
-      <button class="category-btn active" data-category="all">All Maps</button>
-      {% assign categories = site.data.maps | map: 'group' | uniq %}
-      {% for category in categories %}
-      <button class="category-btn" data-category="{{ category | slugify }}">{{ category }}</button>
-      {% endfor %}
-    </div>
-
-    <!-- Maps Content -->
-    <div class="maps-content" id="mapsGrid">
-      {% for group in site.data.maps %}
-      <div class="maps-group" data-category="{{ group.group | slugify }}">
-        <div class="group-header">
-          <h3 class="group-title">
-            <i class="fas fa-layer-group"></i>
-            {{ group.group }}
-          </h3>
-          <span class="group-count">{{ group.links.size }} maps</span>
-        </div>
-        
-        <div class="maps-grid">
-          {% for map in group.links %}
-          <div class="map-card" data-title="{{ map.name | downcase }}" data-category="{{ group.group | slugify }}">
-            <div class="map-preview">
-              {% if map.images and map.images.size > 0 %}
-                <img src="{{ map.images[0] }}" alt="{{ map.name }}" loading="lazy">
-              {% else %}
-                <div class="map-placeholder">
-                  <i class="fas fa-map"></i>
-                </div>
-              {% endif %}
-              <div class="map-overlay">
-                <a href="{{ map.url }}" target="_blank" rel="noopener" class="map-launch">
-                  <i class="fas fa-external-link-alt"></i>
-                  Launch Map
-                </a>
-              </div>
-              <div class="map-badges">
-                <span class="real-time-badge">
-                  <i class="fas fa-wifi"></i>
-                  Real-time
-                </span>
-              </div>
-            </div>
-            
-            <div class="map-content">
-              <h4 class="map-title">{{ map.name }}</h4>
-              {% if map.description %}
-                <p class="map-description">{{ map.description }}</p>
-              {% endif %}
-              
-              <div class="map-meta">
-                <div class="map-source">
-                  <i class="fas fa-server"></i>
-                  <span class="source-name">
-                    {{ map.url | replace: 'https://', '' | replace: 'http://', '' | split: '/' | first | split: '.' | slice: -2 | join: '.' }}
-                  </span>
-                </div>
-                {% if map.update_frequency %}
-                  <div class="update-frequency">
-                    <i class="fas fa-clock"></i>
-                    <span>{{ map.update_frequency }}</span>
+      <div class="maps-container">
+        {% for group in site.data.maps %}
+          <div class="maps-group" data-category="{{ group.group | slugify }}">
+            <h3 class="group-title">{{ group.group }}</h3>
+            <div class="unified-grid unified-grid-3 maps-grid">
+              {% for map in group.links %}
+                <div class="unified-card map-card" data-category="{{ group.group | slugify }}">
+                  <div class="card-content">
+                    {% if map.images and map.images.size > 0 %}
+                      <div class="card-image">
+                        <img src="{{ map.images[0] }}" alt="{{ map.name }}" loading="lazy" onerror="this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-map\'></i></div>'">
+                        <div class="image-overlay">
+                          <a href="{{ map.url }}" target="_blank" rel="noopener noreferrer" class="overlay-link">
+                            <i class="fas fa-external-link-alt"></i>
+                          </a>
+                        </div>
+                      </div>
+                    {% endif %}
+                    <h4 class="card-title">
+                      <a href="{{ map.url }}" target="_blank" rel="noopener noreferrer">{{ map.name }}</a>
+                    </h4>
+                    {% if map.description %}
+                      <p class="card-description">{{ map.description }}</p>
+                    {% endif %}
+                    <div class="card-meta">
+                      <span class="card-category">{{ group.group }}</span>
+                      <span class="external-link-indicator">
+                        <i class="fas fa-external-link-alt"></i>
+                      </span>
+                    </div>
                   </div>
-                {% endif %}
-              </div>
-              
-              {% if map.features %}
-                <div class="map-features">
-                  {% for feature in map.features %}
-                    <span class="feature-tag">{{ feature }}</span>
-                  {% endfor %}
                 </div>
-              {% endif %}
-              
-              <div class="map-actions">
-                <a href="{{ map.url }}" target="_blank" rel="noopener" class="btn-primary">
-                  <i class="fas fa-play"></i>
-                  Open Map
-                </a>
-                <button class="btn-secondary bookmark-btn" data-url="{{ map.url }}" data-title="{{ map.name }}">
-                  <i class="fas fa-bookmark"></i>
-                  Save
-                </button>
-                <button class="btn-secondary share-btn" data-url="{{ map.url }}" data-title="{{ map.name }}">
-                  <i class="fas fa-share"></i>
-                  Share
-                </button>
-              </div>
+              {% endfor %}
             </div>
           </div>
-          {% endfor %}
-        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-    </div>
-
-    <!-- Popular Maps Section -->
-    <div class="popular-maps">
-      <h3 class="popular-title">
-        <i class="fas fa-fire"></i>
-        Popular Maps
-      </h3>
-      <div class="popular-grid">
-        <!-- This would be dynamically populated with most accessed maps -->
-        <div class="popular-item">
-          <i class="fas fa-wind"></i>
-          <span>Windy - Wind & Weather</span>
-        </div>
-        <div class="popular-item">
-          <i class="fas fa-satellite"></i>
-          <span>Real Earth - Satellite</span>
-        </div>
-        <div class="popular-item">
-          <i class="fas fa-cloud-rain"></i>
-          <span>Global Precipitation</span>
-        </div>
-        <div class="popular-item">
-          <i class="fas fa-bolt"></i>
-          <span>Lightning Activity</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Quick Stats -->
-    <div class="maps-stats">
-      <div class="stat-card">
-        <span class="stat-number">{{ site.data.maps | map: 'links' | map: 'size' | join: ',' | split: ',' | size }}</span>
-        <span class="stat-label">Total Maps</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number">{{ site.data.maps.size }}</span>
-        <span class="stat-label">Categories</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number" id="visibleMaps">-</span>
-        <span class="stat-label">Showing</span>
-      </div>
-      <div class="stat-card">
-        <span class="stat-number" id="bookmarkedCount">0</span>
-        <span class="stat-label">Bookmarked</span>
-      </div>
-    </div>
+    {% else %}
+      <p>No maps to display.</p>
+    {% endif %}
   </div>
 </section>
 
+<style>
+.maps-section {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.maps-section .section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.maps-section .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.maps-section .section-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.maps-container {
+  margin-top: 40px;
+}
+
+.maps-group {
+  margin-bottom: 60px;
+}
+
+.maps-group.filtered-out {
+  display: none;
+}
+
+.group-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.map-card {
+  background: white;
+  color: #333;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.map-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.map-card .card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.map-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.map-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.map-card:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-link {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  transition: background 0.3s ease;
+}
+
+.overlay-link:hover {
+  background: rgba(255,255,255,0.3);
+}
+
+.map-card .card-content {
+  padding: 25px;
+}
+
+.map-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.map-card .card-title a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.map-card .card-title a:hover {
+  color: #667eea;
+}
+
+.map-card .card-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.map-card .card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.card-category {
+  background: #f0f0f0;
+  color: #666;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.external-link-indicator {
+  color: #999;
+}
+
+.unified-filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 2px solid rgba(255,255,255,0.3);
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: white;
+  color: #667eea;
+  border-color: white;
+}
+
+@media (max-width: 768px) {
+  .maps-section {
+    padding: 60px 0;
+  }
+  
+  .maps-section .section-title {
+    font-size: 2rem;
+  }
+  
+  .unified-grid-3 {
+    grid-template-columns: 1fr;
+  }
+  
+  .map-card .card-image {
+    height: 150px;
+  }
+}
+</style>
+
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('mapsSearch');
-  const categoryButtons = document.querySelectorAll('.category-btn');
-  const viewButtons = document.querySelectorAll('.view-btn');
-  const mapsGrid = document.getElementById('mapsGrid');
-  const mapCards = document.querySelectorAll('.map-card');
-  const mapsGroups = document.querySelectorAll('.maps-group');
-  const visibleMapsCount = document.getElementById('visibleMaps');
-  const bookmarkedCount = document.getElementById('bookmarkedCount');
+  const mapsSection = document.querySelector('.maps-section');
+  if (!mapsSection) return;
 
-  // Load bookmarks from localStorage
-  let bookmarks = JSON.parse(localStorage.getItem('mapBookmarks') || '[]');
-  updateBookmarkUI();
+  const filterButtons = mapsSection.querySelectorAll('.filter-btn');
+  const mapsGroups = mapsSection.querySelectorAll('.maps-group');
 
-  // Search functionality
-  searchInput.addEventListener('input', function() {
-    filterMaps();
-  });
-
-  // Category filter
-  categoryButtons.forEach(button => {
+  filterButtons.forEach(button => {
     button.addEventListener('click', function() {
-      categoryButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-      filterMaps();
-    });
-  });
-
-  // View toggle
-  viewButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      viewButtons.forEach(btn => btn.classList.remove('active'));
+      filterButtons.forEach(btn => btn.classList.remove('active'));
       this.classList.add('active');
       
-      const view = this.dataset.view;
-      mapsGrid.className = view === 'list' ? 'maps-content list-view' : 'maps-content';
-    });
-  });
-
-  // Filter maps function
-  function filterMaps() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const activeCategory = document.querySelector('.category-btn.active').dataset.category;
-    let visibleCount = 0;
-
-    mapsGroups.forEach(group => {
-      const groupCategory = group.dataset.category;
-      let hasVisibleMaps = false;
-
-      if (activeCategory === 'all' || activeCategory === groupCategory) {
-        const cards = group.querySelectorAll('.map-card');
-        
-        cards.forEach(card => {
-          const title = card.dataset.title;
-          const category = card.dataset.category;
-          const matchesSearch = title.includes(searchTerm);
-          
-          if (matchesSearch) {
-            card.style.display = 'block';
-            hasVisibleMaps = true;
-            visibleCount++;
+      const filter = this.getAttribute('data-filter');
+      
+      if (filter === 'all') {
+        mapsGroups.forEach(group => {
+          group.classList.remove('filtered-out');
+        });
+      } else {
+        mapsGroups.forEach(group => {
+          if (group.getAttribute('data-category') === filter) {
+            group.classList.remove('filtered-out');
           } else {
-            card.style.display = 'none';
+            group.classList.add('filtered-out');
           }
         });
-        
-        group.style.display = hasVisibleMaps ? 'block' : 'none';
-      } else {
-        group.style.display = 'none';
-      }
-    });
-
-    visibleMapsCount.textContent = visibleCount;
-  }
-
-  // Bookmark functionality
-  document.querySelectorAll('.bookmark-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const url = this.dataset.url;
-      const title = this.dataset.title;
-      const bookmark = { url, title };
-
-      const index = bookmarks.findIndex(b => b.url === url);
-      if (index === -1) {
-        bookmarks.push(bookmark);
-        this.classList.add('bookmarked');
-        this.innerHTML = '<i class="fas fa-bookmark"></i> Saved';
-      } else {
-        bookmarks.splice(index, 1);
-        this.classList.remove('bookmarked');
-        this.innerHTML = '<i class="fas fa-bookmark"></i> Save';
-      }
-
-      localStorage.setItem('mapBookmarks', JSON.stringify(bookmarks));
-      updateBookmarkUI();
-    });
-  });
-
-  // Share functionality
-  document.querySelectorAll('.share-btn').forEach(button => {
-    button.addEventListener('click', function() {
-      const url = this.dataset.url;
-      const title = this.dataset.title;
-
-      if (navigator.share) {
-        navigator.share({
-          title: title,
-          url: url
-        });
-      } else {
-        // Fallback: copy to clipboard
-        navigator.clipboard.writeText(url).then(() => {
-          showNotification('Link copied to clipboard!');
-        });
       }
     });
   });
-
-  function updateBookmarkUI() {
-    bookmarkedCount.textContent = bookmarks.length;
-    
-    document.querySelectorAll('.bookmark-btn').forEach(button => {
-      const url = button.dataset.url;
-      const isBookmarked = bookmarks.some(b => b.url === url);
-      
-      if (isBookmarked) {
-        button.classList.add('bookmarked');
-        button.innerHTML = '<i class="fas fa-bookmark"></i> Saved';
-      } else {
-        button.classList.remove('bookmarked');
-        button.innerHTML = '<i class="fas fa-bookmark"></i> Save';
-      }
-    });
-  }
-
-  function showNotification(message) {
-    const notification = document.createElement('div');
-    notification.className = 'notification';
-    notification.textContent = message;
-    
-    Object.assign(notification.style, {
-      position: 'fixed',
-      top: '2rem',
-      right: '2rem',
-      background: 'var(--primary-color)',
-      color: 'white',
-      padding: '1rem 1.5rem',
-      borderRadius: '10px',
-      boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
-      zIndex: '9999',
-      transform: 'translateX(100px)',
-      opacity: '0',
-      transition: 'all 0.3s ease'
-    });
-    
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-      notification.style.transform = 'translateX(0)';
-      notification.style.opacity = '1';
-    }, 100);
-    
-    setTimeout(() => {
-      notification.style.transform = 'translateX(100px)';
-      notification.style.opacity = '0';
-      setTimeout(() => {
-        document.body.removeChild(notification);
-      }, 300);
-    }, 3000);
-  }
-
-  // Initial filter
-  filterMaps();
 });
 </script>
+{% endif %}

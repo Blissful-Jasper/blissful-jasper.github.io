@@ -1,33 +1,113 @@
-// 阅读进度条功能
+/* ================================================
+   阅读进度条 JavaScript - 更新版本
+   ================================================ */
+
+/**
+ * 阅读进度条功能
+ */
 class ReadingProgress {
   constructor() {
-    this.progressBar = null;
-    this.progressPercentage = null;
-    this.estimatedTime = null;
     this.init();
   }
-  
+
   init() {
-    if (this.isPostPage()) {
-      this.createProgressBar();
-      this.calculateReadingTime();
-      this.bindScrollEvents();
-      this.addNavigationButtons();
-    }
+    this.createProgressBar();
+    this.bindEvents();
+    this.updateProgress();
+    this.addReadingTime();
   }
-  
-  isPostPage() {
-    // 检查是否为博客文章页面
-    return document.querySelector('.post-content, .blog-post-content, article') !== null;
-  }
-  
+
   createProgressBar() {
     // 创建进度条容器
     const progressContainer = document.createElement('div');
-    progressContainer.className = 'reading-progress-container';
-    progressContainer.innerHTML = `
-      <div class="reading-progress-bar">
-        <div class="reading-progress-fill"></div>
+    progressContainer.className = 'reading-progress';
+    
+    // 创建进度条
+    const progressBar = document.createElement('div');
+    progressBar.className = 'reading-progress-bar';
+    progressContainer.appendChild(progressBar);
+    
+    // 创建百分比显示
+    const progressPercent = document.createElement('div');
+    progressPercent.className = 'reading-progress-percent';
+    progressPercent.textContent = '0%';
+    
+    // 添加到页面
+    document.body.appendChild(progressContainer);
+    document.body.appendChild(progressPercent);
+    
+    // 保存引用
+    this.progressBar = progressBar;
+    this.progressPercent = progressPercent;
+  }
+
+  bindEvents() {
+    let ticking = false;
+    
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          this.updateProgress();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+  }
+
+  updateProgress() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    const scrollableHeight = documentHeight - windowHeight;
+    
+    let progress = 0;
+    if (scrollableHeight > 0) {
+      progress = Math.min(Math.max((scrollTop / scrollableHeight) * 100, 0), 100);
+    }
+    
+    this.progressBar.style.width = `${progress}%`;
+    
+    const roundedProgress = Math.round(progress);
+    this.progressPercent.textContent = `${roundedProgress}%`;
+    
+    if (progress > 5 && progress < 95) {
+      this.progressPercent.classList.add('visible');
+    } else {
+      this.progressPercent.classList.remove('visible');
+    }
+  }
+
+  getEstimatedReadingTime() {
+    const content = document.querySelector('.post-content, .blog-content, main, article');
+    if (!content) return null;
+    
+    const text = content.textContent || content.innerText;
+    const words = text.trim().split(/\s+/).length;
+    const wordsPerMinute = 200;
+    const minutes = Math.ceil(words / wordsPerMinute);
+    
+    return minutes;
+  }
+
+  addReadingTime() {
+    const readingTime = this.getEstimatedReadingTime();
+    if (!readingTime) return;
+    
+    const timeElement = document.createElement('div');
+    timeElement.className = 'reading-time';
+    timeElement.innerHTML = `<i class="fas fa-clock"></i> 预计阅读时间：${readingTime} 分钟`;
+    
+    const target = document.querySelector('.post-meta, .blog-meta, .entry-meta');
+    if (target) {
+      target.appendChild(timeElement);
+    }
+  }
+}
       </div>
       <div class="reading-progress-info">
         <span class="progress-percentage">0%</span>

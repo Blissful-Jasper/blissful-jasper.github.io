@@ -1,0 +1,280 @@
+- id: climate
+  title: 气候科学
+  description: 气候变化、气候动力学和气候建模相关期刊
+  icon: fas fa-thermometer-half
+  journals:
+    - title: Climate Dynamics
+      publisher: Springer
+      website: https://link.springer.com/journal/382
+      description: 气候系统动力学和变化的理论、观测和建模研究
+      impact_factor: 4.901
+      quartile: 1
+      keywords: [气候动力学, 气候变化, 气候建模]
+      language: English
+      frequency: Monthly
+      rss: https://link.springer.com/journal/382.rss
+      featured: true
+      category: climate
+      
+    - title: Journal of Climate
+      publisher: American Meteorological Society
+      website: https://journals.ametsoc.org/view/journals/clim/clim-overview.xml
+      description: 气候系统物理、动力学和预测的综合研究
+      impact_factor: 5.038
+      quartile: 1
+      keywords: [气候物理, 气候预测, 气候系统]
+      language: English
+      frequency: Semi-monthly
+      featured: true
+      category: climate
+      
+    - title: Nature Climate Change
+      publisher: Nature Publishing Group
+      website: https://www.nature.com/nclimate/
+      description: 气候变化的跨学科研究，包括科学、技术和政策
+      impact_factor: 25.290
+      quartile: 1
+      keywords: [气候变化, 政策, 影响评估]
+      language: English
+      frequency: Monthly
+      featured: true
+      category: climate
+      
+    - title: Climatic Change
+      publisher: Springer
+      website: https://link.springer.com/journal/10584
+      description: 气候变化的科学、技术、社会和政策方面
+      impact_factor: 4.901
+      quartile: 1
+      keywords: [气候变化, 适应, 减缓]
+      language: English
+      frequency: Semi-monthly
+
+- id: atmospheric
+  title: 大气科学
+  description: 大气物理、大气化学和大气动力学期刊
+  icon: fas fa-cloud
+  journals:
+    - title: Journal of Atmospheric Sciences
+      publisher: American Meteorological Society
+      website: https://journals.ametsoc.org/view/journals/atsc/atsc-overview.xml
+      description: 大气科学的理论、观测和建模研究
+      impact_factor: 3.174
+      quartile: 1
+      keywords: [大气动力学, 大气物理, 数值模拟]
+      language: English
+      frequency: Semi-monthly
+      
+    - title: Atmospheric Chemistry and Physics
+      publisher: European Geosciences Union
+      website: https://acp.copernicus.org/
+      description: 大气成分、过程和气候影响的研究
+      impact_factor: 6.133
+      quartile: 1
+      keywords: [大气化学, 大气物理, 气溶胶]
+      language: English
+      frequency: Weekly
+      open_access: true
+      
+    - title: Quarterly Journal of the Royal Meteorological Society
+      publisher: Royal Meteorological Society
+      website: https://rmets.onlinelibrary.wiley.com/journal/1477870x
+      description: 气象学和大气科学的高质量研究
+      impact_factor: 8.900
+      quartile: 1
+      keywords: [气象学, 天气预报, 大气科学]
+      language: English
+      frequency: Monthly
+      
+    - title: Atmospheric Research
+      publisher: Elsevier
+      website: https://www.sciencedirect.com/journal/atmospheric-research
+      description: 大气现象的实验和理论研究
+      impact_factor: 5.965
+      quartile: 1
+      keywords: [大气物理, 云物理, 降水]
+      language: English
+      frequency: Semi-monthly
+
+- id: ocean
+  title: 海洋科学
+  description: 海洋物理、海洋化学和海洋-大气相互作用期刊
+  icon: fas fa-water
+  journals:
+    - title: Journal of Physical Oceanography
+      publisher: American Meteorological Society
+      website: https://journals.ametsoc.org/view/journals/phoc/phoc-overview.xml
+      description: 海洋物理过程和动力学研究
+      impact_factor: 3.138
+      quartile: 1
+      keywords: [海洋动力学, 海洋物理, 海流]
+      language: English
+      frequency: Monthly
+      
+    - title: Ocean Modelling
+      publisher: Elsevier
+      website: https://www.sciencedirect.com/journal/ocean-modelling
+      description: 海洋数值模拟和建模方法
+      impact_factor: 3.293
+      quartile: 2
+      keywords: [海洋建模, 数值模拟, 海洋预报]
+      language: English
+      frequency: Monthly
+      
+    - title: Deep Sea Research Part I
+      publisher: Elsevier
+      website: https://www.sciencedirect.com/journal/deep-sea-research-part-i-oceanographic-research-papers
+      description: 深海海洋学研究论文
+      impact_factor: 3.101
+      quartile: 2
+      keywords: [深海, 海洋学, 海洋环流]
+      language: English
+      frequency: Monthly
+      
+    - title: Progress in Oceanography
+      publisher: Elsevier
+      website: https://www.sciencedirect.com/journal/progress-in-oceanography
+      description: 海洋学各领域的综述和进展
+      impact_factor: 4.925
+      quartile: 1
+      keywords: [海洋学综述, 海洋生态, 海洋化学]
+      language: English
+      frequency: Monthly
+
+- id: earth
+  title: 地球科学
+  description: 地球物理、地质学和地球系统科学期刊
+  icon: fas fa-globe-americas
+  journals:
+    - title: Geophysical Research Letters
+      publisher: American Geophysical Union
+      website: https://agupubs.onlinelibrary.wiley.com/journal/19448007
+      description: 地球物理学快速发表的重要发现
+      impact_factor: 5.576
+      quartile: 1
+      keywords: [地球物理, 快速发表, 重要发现]
+      language: English
+      frequency: Semi-monthly
+      
+    - title: Journal of Geophysical Research - Atmospheres
+      publisher: American Geophysical Union
+      website: https://agupubs.onlinelibrary.wiley.com/journal/2169897x
+      description: 大气科学的地球物理学研究
+      impact_factor: 4.231
+      quartile: 1
+      keywords: [大气地球物理, 大气遥感, 大气建模]
+      language: English
+      frequency: Semi-monthly
+      
+    - title: Earth System Dynamics
+      publisher: European Geosciences Union
+      website: https://esd.copernicus.org/
+      description: 地球系统的动力学和变化
+      impact_factor: 4.189
+      quartile: 1
+      keywords: [地球系统, 系统动力学, 全球变化]
+      language: English
+      frequency: Irregular
+      open_access: true
+      
+    - title: Reviews of Geophysics
+      publisher: American Geophysical Union
+      website: https://agupubs.onlinelibrary.wiley.com/journal/19449208
+      description: 地球物理学各领域的综合评述
+      impact_factor: 25.212
+      quartile: 1
+      keywords: [地球物理综述, 理论发展, 方法创新]
+      language: English
+      frequency: Quarterly
+
+- id: modeling
+  title: 数值模拟
+  description: 数值方法、计算科学和模式开发期刊
+  icon: fas fa-calculator
+  journals:
+    - title: Journal of Computational Physics
+      publisher: Elsevier
+      website: https://www.sciencedirect.com/journal/journal-of-computational-physics
+      description: 计算物理方法和算法
+      impact_factor: 4.645
+      quartile: 1
+      keywords: [计算物理, 数值方法, 算法]
+      language: English
+      frequency: Semi-monthly
+      
+    - title: Monthly Weather Review
+      publisher: American Meteorological Society
+      website: https://journals.ametsoc.org/view/journals/mwre/mwre-overview.xml
+      description: 天气分析、预报和数值天气预报
+      impact_factor: 3.307
+      quartile: 2
+      keywords: [天气预报, 数值天气预报, 天气分析]
+      language: English
+      frequency: Monthly
+      
+    - title: Geoscientific Model Development
+      publisher: European Geosciences Union
+      website: https://gmd.copernicus.org/
+      description: 地球科学模式的开发和评估
+      impact_factor: 5.340
+      quartile: 1
+      keywords: [模式开发, 模式评估, 地球系统模式]
+      language: English
+      frequency: Irregular
+      open_access: true
+      
+    - title: Journal of Advances in Modeling Earth Systems
+      publisher: American Geophysical Union
+      website: https://agupubs.onlinelibrary.wiley.com/journal/19422466
+      description: 地球系统建模的方法和应用
+      impact_factor: 6.200
+      quartile: 1
+      keywords: [地球系统建模, 模式耦合, 建模方法]
+      language: English
+      frequency: Monthly
+      open_access: true
+
+- id: interdisciplinary
+  title: 跨学科期刊
+  description: 多学科交叉和综合性科学期刊
+  icon: fas fa-project-diagram
+  journals:
+    - title: Nature
+      publisher: Nature Publishing Group
+      website: https://www.nature.com/
+      description: 自然科学各领域的突破性研究
+      impact_factor: 69.504
+      quartile: 1
+      keywords: [自然科学, 突破性研究, 高影响]
+      language: English
+      frequency: Weekly
+      
+    - title: Science
+      publisher: American Association for the Advancement of Science
+      website: https://www.science.org/journal/science
+      description: 科学各领域的重要发现和进展
+      impact_factor: 63.714
+      quartile: 1
+      keywords: [科学进展, 重要发现, 跨学科]
+      language: English
+      frequency: Weekly
+      
+    - title: Proceedings of the National Academy of Sciences
+      publisher: National Academy of Sciences
+      website: https://www.pnas.org/
+      description: 美国国家科学院院报，覆盖所有科学领域
+      impact_factor: 12.779
+      quartile: 1
+      keywords: [国家科学院, 多学科, 高质量]
+      language: English
+      frequency: Weekly
+      
+    - title: Earth and Planetary Science Letters
+      publisher: Elsevier
+      website: https://www.sciencedirect.com/journal/earth-and-planetary-science-letters
+      description: 地球和行星科学的快速交流平台
+      impact_factor: 5.785
+      quartile: 1
+      keywords: [地球科学, 行星科学, 快速发表]
+      language: English
+      frequency: Semi-monthly

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原图查看器 - 简单测试</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        
+        .test-image {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .test-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .test-buttons {
+            margin: 30px 0;
+        }
+        
+        .test-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        
+        .debug-info {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+            font-family: monospace;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+    <link rel="stylesheet" href="/assets/gallery-page.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-camera"></i> 原图查看器测试</h1>
+        
+        <div class="test-images">
+            <img src="/pictures/DSC_1667.JPG" alt="测试图片1" class="test-image" onclick="testLightbox('/pictures/DSC_1667.JPG', '数据分析工作', '在实验室进行气候数据分析和处理')">
+            <img src="/pictures/DSC_1573.jpg" alt="测试图片2" class="test-image" onclick="testLightbox('/pictures/DSC_1573.jpg', '气象站维护', '对野外自动气象站进行例行维护和检查')">
+            <img src="/pictures/DSC_1354.jpg" alt="测试图片3" class="test-image" onclick="testLightbox('/pictures/DSC_1354.jpg', '国际学术会议', '在国际大气科学会议上展示研究成果')">
+        </div>
+        
+        <div class="test-buttons">
+            <button class="test-btn" onclick="directTestOriginalViewer()">
+                <i class="fas fa-expand-arrows-alt"></i> 直接测试原图查看器
+            </button>
+            <button class="test-btn" onclick="testImagePaths()">
+                <i class="fas fa-link"></i> 测试图片路径
+            </button>
+            <button class="test-btn" onclick="showDebugInfo()">
+                <i class="fas fa-bug"></i> 显示调试信息
+            </button>
+        </div>
+        
+        <div id="debugInfo" class="debug-info" style="display: none;"></div>
+    </div>
+
+    <!-- 灯箱模态框 -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-overlay" onclick="closeLightbox()"></div>
+        <div class="lightbox-content">
+            <div class="lightbox-header">
+                <div class="lightbox-controls">
+                    <button class="control-btn" id="viewOriginalBtn" onclick="viewOriginalImage()" title="查看原图">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                        <span>原图</span>
+                    </button>
+                    <button class="control-btn" id="downloadBtn" onclick="downloadImage()" title="下载图片">
+                        <i class="fas fa-download"></i>
+                        <span>下载</span>
+                    </button>
+                    <button class="control-btn" id="shareBtn" onclick="shareCurrentImage()" title="分享图片">
+                        <i class="fas fa-share-alt"></i>
+                        <span>分享</span>
+                    </button>
+                </div>
+                <button class="lightbox-close" onclick="closeLightbox()" title="关闭">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="lightbox-image-container">
+                <img id="lightbox-image" src="" alt="" loading="lazy">
+                <div class="image-loading" id="imageLoading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>加载中...</span>
+                </div>
+            </div>
+            
+            <div class="lightbox-info">
+                <div class="info-content">
+                    <h3 id="lightbox-title">图片标题</h3>
+                    <p id="lightbox-description">图片描述</p>
+                    <div class="image-meta" id="lightbox-meta"></div>
+                </div>
+                <div class="image-actions">
+                    <button class="action-button zoom-in" onclick="zoomImage(1.2)" title="放大">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                    <button class="action-button zoom-out" onclick="zoomImage(0.8)" title="缩小">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <button class="action-button zoom-reset" onclick="resetZoom()" title="重置">
+                        <i class="fas fa-compress"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/gallery-page.js"></script>
+
+    <script>
+        // 测试lightbox
+        function testLightbox(imagePath, title, description) {
+            console.log('Testing lightbox with:', { imagePath, title, description });
+            
+            const metadata = {
+                location: '测试地点',
+                date: '2024-01-01',
+                camera: 'Canon EOS',
+                tags: '测试,图片'
+            };
+            
+            openLightbox(imagePath, title, description, {
+                originalPath: imagePath,
+                thumbnail: imagePath,
+                metadata: metadata
+            });
+        }
+        
+        // 直接测试原图查看器
+        function directTestOriginalViewer() {
+            window.currentImageData = {
+                src: '/pictures/DSC_1667.JPG',
+                title: '直接测试图片',
+                description: '这是一张直接调用原图查看器的测试图片',
+                originalPath: '/pictures/DSC_1667.JPG',
+                thumbnail: '/pictures/DSC_1667.JPG',
+                metadata: {
+                    location: '实验室',
+                    date: '2024-01-01',
+                    camera: 'Canon EOS',
+                    tags: '直接测试'
+                }
+            };
+            
+            console.log('Direct test data:', window.currentImageData);
+            viewOriginalImage();
+        }
+        
+        // 测试图片路径
+        function testImagePaths() {
+            const testPaths = [
+                '/pictures/DSC_1667.JPG',
+                '/pictures/DSC_1573.jpg',
+                '/pictures/DSC_1354.jpg',
+                '/pictures/DSC_1361.jpg'
+            ];
+            
+            const debugDiv = document.getElementById('debugInfo');
+            debugDiv.style.display = 'block';
+            debugDiv.innerHTML = '<h3>图片路径测试结果:</h3>';
+            
+            testPaths.forEach((path, index) => {
+                const fullUrl = window.location.origin + path;
+                debugDiv.innerHTML += `<div><strong>测试 ${index + 1}:</strong> <a href="${fullUrl}" target="_blank">${fullUrl}</a> - `;
+                
+                const img = new Image();
+                const testDiv = document.createElement('span');
+                testDiv.textContent = '测试中...';
+                debugDiv.appendChild(testDiv);
+                
+                img.onload = function() {
+                    testDiv.innerHTML = `<span style="color: green;">✓ 成功 (${this.naturalWidth}×${this.naturalHeight})</span>`;
+                };
+                
+                img.onerror = function() {
+                    testDiv.innerHTML = `<span style="color: red;">✗ 失败</span>`;
+                };
+                
+                img.src = fullUrl;
+                debugDiv.innerHTML += '<br>';
+            });
+        }
+        
+        // 显示调试信息
+        function showDebugInfo() {
+            const debugDiv = document.getElementById('debugInfo');
+            debugDiv.style.display = 'block';
+            
+            const info = {
+                '当前URL': window.location.href,
+                '基础URL': window.location.origin,
+                '路径': window.location.pathname,
+                '用户代理': navigator.userAgent.substring(0, 80) + '...',
+                '图片数据可用': typeof window.currentImageData !== 'undefined',
+                '画廊JS已加载': typeof viewOriginalImage === 'function',
+                'openLightbox函数': typeof openLightbox === 'function',
+                'closeLightbox函数': typeof closeLightbox === 'function'
+            };
+            
+            let html = '<h3>系统调试信息:</h3>';
+            for (const [key, value] of Object.entries(info)) {
+                html += `<div><strong>${key}:</strong> ${value}</div>`;
+            }
+            
+            if (window.currentImageData) {
+                html += '<h3>当前图片数据:</h3>';
+                html += `<pre style="background: #f8f9fa; padding: 10px; border-radius: 5px; overflow-x: auto;">${JSON.stringify(window.currentImageData, null, 2)}</pre>`;
+            }
+            
+            debugDiv.innerHTML = html;
+        }
+        
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Simple test page loaded');
+            console.log('Gallery functions available:', {
+                openLightbox: typeof openLightbox,
+                viewOriginalImage: typeof viewOriginalImage,
+                closeLightbox: typeof closeLightbox
+            });
+            
+            // 检查图片加载
+            const images = document.querySelectorAll('.test-image');
+            images.forEach((img, index) => {
+                img.onload = () => console.log(`Test image ${index + 1} loaded successfully`);
+                img.onerror = () => console.warn(`Test image ${index + 1} failed to load`);
+            });
+        });
+    </script>
+</body>
+</html>

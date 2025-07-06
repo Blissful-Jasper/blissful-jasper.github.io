@@ -1,53 +1,150 @@
-/* Publications Section Styles */
+/* Publications Section 现代专业样式 - 专为首页设计的紧凑版本 */
 
+/* 定义专属的CSS变量 */
+:root {
+  --pub-primary: #a855f7;
+  --pub-secondary: #3b82f6;
+  --pub-accent: #f59e0b;
+  --pub-bg: #faf5ff;
+  --pub-card-bg: #ffffff;
+  --pub-text-primary: #1e293b;
+  --pub-text-secondary: #64748b;
+  --pub-border: #e2e8f0;
+  --pub-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --pub-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Publications Section 特定样式 - 紧凑版本 */
 .publications-section {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-    min-height: 100vh;
-    padding: 4rem 0;
-    position: relative;
-    overflow: hidden;
+  padding: 3rem 0;
+  background: var(--pub-bg);
+  position: relative;
+  overflow: hidden;
 }
 
 .publications-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.06)"/></svg>');
-    pointer-events: none;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+  pointer-events: none;
 }
 
-.publications-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    position: relative;
-    z-index: 1;
+.publications-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-/* Header */
-.publications-header {
-    text-align: center;
-    margin-bottom: 4rem;
-    animation: fadeInUp 0.8s ease-out;
+.publications-content {
+  display: grid;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
-.publications-header h2 {
-    font-size: 3rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 1rem;
+/* Publications Stats Card - 紧凑版本 */
+.publications-stats-card {
+  background: var(--pub-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--pub-shadow);
+  border: 1px solid var(--pub-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
 }
 
-.publications-header p {
-    font-size: 1.2rem;
-    color: var(--text-light);
-    max-width: 600px;
+.publications-stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--pub-shadow-hover);
+}
+
+.publications-stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pub-primary), var(--pub-secondary));
+}
+
+.publications-stats-card .card-header {
+  padding: 1.5rem 1.5rem 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+}
+
+.publications-stats-card .card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--pub-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publications-stats-card .card-title i {
+  color: var(--pub-primary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+  border-radius: 12px;
+  border: 1px solid var(--pub-border);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--pub-primary), var(--pub-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pub-primary);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--pub-text-secondary);
+  font-weight: 500;
+}
     margin: 0 auto;
     line-height: 1.6;
 }
