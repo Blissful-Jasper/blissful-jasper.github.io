@@ -11,7 +11,7 @@ gem "csv"
 gem "base64"
 gem "bigdecimal"
 
-# Windows 平台支持
+# 跨平台支持
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"

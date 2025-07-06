@@ -65,14 +65,31 @@
 git clone https://github.com/blissful-jasper/blissful-jasper.github.io.git
 cd blissful-jasper.github.io
 
-# 2. 安装依赖
-bundle install
+# 2. 快速修复和启动 (推荐)
+# Windows PowerShell
+.\fix-github-pages.ps1
 
-# 3. 启动本地服务器
+# Linux/macOS Bash
+chmod +x fix-github-pages.sh
+./fix-github-pages.sh
+
+# 3. 手动安装 (备选方案)
+bundle install
 bundle exec jekyll serve
 
 # 4. 访问网站
 # 打开浏览器访问 http://localhost:4000
+```
+
+### 跨平台部署修复
+如果遇到平台兼容性问题：
+```bash
+# 清理依赖
+rm -rf .bundle vendor Gemfile.lock
+
+# 重新配置
+bundle config set --local deployment false
+bundle install --jobs 4 --retry 3
 ```
 
 ### 开发模式
@@ -247,4 +264,4 @@ page_sections:
 
 ---
 
-*最后更新: 2025年1月6日*
+*最后更新: 2025年7月6日*
