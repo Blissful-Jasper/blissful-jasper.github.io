@@ -1,0 +1,184 @@
+---
+layout: page
+title: Publications
+permalink: /publications.html
+---
+
+{% unless site.page_sections.publications %}
+<link rel="stylesheet" href="assets/page-disabled-styles.css">
+<div class="page-disabled-notice">
+  <div class="notice-content">
+    <h2>页面暂时关闭</h2>
+    <p>Publications 页面当前已在配置中禁用。</p>
+    <p>如需启用此页面，请在 _config.yml 中设置 publications: true</p>
+    <a href="/" class="back-home-btn">返回主页</a>
+  </div>
+</div>
+{% else %}
+
+<link rel="stylesheet" href="assets/publications-page-new.css">
+
+<div class="publications-page">
+  <div class="publications-page-container">
+    
+    <!-- 页面头部 -->
+    <header class="publications-page-header">
+      <h1 class="publications-page-title">学术发表</h1>
+      <p class="publications-page-subtitle">Selected Publications & Research Output</p>
+      <p class="publications-page-description">
+        致力于高质量学术研究，在热带大气动力学、对流耦合赤道波、热带降水变率等领域发表多篇学术论文。
+        以下是我的主要学术成果，涵盖理论研究、观测分析和模式评估等多个方面。
+      </p>
+    </header>
+
+    <!-- 统计信息 -->
+    <section class="publications-stats">
+      {% assign total_papers = 0 %}
+      {% for year_group in site.data.publications %}
+        {% assign total_papers = total_papers | plus: year_group.papers.size %}
+      {% endfor %}
+      
+      <div class="stat-card">
+        <span class="stat-number">{{ total_papers }}</span>
+        <div class="stat-label">发表论文</div>
+        <div class="stat-description">总发表数量</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">{{ site.data.publications.size }}</span>
+        <div class="stat-label">发表年份</div>
+        <div class="stat-description">活跃年数</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">150+</span>
+        <div class="stat-label">总引用数</div>
+        <div class="stat-description">学术影响力</div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5</span>
+        <div class="stat-label">合作机构</div>
+        <div class="stat-description">国际合作</div>
+      </div>
+    </section>
+
+    <!-- 研究领域标签 -->
+    <section class="research-areas">
+      <div class="area-tags">
+        <div class="area-tag active" data-area="all">全部论文</div>
+        <div class="area-tag" data-area="waves">赤道波动</div>
+        <div class="area-tag" data-area="precipitation">热带降水</div>
+        <div class="area-tag" data-area="ai">人工智能</div>
+        <div class="area-tag" data-area="models">模式评估</div>
+      </div>
+    </section>
+
+    <!-- 年份导航 -->
+    <nav class="year-navigation">
+      {% for year_group in site.data.publications reversed %}
+        <a href="#{{ year_group.year }}" class="year-btn{% if forloop.first %} active{% endif %}">{{ year_group.year }}</a>
+      {% endfor %}
+    </nav>
+
+    <!-- 论文列表 -->
+    <section class="publications-list">
+      {% for year_group in site.data.publications %}
+        <article class="year-section" id="{{ year_group.year }}">
+          <div class="year-header">
+            <div class="year-icon">{{ year_group.year | slice: -2, 2 }}</div>
+            <h2 class="year-title">{{ year_group.year }}年发表</h2>
+          </div>
+          <div class="publications-grid">
+            {% for paper in year_group.papers %}
+              <div class="publication-item" data-area="{{ paper.category | default: 'general' }}">
+                <div class="publication-header">
+                  <h3 class="publication-title">{{ paper.title }}</h3>
+                  <span class="publication-status status-{{ paper.status | default: 'published' }}">
+                    {% if paper.status == 'published' %}已发表{% elsif paper.status == 'accepted' %}已接收{% elsif paper.status == 'submitted' %}已投稿{% else %}已发表{% endif %}
+                  </span>
+                </div>
+                <div class="publication-authors">{{ paper.authors }}</div>
+                <div class="publication-journal">
+                  {{ paper.journal }}{% if paper.year %} ({{ paper.year }}){% endif %}
+                </div>
+                {% if paper.abstract %}
+                  <div class="publication-abstract">{{ paper.abstract }}</div>
+                {% endif %}
+                <div class="publication-links">
+                  {% if paper.pdf %}
+                    <a href="{{ paper.pdf }}" target="_blank" class="publication-link">
+                      <i class="fas fa-file-pdf"></i>
+                      PDF
+                    </a>
+                  {% endif %}
+                  {% if paper.doi %}
+                    <a href="{{ paper.doi }}" target="_blank" class="publication-link">
+                      <i class="fas fa-external-link-alt"></i>
+                      DOI
+                    </a>
+                  {% endif %}
+                  {% if paper.code %}
+                    <a href="{{ paper.code }}" target="_blank" class="publication-link">
+                      <i class="fas fa-code"></i>
+                      Code
+                    </a>
+                  {% endif %}
+                  {% if paper.data %}
+                    <a href="{{ paper.data }}" target="_blank" class="publication-link">
+                      <i class="fas fa-database"></i>
+                      Data
+                    </a>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </article>
+      {% endfor %}
+    </section>
+
+  </div>
+</div>
+
+<script>
+// 年份导航功能
+document.querySelectorAll('.year-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // 移除所有活动状态
+    document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+    // 添加当前活动状态
+    this.classList.add('active');
+    
+    // 滚动到对应年份
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+// 研究领域过滤功能
+document.querySelectorAll('.area-tag').forEach(tag => {
+  tag.addEventListener('click', function() {
+    // 移除所有活动状态
+    document.querySelectorAll('.area-tag').forEach(t => t.classList.remove('active'));
+    // 添加当前活动状态
+    this.classList.add('active');
+    
+    const selectedArea = this.getAttribute('data-area');
+    const publications = document.querySelectorAll('.publication-item');
+    
+    publications.forEach(pub => {
+      const pubAreas = pub.getAttribute('data-area');
+      if (selectedArea === 'all' || (pubAreas && pubAreas.includes(selectedArea))) {
+        pub.style.display = 'block';
+      } else {
+        pub.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+{% endunless %}

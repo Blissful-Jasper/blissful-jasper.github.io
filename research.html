@@ -1,0 +1,242 @@
+---
+layout: page
+title: Research
+permalink: /research.html
+---
+
+{% unless site.page_sections.research %}
+<link rel="stylesheet" href="assets/page-disabled-styles.css">
+<div class="page-disabled-notice">
+  <div class="notice-content">
+    <h2>页面暂时关闭</h2>
+    <p>Research 页面当前已在配置中禁用。</p>
+    <p>如需启用此页面，请在 _config.yml 中设置 research: true</p>
+    <a href="/" class="back-home-btn">返回主页</a>
+  </div>
+</div>
+{% else %}
+
+<link rel="stylesheet" href="assets/research-page-new.css">
+
+<div class="research-page">
+  <div class="research-page-container">
+    
+    <!-- 页面头部 -->
+    <header class="research-page-header">
+      <h1 class="research-page-title">研究方向</h1>
+      <p class="research-page-subtitle">探索热带大气动力学与人工智能的交叉融合</p>
+      <p class="research-page-description">
+        专注于热带大气动力学中的波动现象，包括对流耦合赤道波、热带降水变率及其在气候模式中的表现特征。
+        同时探索深度学习等人工智能技术在气象预报和气候模拟中的创新应用，致力于推动气象学与数据科学的交叉发展。
+      </p>
+    </header>
+
+    <!-- 研究概览 -->
+    <section class="research-overview">
+      <div class="overview-card">
+        <div class="overview-icon primary">
+          <i class="fas fa-globe-americas"></i>
+        </div>
+        <h3 class="overview-title">热带大气动力学</h3>
+        <p class="overview-text">
+          研究热带地区的大气运动规律，特别关注对流耦合赤道波（如Kelvin波、MJO、MRG波）的动力学机制，
+          以及这些波动对全球气候系统的影响。
+        </p>
+      </div>
+      
+      <div class="overview-card">
+        <div class="overview-icon secondary">
+          <i class="fas fa-cloud-rain"></i>
+        </div>
+        <h3 class="overview-title">热带降水变率</h3>
+        <p class="overview-text">
+          分析热带地区降水的时空分布特征，探索大气波动对降水模态的调制作用，
+          研究季风、ENSO等气候现象对区域降水的影响机制。
+        </p>
+      </div>
+      
+      <div class="overview-card">
+        <div class="overview-icon tertiary">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3 class="overview-title">人工智能应用</h3>
+        <p class="overview-text">
+          将深度学习、机器学习等人工智能技术应用于气象数据分析、气候模式改进和天气预报精度提升，
+          推动传统气象学与现代数据科学的融合发展。
+        </p>
+      </div>
+    </section>
+
+    <!-- 详细研究方向 -->
+    <section class="research-details">
+      
+      <!-- 对流耦合赤道波 -->
+      <article class="research-area">
+        <div class="area-header">
+          <div class="area-icon waves">
+            <i class="fas fa-wave-square"></i>
+          </div>
+          <h2 class="area-title">对流耦合赤道波</h2>
+        </div>
+        <div class="area-content">
+          <div class="area-description">
+            <p>
+              对流耦合赤道波是热带大气中最重要的波动现象之一，包括Kelvin波、混合Rossby-重力波(MRG)、
+              惯性重力波等。这些波动与深对流紧密耦合，对热带天气和气候具有重要影响。
+            </p>
+            <p>
+              我的研究重点关注这些波动的传播特征、生命周期以及与对流的相互作用机制。
+              通过分析卫星观测数据和再分析资料，揭示不同类型赤道波的结构特征和演变规律，
+              为改进数值预报模式中的对流参数化方案提供理论依据。
+            </p>
+          </div>
+          <div class="area-highlights">
+            <h4>研究重点</h4>
+            <ul>
+              <li>Kelvin波的传播与演变</li>
+              <li>MRG波的结构特征</li>
+              <li>波动-对流相互作用</li>
+              <li>赤道波谱分析方法</li>
+              <li>观测诊断技术</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 热带降水变率 -->
+      <article class="research-area">
+        <div class="area-header">
+          <div class="area-icon precipitation">
+            <i class="fas fa-cloud-rain"></i>
+          </div>
+          <h2 class="area-title">热带降水变率</h2>
+        </div>
+        <div class="area-content">
+          <div class="area-description">
+            <p>
+              热带降水具有显著的时空变率特征，从日内振荡到年际变化，涵盖多个时间尺度。
+              理解这些变率的物理机制对于改进天气预报和气候预测具有重要意义。
+            </p>
+            <p>
+              研究中特别关注大气波动对降水模态的调制作用，分析MJO、BSISO等低频振荡
+              如何影响区域降水的分布和强度。结合多源观测数据，建立降水变率的诊断框架，
+              为极端降水事件的预测提供科学支撑。
+            </p>
+          </div>
+          <div class="area-highlights">
+            <h4>研究内容</h4>
+            <ul>
+              <li>MJO对降水的调制</li>
+              <li>季内振荡特征</li>
+              <li>极端降水事件</li>
+              <li>降水时空谱分析</li>
+              <li>多尺度相互作用</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 气候模式评估 -->
+      <article class="research-area">
+        <div class="area-header">
+          <div class="area-icon models">
+            <i class="fas fa-globe"></i>
+          </div>
+          <h2 class="area-title">气候模式评估</h2>
+        </div>
+        <div class="area-content">
+          <div class="area-description">
+            <p>
+              现代气候模式（如CMIP6）在模拟热带大气过程方面仍存在不足，特别是在表现
+              对流耦合赤道波和热带降水变率方面。系统评估这些模式的性能有助于识别
+              模式误差来源并指导模式改进。
+            </p>
+            <p>
+              通过对比模式输出与观测数据，定量评估模式在模拟热带波动、降水分布、
+              季内振荡等方面的能力。建立标准化的评估体系，为模式开发者提供
+              改进建议，推动气候模式的持续发展。
+            </p>
+          </div>
+          <div class="area-highlights">
+            <h4>评估指标</h4>
+            <ul>
+              <li>波动频谱特征</li>
+              <li>降水分布偏差</li>
+              <li>季内振荡强度</li>
+              <li>对流参数化效果</li>
+              <li>模式间对比分析</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- 人工智能应用 -->
+      <article class="research-area">
+        <div class="area-header">
+          <div class="area-icon ai">
+            <i class="fas fa-brain"></i>
+          </div>
+          <h2 class="area-title">深度学习应用</h2>
+        </div>
+        <div class="area-content">
+          <div class="area-description">
+            <p>
+              人工智能技术在气象学领域展现出巨大潜力，特别是在处理大量气象数据、
+              识别复杂模态和改进预报精度方面。将机器学习算法与传统气象学方法相结合，
+              开创性地解决气象学中的前沿问题。
+            </p>
+            <p>
+              研究重点包括：利用深度学习技术自动识别大气波动模态、开发基于神经网络的
+              降水预报模型、使用机器学习方法改进气候模式的参数化方案等。
+              这些工作将推动气象学向智能化方向发展。
+            </p>
+          </div>
+          <div class="area-highlights">
+            <h4>技术方向</h4>
+            <ul>
+              <li>深度学习模态识别</li>
+              <li>神经网络预报模型</li>
+              <li>机器学习参数化</li>
+              <li>大数据分析技术</li>
+              <li>智能诊断工具</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- 研究成果 -->
+    <section class="research-achievements">
+      <div class="achievements-header">
+        <h2 class="achievements-title">研究成果</h2>
+        <p class="achievements-subtitle">学术产出与影响力统计</p>
+      </div>
+      <div class="achievements-grid">
+        <div class="achievement-item">
+          <span class="achievement-number">5+</span>
+          <div class="achievement-label">发表论文</div>
+          <div class="achievement-description">SCI期刊论文</div>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-number">10+</span>
+          <div class="achievement-label">学术会议</div>
+          <div class="achievement-description">国际会议报告</div>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-number">3</span>
+          <div class="achievement-label">研究项目</div>
+          <div class="achievement-description">主持参与项目</div>
+        </div>
+        <div class="achievement-item">
+          <span class="achievement-number">100+</span>
+          <div class="achievement-label">引用次数</div>
+          <div class="achievement-description">学术影响力</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+{% endunless %}

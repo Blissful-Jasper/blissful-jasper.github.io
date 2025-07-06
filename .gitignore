@@ -1,39 +1,71 @@
 # =============================================================================
-# 📄 .gitignore - Git 忽略文件
+# 📄 .gitignore - Git 忽略文件配置
 # =============================================================================
+
+# Jekyll构建文件
 _site/
 .sass-cache/
 .jekyll-cache/
 .jekyll-metadata
 .bundle/
 vendor/
-Gemfile.lock
+
+# 系统文件
 .DS_Store
+Thumbs.db
 *.swp
 *.swo
 *~
+
+# 开发环境
+.vscode/
+.idea/
+*.sublime-*
+
+# Node.js (如果使用)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 安全配置文件
 _config_secure.yml
 
-# ============================================================================
-# Custom ignore rules for cleanup
-# Log and temporary files
+# 临时文件和备份
+*.tmp
+*.bak
+*~
+.backup/
+backup/
+
+# 开发和测试文件
+*test*.html
+*debug*.html
+*preview*.html
+*demo*.html
+validate-*.html
+
+# 开发报告和日志 (保持项目整洁)
+*_REPORT.md
 *_LOG*.md
-# RSS logs and fix logs
-RSS_*.md
-# Test and preview html
-test*.html
-preview.html
-# Generated page html (keep markdown sources)
-about.html
-contact.html
-publications.html
-research.html
-links.html
-maps.html
-blog.html
-blog-post.html
-# Local scripts not needed
-convert-md-to-html.js
-genBlogIndex.js
-# VSCode settings
-.vscode/
+*_COMPLETE*.md
+*_FIX*.md
+PROJECT_CLEANUP_*.md
+LIQUID_SYNTAX_*.md
+GALLERY_*_REPORT.md
+WEBSITE_*_REPORT.md
+
+# 本地脚本
+convert-*.js
+gen*.js
+start-*.bat
+
+# 编辑器缓存
+*.kate-swp
+
+# 部署相关 (可选)
+# _deployment/
+
+# 测试目录
+_test-pages/
+_backup/

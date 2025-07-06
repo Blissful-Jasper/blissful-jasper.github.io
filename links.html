@@ -1,0 +1,132 @@
+---
+layout: page
+title: Links
+permalink: /links.html
+---
+
+<link rel="stylesheet" href="assets/links-modern.css">
+
+<div class="links-container">
+  <!-- Header Section -->
+  <div class="links-header">
+    <div class="header-content">
+      <h1 class="page-title">
+        <i class="fas fa-link"></i>
+        学术链接
+      </h1>
+      <p class="page-subtitle">精选的学术研究工具、数据源和专业资源</p>
+    </div>
+  </div>
+
+  <!-- Search and Filter Bar -->
+  <div class="filter-controls">
+    <div class="search-container">
+      <input type="text" id="linksSearch" placeholder="搜索链接..." class="search-input">
+      <i class="fas fa-search search-icon"></i>
+    </div>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-group="all">全部</button>
+      <button class="filter-btn" data-group="enso-气候现象">ENSO & 气候</button>
+      <button class="filter-btn" data-group="数值模式与流体模拟">数值模式</button>
+      <button class="filter-btn" data-group="数据与课程">数据课程</button>
+      <button class="filter-btn" data-group="卫星与波动监测">卫星监测</button>
+      <button class="filter-btn" data-group="python与大气科学">Python</button>
+      <button class="filter-btn" data-group="数据可视化与图形设计">可视化</button>
+    </div>
+  </div>
+
+  <!-- Links Grid -->
+  <div class="links-grid">
+    {% for group in site.data.links %}
+      <div class="group-section">
+        <h2 class="group-title">
+          <i class="fas fa-folder-open"></i>
+          {{ group.group }}
+        </h2>
+        
+        <div class="links-row">
+          {% for link in group.links %}
+            <div class="link-card" data-group="{{ group.group | slugify }}">
+              {% if link.images and link.images.size > 0 %}
+                <div class="link-image">
+                  <img src="{{ link.images[0] }}" alt="{{ link.name }}" loading="lazy">
+                  <div class="image-overlay">
+                    <div class="link-icon">
+                      <i class="fas fa-external-link-alt"></i>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+              <div class="link-header">
+                {% unless link.images and link.images.size > 0 %}
+                  <div class="link-icon">
+                    <i class="fas fa-external-link-alt"></i>
+                  </div>
+                {% endunless %}
+                <div class="link-title-section">
+                  <h3 class="link-title">
+                    <a href="{{ link.url }}" target="_blank" rel="noopener">
+                      {{ link.name }}
+                    </a>
+                  </h3>
+                </div>
+              </div>
+              
+              <div class="link-footer">
+                <div class="link-actions">
+                  <a href="{{ link.url }}" target="_blank" rel="noopener" class="visit-btn">
+                    <i class="fas fa-external-link-alt"></i>
+                    访问
+                  </a>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+// Links Search and Filter Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('linksSearch');
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const linkCards = document.querySelectorAll('.link-card');
+  
+  // Search functionality
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    linkCards.forEach(card => {
+      const title = card.querySelector('.link-title').textContent.toLowerCase();
+      
+      if (title.includes(searchTerm)) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+  
+  // Filter functionality
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const group = this.dataset.group;
+      
+      // Update active button
+      filterButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter cards
+      linkCards.forEach(card => {
+        if (group === 'all' || card.dataset.group === group) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+});
+</script>
