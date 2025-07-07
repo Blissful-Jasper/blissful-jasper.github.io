@@ -27,15 +27,16 @@ jobs:
         cache: 'npm'
         
     - name: Install Node.js dependencies 📥
-      run: npm ci
+      run: npm ci || npm install
       
     - name: Build Jekyll site 🔨
       run: bundle exec jekyll build
       
-    - name: Minify files 🗜️
+    - name: Minify files 🗜️ (Optional)
       run: |
-        chmod +x ./minify-site.sh
-        ./minify-site.sh
+        npx html-minifier-terser ./_site/**/*.html --remove-comments --collapse-whitespace --file-ext html || echo "HTML minification skipped"
+        npx cleancss ./_site/**/*.css --batch --batch-suffix "" || echo "CSS minification skipped"
+        npx uglifyjs ./_site/**/*.js -c -m || echo "JS minification skipped"
         
     - name: Deploy to GitHub Pages 🚀
       if: github.ref == 'refs/heads/main'
