@@ -196,10 +196,10 @@
 
 <h2 id="-问题解决">📋 问题解决</h2>
 
-<p>原始错误 <code class="language-plaintext highlighter-rouge">npm error JSON.parse Unexpected token "#"</code> 已解决：</p>
+<p>原始错误已解决：</p>
 <ul>
-  <li>✅ 移除了 <code class="language-plaintext highlighter-rouge">package.json</code> 中的非法注释</li>
-  <li>✅ 确保 JSON 格式完全符合标准</li>
+  <li>✅ <code class="language-plaintext highlighter-rouge">npm error JSON.parse Unexpected token "#"</code> - 移除了非法注释</li>
+  <li>✅ <code class="language-plaintext highlighter-rouge">npm ci</code> 同步错误 - 简化了依赖结构，使用 npx 运行工具</li>
 </ul>
 
 <h2 id="-可用命令">🚀 可用命令</h2>
@@ -208,44 +208,54 @@
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run dev        <span class="c"># 启动开发服务器 (Jekyll + LiveReload)</span>
 npm run build:dev  <span class="c"># 构建开发版本 (包含草稿)</span>
 npm run clean      <span class="c"># 清理构建文件</span>
+npm run build      <span class="c"># 标准构建</span>
 </code></pre></div></div>
 
-<h3 id="生产构建">生产构建</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run build      <span class="c"># 标准构建</span>
-npm run build:prod <span class="c"># 生产环境构建 (Linux/macOS)</span>
-npm run build:prod:win <span class="c"># 生产环境构建 (Windows)</span>
+<h3 id="文件压缩-使用-npx无需预安装">文件压缩 (使用 npx，无需预安装)</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run minify:html <span class="c"># 压缩 HTML 文件</span>
+npm run minify:css  <span class="c"># 压缩 CSS 文件</span>
+npm run minify:js   <span class="c"># 压缩 JavaScript 文件</span>
+npm run minify:win  <span class="c"># Windows PowerShell 批量压缩</span>
 </code></pre></div></div>
 
-<h3 id="文件压缩">文件压缩</h3>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run minify     <span class="c"># 压缩所有文件 (Linux/macOS)</span>
-npm run minify:win <span class="c"># 压缩所有文件 (Windows)</span>
-npm run minify:html <span class="c"># 仅压缩 HTML</span>
-npm run minify:css  <span class="c"># 仅压缩 CSS</span>
-npm run minify:js   <span class="c"># 仅压缩 JavaScript</span>
-</code></pre></div></div>
-
-<h3 id="部署和测试">部署和测试</h3>
+<h3 id="部署">部署</h3>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run deploy     <span class="c"># 构建并部署到 GitHub Pages</span>
-npm run <span class="nb">test</span>       <span class="c"># 运行 HTML 校验</span>
-npm run serve:prod <span class="c"># 本地预览生产版本</span>
+npm run <span class="nb">test</span>       <span class="c"># 运行构建测试</span>
 </code></pre></div></div>
 
-<h2 id="-平台兼容性">🔧 平台兼容性</h2>
+<h2 id="-技术说明">🔧 技术说明</h2>
 
+<h3 id="简化的依赖策略">简化的依赖策略</h3>
 <ul>
-  <li><strong>Linux/macOS</strong>: 使用标准的 <code class="language-plaintext highlighter-rouge">find</code> 命令</li>
-  <li><strong>Windows</strong>: 使用 PowerShell 脚本 <code class="language-plaintext highlighter-rouge">minify-site.ps1</code></li>
+  <li><strong>最小依赖</strong>: 只在 package.json 中包含必要的 <code class="language-plaintext highlighter-rouge">gh-pages</code></li>
+  <li><strong>按需工具</strong>: 使用 <code class="language-plaintext highlighter-rouge">npx</code> 运行压缩工具，避免复杂的依赖树</li>
+  <li><strong>错误容忍</strong>: 压缩步骤可选，不会中断构建流程</li>
 </ul>
 
-<h2 id="-相关文件">📁 相关文件</h2>
+<h3 id="平台兼容性">平台兼容性</h3>
+<ul>
+  <li><strong>Linux/macOS</strong>: 使用 npx 命令</li>
+  <li><strong>Windows</strong>: 使用 PowerShell 脚本</li>
+  <li><strong>CI/CD</strong>: GitHub Actions 自动处理</li>
+</ul>
+
+<h2 id="-核心文件">📁 核心文件</h2>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">package.json</code> - Node.js 依赖和脚本定义</li>
-  <li><code class="language-plaintext highlighter-rouge">package-lock.json</code> - 依赖锁定文件</li>
+  <li><code class="language-plaintext highlighter-rouge">package.json</code> - 简化的 Node.js 配置 (只包含必要依赖)</li>
+  <li><code class="language-plaintext highlighter-rouge">package-lock.json</code> - 最小化锁文件</li>
   <li><code class="language-plaintext highlighter-rouge">minify-site.ps1</code> - Windows 压缩脚本</li>
-  <li><code class="language-plaintext highlighter-rouge">minify-site.sh</code> - Linux/Unix 压缩脚本</li>
-  <li><code class="language-plaintext highlighter-rouge">.github/workflows/build-and-deploy.yml</code> - GitHub Actions 工作流</li>
+  <li><code class="language-plaintext highlighter-rouge">.github/workflows/build-and-deploy.yml</code> - CI/CD 工作流</li>
 </ul>
+
+<h2 id="-优势">🎯 优势</h2>
+
+<ol>
+  <li><strong>简单</strong>: 避免复杂的依赖管理</li>
+  <li><strong>可靠</strong>: 使用 npx 确保工具可用性</li>
+  <li><strong>灵活</strong>: 压缩步骤可选，不影响核心功能</li>
+  <li><strong>兼容</strong>: 支持多平台和 CI/CD 环境</li>
+</ol>
 
   </div>
 </article>
