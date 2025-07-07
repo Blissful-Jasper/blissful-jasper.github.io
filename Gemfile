@@ -22,3 +22,6 @@ gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
 # HTTP 服务器
 gem "webrick", "~> 1.9"
+                                                        
+# Temporary fix for GitHub Actions Ruby 3.1 compatibility 
+gem "zeitwerk", "~> 2.6.0"                             
