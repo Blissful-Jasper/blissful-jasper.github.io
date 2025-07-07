@@ -1,0 +1,525 @@
+[
+  {
+    "title": "Philosophies and concerns about ENSO",
+    "date": "",
+    "summary": "ENSO 相关理念与关注点。",
+    "file": "https://iri.columbia.edu/",
+    "group": "ENSO & 气候现象",
+    "images": []
+  },
+  {
+    "title": "Why do we care about El Niño and La Niña?",
+    "date": "",
+    "summary": "为什么我们关心厄尔尼诺和拉尼娜现象。",
+    "file": "https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/",
+    "group": "ENSO & 气候现象",
+    "images": []
+  },
+  {
+    "title": "Watching for El Niño and La Niña",
+    "date": "",
+    "summary": "观察厄尔尼诺和拉尼娜现象。",
+    "file": "https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming",
+    "group": "ENSO & 气候现象",
+    "images": []
+  },
+  {
+    "title": "Why are there so many ENSO indexes?",
+    "date": "",
+    "summary": "为什么有这么多ENSO指数。",
+    "file": "https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one",
+    "group": "ENSO & 气候现象",
+    "images": []
+  },
+  {
+    "title": "How Good Have ENSO Forecasts Been Lately?",
+    "date": "",
+    "summary": "最近ENSO预测的准确性如何。",
+    "file": "https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately",
+    "group": "ENSO & 气候现象",
+    "images": []
+  },
+  {
+    "title": "Shallow water model (Matlab, barotropic instability)",
+    "date": "",
+    "summary": "浅水模型（Matlab，正压不稳定性）。",
+    "file": "https://www.met.reading.ac.uk/%7Eswrhgnrj/shallow_water_model/",
+    "group": "数值模式与流体模拟",
+    "images": []
+  },
+  {
+    "title": "GFDL Dry spectral idealized model",
+    "date": "",
+    "summary": "GFDL 干理想谱模式。",
+    "file": "https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/",
+    "group": "数值模式与流体模拟",
+    "images": []
+  },
+  {
+    "title": "GFDL Dry model github",
+    "date": "",
+    "summary": "GFDL 干模型 GitHub 仓库。",
+    "file": "https://github.com/gchenpu/idealized",
+    "group": "数值模式与流体模拟",
+    "images": []
+  },
+  {
+    "title": "GFDL Moist spectral idealized model",
+    "date": "",
+    "summary": "GFDL 湿理想谱模式。",
+    "file": "https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/",
+    "group": "数值模式与流体模拟",
+    "images": []
+  },
+  {
+    "title": "DART, GeoCAT, and VAPOR sites",
+    "date": "",
+    "summary": "DART、GeoCAT 和 VAPOR 网站资源。",
+    "file": "https://www2.cisl.ucar.edu/resources/legacy/spherepack",
+    "group": "数值模式与流体模拟",
+    "images": []
+  },
+  {
+    "title": "Misc fluid simulators",
+    "date": "",
+    "summary": "各种流体模拟器。",
+    "file": "https://matthias-research.github.io/pages/tenMinutePhysics/index.html",
+    "group": "数值模式与流体模拟",
+    "images": []
+  },
+  {
+    "title": "notes on regression and time series analysis",
+    "date": "",
+    "summary": "回归与时间序列分析笔记。",
+    "file": "https://people.duke.edu/~rnau/411home.htm",
+    "group": "数据与课程",
+    "images": []
+  },
+  {
+    "title": "Precipitation datasets",
+    "date": "",
+    "summary": "降水数据集。",
+    "file": "https://gpm.nasa.gov/data/directory",
+    "group": "数据与课程",
+    "images": []
+  },
+  {
+    "title": "Classic and Historical Papers Papers on Geophysical Fluid Dynamics",
+    "date": "",
+    "summary": "经典与历史论文，地球物理流体动力学相关资料。",
+    "file": "https://empslocal.ex.ac.uk/people/staff/gv219/classics.d/general.html",
+    "group": "经典论文与资料",
+    "images": []
+  },
+  {
+    "title": "IRI Seasonal Climate Forecast",
+    "date": "",
+    "summary": "IRI 季节性气候预测。",
+    "file": "https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/",
+    "group": "季节预测与季风",
+    "images": []
+  },
+  {
+    "title": "Seasonal Climate Forecast CFSv2",
+    "date": "",
+    "summary": "CFSv2 季节性气候预测。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/",
+    "group": "季节预测与季风",
+    "images": []
+  },
+  {
+    "title": "World monsoons",
+    "date": "",
+    "summary": "世界季风相关资源。",
+    "file": "https://worldmonsoons.org/",
+    "group": "季节预测与季风",
+    "images": []
+  },
+  {
+    "title": "CIMSS Satellite Blog",
+    "date": "",
+    "summary": "CIMSS 卫星博客。",
+    "file": "https://cimss.ssec.wisc.edu/satellite-blog/",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "GOES Geostationary archive",
+    "date": "",
+    "summary": "GOES 静止卫星数据存档。",
+    "file": "https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "Grided Satellite data",
+    "date": "",
+    "summary": "网格化卫星数据。",
+    "file": "https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "Sandro Lubis blog for equatorial waves",
+    "date": "",
+    "summary": "Sandro Lubis 赤道波动博客。",
+    "file": "https://sandrolubis.wordpress.com/",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "Carl Scherck tropical waves monitoring",
+    "date": "",
+    "summary": "Carl Scherck 热带波动监测。",
+    "file": "https://ncics.org/portfolio/monitor/mjo/",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "Kyle MacRitchie page",
+    "date": "",
+    "summary": "Kyle MacRitchie 页面。",
+    "file": "https://www.kylemacritchie.com/",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "Micheal Ventrice page",
+    "date": "",
+    "summary": "Micheal Ventrice 页面。",
+    "file": "https://mikeventrice.weebly.com/",
+    "group": "卫星与波动监测",
+    "images": []
+  },
+  {
+    "title": "Cliff Mass blog",
+    "date": "",
+    "summary": "Cliff Mass 博客。",
+    "file": "https://cliffmass.blogspot.com/",
+    "group": "博客与主页",
+    "images": []
+  },
+  {
+    "title": "GHCN call and plot",
+    "date": "",
+    "summary": "GHCN 数据调用与绘图。",
+    "file": "https://github.com/akrherz/pyIEM",
+    "group": "Python与大气科学",
+    "images": []
+  },
+  {
+    "title": "Python for Geosciences Daily (GHCN-D)",
+    "date": "",
+    "summary": "Python 用于地球科学的每日数据（GHCN-D）。",
+    "file": "https://github.com/jjrennie/GHCNpy",
+    "group": "Python与大气科学",
+    "images": []
+  },
+  {
+    "title": "Collection of Python libraries",
+    "date": "",
+    "summary": "Python 库集合。",
+    "file": "https://pyaos.github.io/packages/?fbclid=IwAR3mk45ythjGm-JLYbphd6AZbJGduYfLu75wOGnzDTbUNQcBYj1BfQX3tCs",
+    "group": "Python与大气科学",
+    "images": []
+  },
+  {
+    "title": "ACMAD",
+    "date": "",
+    "summary": "非洲气候监测与开发中心。",
+    "file": "https://www.acmad.org/",
+    "group": "非洲气候与干旱",
+    "images": []
+  },
+  {
+    "title": "FEWS NET",
+    "date": "",
+    "summary": "饥荒预警系统网络。",
+    "file": "https://fews.net/",
+    "group": "非洲气候与干旱",
+    "images": []
+  },
+  {
+    "title": "GCRF African SWIFT",
+    "date": "",
+    "summary": "GCRF 非洲 SWIFT 项目。",
+    "file": "https://africanswift.org/",
+    "group": "非洲气候与干旱",
+    "images": []
+  },
+  {
+    "title": "CPC Portal for African",
+    "date": "",
+    "summary": "CPC 非洲气候门户。",
+    "file": "https://www.cpc.ncep.noaa.gov/products/international/africa/africa.shtml",
+    "group": "非洲气候与干旱",
+    "images": []
+  },
+  {
+    "title": "Seasonal forecasting over Nile",
+    "date": "",
+    "summary": "尼罗河季节性预测。",
+    "file": "https://hrc-sudan.sd/index.php/portfolio/seasonal-forecasting-of-the-blue-nile-flows-at-ethiopia-sudan-border/",
+    "group": "非洲气候与干旱",
+    "images": []
+  },
+  {
+    "title": "Collection of animation, videos, interactive plots on sound waves",
+    "date": "",
+    "summary": "声音波动的动画、视频和交互式图表集合。",
+    "file": "https://www.acs.psu.edu/drussell/Demos.html",
+    "group": "波动与物理动画",
+    "images": []
+  },
+  {
+    "title": "Atlas of internal solitary waves",
+    "date": "",
+    "summary": "内部孤立波图集。",
+    "file": "https://www.internalwaveatlas.com/",
+    "group": "波动与物理动画",
+    "images": []
+  },
+  {
+    "title": "NSF videos about Fluid dynamics",
+    "date": "",
+    "summary": "NSF 关于流体动力学的视频。",
+    "file": "https://www.nsf.gov/news/special_reports/physics/index.jsp",
+    "group": "波动与物理动画",
+    "images": []
+  },
+  {
+    "title": "Feynmann lectures on Physics",
+    "date": "",
+    "summary": "费曼物理学讲座。",
+    "file": "http://www.feynmanlectures.caltech.edu",
+    "group": "波动与物理动画",
+    "images": []
+  },
+  {
+    "title": "One dimensional positive, negative, and zero group velocity",
+    "date": "",
+    "summary": "一维正、负和零群速度。",
+    "file": "https://www.youtube.com/watch?v=tlM9vq-bepA",
+    "group": "波动与物理动画",
+    "images": []
+  },
+  {
+    "title": "Two dimensional gravity wave",
+    "date": "",
+    "summary": "二维重力波。",
+    "file": "https://www.youtube.com/watch?v=xf8Y6YYxvew",
+    "group": "波动与物理动画",
+    "images": []
+  },
+
+  
+  {
+    "title": "DFT vs. FFT jupyter notebook",
+    "date": "",
+    "summary": "DFT 与 FFT 的 Jupyter Notebook。",
+    "file": "https://nbviewer.org/url/jakevdp.github.io/downloads/notebooks/UnderstandingTheFFT.ipynb",
+    "group": "FFT 与数据可视化",
+    "images": []
+  },
+  {
+    "title": "Mike Cohen FFT 视频",
+    "date": "",
+    "summary": "Mike Cohen 的 FFT 视频教程。",
+    "file": "https://www.youtube.com/watch?v=gr3IG81Gl9I&list=PLn0OLiymPak3lrIErlYVnIc3pGTwgt_ml",
+    "group": "FFT 与数据可视化",
+    "images": []
+  },
+  {
+    "title": "Infinity is a beautiful concept and it is ruining physics",
+    "date": "",
+    "summary": "无限是一个美丽的概念，但它正在破坏物理学。",
+    "file": "https://www.discovermagazine.com/the-sciences/infinity-is-a-beautiful-concept-and-its-ruining-physics",
+    "group": "科学与哲学",
+    "images": []
+  },
+  {
+    "title": "Ten simple rules for better figures",
+    "date": "",
+    "summary": "制作更好图形的十条简单规则。",
+    "file": "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Rainbow color map perception artifacts",
+    "date": "",
+    "summary": "彩虹色图的感知伪影问题。",
+    "file": "https://www.kennethmoreland.com/color-advice/",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Modifying matplotlib colormaps",
+    "date": "",
+    "summary": "修改 Matplotlib 的色图。",
+    "file": "https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Adjusting the zero in a skewed colormap",
+    "date": "",
+    "summary": "调整偏斜色图中的零点。",
+    "file": "https://stackoverflow.com/questions/31051488/how-to-modify-a-matplotlib-colormap",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Adjusting extremes",
+    "date": "",
+    "summary": "调整色图中的极值。",
+    "file": "https://stackoverflow.com/questions/25432654/how-to-create-matplotlib-colormap-that-treats-one-value-specially?noredirect=1#comment39706467_25432654",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Matplotlib colormap reference",
+    "date": "",
+    "summary": "Matplotlib 色图参考。",
+    "file": "https://matplotlib.org/stable/tutorials/colors/colormaps.html",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Matplotlib colormap examples",
+    "date": "",
+    "summary": "Matplotlib 色图示例。",
+    "file": "https://matplotlib.org/stable/gallery/color/colormap_reference.html",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Matplotlib colormap customization",
+    "date": "",
+    "summary": "Matplotlib 色图定制。",
+    "file": "https://matplotlib.org/3.1.1/tutorials/colors/colorbar_only.html",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Increasing the white band in the blue-white-red colormap",
+    "date": "",
+    "summary": "增加蓝白红色图中的白色带。",
+    "file": "https://gist.github.com/ahmedshaaban1/1259e1efc7d8aeb843c2440511a22658",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+  {
+    "title": "Creating publication quality figures",
+    "date": "",
+    "summary": "创建出版质量的图形。",
+    "file": "https://www.nature.com/articles/nmeth.1618",
+    "group": "数据可视化与图形设计",
+    "images": []
+  },
+
+  {
+    "title": "NCL color cmaps",
+    "date": "2025-07-01",
+    "summary": " NCL color_table_gallery。",
+    "file": "https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml",
+    "group": "数据可视化与图形设计",
+    "images": ["./links/ncl_color_cmaps.png"]
+  },
+
+
+
+  {
+    "title": "The element of style by Strunk and White (pdf)",
+    "date": "",
+    "summary": "Strunk 和 White 的写作风格指南（PDF）。",
+    "file": "https://faculty.washington.edu/heagerty/Courses/b572/public/StrunkWhite.pdf",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Effective technical writing from PennState",
+    "date": "",
+    "summary": "PennState 的有效技术写作指南。",
+    "file": "https://www.e-education.psu.edu/styleforstudents/",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Writing in the Sciences (Stanford, Coursera)",
+    "date": "",
+    "summary": "斯坦福大学的科学写作课程（Coursera）。",
+    "file": "https://www.coursera.org/learn/sciwrite",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Academic Phrasebank",
+    "date": "",
+    "summary": "学术短语库。",
+    "file": "http://www.phrasebank.manchester.ac.uk/",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Guide to grammar and writing",
+    "date": "",
+    "summary": "语法和写作指南。",
+    "file": "https://guidetogrammar.org/",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Words with similar rhymes",
+    "date": "",
+    "summary": "具有相似韵律的单词资源。",
+    "file": "https://www.rhymezone.com/",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Synonyms",
+    "date": "",
+    "summary": "同义词资源。",
+    "file": "https://www.thesaurus.com/",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "On writing and some numerical books",
+    "date": "",
+    "summary": "关于写作和一些数值书籍的资源。",
+    "file": "https://hplgit.github.io/",
+    "group": "学术写作与资源",
+    "images": []
+  },
+  {
+    "title": "Reproducibility problem",
+    "date": "",
+    "summary": "科学研究中的可重复性问题。",
+    "file": "https://www.nature.com/articles/533452a",
+    "group": "学术写作与资源",
+    "images": []
+  },
+   
+
+  {
+    "title": "常用学术/工具/资源",
+    "date": "",
+    "summary": "常用学术工具与资源相关链接。",
+    "file": "",
+    "group": "常用学术/工具/资源",
+    "images": [],
+    "links": [
+      { "name": "Google Scholar", "url": "https://scholar.google.com/" },
+      { "name": "ResearchGate", "url": "https://www.researchgate.net/profile/Xianpu-Ji" },
+      { "name": "GitHub", "url": "https://github.com/Blissful-Jasper" },
+      { "name": "ORCID", "url": "https://orcid.org/0009-0001-5197-4804" },
+      { "name": "Python 官网", "url": "https://www.python.org/" },
+      { "name": "Deep Learning.ai", "url": "https://www.deeplearning.ai/" }
+    ]
+  }
+
+  
+
+]

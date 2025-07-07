@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>MRG波与热带降水的关系 | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="MRG波与热带降水的关系" />
+<meta name="author" content="Xianpu Ji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。" />
+<meta property="og:description" content="我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。" />
+<link rel="canonical" href="https://blissful-jasper.github.io/blog/MRG-waves/" />
+<meta property="og:url" content="https://blissful-jasper.github.io/blog/MRG-waves/" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-06-29T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="MRG波与热带降水的关系" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Xianpu Ji"},"dateModified":"2025-06-29T00:00:00+00:00","datePublished":"2025-06-29T00:00:00+00:00","description":"我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。","headline":"MRG波与热带降水的关系","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/blog/MRG-waves/"},"url":"https://blissful-jasper.github.io/blog/MRG-waves/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/code-highlighting.css">
+  <link rel="stylesheet" href="/assets/gfs-data-styles.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+  
+  <!-- Load non-critical CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+  
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css"></noscript>
+  
+  <!-- MathJax - Load only when needed -->
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  </script>
+  
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  
+  <!-- Prism.js for code highlighting with better theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<!-- 全站通用功能样式 --><!-- 全站通用功能样式和脚本 -->
+
+<!-- Complete Theme System -->
+<link rel="stylesheet" href="/assets/theme-system-complete.css">
+<link rel="stylesheet" href="/assets/theme-switcher.css">
+
+<!-- 阅读进度条样式 -->
+<link rel="stylesheet" href="/assets/reading-progress.css">
+
+<!-- 访问统计和地图样式 -->
+<link rel="stylesheet" href="/assets/analytics-map.css">
+
+<!-- Enhanced Header Styles -->
+<link rel="stylesheet" href="/assets/header-styles.css">
+
+<!-- Modern Homepage Layout -->
+<link rel="stylesheet" href="/assets/homepage-layout.css">
+<link rel="stylesheet" href="/assets/homepage-gallery-journals.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 确保 Font Awesome 图标可用 -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<!-- Theme Initialization Script -->
+<script>
+  // Initialize theme from localStorage before page renders
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'blue';
+    const savedMode = localStorage.getItem('mode') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedMode);
+    document.documentElement.classList.add(`theme-${savedTheme}`);
+  })();
+</script>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRG波与热带降水的关系</title>
+    <script>
+        const AI_API_KEY = "";
+    </script>
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                
+                    <span class="logo-text">Xianpu Ji</span>
+                
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/journals.html" class="nav-link">Journals</a></li>
+            <li role="menuitem"><a href="/gallery.html" class="nav-link">Gallery</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/journals.html" class="mobile-nav-link">Journals</a></li>
+                <li><a href="/gallery.html" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <link rel="stylesheet" href="/assets/post-style.css">
+
+<article class="post-article">
+  <!-- 文章头部 -->
+  <header class="post-header">
+    <div class="post-meta-top">
+      <a href="/blog.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        返回博客
+      </a>
+      <div class="post-share">
+        <button class="share-btn" onclick="sharePost()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <h1 class="post-title">MRG波与热带降水的关系</h1>
+    
+    <div class="post-meta">
+      <div class="meta-item">
+        <i class="far fa-calendar-alt"></i>
+        <time datetime="2025-06-29T00:00:00+00:00">
+          2025年6月29日
+        </time>
+      </div>
+      
+      
+      
+      
+    </div>
+    
+    
+    <div class="post-tags">
+      
+      <span class="tag">MRG波</span>
+      
+      <span class="tag">热带气象</span>
+      
+      <span class="tag">降水</span>
+      
+      <span class="tag">大气动力学</span>
+      
+    </div>
+    
+  </header>
+
+  <!-- 文章内容 -->
+  <div class="post-content">
+    # MRG波与热带降水的关系
+
+Mixed Rossby-Gravity（MRG）波是热带大气中一种重要的波动现象，对热带降水的时空分布具有重要影响。本文将探讨MRG波的基本特征及其与热带降水的相互关系。
+
+## MRG波的基本特征
+
+### 1. 波动结构
+
+MRG波是一种混合型波动，具有以下特征：
+
+- **水平结构**：在赤道附近具有最大振幅
+- **垂直结构**：呈现斜压结构
+- **传播特性**：向西传播，传播速度约为15-20 m/s
+- **周期特性**：周期约为3-5天
+
+### 2. 动力学机制
+
+MRG波的产生和维持机制包括：
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# MRG波的色散关系
+def mrg_dispersion(k, beta, N, H):
+    """
+    计算MRG波的色散关系
+    k: 波数
+    beta: 科里奥利参数的经向梯度
+    N: 浮力频率
+    H: 等效深度
+    """
+    c = np.sqrt(beta * H)  # 重力波速度
+    omega = -k * c / (1 + k**2 * H / beta)
+    return omega
+
+# 绘制色散关系图
+k = np.linspace(-0.1, 0.1, 100)
+beta = 2.3e-11  # m^-1 s^-1
+N = 0.02  # s^-1
+H = 50  # m
+
+omega = mrg_dispersion(k, beta, N, H)
+
+plt.figure(figsize=(10, 6))
+plt.plot(k, omega, 'b-', linewidth=2, label='MRG波')
+plt.xlabel('波数 k (m^-1)')
+plt.ylabel('频率 ω (s^-1)')
+plt.title('MRG波的色散关系')
+plt.grid(True)
+plt.legend()
+plt.show()
+```
+
+## MRG波与对流的相互作用
+
+### 1. 对流触发机制
+
+MRG波通过以下机制影响对流活动：
+
+- **低层辐合**：MRG波的低层辐合有利于对流的触发
+- **垂直风切变**：影响对流系统的结构和强度
+- **水汽输送**：调节大气中的水汽分布
+
+### 2. 对流反馈效应
+
+对流活动也会反过来影响MRG波：
+
+- **潜热释放**：对流释放的潜热为MRG波提供能量
+- **动量输送**：对流动量输送影响波动的传播
+- **波-对流耦合**：形成复杂的相互作用
+
+## 观测特征
+
+### 1. 卫星观测
+
+利用卫星数据可以观测到MRG波的特征：
+
+```python
+import xarray as xr
+import numpy as np
+
+def analyze_mrg_wave(olr_data, u_data, v_data):
+    """
+    分析MRG波的特征
+    olr_data: 向外长波辐射数据
+    u_data: 纬向风数据
+    v_data: 经向风数据
+    """
+    # 计算功率谱
+    olr_spectrum = np.fft.fft2(olr_data)
+    u_spectrum = np.fft.fft2(u_data)
+    v_spectrum = np.fft.fft2(v_data)
+    
+    # 识别MRG波信号
+    # 这里简化为频率和波数的筛选
+    freq_range = (1/5, 1/3)  # 3-5天周期
+    wavenumber_range = (-6, -1)  # 向西传播
+    
+    return olr_spectrum, u_spectrum, v_spectrum
+
+# 示例数据处理
+def process_satellite_data(data_path):
+    """
+    处理卫星观测数据
+    """
+    # 读取数据
+    olr_data = xr.open_dataset(f"{data_path}/olr.nc")
+    wind_data = xr.open_dataset(f"{data_path}/wind.nc")
+    
+    # 时间滤波（保留3-5天周期）
+    olr_filtered = bandpass_filter(olr_data.olr, 3, 5)
+    u_filtered = bandpass_filter(wind_data.u, 3, 5)
+    v_filtered = bandpass_filter(wind_data.v, 3, 5)
+    
+    return olr_filtered, u_filtered, v_filtered
+
+def bandpass_filter(data, low_period, high_period):
+    """
+    带通滤波器
+    """
+    # 简化的滤波实现
+    from scipy import signal
+    
+    dt = 1  # 假设日数据
+    low_freq = 1/high_period
+    high_freq = 1/low_period
+    
+    # 设计带通滤波器
+    b, a = signal.butter(4, [low_freq, high_freq], btype='band')
+    
+    # 应用滤波器
+    filtered_data = signal.filtfilt(b, a, data)
+    
+    return filtered_data
+```
+
+### 2. 再分析数据
+
+再分析数据提供了更完整的三维结构：
+
+- **ERA5数据**：高分辨率的大气再分析数据
+- **JRA-55数据**：日本气象厅的再分析数据
+- **MERRA-2数据**：NASA的现代再分析数据
+
+## 降水预报中的应用
+
+### 1. 预报模式改进
+
+理解MRG波对改进数值天气预报具有重要意义：
+
+```python
+def improve_precipitation_forecast(model_data, mrg_index):
+    """
+    利用MRG波信息改进降水预报
+    """
+    # 计算MRG波指数
+    mrg_strength = calculate_mrg_index(model_data)
+    
+    # 建立统计关系
+    precip_forecast = []
+    for i, strength in enumerate(mrg_strength):
+        if strength > threshold:
+            # 增强降水预报
+            adjusted_precip = model_data.precip[i] * 1.2
+        else:
+            # 常规预报
+            adjusted_precip = model_data.precip[i]
+        
+        precip_forecast.append(adjusted_precip)
+    
+    return np.array(precip_forecast)
+
+def calculate_mrg_index(data):
+    """
+    计算MRG波活动指数
+    """
+    # 基于850hPa风场的MRG波指数
+    u850 = data.u.sel(level=850)
+    v850 = data.v.sel(level=850)
+    
+    # 计算涡度
+    vorticity = calculate_vorticity(u850, v850)
+    
+    # 滤波提取MRG波信号
+    mrg_vorticity = bandpass_filter(vorticity, 3, 5)
+    
+    # 计算指数
+    mrg_index = np.std(mrg_vorticity, axis=0)
+    
+    return mrg_index
+```
+
+### 2. 统计预报模型
+
+建立基于MRG波的统计预报模型：
+
+```python
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+
+def build_mrg_precip_model(features, precipitation):
+    """
+    构建MRG波-降水统计模型
+    """
+    # 特征工程
+    X = prepare_features(features)
+    y = precipitation
+    
+    # 划分训练测试集
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42
+    )
+    
+    # 训练随机森林模型
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model.fit(X_train, y_train)
+    
+    # 评估模型
+    train_score = model.score(X_train, y_train)
+    test_score = model.score(X_test, y_test)
+    
+    return model, train_score, test_score
+
+def prepare_features(data):
+    """
+    准备机器学习特征
+    """
+    features = []
+    
+    # MRG波强度
+    mrg_strength = calculate_mrg_index(data)
+    features.append(mrg_strength)
+    
+    # 环境参数
+    sst = data.sst  # 海表温度
+    humidity = data.humidity  # 相对湿度
+    wind_shear = data.wind_shear  # 风切变
+    
+    features.extend([sst, humidity, wind_shear])
+    
+    # 组合特征
+    X = np.column_stack(features)
+    
+    return X
+```
+
+## 区域差异
+
+### 1. 太平洋地区
+
+在太平洋地区，MRG波表现出以下特征：
+
+- **传播路径**：主要沿着赤道向西传播
+- **强度变化**：与ENSO现象相关
+- **季节性**：在北半球夏季较为活跃
+
+### 2. 印度洋地区
+
+印度洋地区的MRG波特征：
+
+- **季风影响**：受到亚洲季风的调制
+- **海温作用**：印度洋海温对MRG波有重要影响
+- **对流活动**：与印度洋暖池的对流活动密切相关
+
+### 3. 大西洋地区
+
+大西洋地区的MRG波：
+
+- **非洲波动**：与非洲东风波相互作用
+- **飓风生成**：对大西洋飓风的生成有一定影响
+- **季节循环**：具有明显的季节性特征
+
+## 气候变化的影响
+
+### 1. 全球增暖背景下的变化
+
+气候变化对MRG波的影响：
+
+```python
+def analyze_climate_change_impact(historical_data, future_data):
+    """
+    分析气候变化对MRG波的影响
+    """
+    # 计算历史时期的MRG波特征
+    hist_mrg = calculate_mrg_statistics(historical_data)
+    
+    # 计算未来时期的MRG波特征
+    future_mrg = calculate_mrg_statistics(future_data)
+    
+    # 计算变化
+    amplitude_change = future_mrg.amplitude - hist_mrg.amplitude
+    frequency_change = future_mrg.frequency - hist_mrg.frequency
+    speed_change = future_mrg.speed - hist_mrg.speed
+    
+    return {
+        'amplitude_change': amplitude_change,
+        'frequency_change': frequency_change,
+        'speed_change': speed_change
+    }
+
+def calculate_mrg_statistics(data):
+    """
+    计算MRG波的统计特征
+    """
+    # 提取MRG波信号
+    mrg_signal = extract_mrg_signal(data)
+    
+    # 计算统计量
+    amplitude = np.std(mrg_signal)
+    frequency = calculate_dominant_frequency(mrg_signal)
+    speed = calculate_propagation_speed(mrg_signal)
+    
+    return {
+        'amplitude': amplitude,
+        'frequency': frequency,
+        'speed': speed
+    }
+```
+
+### 2. 对降水模式的影响
+
+气候变化如何通过MRG波影响降水：
+
+- **强度变化**：MRG波强度的变化影响降水强度
+- **分布变化**：影响降水的空间分布
+- **极端事件**：对极端降水事件的影响
+
+## 未来研究方向
+
+### 1. 高分辨率模拟
+
+- **云分解模式**：使用高分辨率模式研究MRG波-对流相互作用
+- **大涡模拟**：详细模拟对流过程
+- **机器学习**：利用AI技术改进参数化方案
+
+### 2. 多尺度相互作用
+
+- **季节内变化**：MRG波与MJO的相互作用
+- **季节循环**：与季风系统的相互作用
+- **年际变化**：与ENSO等现象的关系
+
+### 3. 实用化应用
+
+- **预报改进**：将MRG波信息纳入业务预报
+- **气候监测**：开发MRG波监测产品
+- **影响评估**：评估MRG波对社会经济的影响
+
+## 结论
+
+MRG波作为热带大气中的重要波动现象，对热带降水具有重要影响。通过深入理解MRG波的特征和机制，我们可以：
+
+1. **改进天气预报**：提高热带地区的降水预报精度
+2. **增进科学认识**：深化对热带大气动力学的理解
+3. **应对气候变化**：评估未来气候变化的影响
+4. **防灾减灾**：为极端天气事件的预报提供科学依据
+
+随着观测技术和数值模拟能力的不断提高，MRG波研究将在未来的大气科学研究中发挥更重要的作用。
+
+## 参考文献
+
+1. Matsuno, T. (1966). Quasi-geostrophic motions in the equatorial area. Journal of the Meteorological Society of Japan, 44(1), 25-43.
+
+2. Wheeler, M., & Kiladis, G. N. (1999). Convectively coupled equatorial waves: Analysis of clouds and temperature in the wavenumber-frequency domain. Journal of the Atmospheric Sciences, 56(3), 374-399.
+
+3. Kiladis, G. N., Wheeler, M. C., Haertel, P. T., Straub, K. H., & Roundy, P. E. (2009). Convectively coupled equatorial waves. Reviews of Geophysics, 47(2).
+
+4. Yang, G. Y., Hoskins, B., & Slingo, J. (2007). Convectively coupled equatorial waves. Part I: Horizontal and vertical structures. Journal of the Atmospheric Sciences, 64(10), 3406-3423.
+
+---
+
+*本文介绍了MRG波与热带降水关系的基本概念和研究方法，为相关研究提供参考。*
+
+  </div>
+
+  <!-- 文章底部 -->
+  <footer class="post-footer">
+    <!-- 上一篇/下一篇导航 -->
+    <div class="post-navigation">
+      
+      
+      
+    </div>
+    
+    <!-- 分享按钮 -->
+    <div class="post-share-section">
+      <h4>分享这篇文章</h4>
+      <div class="share-buttons">
+        <a href="#" class="share-btn weibo" onclick="shareToWeibo()">
+          <i class="fab fa-weibo"></i>
+          微博
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+          <i class="fab fa-twitter"></i>
+          Twitter
+        </a>
+        <a href="#" class="share-btn copy" onclick="copyUrl()">
+          <i class="fas fa-link"></i>
+          复制链接
+        </a>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<!-- 目录悬浮窗 -->
+<div class="toc-container" id="tocContainer">
+  <div class="toc-header">
+    <h4>目录</h4>
+    <button class="toc-toggle" onclick="toggleToc()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="toc-content" id="tocContent">
+    <!-- 目录内容将由JavaScript生成 -->
+  </div>
+</div>
+
+<!-- 目录触发按钮 -->
+<button class="toc-trigger" onclick="toggleToc()">
+  <i class="fas fa-list"></i>
+</button>
+
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="/assets/post-script.js"></script>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Global Stats Display --><!-- 全局访问统计展示组件 -->
+<div id="global-stats-display" class="global-stats-container">
+  <div class="stats-toggle-btn" onclick="toggleGlobalStats()">
+    <i class="fas fa-chart-bar"></i>
+    <span class="stats-label">统计</span>
+  </div>
+  
+  <div class="stats-panel" id="global-stats-panel">
+    <div class="stats-header">
+      <h3><i class="fas fa-analytics"></i> 实时访问统计</h3>
+      <button class="close-stats" onclick="toggleGlobalStats()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="stats-content">
+      <div class="quick-stats">
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-total-visits">--</div>
+          <div class="stat-label">总访问量</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-today-visits">--</div>
+          <div class="stat-label">今日访问</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-online-users">--</div>
+          <div class="stat-label">在线用户</div>
+        </div>
+      </div>
+      
+      <div class="current-session">
+        <h4><i class="fas fa-user-clock"></i> 当前会话</h4>
+        <div class="session-info">
+          <div class="session-item">
+            <span class="session-label">访问时长:</span>
+            <span class="session-value" id="global-session-duration">00:00</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">页面浏览:</span>
+            <span class="session-value" id="global-page-views">1</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">设备类型:</span>
+            <span class="session-value" id="global-device-type">Desktop</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="last-update">
+        <i class="far fa-clock"></i>
+        最后更新: <span id="global-last-update">--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.global-stats-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-family: var(--font-family-sans, 'Inter', sans-serif);
+}
+
+.stats-toggle-btn {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.stats-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  filter: brightness(1.1);
+}
+
+.stats-panel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 320px;
+  background: var(--bg-primary, white);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.stats-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.stats-header {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  padding: 16px 20px;
+  border-radius: var(--radius-xl, 1rem) var(--radius-xl, 1rem) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-stats {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-stats:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.stats-content {
+  padding: 20px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quick-stat-item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-lg, 0.75rem);
+  transition: all 0.2s ease;
+}
+
+.quick-stat-item:hover {
+  background: var(--bg-tertiary, #f3f4f6);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #9ca3af);
+  font-weight: 500;
+}
+
+.current-session {
+  margin-bottom: 16px;
+}
+
+.current-session h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 13px;
+}
+
+.session-label {
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.session-value {
+  color: var(--text-primary, #1f2937);
+  font-weight: 600;
+}
+
+.last-update {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted, #9ca3af);
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .global-stats-container {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .stats-panel {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+function toggleGlobalStats() {
+  const panel = document.getElementById('global-stats-panel');
+  panel.classList.toggle('active');
+}
+
+// 初始化全局统计
+document.addEventListener('DOMContentLoaded', function() {
+  updateGlobalStats();
+  setInterval(updateGlobalStats, 30000); // 每30秒更新一次
+});
+
+function updateGlobalStats() {
+  // 模拟统计数据更新
+  const now = new Date();
+  
+  // 更新基本统计
+  document.getElementById('global-total-visits').textContent = Math.floor(Math.random() * 10000) + 5000;
+  document.getElementById('global-today-visits').textContent = Math.floor(Math.random() * 200) + 50;
+  document.getElementById('global-online-users').textContent = Math.floor(Math.random() * 20) + 5;
+  
+  // 更新会话信息
+  if (window.sessionStartTime) {
+    const duration = Math.floor((now - window.sessionStartTime) / 1000);
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    document.getElementById('global-session-duration').textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+  
+  // 检测设备类型
+  const deviceType = /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  document.getElementById('global-device-type').textContent = deviceType;
+  
+  // 更新时间
+  document.getElementById('global-last-update').textContent = now.toLocaleTimeString('zh-CN');
+}
+
+// 记录会话开始时间
+if (!window.sessionStartTime) {
+  window.sessionStartTime = new Date();
+}
+
+// 页面浏览量计数
+let pageViews = parseInt(sessionStorage.getItem('pageViews') || '0') + 1;
+sessionStorage.setItem('pageViews', pageViews.toString());
+if (document.getElementById('global-page-views')) {
+  document.getElementById('global-page-views').textContent = pageViews;
+}
+</script>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    <script src="/assets/js/performance-optimizations.js"></script>
+    
+    <script>
+    // Modal functionality
+    function openModal(src, alt) {
+      var modal = document.getElementById('galleryModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = src;
+      captionText.innerHTML = alt;
+    }
+
+    function closeModal() {
+      document.getElementById('galleryModal').style.display = "none";
+    }
+    </script>
+
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- 全站通用功能脚本 --><!-- 全站通用功能脚本 -->
+
+<!-- Theme Switcher -->
+<script src="/assets/theme-switcher.js"></script>
+
+<!-- 阅读进度条脚本（在支持的页面加载） -->
+
+<script src="/assets/blog-reading-progress.js"></script>
+
+
+<!-- 访问统计和地图脚本 -->
+<script src="/assets/analytics-map.js"></script>
+
+<script>
+// 全局页面增强
+document.addEventListener('DOMContentLoaded', function() {
+  // 标记当前页面为博客页面（用于阅读进度条）
+  const pageLayout = 'post';
+  const pageUrl = '/blog/MRG-waves/';
+  
+  if (pageLayout === 'post' || pageUrl.includes('/blog')) {
+    document.body.classList.add('blog-page');
+  }
+  
+  // 添加页面特定类名
+  if (pageUrl) {
+    const pageClass = pageUrl.replace(/\//g, '-').replace(/\.html$/, '');
+    if (pageClass) {
+      document.body.classList.add('page' + pageClass);
+    }
+  }
+  
+  // 确保访问统计在所有页面显示
+  if (typeof initializeAnalytics === 'function') {
+    initializeAnalytics();
+  }
+  
+  // 添加页面加载动画
+  document.body.classList.add('fade-in');
+});
+
+// 页面性能优化
+window.addEventListener('load', function() {
+  // 标记页面完全加载
+  document.body.classList.add('page-loaded');
+  
+  // 预加载重要资源
+  const preloadLinks = [
+    '/assets/theme-system.css',
+    '/assets/analytics-map.css',
+    '/assets/gallery-page.css'
+  ];
+  
+  preloadLinks.forEach(href => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'style';
+    link.href = href;
+    document.head.appendChild(link);
+  });
+});
+</script>
+<!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
+</html>

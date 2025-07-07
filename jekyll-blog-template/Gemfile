@@ -1,0 +1,35 @@
+source "https://rubygems.org"
+
+# Jekyll版本
+gem "jekyll", "~> 4.3.0"
+
+# GitHub Pages兼容
+# gem "github-pages", group: :jekyll_plugins
+
+# 主题
+gem "minima", "~> 2.5"
+
+# 插件
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-paginate"
+  gem "jekyll-sitemap"
+  gem "jekyll-seo-tag"
+end
+
+# Windows和JRuby平台支持
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo", ">= 1", "< 3"
+  gem "tzinfo-data"
+end
+
+# Windows性能监视目录变化
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# HTTP服务器
+gem "webrick", "~> 1.9"
+
+# 兼容性gems
+gem "csv"
+gem "base64"
+gem "bigdecimal"

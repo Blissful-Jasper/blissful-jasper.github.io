@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>关于重编译WRF时的一些建议 | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="关于重编译WRF时的一些建议" />
+<meta name="author" content="Xianpu Ji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="关于重编译wrf时的一些建议" />
+<meta property="og:description" content="关于重编译wrf时的一些建议" />
+<link rel="canonical" href="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/" />
+<meta property="og:url" content="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="关于重编译WRF时的一些建议" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Xianpu Ji"},"dateModified":"2024-01-10T00:00:00+00:00","datePublished":"2024-01-10T00:00:00+00:00","description":"关于重编译wrf时的一些建议","headline":"关于重编译WRF时的一些建议","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/"},"url":"https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/code-highlighting.css">
+  <link rel="stylesheet" href="/assets/gfs-data-styles.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+  
+  <!-- Load non-critical CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+  
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css"></noscript>
+  
+  <!-- MathJax - Load only when needed -->
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  </script>
+  
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  
+  <!-- Prism.js for code highlighting with better theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<!-- 全站通用功能样式 --><!-- 全站通用功能样式和脚本 -->
+
+<!-- Complete Theme System -->
+<link rel="stylesheet" href="/assets/theme-system-complete.css">
+<link rel="stylesheet" href="/assets/theme-switcher.css">
+
+<!-- 阅读进度条样式 -->
+<link rel="stylesheet" href="/assets/reading-progress.css">
+
+<!-- 访问统计和地图样式 -->
+<link rel="stylesheet" href="/assets/analytics-map.css">
+
+<!-- Enhanced Header Styles -->
+<link rel="stylesheet" href="/assets/header-styles.css">
+
+<!-- Modern Homepage Layout -->
+<link rel="stylesheet" href="/assets/homepage-layout.css">
+<link rel="stylesheet" href="/assets/homepage-gallery-journals.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 确保 Font Awesome 图标可用 -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<!-- Theme Initialization Script -->
+<script>
+  // Initialize theme from localStorage before page renders
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'blue';
+    const savedMode = localStorage.getItem('mode') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedMode);
+    document.documentElement.classList.add(`theme-${savedTheme}`);
+  })();
+</script>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于重编译WRF时的一些建议</title>
+    <script>
+        const AI_API_KEY = "";
+    </script>
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                
+                    <span class="logo-text">Xianpu Ji</span>
+                
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/journals.html" class="nav-link">Journals</a></li>
+            <li role="menuitem"><a href="/gallery.html" class="nav-link">Gallery</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/journals.html" class="mobile-nav-link">Journals</a></li>
+                <li><a href="/gallery.html" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <link rel="stylesheet" href="/assets/post-style.css">
+
+<article class="post-article">
+  <!-- 文章头部 -->
+  <header class="post-header">
+    <div class="post-meta-top">
+      <a href="/blog.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        返回博客
+      </a>
+      <div class="post-share">
+        <button class="share-btn" onclick="sharePost()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <h1 class="post-title">关于重编译WRF时的一些建议</h1>
+    
+    <div class="post-meta">
+      <div class="meta-item">
+        <i class="far fa-calendar-alt"></i>
+        <time datetime="2024-01-10T00:00:00+00:00">
+          2024年1月10日
+        </time>
+      </div>
+      
+      
+      
+      
+    </div>
+    
+    
+    <div class="post-tags">
+      
+      <span class="tag">WRF</span>
+      
+      <span class="tag">编译</span>
+      
+      <span class="tag">源代码修改</span>
+      
+      <span class="tag">数值模拟</span>
+      
+    </div>
+    
+  </header>
+
+  <!-- 文章内容 -->
+  <div class="post-content">
+    <h1 id="关于重编译wrf时的一些建议">关于重编译wrf时的一些建议</h1>
+
+<p>通常，我们进行一些敏感性实验时，需要修改WRF自带的源代码。比如:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>In this study, no specific radiation scheme available in the WRFv2.1.1 package was employed. Rather, a constant radiational cooling of 
+-0.5 K / day was applied at all vertical model levels. (Gall and Frank,2009)
+</code></pre></div></div>
+
+<p>上述一篇文献中作者就修改了WRF的辐射方案为一个固定的常数，-0.5 k $day^{-1}$,这肯定就需要修改WRF源代码中关于辐射变量相关的计算代码了。</p>
+
+<p>https://github.com/wrf-model/WRF/blob/master/phys/module_radiation_driver.F</p>
+
+<p>修改之后，需要重新编译WRF，使其运行时生效。那么，这就涉及到编译的速度，一般来说，完整的编译一次WRF大概需要半小时左右，这无疑是比较浪费时间的，仅仅就调整源代码的参数来说，其实完全没有必要清除所有的历史记录后编译，下面是一些建议：</p>
+
+<h1 id="如何快速的编译wrf">如何快速的编译WRF</h1>
+
+<h2 id="编译的次序">编译的次序</h2>
+
+<ul>
+  <li>
+    <p>当您重新编译时，您是仅仅编译，还是进行了<code class="language-plaintext highlighter-rouge">clean-a</code>，然后重新配置(configure)，然后重新编译(compile)？
+<img src="image.png" alt="Alt text" /></p>
+  </li>
+  <li>
+    <p>对于物理参数的修改，不需要clean/configure。您可以直接编译，而且通常比原始的完整编译更快。</p>
+  </li>
+</ul>
+
+<h2 id="编译器的选择">编译器的选择</h2>
+
+<ul>
+  <li>
+    <p>如果您碰巧使用的是 Intel编译器，那么编译将花费相当长的时间，即使是重新编译也是如此。</p>
+  </li>
+  <li>
+    <p>GNU (gfortran)编译速度快得多(而且它是一个免费的编译器)。即使您最终希望使用 Intel，为了修改代码和编译以测试准确性，切换到 GNU 也是值得的，这样您就可以进行快速编译，直到您对所有修改都满意为止。</p>
+  </li>
+</ul>
+
+<h2 id="多处理器并行编译">多处理器并行编译</h2>
+
+<p>可以使用多个处理器进行编译。其中，最多4个处理器是一个很好的使用数字(再多的话，就会有些平稳)。在编译之前，您可以设置:</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="n">setenv</span><span class="w"> </span><span class="n">J</span><span class="w"> </span><span class="s2">"-j 4"</span><span class="w">
+
+</span></code></pre></div></div>
+<p>(csh e.g.), or</p>
+
+<div class="language-fortran highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="n">export</span><span class="w"> </span><span class="n">J</span><span class="o">=</span><span class="s2">"-j 4"</span><span class="w">
+
+</span></code></pre></div></div>
+<p>(bash e.g.)</p>
+
+<p>因此，当你只是修改了源代码中的一些物理参数时，完全可以只进行编译，而不需要配置后在编译，亲测这样所用的时间大概在5min左右，非常快捷！</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+./compile em_real <span class="o">&gt;</span>&amp; compile.log
+
+
+</code></pre></div></div>
+
+<p>或者将其放在后台</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nb">nohup</span> ./compile em_real <span class="o">&gt;</span>&amp; compile.log &amp;
+
+</code></pre></div></div>
+
+<hr />
+
+<p>参考：</p>
+
+<p>https://forum.mmm.ucar.edu/threads/quick-wrf-compilation-after-modifying-some-parameters-in-the-land-surface-model.5526/</p>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <footer class="post-footer">
+    <!-- 上一篇/下一篇导航 -->
+    <div class="post-navigation">
+      
+      <div class="nav-item nav-prev">
+        <a href="/%E6%8A%80%E6%9C%AF/wrf/2024/01/04/WRF-with-GFS-data/" class="nav-link">
+          <i class="fas fa-chevron-left"></i>
+          <div class="nav-content">
+            <span class="nav-label">上一篇</span>
+            <span class="nav-title">使用GFS数据驱动WRF模式</span>
+          </div>
+        </a>
+      </div>
+      
+      
+      
+      <div class="nav-item nav-next">
+        <a href="/%E7%A7%91%E7%A0%94/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/2024/12/15/dl-meteorology/" class="nav-link">
+          <div class="nav-content">
+            <span class="nav-label">下一篇</span>
+            <span class="nav-title">Deep Learning in Meteorology</span>
+          </div>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+    </div>
+    
+    <!-- 分享按钮 -->
+    <div class="post-share-section">
+      <h4>分享这篇文章</h4>
+      <div class="share-buttons">
+        <a href="#" class="share-btn weibo" onclick="shareToWeibo()">
+          <i class="fab fa-weibo"></i>
+          微博
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+          <i class="fab fa-twitter"></i>
+          Twitter
+        </a>
+        <a href="#" class="share-btn copy" onclick="copyUrl()">
+          <i class="fas fa-link"></i>
+          复制链接
+        </a>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<!-- 目录悬浮窗 -->
+<div class="toc-container" id="tocContainer">
+  <div class="toc-header">
+    <h4>目录</h4>
+    <button class="toc-toggle" onclick="toggleToc()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="toc-content" id="tocContent">
+    <!-- 目录内容将由JavaScript生成 -->
+  </div>
+</div>
+
+<!-- 目录触发按钮 -->
+<button class="toc-trigger" onclick="toggleToc()">
+  <i class="fas fa-list"></i>
+</button>
+
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="/assets/post-script.js"></script>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Global Stats Display --><!-- 全局访问统计展示组件 -->
+<div id="global-stats-display" class="global-stats-container">
+  <div class="stats-toggle-btn" onclick="toggleGlobalStats()">
+    <i class="fas fa-chart-bar"></i>
+    <span class="stats-label">统计</span>
+  </div>
+  
+  <div class="stats-panel" id="global-stats-panel">
+    <div class="stats-header">
+      <h3><i class="fas fa-analytics"></i> 实时访问统计</h3>
+      <button class="close-stats" onclick="toggleGlobalStats()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="stats-content">
+      <div class="quick-stats">
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-total-visits">--</div>
+          <div class="stat-label">总访问量</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-today-visits">--</div>
+          <div class="stat-label">今日访问</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-online-users">--</div>
+          <div class="stat-label">在线用户</div>
+        </div>
+      </div>
+      
+      <div class="current-session">
+        <h4><i class="fas fa-user-clock"></i> 当前会话</h4>
+        <div class="session-info">
+          <div class="session-item">
+            <span class="session-label">访问时长:</span>
+            <span class="session-value" id="global-session-duration">00:00</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">页面浏览:</span>
+            <span class="session-value" id="global-page-views">1</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">设备类型:</span>
+            <span class="session-value" id="global-device-type">Desktop</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="last-update">
+        <i class="far fa-clock"></i>
+        最后更新: <span id="global-last-update">--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.global-stats-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-family: var(--font-family-sans, 'Inter', sans-serif);
+}
+
+.stats-toggle-btn {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.stats-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  filter: brightness(1.1);
+}
+
+.stats-panel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 320px;
+  background: var(--bg-primary, white);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.stats-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.stats-header {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  padding: 16px 20px;
+  border-radius: var(--radius-xl, 1rem) var(--radius-xl, 1rem) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-stats {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-stats:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.stats-content {
+  padding: 20px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quick-stat-item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-lg, 0.75rem);
+  transition: all 0.2s ease;
+}
+
+.quick-stat-item:hover {
+  background: var(--bg-tertiary, #f3f4f6);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #9ca3af);
+  font-weight: 500;
+}
+
+.current-session {
+  margin-bottom: 16px;
+}
+
+.current-session h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 13px;
+}
+
+.session-label {
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.session-value {
+  color: var(--text-primary, #1f2937);
+  font-weight: 600;
+}
+
+.last-update {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted, #9ca3af);
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .global-stats-container {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .stats-panel {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+function toggleGlobalStats() {
+  const panel = document.getElementById('global-stats-panel');
+  panel.classList.toggle('active');
+}
+
+// 初始化全局统计
+document.addEventListener('DOMContentLoaded', function() {
+  updateGlobalStats();
+  setInterval(updateGlobalStats, 30000); // 每30秒更新一次
+});
+
+function updateGlobalStats() {
+  // 模拟统计数据更新
+  const now = new Date();
+  
+  // 更新基本统计
+  document.getElementById('global-total-visits').textContent = Math.floor(Math.random() * 10000) + 5000;
+  document.getElementById('global-today-visits').textContent = Math.floor(Math.random() * 200) + 50;
+  document.getElementById('global-online-users').textContent = Math.floor(Math.random() * 20) + 5;
+  
+  // 更新会话信息
+  if (window.sessionStartTime) {
+    const duration = Math.floor((now - window.sessionStartTime) / 1000);
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    document.getElementById('global-session-duration').textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+  
+  // 检测设备类型
+  const deviceType = /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  document.getElementById('global-device-type').textContent = deviceType;
+  
+  // 更新时间
+  document.getElementById('global-last-update').textContent = now.toLocaleTimeString('zh-CN');
+}
+
+// 记录会话开始时间
+if (!window.sessionStartTime) {
+  window.sessionStartTime = new Date();
+}
+
+// 页面浏览量计数
+let pageViews = parseInt(sessionStorage.getItem('pageViews') || '0') + 1;
+sessionStorage.setItem('pageViews', pageViews.toString());
+if (document.getElementById('global-page-views')) {
+  document.getElementById('global-page-views').textContent = pageViews;
+}
+</script>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    <script src="/assets/js/performance-optimizations.js"></script>
+    
+    <script>
+    // Modal functionality
+    function openModal(src, alt) {
+      var modal = document.getElementById('galleryModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = src;
+      captionText.innerHTML = alt;
+    }
+
+    function closeModal() {
+      document.getElementById('galleryModal').style.display = "none";
+    }
+    </script>
+
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- 全站通用功能脚本 --><!-- 全站通用功能脚本 -->
+
+<!-- Theme Switcher -->
+<script src="/assets/theme-switcher.js"></script>
+
+<!-- 阅读进度条脚本（在支持的页面加载） -->
+
+<script src="/assets/blog-reading-progress.js"></script>
+
+
+<!-- 访问统计和地图脚本 -->
+<script src="/assets/analytics-map.js"></script>
+
+<script>
+// 全局页面增强
+document.addEventListener('DOMContentLoaded', function() {
+  // 标记当前页面为博客页面（用于阅读进度条）
+  const pageLayout = 'post';
+  const pageUrl = '/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/';
+  
+  if (pageLayout === 'post' || pageUrl.includes('/blog')) {
+    document.body.classList.add('blog-page');
+  }
+  
+  // 添加页面特定类名
+  if (pageUrl) {
+    const pageClass = pageUrl.replace(/\//g, '-').replace(/\.html$/, '');
+    if (pageClass) {
+      document.body.classList.add('page' + pageClass);
+    }
+  }
+  
+  // 确保访问统计在所有页面显示
+  if (typeof initializeAnalytics === 'function') {
+    initializeAnalytics();
+  }
+  
+  // 添加页面加载动画
+  document.body.classList.add('fade-in');
+});
+
+// 页面性能优化
+window.addEventListener('load', function() {
+  // 标记页面完全加载
+  document.body.classList.add('page-loaded');
+  
+  // 预加载重要资源
+  const preloadLinks = [
+    '/assets/theme-system.css',
+    '/assets/analytics-map.css',
+    '/assets/gallery-page.css'
+  ];
+  
+  preloadLinks.forEach(href => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'style';
+    link.href = href;
+    document.head.appendChild(link);
+  });
+});
+</script>
+<!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
+</html>

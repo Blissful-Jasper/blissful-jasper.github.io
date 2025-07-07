@@ -1,0 +1,43 @@
+/* Maps 页面专属样式 */
+.maps-section, .markdown-body.maps {
+  background: var(--bg-primary);
+  border-radius: var(--radius);
+  box-shadow: none;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto 2rem auto;
+}
+.link-card {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.06);
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  min-width: 320px;
+  max-width: 480px;
+  flex: 1 1 380px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.link-card h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.link-card ul {
+  list-style: none;
+  padding: 0;
+}
+.link-card li {
+  margin-bottom: 0.7rem;
+}
+.link-card a {
+  color: var(--secondary-color);
+  font-size: 1rem;
+  font-weight: 500;
+  word-break: break-all;
+}
+.link-desc {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9em;
+}

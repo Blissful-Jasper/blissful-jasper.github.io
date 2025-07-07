@@ -1,0 +1,313 @@
+/* Publications Section 现代专业样式 - 专为首页设计的紧凑版本 */
+
+/* 定义专属的CSS变量 */
+:root {
+  --pub-primary: #a855f7;
+  --pub-secondary: #3b82f6;
+  --pub-accent: #f59e0b;
+  --pub-bg: #faf5ff;
+  --pub-card-bg: #ffffff;
+  --pub-text-primary: #1e293b;
+  --pub-text-secondary: #64748b;
+  --pub-border: #e2e8f0;
+  --pub-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --pub-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Publications Section 特定样式 - 紧凑版本 */
+.publications-section {
+  padding: 3rem 0;
+  background: var(--pub-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.publications-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+  pointer-events: none;
+}
+
+.publications-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.publications-content {
+  display: grid;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Publications Stats Card - 紧凑版本 */
+.publications-stats-card {
+  background: var(--pub-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--pub-shadow);
+  border: 1px solid var(--pub-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.publications-stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--pub-shadow-hover);
+}
+
+.publications-stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--pub-primary), var(--pub-secondary));
+}
+
+.publications-stats-card .card-header {
+  padding: 1.5rem 1.5rem 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+}
+
+.publications-stats-card .card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--pub-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.publications-stats-card .card-title i {
+  color: var(--pub-primary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+  border-radius: 12px;
+  border: 1px solid var(--pub-border);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.stat-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--pub-primary), var(--pub-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.stat-info {
+  flex: 1;
+}
+
+.stat-number {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pub-primary);
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--pub-text-secondary);
+  font-weight: 500;
+}
+
+/* Publications Timeline - 紧凑版本 */
+.publications-timeline {
+  margin-top: 2rem;
+}
+
+.timeline-container {
+  position: relative;
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 1rem;
+  background: var(--pub-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--pub-shadow);
+  border: 1px solid var(--pub-border);
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 2rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--pub-primary), var(--pub-secondary));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding-left: 4rem;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background: var(--pub-primary);
+  border-radius: 50%;
+  border: 3px solid var(--pub-card-bg);
+  box-shadow: 0 0 0 3px var(--pub-primary);
+}
+
+.timeline-year {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--pub-primary);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-papers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.paper-item {
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(59, 130, 246, 0.05));
+  border-radius: 10px;
+  border: 1px solid var(--pub-border);
+  transition: all 0.3s ease;
+}
+
+.paper-item:hover {
+  transform: translateX(5px);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.paper-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--pub-text-primary);
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.paper-journal {
+  font-size: 0.8rem;
+  color: var(--pub-text-secondary);
+  font-style: italic;
+}
+
+.paper-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+}
+
+.paper-tag {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+  color: var(--pub-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+/* 动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .publications-section {
+    padding: 2rem 0;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+  
+  .stat-item {
+    padding: 0.8rem;
+  }
+  
+  .timeline-container {
+    max-height: 300px;
+  }
+  
+  .timeline-item {
+    padding-left: 3rem;
+  }
+  
+  .timeline-container::before {
+    left: 1.5rem;
+  }
+  
+  .timeline-item::before {
+    left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-stats-card .card-header {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    padding: 0 1rem 1rem;
+  }
+  
+  .stat-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .timeline-container {
+    padding: 0.8rem;
+  }
+}

@@ -1,0 +1,489 @@
+/* Research Section 现代专业样式 - 专为首页设计的紧凑版本 */
+
+/* 定义专属的CSS变量 */
+:root {
+  --research-primary: #0ea5e9;
+  --research-secondary: #10b981;
+  --research-accent: #f59e0b;
+  --research-bg: #f8fafc;
+  --research-card-bg: #ffffff;
+  --research-text-primary: #1e293b;
+  --research-text-secondary: #64748b;
+  --research-border: #e2e8f0;
+  --research-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --research-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Research Section 特定样式 - 紧凑版本 */
+.research-section {
+  padding: 3rem 0;
+  background: var(--research-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.research-section .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.research-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.03) 0%, rgba(16, 185, 129, 0.03) 100%);
+  pointer-events: none;
+}
+
+.research-content {
+  display: grid;
+  gap: 1.5rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Research Overview Card - 紧凑版本 */
+.research-overview-card {
+  background: var(--research-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--research-shadow);
+  border: 1px solid var(--research-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.research-overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--research-shadow-hover);
+}
+
+.research-overview-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--research-primary), var(--research-secondary));
+}
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #10b981, #3b82f6, #8b5cf6);
+}
+
+.research-overview-card .card-header {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.overview-content {
+  padding: 2rem;
+}
+
+.research-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--about-text-primary);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.research-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(59, 130, 246, 0.05));
+  border-radius: var(--about-radius-lg);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--about-shadow-md);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--about-text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Research Areas Grid */
+.research-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.research-area-card {
+  background: var(--about-bg-primary);
+  border-radius: var(--about-radius-2xl);
+  box-shadow: var(--about-shadow-lg);
+  border: 1px solid var(--about-border);
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-area-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.research-area-card:hover::before {
+  transform: scaleX(1);
+}
+
+.research-area-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--about-shadow-xl);
+}
+
+.area-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: var(--about-radius-full);
+  color: var(--about-text-white);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.research-area-card:hover .area-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.area-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--about-text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.area-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--about-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.area-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.topic-tag {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+  color: var(--about-text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: var(--about-radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  transition: all 0.3s ease;
+}
+
+.topic-tag:hover {
+  background: linear-gradient(135deg, #10b981, #3b82f6);
+  color: var(--about-text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--about-shadow-sm);
+}
+
+/* Current Projects Card */
+.current-projects-card {
+  background: var(--about-bg-primary);
+  border-radius: var(--about-radius-2xl);
+  box-shadow: var(--about-shadow-xl);
+  border: 1px solid var(--about-border);
+  overflow: hidden;
+  position: relative;
+}
+
+.current-projects-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8b5cf6, #06b6d4, #10b981);
+}
+
+.current-projects-card .card-header {
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+}
+
+.project-item {
+  background: var(--about-bg-secondary);
+  border-radius: var(--about-radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--about-border);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--about-shadow-md);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.02), rgba(16, 185, 129, 0.02));
+}
+
+.project-status {
+  position: absolute;
+  top: -10px;
+  right: 2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--about-radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--about-shadow-md);
+}
+
+.project-status.ongoing {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: var(--about-text-white);
+}
+
+.project-status.completed {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: var(--about-text-white);
+}
+
+.project-status.planning {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: var(--about-text-white);
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--about-text-primary);
+  margin: 1.5rem 0 1rem 0;
+  line-height: 1.4;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--about-text-secondary);
+  margin-bottom: 2rem;
+}
+
+.project-timeline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--about-border-light);
+}
+
+.timeline-label {
+  font-size: 0.9rem;
+  color: var(--about-text-light);
+  font-weight: 500;
+}
+
+.timeline-value {
+  font-size: 0.9rem;
+  color: var(--about-text-primary);
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(16, 185, 129, 0.1));
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--about-radius-sm);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .research-areas-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .research-stats {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-section {
+    padding: 4rem 0;
+  }
+  
+  .overview-content {
+    padding: 2rem;
+  }
+  
+  .research-area-card {
+    padding: 2rem;
+  }
+  
+  .area-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .projects-grid {
+    padding: 2rem;
+  }
+  
+  .project-item {
+    padding: 2rem;
+  }
+  
+  .research-stats {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    padding: 1.5rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .research-areas-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .research-area-card {
+    padding: 1.5rem;
+  }
+  
+  .area-title {
+    font-size: 1.3rem;
+  }
+  
+  .project-item {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
+  
+  .projects-grid {
+    padding: 1.5rem;
+  }
+  
+  .overview-content {
+    padding: 1.5rem;
+  }
+  
+  .research-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Special Animations */
+@keyframes researchFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.research-area-card:nth-child(odd) .area-icon {
+  animation: researchFloat 4s ease-in-out infinite;
+}
+
+.research-area-card:nth-child(even) .area-icon {
+  animation: researchFloat 4s ease-in-out infinite 2s;
+}
+
+/* Print Styles */
+@media print {
+  .research-section {
+    background: white;
+    padding: 2rem 0;
+  }
+  
+  .research-section::before {
+    display: none;
+  }
+  
+  .research-overview-card,
+  .research-area-card,
+  .current-projects-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .card-header {
+    background: #f8f9fa !important;
+    color: #333 !important;
+  }
+  
+  .area-icon {
+    background: #6c757d !important;
+  }
+}

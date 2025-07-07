@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python绘图：在地图上添加小地图 | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Python绘图：在地图上添加小地图" />
+<meta name="author" content="Xianpu Ji" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python绘图：在地图上添加小地图" />
+<meta property="og:description" content="Python绘图：在地图上添加小地图" />
+<link rel="canonical" href="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E7%BB%98%E5%9B%BE/2024/01/01/Map-add-figure/" />
+<meta property="og:url" content="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E7%BB%98%E5%9B%BE/2024/01/01/Map-add-figure/" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-01T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python绘图：在地图上添加小地图" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Xianpu Ji"},"dateModified":"2024-01-01T00:00:00+00:00","datePublished":"2024-01-01T00:00:00+00:00","description":"Python绘图：在地图上添加小地图","headline":"Python绘图：在地图上添加小地图","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E7%BB%98%E5%9B%BE/2024/01/01/Map-add-figure/"},"url":"https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E7%BB%98%E5%9B%BE/2024/01/01/Map-add-figure/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/code-highlighting.css">
+  <link rel="stylesheet" href="/assets/gfs-data-styles.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+  
+  <!-- Load non-critical CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+  
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css"></noscript>
+  
+  <!-- MathJax - Load only when needed -->
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  </script>
+  
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  
+  <!-- Prism.js for code highlighting with better theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<!-- 全站通用功能样式 --><!-- 全站通用功能样式和脚本 -->
+
+<!-- Complete Theme System -->
+<link rel="stylesheet" href="/assets/theme-system-complete.css">
+<link rel="stylesheet" href="/assets/theme-switcher.css">
+
+<!-- 阅读进度条样式 -->
+<link rel="stylesheet" href="/assets/reading-progress.css">
+
+<!-- 访问统计和地图样式 -->
+<link rel="stylesheet" href="/assets/analytics-map.css">
+
+<!-- Enhanced Header Styles -->
+<link rel="stylesheet" href="/assets/header-styles.css">
+
+<!-- Modern Homepage Layout -->
+<link rel="stylesheet" href="/assets/homepage-layout.css">
+<link rel="stylesheet" href="/assets/homepage-gallery-journals.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 确保 Font Awesome 图标可用 -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<!-- Theme Initialization Script -->
+<script>
+  // Initialize theme from localStorage before page renders
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'blue';
+    const savedMode = localStorage.getItem('mode') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedMode);
+    document.documentElement.classList.add(`theme-${savedTheme}`);
+  })();
+</script>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python绘图：在地图上添加小地图</title>
+    <script>
+        const AI_API_KEY = "";
+    </script>
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                
+                    <span class="logo-text">Xianpu Ji</span>
+                
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/journals.html" class="nav-link">Journals</a></li>
+            <li role="menuitem"><a href="/gallery.html" class="nav-link">Gallery</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/journals.html" class="mobile-nav-link">Journals</a></li>
+                <li><a href="/gallery.html" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <link rel="stylesheet" href="/assets/post-style.css">
+
+<article class="post-article">
+  <!-- 文章头部 -->
+  <header class="post-header">
+    <div class="post-meta-top">
+      <a href="/blog.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        返回博客
+      </a>
+      <div class="post-share">
+        <button class="share-btn" onclick="sharePost()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <h1 class="post-title">Python绘图：在地图上添加小地图</h1>
+    
+    <div class="post-meta">
+      <div class="meta-item">
+        <i class="far fa-calendar-alt"></i>
+        <time datetime="2024-01-01T00:00:00+00:00">
+          2024年1月1日
+        </time>
+      </div>
+      
+      
+      
+      
+    </div>
+    
+    
+    <div class="post-tags">
+      
+      <span class="tag">Python</span>
+      
+      <span class="tag">地图</span>
+      
+      <span class="tag">可视化</span>
+      
+      <span class="tag">cartopy</span>
+      
+    </div>
+    
+  </header>
+
+  <!-- 文章内容 -->
+  <div class="post-content">
+    <h1 id="python绘图在地图上添加小地图">Python绘图：在地图上添加小地图</h1>
+
+<p>在科学研究中，我们经常需要在大范围的地图上添加小地图来突出显示研究区域。本文将介绍如何使用Python的cartopy和matplotlib库来实现这一功能。</p>
+
+<h2 id="基本概念">基本概念</h2>
+
+<h3 id="什么是小地图inset-map">什么是小地图（Inset Map）</h3>
+
+<p>小地图是一个嵌入在主地图中的小型地图，通常用于：</p>
+
+<ul>
+  <li><strong>显示研究区域位置</strong>：在大范围地图中标出具体研究区域</li>
+  <li><strong>提供地理背景</strong>：为读者提供地理位置的参考</li>
+  <li><strong>增强地图可读性</strong>：帮助读者更好地理解空间关系</li>
+</ul>
+
+<h3 id="应用场景">应用场景</h3>
+
+<ul>
+  <li><strong>科学论文</strong>：在研究区域图中添加位置示意图</li>
+  <li><strong>数据报告</strong>：在区域分析图中提供全局视角</li>
+  <li><strong>演示文稿</strong>：增强地图的表达效果</li>
+</ul>
+
+<h2 id="技术准备">技术准备</h2>
+
+<h3 id="所需库">所需库</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="n">cfeature</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">cartopy.mpl.gridliner</span> <span class="kn">import</span> <span class="n">LONGITUDE_FORMATTER</span><span class="p">,</span> <span class="n">LATITUDE_FORMATTER</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="n">patches</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">Rectangle</span>
+<span class="kn">import</span> <span class="nn">cartopy.io.shapereader</span> <span class="k">as</span> <span class="n">shpreader</span>
+</code></pre></div></div>
+
+<h3 id="安装依赖">安装依赖</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>matplotlib cartopy numpy
+<span class="c"># 如果需要额外的地图数据</span>
+pip <span class="nb">install </span>cartopy[plotting]
+</code></pre></div></div>
+
+<h2 id="基础实现">基础实现</h2>
+
+<h3 id="1-简单的小地图示例">1. 简单的小地图示例</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_basic_inset_map</span><span class="p">():</span>
+    <span class="s">"""
+    创建基础的小地图示例
+    """</span>
+    <span class="c1"># 创建主图
+</span>    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># 主地图 - 中国东部区域
+</span>    <span class="n">ax_main</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">105</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    
+    <span class="c1"># 添加地图特征
+</span>    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">RIVERS</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAKES</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+    
+    <span class="c1"># 添加网格
+</span>    <span class="n">gl</span> <span class="o">=</span> <span class="n">ax_main</span><span class="p">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">gl</span><span class="p">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">gl</span><span class="p">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">gl</span><span class="p">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
+    <span class="n">gl</span><span class="p">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
+    
+    <span class="c1"># 创建小地图 - 显示整个中国
+</span>    <span class="n">ax_inset</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> 
+                           <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">70</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">55</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    
+    <span class="c1"># 添加小地图特征
+</span>    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightgray'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightblue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="c1"># 在小地图上标出主地图的范围
+</span>    <span class="n">rect</span> <span class="o">=</span> <span class="n">patches</span><span class="p">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">105</span><span class="p">,</span> <span class="mi">25</span><span class="p">),</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> 
+                           <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> 
+                           <span class="n">facecolor</span><span class="o">=</span><span class="s">'none'</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+    
+    <span class="c1"># 添加标题
+</span>    <span class="n">ax_main</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'中国东部地区详细地图'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax_main</span><span class="p">,</span> <span class="n">ax_inset</span>
+
+<span class="c1"># 创建地图
+</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax_main</span><span class="p">,</span> <span class="n">ax_inset</span> <span class="o">=</span> <span class="n">create_basic_inset_map</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="2-高级小地图功能">2. 高级小地图功能</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">InsetMapCreator</span><span class="p">:</span>
+    <span class="s">"""
+    小地图创建器类
+    """</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span> <span class="o">=</span> <span class="bp">None</span>
+        
+    <span class="k">def</span> <span class="nf">create_main_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">extent</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">()):</span>
+        <span class="s">"""
+        创建主地图
+        
+        Parameters:
+        -----------
+        extent : list
+            地图范围 [lon_min, lon_max, lat_min, lat_max]
+        projection : cartopy projection
+            地图投影
+        """</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">,</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        
+        <span class="c1"># 添加基本地图特征
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">RIVERS</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAKES</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.6</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightgray'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightblue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ax_main</span>
+    
+    <span class="k">def</span> <span class="nf">add_inset_map</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">inset_extent</span><span class="p">,</span> 
+                     <span class="n">main_extent</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">()):</span>
+        <span class="s">"""
+        添加小地图
+        
+        Parameters:
+        -----------
+        position : list
+            小地图位置 [x, y, width, height] (相对坐标)
+        inset_extent : list
+            小地图显示范围
+        main_extent : list
+            主地图范围（用于在小地图上标注）
+        projection : cartopy projection
+            小地图投影
+        """</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">fig</span><span class="p">.</span><span class="n">add_axes</span><span class="p">(</span><span class="n">position</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">projection</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span><span class="p">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">inset_extent</span><span class="p">,</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+        
+        <span class="c1"># 添加小地图特征
+</span>        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightgray'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightblue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        
+        <span class="c1"># 标注主地图范围
+</span>        <span class="k">if</span> <span class="n">main_extent</span><span class="p">:</span>
+            <span class="n">lon_min</span><span class="p">,</span> <span class="n">lon_max</span><span class="p">,</span> <span class="n">lat_min</span><span class="p">,</span> <span class="n">lat_max</span> <span class="o">=</span> <span class="n">main_extent</span>
+            <span class="n">rect</span> <span class="o">=</span> <span class="n">patches</span><span class="p">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">lon_min</span><span class="p">,</span> <span class="n">lat_min</span><span class="p">),</span> 
+                                   <span class="n">lon_max</span> <span class="o">-</span> <span class="n">lon_min</span><span class="p">,</span> 
+                                   <span class="n">lat_max</span> <span class="o">-</span> <span class="n">lat_min</span><span class="p">,</span>
+                                   <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> 
+                                   <span class="n">facecolor</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span><span class="p">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">ax_inset</span>
+    
+    <span class="k">def</span> <span class="nf">add_gridlines</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="s">"""
+        添加网格线
+        """</span>
+        <span class="n">gl</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">gridlines</span><span class="p">(</span><span class="n">draw_labels</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">gl</span><span class="p">.</span><span class="n">top_labels</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">gl</span><span class="p">.</span><span class="n">right_labels</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="n">gl</span><span class="p">.</span><span class="n">xformatter</span> <span class="o">=</span> <span class="n">LONGITUDE_FORMATTER</span>
+        <span class="n">gl</span><span class="p">.</span><span class="n">yformatter</span> <span class="o">=</span> <span class="n">LATITUDE_FORMATTER</span>
+        <span class="k">return</span> <span class="n">gl</span>
+</code></pre></div></div>
+
+<h2 id="实际应用示例">实际应用示例</h2>
+
+<h3 id="示例1上海及周边地区">示例1：上海及周边地区</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_shanghai_map</span><span class="p">():</span>
+    <span class="s">"""
+    创建上海及周边地区地图，带小地图显示位置
+    """</span>
+    <span class="n">creator</span> <span class="o">=</span> <span class="n">InsetMapCreator</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    
+    <span class="c1"># 主地图：上海及周边详细地图
+</span>    <span class="n">main_extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mf">122.5</span><span class="p">,</span> <span class="mf">30.5</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span>
+    <span class="n">ax_main</span> <span class="o">=</span> <span class="n">creator</span><span class="p">.</span><span class="n">create_main_map</span><span class="p">(</span><span class="n">main_extent</span><span class="p">)</span>
+    
+    <span class="c1"># 添加网格
+</span>    <span class="n">creator</span><span class="p">.</span><span class="n">add_gridlines</span><span class="p">(</span><span class="n">ax_main</span><span class="p">)</span>
+    
+    <span class="c1"># 添加数据点（示例）
+</span>    <span class="n">shanghai_lon</span><span class="p">,</span> <span class="n">shanghai_lat</span> <span class="o">=</span> <span class="mf">121.47</span><span class="p">,</span> <span class="mf">31.23</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">shanghai_lon</span><span class="p">,</span> <span class="n">shanghai_lat</span><span class="p">,</span> <span class="s">'ro'</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> 
+                <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">(),</span> <span class="n">label</span><span class="o">=</span><span class="s">'上海市中心'</span><span class="p">)</span>
+    
+    <span class="c1"># 小地图：显示在中国的位置
+</span>    <span class="n">inset_extent</span> <span class="o">=</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">55</span><span class="p">]</span>
+    <span class="n">ax_inset</span> <span class="o">=</span> <span class="n">creator</span><span class="p">.</span><span class="n">add_inset_map</span><span class="p">([</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> 
+                                   <span class="n">inset_extent</span><span class="p">,</span> <span class="n">main_extent</span><span class="p">)</span>
+    
+    <span class="c1"># 添加标题和标签
+</span>    <span class="n">ax_main</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'上海及周边地区详细地图'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'upper right'</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">creator</span><span class="p">.</span><span class="n">fig</span>
+
+<span class="c1"># 创建地图
+</span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_shanghai_map</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="示例2多个小地图">示例2：多个小地图</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_multi_inset_map</span><span class="p">():</span>
+    <span class="s">"""
+    创建包含多个小地图的复合地图
+    """</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+    
+    <span class="c1"># 主地图：中国东部
+</span>    <span class="n">ax_main</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">105</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">45</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    
+    <span class="c1"># 添加主地图特征
+</span>    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightgray'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightblue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="c1"># 小地图1：北京周边
+</span>    <span class="n">ax_beijing</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_beijing</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">115</span><span class="p">,</span> <span class="mi">118</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">41</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_beijing</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax_beijing</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">ax_beijing</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'北京地区'</span><span class="p">)</span>
+    
+    <span class="c1"># 小地图2：上海周边
+</span>    <span class="n">ax_shanghai</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_shanghai</span><span class="p">.</span><span class="n">set_extent</span><span class="p">([</span><span class="mi">120</span><span class="p">,</span> <span class="mf">122.5</span><span class="p">,</span> <span class="mf">30.5</span><span class="p">,</span> <span class="mi">32</span><span class="p">],</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_shanghai</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">ax_shanghai</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.4</span><span class="p">)</span>
+    <span class="n">ax_shanghai</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'上海地区'</span><span class="p">)</span>
+    
+    <span class="c1"># 在主地图上标注两个区域
+</span>    <span class="c1"># 北京区域
+</span>    <span class="n">rect_beijing</span> <span class="o">=</span> <span class="n">patches</span><span class="p">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">115</span><span class="p">,</span> <span class="mi">39</span><span class="p">),</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> 
+                                   <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'blue'</span><span class="p">,</span> 
+                                   <span class="n">facecolor</span><span class="o">=</span><span class="s">'blue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect_beijing</span><span class="p">)</span>
+    
+    <span class="c1"># 上海区域
+</span>    <span class="n">rect_shanghai</span> <span class="o">=</span> <span class="n">patches</span><span class="p">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="mi">120</span><span class="p">,</span> <span class="mf">30.5</span><span class="p">),</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> 
+                                    <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> 
+                                    <span class="n">facecolor</span><span class="o">=</span><span class="s">'red'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span>
+                                    <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect_shanghai</span><span class="p">)</span>
+    
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'中国东部地区及重点城市'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">fig</span>
+
+<span class="c1"># 创建多小地图
+</span><span class="n">fig</span> <span class="o">=</span> <span class="n">create_multi_inset_map</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="高级技巧">高级技巧</h2>
+
+<h3 id="1-连接线">1. 连接线</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add_connection_lines</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax_main</span><span class="p">,</span> <span class="n">ax_inset</span><span class="p">,</span> <span class="n">main_extent</span><span class="p">):</span>
+    <span class="s">"""
+    在主地图和小地图之间添加连接线
+    """</span>
+    <span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">ConnectionPatch</span>
+    
+    <span class="c1"># 计算连接点
+</span>    <span class="n">lon_min</span><span class="p">,</span> <span class="n">lon_max</span><span class="p">,</span> <span class="n">lat_min</span><span class="p">,</span> <span class="n">lat_max</span> <span class="o">=</span> <span class="n">main_extent</span>
+    
+    <span class="c1"># 主地图上的点
+</span>    <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">ax_main</span><span class="p">.</span><span class="n">projection</span><span class="p">.</span><span class="n">transform_point</span><span class="p">(</span><span class="n">lon_min</span><span class="p">,</span> <span class="n">lat_min</span><span class="p">,</span> 
+                                               <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="c1"># 小地图上的点
+</span>    <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">ax_inset</span><span class="p">.</span><span class="n">projection</span><span class="p">.</span><span class="n">transform_point</span><span class="p">(</span><span class="n">lon_min</span><span class="p">,</span> <span class="n">lat_min</span><span class="p">,</span> 
+                                                <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    
+    <span class="c1"># 创建连接线
+</span>    <span class="n">con</span> <span class="o">=</span> <span class="n">ConnectionPatch</span><span class="p">((</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">),</span> <span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">),</span> <span class="s">"data"</span><span class="p">,</span> <span class="s">"data"</span><span class="p">,</span>
+                         <span class="n">axesA</span><span class="o">=</span><span class="n">ax_main</span><span class="p">,</span> <span class="n">axesB</span><span class="o">=</span><span class="n">ax_inset</span><span class="p">,</span>
+                         <span class="n">color</span><span class="o">=</span><span class="s">"red"</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_artist</span><span class="p">(</span><span class="n">con</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">con</span>
+</code></pre></div></div>
+
+<h3 id="2-自定义样式">2. 自定义样式</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">customize_map_style</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s">'scientific'</span><span class="p">):</span>
+    <span class="s">"""
+    自定义地图样式
+    """</span>
+    <span class="k">if</span> <span class="n">style</span> <span class="o">==</span> <span class="s">'scientific'</span><span class="p">:</span>
+        <span class="c1"># 科学论文风格
+</span>        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'black'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'gray'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'white'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightblue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">style</span> <span class="o">==</span> <span class="s">'presentation'</span><span class="p">:</span>
+        <span class="c1"># 演示文稿风格
+</span>        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'darkblue'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'darkgray'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightgreen'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'lightblue'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+        
+    <span class="k">elif</span> <span class="n">style</span> <span class="o">==</span> <span class="s">'minimal'</span><span class="p">:</span>
+        <span class="c1"># 简约风格
+</span>        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'black'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'gray'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">LAND</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'white'</span><span class="p">)</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">OCEAN</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'white'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="性能优化">性能优化</h2>
+
+<h3 id="1-地图数据缓存">1. 地图数据缓存</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">CachedMapCreator</span><span class="p">:</span>
+    <span class="s">"""
+    带缓存的地图创建器
+    """</span>
+    
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">cached_features</span> <span class="o">=</span> <span class="p">{}</span>
+    
+    <span class="k">def</span> <span class="nf">get_cached_feature</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feature_name</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="s">'50m'</span><span class="p">):</span>
+        <span class="s">"""
+        获取缓存的地图特征
+        """</span>
+        <span class="n">cache_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">feature_name</span><span class="si">}</span><span class="s">_</span><span class="si">{</span><span class="n">resolution</span><span class="si">}</span><span class="s">"</span>
+        <span class="k">if</span> <span class="n">cache_key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">.</span><span class="n">cached_features</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">feature_name</span> <span class="o">==</span> <span class="s">'coastline'</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">.</span><span class="n">cached_features</span><span class="p">[</span><span class="n">cache_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">.</span><span class="n">with_scale</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">feature_name</span> <span class="o">==</span> <span class="s">'borders'</span><span class="p">:</span>
+                <span class="bp">self</span><span class="p">.</span><span class="n">cached_features</span><span class="p">[</span><span class="n">cache_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">.</span><span class="n">with_scale</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>
+            <span class="c1"># 添加更多特征...
+</span>        
+        <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">cached_features</span><span class="p">[</span><span class="n">cache_key</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="2-分辨率控制">2. 分辨率控制</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_optimized_map</span><span class="p">(</span><span class="n">main_extent</span><span class="p">,</span> <span class="n">inset_extent</span><span class="p">,</span> 
+                        <span class="n">main_resolution</span><span class="o">=</span><span class="s">'50m'</span><span class="p">,</span> <span class="n">inset_resolution</span><span class="o">=</span><span class="s">'110m'</span><span class="p">):</span>
+    <span class="s">"""
+    创建优化的地图（不同分辨率）
+    """</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+    
+    <span class="c1"># 主地图使用高分辨率
+</span>    <span class="n">ax_main</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">main_extent</span><span class="p">,</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">.</span><span class="n">with_scale</span><span class="p">(</span><span class="n">main_resolution</span><span class="p">))</span>
+    <span class="n">ax_main</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">.</span><span class="n">with_scale</span><span class="p">(</span><span class="n">main_resolution</span><span class="p">))</span>
+    
+    <span class="c1"># 小地图使用低分辨率
+</span>    <span class="n">ax_inset</span> <span class="o">=</span> <span class="n">fig</span><span class="p">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span> 
+                           <span class="n">projection</span><span class="o">=</span><span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">inset_extent</span><span class="p">,</span> <span class="n">ccrs</span><span class="p">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">COASTLINE</span><span class="p">.</span><span class="n">with_scale</span><span class="p">(</span><span class="n">inset_resolution</span><span class="p">))</span>
+    <span class="n">ax_inset</span><span class="p">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="p">.</span><span class="n">BORDERS</span><span class="p">.</span><span class="n">with_scale</span><span class="p">(</span><span class="n">inset_resolution</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax_main</span><span class="p">,</span> <span class="n">ax_inset</span>
+</code></pre></div></div>
+
+<h2 id="总结">总结</h2>
+
+<p>通过本文的介绍，我们学习了如何使用Python创建带有小地图的地图可视化：</p>
+
+<ol>
+  <li><strong>基础概念</strong>：了解了小地图的作用和应用场景</li>
+  <li><strong>基本实现</strong>：掌握了使用cartopy创建小地图的基本方法</li>
+  <li><strong>高级功能</strong>：学习了如何创建复杂的多小地图布局</li>
+  <li><strong>样式定制</strong>：了解了如何自定义地图样式</li>
+  <li><strong>性能优化</strong>：学习了提高地图渲染效率的方法</li>
+</ol>
+
+<p>小地图是科学可视化中的重要工具，合理使用可以大大提升地图的信息传达效果。在实际应用中，需要根据具体需求选择合适的位置、大小和样式。</p>
+
+<h2 id="参考资源">参考资源</h2>
+
+<ul>
+  <li><a href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy官方文档</a></li>
+  <li><a href="https://matplotlib.org/">Matplotlib官方文档</a></li>
+  <li><a href="https://proj.org/">地图投影参考</a></li>
+</ul>
+
+<hr />
+
+<p><em>希望这篇文章对您在Python地图可视化方面有所帮助！</em></p>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <footer class="post-footer">
+    <!-- 上一篇/下一篇导航 -->
+    <div class="post-navigation">
+      
+      <div class="nav-item nav-prev">
+        <a href="/%E6%8A%80%E6%9C%AF/wrf/2023/12/31/WRF%E4%BF%AE%E6%94%B9geo_em/" class="nav-link">
+          <i class="fas fa-chevron-left"></i>
+          <div class="nav-content">
+            <span class="nav-label">上一篇</span>
+            <span class="nav-title">WRF修改geo_em变量</span>
+          </div>
+        </a>
+      </div>
+      
+      
+      
+      <div class="nav-item nav-next">
+        <a href="/%E7%A7%91%E7%A0%94/%E7%83%AD%E5%B8%A6%E6%B0%94%E8%B1%A1/2024/01/04/CCEWs/" class="nav-link">
+          <div class="nav-content">
+            <span class="nav-label">下一篇</span>
+            <span class="nav-title">Convectively Coupled Equatorial Waves</span>
+          </div>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+    </div>
+    
+    <!-- 分享按钮 -->
+    <div class="post-share-section">
+      <h4>分享这篇文章</h4>
+      <div class="share-buttons">
+        <a href="#" class="share-btn weibo" onclick="shareToWeibo()">
+          <i class="fab fa-weibo"></i>
+          微博
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+          <i class="fab fa-twitter"></i>
+          Twitter
+        </a>
+        <a href="#" class="share-btn copy" onclick="copyUrl()">
+          <i class="fas fa-link"></i>
+          复制链接
+        </a>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<!-- 目录悬浮窗 -->
+<div class="toc-container" id="tocContainer">
+  <div class="toc-header">
+    <h4>目录</h4>
+    <button class="toc-toggle" onclick="toggleToc()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="toc-content" id="tocContent">
+    <!-- 目录内容将由JavaScript生成 -->
+  </div>
+</div>
+
+<!-- 目录触发按钮 -->
+<button class="toc-trigger" onclick="toggleToc()">
+  <i class="fas fa-list"></i>
+</button>
+
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="/assets/post-script.js"></script>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Global Stats Display --><!-- 全局访问统计展示组件 -->
+<div id="global-stats-display" class="global-stats-container">
+  <div class="stats-toggle-btn" onclick="toggleGlobalStats()">
+    <i class="fas fa-chart-bar"></i>
+    <span class="stats-label">统计</span>
+  </div>
+  
+  <div class="stats-panel" id="global-stats-panel">
+    <div class="stats-header">
+      <h3><i class="fas fa-analytics"></i> 实时访问统计</h3>
+      <button class="close-stats" onclick="toggleGlobalStats()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="stats-content">
+      <div class="quick-stats">
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-total-visits">--</div>
+          <div class="stat-label">总访问量</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-today-visits">--</div>
+          <div class="stat-label">今日访问</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-online-users">--</div>
+          <div class="stat-label">在线用户</div>
+        </div>
+      </div>
+      
+      <div class="current-session">
+        <h4><i class="fas fa-user-clock"></i> 当前会话</h4>
+        <div class="session-info">
+          <div class="session-item">
+            <span class="session-label">访问时长:</span>
+            <span class="session-value" id="global-session-duration">00:00</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">页面浏览:</span>
+            <span class="session-value" id="global-page-views">1</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">设备类型:</span>
+            <span class="session-value" id="global-device-type">Desktop</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="last-update">
+        <i class="far fa-clock"></i>
+        最后更新: <span id="global-last-update">--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.global-stats-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-family: var(--font-family-sans, 'Inter', sans-serif);
+}
+
+.stats-toggle-btn {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.stats-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  filter: brightness(1.1);
+}
+
+.stats-panel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 320px;
+  background: var(--bg-primary, white);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.stats-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.stats-header {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  padding: 16px 20px;
+  border-radius: var(--radius-xl, 1rem) var(--radius-xl, 1rem) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-stats {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-stats:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.stats-content {
+  padding: 20px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quick-stat-item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-lg, 0.75rem);
+  transition: all 0.2s ease;
+}
+
+.quick-stat-item:hover {
+  background: var(--bg-tertiary, #f3f4f6);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #9ca3af);
+  font-weight: 500;
+}
+
+.current-session {
+  margin-bottom: 16px;
+}
+
+.current-session h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 13px;
+}
+
+.session-label {
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.session-value {
+  color: var(--text-primary, #1f2937);
+  font-weight: 600;
+}
+
+.last-update {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted, #9ca3af);
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .global-stats-container {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .stats-panel {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+function toggleGlobalStats() {
+  const panel = document.getElementById('global-stats-panel');
+  panel.classList.toggle('active');
+}
+
+// 初始化全局统计
+document.addEventListener('DOMContentLoaded', function() {
+  updateGlobalStats();
+  setInterval(updateGlobalStats, 30000); // 每30秒更新一次
+});
+
+function updateGlobalStats() {
+  // 模拟统计数据更新
+  const now = new Date();
+  
+  // 更新基本统计
+  document.getElementById('global-total-visits').textContent = Math.floor(Math.random() * 10000) + 5000;
+  document.getElementById('global-today-visits').textContent = Math.floor(Math.random() * 200) + 50;
+  document.getElementById('global-online-users').textContent = Math.floor(Math.random() * 20) + 5;
+  
+  // 更新会话信息
+  if (window.sessionStartTime) {
+    const duration = Math.floor((now - window.sessionStartTime) / 1000);
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    document.getElementById('global-session-duration').textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+  
+  // 检测设备类型
+  const deviceType = /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  document.getElementById('global-device-type').textContent = deviceType;
+  
+  // 更新时间
+  document.getElementById('global-last-update').textContent = now.toLocaleTimeString('zh-CN');
+}
+
+// 记录会话开始时间
+if (!window.sessionStartTime) {
+  window.sessionStartTime = new Date();
+}
+
+// 页面浏览量计数
+let pageViews = parseInt(sessionStorage.getItem('pageViews') || '0') + 1;
+sessionStorage.setItem('pageViews', pageViews.toString());
+if (document.getElementById('global-page-views')) {
+  document.getElementById('global-page-views').textContent = pageViews;
+}
+</script>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    <script src="/assets/js/performance-optimizations.js"></script>
+    
+    <script>
+    // Modal functionality
+    function openModal(src, alt) {
+      var modal = document.getElementById('galleryModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = src;
+      captionText.innerHTML = alt;
+    }
+
+    function closeModal() {
+      document.getElementById('galleryModal').style.display = "none";
+    }
+    </script>
+
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- 全站通用功能脚本 --><!-- 全站通用功能脚本 -->
+
+<!-- Theme Switcher -->
+<script src="/assets/theme-switcher.js"></script>
+
+<!-- 阅读进度条脚本（在支持的页面加载） -->
+
+<script src="/assets/blog-reading-progress.js"></script>
+
+
+<!-- 访问统计和地图脚本 -->
+<script src="/assets/analytics-map.js"></script>
+
+<script>
+// 全局页面增强
+document.addEventListener('DOMContentLoaded', function() {
+  // 标记当前页面为博客页面（用于阅读进度条）
+  const pageLayout = 'post';
+  const pageUrl = '/%E6%8A%80%E6%9C%AF/%E7%BB%98%E5%9B%BE/2024/01/01/Map-add-figure/';
+  
+  if (pageLayout === 'post' || pageUrl.includes('/blog')) {
+    document.body.classList.add('blog-page');
+  }
+  
+  // 添加页面特定类名
+  if (pageUrl) {
+    const pageClass = pageUrl.replace(/\//g, '-').replace(/\.html$/, '');
+    if (pageClass) {
+      document.body.classList.add('page' + pageClass);
+    }
+  }
+  
+  // 确保访问统计在所有页面显示
+  if (typeof initializeAnalytics === 'function') {
+    initializeAnalytics();
+  }
+  
+  // 添加页面加载动画
+  document.body.classList.add('fade-in');
+});
+
+// 页面性能优化
+window.addEventListener('load', function() {
+  // 标记页面完全加载
+  document.body.classList.add('page-loaded');
+  
+  // 预加载重要资源
+  const preloadLinks = [
+    '/assets/theme-system.css',
+    '/assets/analytics-map.css',
+    '/assets/gallery-page.css'
+  ];
+  
+  preloadLinks.forEach(href => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'style';
+    link.href = href;
+    document.head.appendChild(link);
+  });
+});
+</script>
+<!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
+</html>
