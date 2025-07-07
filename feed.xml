@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://blissful-jasper.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blissful-jasper.github.io/" rel="alternate" type="text/html" /><updated>2025-07-07T14:14:30+00:00</updated><id>https://blissful-jasper.github.io/feed.xml</id><title type="html">Xianpu Ji</title><subtitle>我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。</subtitle><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><entry><title type="html">Jekyll Writing Guide</title><link href="https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide/" rel="alternate" type="text/html" title="Jekyll Writing Guide" /><published>2025-07-07T00:00:00+00:00</published><updated>2025-07-07T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide</id><content type="html" xml:base="https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide/"><![CDATA[]]></content><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><category term="jekyll-blog-template" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">GFS数据处理与可视化</title><link href="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing/" rel="alternate" type="text/html" title="GFS数据处理与可视化" /><published>2025-07-03T00:00:00+00:00</published><updated>2025-07-03T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing</id><content type="html" xml:base="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing/"><![CDATA[<h1 id="gfs数据处理与可视化">GFS数据处理与可视化</h1>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="https://blissful-jasper.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://blissful-jasper.github.io/" rel="alternate" type="text/html" /><updated>2025-07-07T14:42:39+00:00</updated><id>https://blissful-jasper.github.io/feed.xml</id><title type="html">Xianpu Ji</title><subtitle>我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。</subtitle><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><entry><title type="html">GFS数据处理与可视化</title><link href="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing/" rel="alternate" type="text/html" title="GFS数据处理与可视化" /><published>2025-07-03T00:00:00+00:00</published><updated>2025-07-03T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing</id><content type="html" xml:base="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing/"><![CDATA[<h1 id="gfs数据处理与可视化">GFS数据处理与可视化</h1>
 
 <p>全球预报系统（GFS）是美国国家气象局运行的全球数值天气预报模型。本文介绍如何下载、处理和可视化GFS数据。</p>
 
@@ -1317,7 +1317,353 @@ gem <span class="nb">install </span>jekyll bundler
 
 <hr />
 
-<p><em>本文是对深度学习在气象领域应用的概述，更多详细信息请参考相关学术文献。</em></p>]]></content><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><category term="科研" /><category term="深度学习" /><category term="深度学习" /><category term="机器学习" /><category term="气象预报" /><category term="人工智能" /><summary type="html"><![CDATA[深度学习在气象领域的应用]]></summary></entry><entry><title type="html">关于重编译WRF时的一些建议</title><link href="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/" rel="alternate" type="text/html" title="关于重编译WRF时的一些建议" /><published>2024-01-10T00:00:00+00:00</published><updated>2024-01-10T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile</id><content type="html" xml:base="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/"><![CDATA[<h1 id="关于重编译wrf时的一些建议">关于重编译wrf时的一些建议</h1>
+<p><em>本文是对深度学习在气象领域应用的概述，更多详细信息请参考相关学术文献。</em></p>]]></content><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><category term="科研" /><category term="深度学习" /><category term="深度学习" /><category term="机器学习" /><category term="气象预报" /><category term="人工智能" /><summary type="html"><![CDATA[深度学习在气象领域的应用]]></summary></entry><entry><title type="html">Getting Started with Machine Learning in Climate Science</title><link href="https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/" rel="alternate" type="text/html" title="Getting Started with Machine Learning in Climate Science" /><published>2024-01-15T00:00:00+00:00</published><updated>2024-01-15T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science</id><content type="html" xml:base="https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/"><![CDATA[<p>Machine learning has revolutionized many fields of science, and climate science is no exception. In this post, I’ll share insights from my recent research and provide a practical introduction to applying ML techniques in atmospheric sciences.</p>
+
+<h2 id="why-machine-learning-in-climate-science">Why Machine Learning in Climate Science?</h2>
+
+<p>Climate data is characterized by:</p>
+<ul>
+  <li><strong>High dimensionality</strong>: Satellite observations, reanalysis data, and model outputs contain millions of data points</li>
+  <li><strong>Complex patterns</strong>: Non-linear relationships between variables that traditional statistical methods struggle to capture</li>
+  <li><strong>Temporal dependencies</strong>: Time series with multiple scales of variability</li>
+  <li><strong>Spatial correlations</strong>: Geographic patterns that span different scales</li>
+</ul>
+
+<p>Machine learning excels at finding patterns in such complex, high-dimensional datasets.</p>
+
+<h2 id="getting-started-essential-tools">Getting Started: Essential Tools</h2>
+
+<h3 id="python-libraries">Python Libraries</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="n">cfeature</span>
+
+<span class="c1"># Machine learning libraries
+</span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+</code></pre></div></div>
+
+<h3 id="data-sources">Data Sources</h3>
+
+<p>Popular climate datasets for ML applications:</p>
+<ul>
+  <li><strong>ERA5 Reanalysis</strong>: High-resolution atmospheric reanalysis</li>
+  <li><strong>CHIRPS</strong>: Precipitation data for tropical regions</li>
+  <li><strong>MODIS</strong>: Satellite observations of clouds, vegetation, etc.</li>
+  <li><strong>CMIP6</strong>: Climate model ensemble data</li>
+</ul>
+
+<h2 id="practical-example-precipitation-prediction">Practical Example: Precipitation Prediction</h2>
+
+<p>Let’s build a simple model to predict precipitation using atmospheric variables.</p>
+
+<h3 id="1-data-preparation">1. Data Preparation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+
+<span class="c1"># Load ERA5 reanalysis data
+</span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s">'era5_data.nc'</span><span class="p">)</span>
+
+<span class="c1"># Select relevant variables
+</span><span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">,</span> <span class="s">'relative_humidity'</span><span class="p">,</span> <span class="s">'sea_level_pressure'</span><span class="p">,</span> 
+             <span class="s">'wind_speed_10m'</span><span class="p">,</span> <span class="s">'total_precipitation'</span><span class="p">]</span>
+
+<span class="c1"># Extract data for a specific region (e.g., tropical Pacific)
+</span><span class="n">region_data</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">280</span><span class="p">),</span>
+    <span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s">'2010-01-01'</span><span class="p">,</span> <span class="s">'2020-12-31'</span><span class="p">)</span>
+<span class="p">)[</span><span class="n">variables</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Data shape: </span><span class="si">{</span><span class="n">region_data</span><span class="p">.</span><span class="n">dims</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-feature-engineering">2. Feature Engineering</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_features</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="s">"""Create additional features from basic meteorological variables."""</span>
+    
+    <span class="c1"># Calculate gradients
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'temp_gradient_lat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">].</span><span class="n">differentiate</span><span class="p">(</span><span class="s">'latitude'</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">'temp_gradient_lon'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">].</span><span class="n">differentiate</span><span class="p">(</span><span class="s">'longitude'</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate relative vorticity
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'vorticity'</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_vorticity</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'wind_u'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">'wind_v'</span><span class="p">])</span>
+    
+    <span class="c1"># Time-based features
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'day_of_year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'time.dayofyear'</span><span class="p">]</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">'hour'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'time.hour'</span><span class="p">]</span>
+    
+    <span class="c1"># Lagged features (previous time steps)
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'temp_lag1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">].</span><span class="n">shift</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">'precip_lag1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'total_precipitation'</span><span class="p">].</span><span class="n">shift</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="c1"># Apply feature engineering
+</span><span class="n">enhanced_data</span> <span class="o">=</span> <span class="n">create_features</span><span class="p">(</span><span class="n">region_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-model-training">3. Model Training</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prepare training data
+</span><span class="k">def</span> <span class="nf">prepare_ml_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target_var</span><span class="o">=</span><span class="s">'total_precipitation'</span><span class="p">):</span>
+    <span class="s">"""Convert xarray dataset to sklearn-compatible format."""</span>
+    
+    <span class="c1"># Stack spatial dimensions
+</span>    <span class="n">stacked</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">stack</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="p">(</span><span class="s">'time'</span><span class="p">,</span> <span class="s">'latitude'</span><span class="p">,</span> <span class="s">'longitude'</span><span class="p">))</span>
+    
+    <span class="c1"># Convert to DataFrame
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">stacked</span><span class="p">.</span><span class="n">to_dataframe</span><span class="p">().</span><span class="n">dropna</span><span class="p">()</span>
+    
+    <span class="c1"># Separate features and target
+</span>    <span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">target_var</span><span class="p">]</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_var</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">prepare_ml_data</span><span class="p">(</span><span class="n">enhanced_data</span><span class="p">)</span>
+
+<span class="c1"># Split data
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># Train Random Forest model
+</span><span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">rf_model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Make predictions
+</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">rf_model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Evaluate
+</span><span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"RMSE: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"R²: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="4-feature-importance-analysis">4. Feature Importance Analysis</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analyze feature importance
+</span><span class="n">feature_importance</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'feature'</span><span class="p">:</span> <span class="n">X</span><span class="p">.</span><span class="n">columns</span><span class="p">,</span>
+    <span class="s">'importance'</span><span class="p">:</span> <span class="n">rf_model</span><span class="p">.</span><span class="n">feature_importances_</span>
+<span class="p">}).</span><span class="n">sort_values</span><span class="p">(</span><span class="s">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">barh</span><span class="p">(</span><span class="n">feature_importance</span><span class="p">[</span><span class="s">'feature'</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> <span class="n">feature_importance</span><span class="p">[</span><span class="s">'importance'</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Feature Importance'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Top 10 Most Important Features for Precipitation Prediction'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="deep-learning-for-climate-data">Deep Learning for Climate Data</h2>
+
+<p>For more complex patterns, deep learning can be powerful:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Build a simple neural network
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s">'mse'</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'mae'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Train the model
+</span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+    <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># Evaluate
+</span><span class="n">nn_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">nn_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nn_pred</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Neural Network RMSE: </span><span class="si">{</span><span class="n">nn_rmse</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="challenges-and-best-practices">Challenges and Best Practices</h2>
+
+<h3 id="1-handling-missing-data">1. Handling Missing Data</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Interpolation for spatial gaps
+</span><span class="n">data_filled</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">interpolate_na</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s">'latitude'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">'linear'</span><span class="p">)</span>
+
+<span class="c1"># Forward fill for temporal gaps
+</span><span class="n">data_filled</span> <span class="o">=</span> <span class="n">data_filled</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">'ffill'</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-cross-validation-with-time-series">2. Cross-Validation with Time Series</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">TimeSeriesSplit</span>
+
+<span class="n">tscv</span> <span class="o">=</span> <span class="n">TimeSeriesSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">val_idx</span> <span class="ow">in</span> <span class="n">tscv</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">X_train_cv</span><span class="p">,</span> <span class="n">X_val_cv</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">X</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+    <span class="n">y_train_cv</span><span class="p">,</span> <span class="n">y_val_cv</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">y</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+    
+    <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_cv</span><span class="p">,</span> <span class="n">y_train_cv</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_val_cv</span><span class="p">,</span> <span class="n">y_val_cv</span><span class="p">)</span>
+    <span class="n">cv_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Cross-validation scores: </span><span class="si">{</span><span class="n">cv_scores</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean CV score: </span><span class="si">{</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s"> ± </span><span class="si">{</span><span class="n">np</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-dealing-with-scale-differences">3. Dealing with Scale Differences</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Normalize features
+</span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advanced-applications">Advanced Applications</h2>
+
+<h3 id="convolutional-neural-networks-for-spatial-data">Convolutional Neural Networks for Spatial Data</h3>
+
+<p>For gridded climate data, CNNs can capture spatial patterns:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Reshape data for CNN (samples, height, width, channels)
+</span><span class="n">X_cnn</span> <span class="o">=</span> <span class="n">X_spatial</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_vars</span><span class="p">))</span>
+
+<span class="c1"># Build CNN model
+</span><span class="n">cnn_model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Flatten</span><span class="p">(),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="lstm-for-time-series-prediction">LSTM for Time Series Prediction</h3>
+
+<p>For capturing temporal dependencies:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prepare sequence data
+</span><span class="k">def</span> <span class="nf">create_sequences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">seq_length</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">seq_length</span><span class="p">):</span>
+        <span class="n">X</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="n">seq_length</span><span class="p">)])</span>
+        <span class="n">y</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">seq_length</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">X_seq</span><span class="p">,</span> <span class="n">y_seq</span> <span class="o">=</span> <span class="n">create_sequences</span><span class="p">(</span><span class="n">time_series_data</span><span class="p">)</span>
+
+<span class="c1"># LSTM model
+</span><span class="n">lstm_model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">seq_length</span><span class="p">,</span> <span class="n">n_features</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="evaluation-and-interpretation">Evaluation and Interpretation</h2>
+
+<h3 id="model-explainability">Model Explainability</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">shap</span>
+
+<span class="c1"># SHAP values for model interpretation
+</span><span class="n">explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="p">.</span><span class="n">TreeExplainer</span><span class="p">(</span><span class="n">rf_model</span><span class="p">)</span>
+<span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer</span><span class="p">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># Plot SHAP summary
+</span><span class="n">shap</span><span class="p">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">X_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="physical-consistency-checks">Physical Consistency Checks</h3>
+
+<p>Always validate that your ML model results make physical sense:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Check if predictions follow physical laws
+</span><span class="k">def</span> <span class="nf">validate_physics</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="s">"""Check basic physical consistency."""</span>
+    
+    <span class="c1"># Example: Precipitation should increase with humidity
+</span>    <span class="n">humidity</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s">'relative_humidity'</span><span class="p">]</span>
+    <span class="n">precip</span> <span class="o">=</span> <span class="n">predictions</span>
+    
+    <span class="n">correlation</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">humidity</span><span class="p">,</span> <span class="n">precip</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">correlation</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"Precipitation should correlate positively with humidity"</span>
+    
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<h2 id="resources-and-next-steps">Resources and Next Steps</h2>
+
+<h3 id="recommended-reading">Recommended Reading</h3>
+<ul>
+  <li>“Deep Learning for the Earth Sciences” by Reichstein et al.</li>
+  <li>“Machine Learning in Python for Climate Science” by Huntingford et al.</li>
+  <li>“AI for Earth” Microsoft documentation</li>
+</ul>
+
+<h3 id="datasets">Datasets</h3>
+<ul>
+  <li><a href="https://cds.climate.copernicus.eu/">Climate Data Store</a></li>
+  <li><a href="https://giovanni.gsfc.nasa.gov/">NASA Giovanni</a></li>
+  <li><a href="https://psl.noaa.gov/data/">NOAA Physical Sciences Laboratory</a></li>
+</ul>
+
+<h3 id="code-repositories">Code Repositories</h3>
+<ul>
+  <li><a href="https://github.com/climate-ml/examples">Climate ML Examples</a></li>
+  <li><a href="https://gallery.pangeo.io/">Pangeo Gallery</a></li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Machine learning offers powerful tools for climate science research, but success requires:</p>
+<ol>
+  <li>Understanding both the climate science and ML fundamentals</li>
+  <li>Careful data preprocessing and feature engineering</li>
+  <li>Appropriate validation strategies</li>
+  <li>Physical interpretation of results</li>
+</ol>
+
+<p>The combination of domain expertise and ML techniques can lead to breakthrough insights in our understanding of the climate system.</p>
+
+<p>In my next post, I’ll dive deeper into specific applications like tropical cyclone tracking and seasonal forecasting. Stay tuned!</p>
+
+<hr />
+
+<p><em>Have questions about applying ML to your climate research? Feel free to reach out via <a href="mailto:xianpuji@hhu.edu.cn">email</a> or connect with me on <a href="https://twitter.com/">Twitter</a>.</em></p>]]></content><author><name>Your Name</name></author><category term="jekyll-blog-template" /><category term="research" /><category term="machine-learning" /><category term="python" /><category term="tensorflow" /><category term="climate-modeling" /><category term="tutorial" /><summary type="html"><![CDATA[An introduction to applying machine learning techniques in climate science research, with practical examples and code snippets.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blissful-jasper.github.io/assets/images/posts/ml-climate-intro.jpg" /><media:content medium="image" url="https://blissful-jasper.github.io/assets/images/posts/ml-climate-intro.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">关于重编译WRF时的一些建议</title><link href="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/" rel="alternate" type="text/html" title="关于重编译WRF时的一些建议" /><published>2024-01-10T00:00:00+00:00</published><updated>2024-01-10T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile</id><content type="html" xml:base="https://blissful-jasper.github.io/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/"><![CDATA[<h1 id="关于重编译wrf时的一些建议">关于重编译wrf时的一些建议</h1>
 
 <p>通常，我们进行一些敏感性实验时，需要修改WRF自带的源代码。比如:</p>
 
@@ -1391,665 +1737,444 @@ gem <span class="nb">install </span>jekyll bundler
 
 <p>参考：</p>
 
-<p>https://forum.mmm.ucar.edu/threads/quick-wrf-compilation-after-modifying-some-parameters-in-the-land-surface-model.5526/</p>]]></content><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><category term="技术" /><category term="WRF" /><category term="WRF" /><category term="编译" /><category term="源代码修改" /><category term="数值模拟" /><summary type="html"><![CDATA[关于重编译wrf时的一些建议]]></summary></entry><entry><title type="html">Convectively Coupled Equatorial Waves</title><link href="https://blissful-jasper.github.io/%E7%A7%91%E7%A0%94/%E7%83%AD%E5%B8%A6%E6%B0%94%E8%B1%A1/2024/01/04/CCEWs/" rel="alternate" type="text/html" title="Convectively Coupled Equatorial Waves" /><published>2024-01-04T00:00:00+00:00</published><updated>2024-01-04T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/%E7%A7%91%E7%A0%94/%E7%83%AD%E5%B8%A6%E6%B0%94%E8%B1%A1/2024/01/04/CCEWs</id><content type="html" xml:base="https://blissful-jasper.github.io/%E7%A7%91%E7%A0%94/%E7%83%AD%E5%B8%A6%E6%B0%94%E8%B1%A1/2024/01/04/CCEWs/"><![CDATA[<h1 id="convectively-coupled-equatorial-waves">Convectively coupled equatorial waves</h1>
+<p>https://forum.mmm.ucar.edu/threads/quick-wrf-compilation-after-modifying-some-parameters-in-the-land-surface-model.5526/</p>]]></content><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><category term="技术" /><category term="WRF" /><category term="WRF" /><category term="编译" /><category term="源代码修改" /><category term="数值模拟" /><summary type="html"><![CDATA[关于重编译wrf时的一些建议]]></summary></entry><entry><title type="html">Understanding Tropical Waves: Kelvin Waves and the MJO</title><link href="https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/" rel="alternate" type="text/html" title="Understanding Tropical Waves: Kelvin Waves and the MJO" /><published>2024-01-10T00:00:00+00:00</published><updated>2024-01-10T00:00:00+00:00</updated><id>https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo</id><content type="html" xml:base="https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/"><![CDATA[<p>Tropical waves are among the most fascinating phenomena in atmospheric science. These large-scale disturbances shape weather patterns across the globe, influencing everything from monsoons to hurricanes. Today, I want to share insights from my recent research on two particularly important types of tropical waves: Kelvin waves and the Madden-Julian Oscillation (MJO).</p>
 
-<h2 id="简介">简介</h2>
+<h2 id="what-are-tropical-waves">What Are Tropical Waves?</h2>
 
-<p>对流耦合赤道波动控制了热带一部分的降水变率，其水平结果和频散特征来自于Matsuno’s(1966)在赤道$\beta$
-平面上的浅水方程的解，包括：</p>
+<p>Tropical waves are organized disturbances in the tropical atmosphere that propagate across ocean basins. Unlike mid-latitude weather systems that are driven by temperature gradients, tropical waves are primarily driven by:</p>
 
-<ol>
-  <li>
-    <p>kelvin wave</p>
-  </li>
-  <li>
-    <p>equatorial Rossby wave</p>
-  </li>
-  <li>
-    <p>mixed Rossby-gravity wave</p>
-  </li>
-  <li>
-    <p>inertio-gravity wave</p>
-  </li>
-</ol>
+<ul>
+  <li><strong>Convective heating</strong>: Latent heat release from thunderstorms</li>
+  <li><strong>Wave dynamics</strong>: Mathematical solutions to atmospheric equations</li>
+  <li><strong>Air-sea interactions</strong>: Exchange of heat and moisture with the ocean</li>
+</ul>
 
-<p> </p>
+<p>These waves play crucial roles in:</p>
+<ul>
+  <li>Tropical cyclone formation</li>
+  <li>Monsoon variability</li>
+  <li>Global circulation patterns</li>
+  <li>Climate oscillations</li>
+</ul>
 
-<p>由于存在湿过程的影响，他们的倾斜垂向结构是复杂的，而且他们的尺度与理论干波的期望的结构不一致。</p>
+<h2 id="kelvin-waves-the-equatorial-express">Kelvin Waves: The Equatorial Express</h2>
 
-<p> </p>
+<h3 id="basic-physics">Basic Physics</h3>
 
-<p>CCEWs的动力结构和云形态在一个令人惊讶的大尺度范围内显示出很大程度的自相似性，其前缘为浅对流，其次是深对流，然后是层云降水，反映了单个中尺度对流复合体的特征。</p>
-
-<p> </p>
-
-<p>CCEWs在热带地区具有广泛的影响，其在一般环流模式中的模拟仍然存在问题，尽管使用更简单的模式已经取得了进展。对CCEWs的完整理解仍然是热带气象学的一个挑战。</p>
-
-<p> </p>
-
-<p>目前，CMIP6 的众多模式数据中，仍然无法较好的抓住赤道波动。</p>
-
-<p> </p>
-
-<h2 id="研究回顾">研究回顾</h2>
-
-<p> </p>
-
-<p>积云降水在热带地区中的降水占绝大部分，如果没有卫星观测，你会感觉许多降水看起来是随机分布的。只有在一些特别的区域（如季风区），才会观察到一些相对低频的周期性降水（一个月左右）。</p>
-
-<p> </p>
-
-<p>事实上，热带的对流降水被认为在广阔的时空尺度上是有组织的，从中尺度对流系统（MCSs）到行星尺度的特征（MJO）。在中尺度上，降水往往是由向东或者是向西的波动组成，无论是沿着赤道海上在热带辐合带内（ITCZ）与之平行的纬度范围内。</p>
-
-<p> </p>
-
-<p>与热带外地区不同，赤道地区可以为扰动提供发展背景的观点最早可以追溯到Riehl[1945],他认为西传的波动导致了加勒比地区的许多日常天气变率。</p>
-
-<p> </p>
-
-<p>这种”东风波”（Easterly
-waves，EWs）被定义为热带辐合带内向西传播的几千公里尺度的低压反向的槽，并将其与热带气旋联系起来(Dunn[1940],Riehl[1948])。
-后续的研究也证实了，东风波或者称为热带低压型扰动是印度洋以外热带几乎所有地区的重要特征。</p>
-
-<p> </p>
-
-<p>在20世纪50年代后期，人们认识到旋转行星的低纬度区域会产生一类特殊的沿赤道的"被捕获"的运动[Yoshida,
-1959; Rosenthal, 1960, 1965; Bretherton, 1964].</p>
-
-<p>在最经典的赤道运动的文献中，松野[1966]求解了赤道$\beta$平面下浅水方程组的纬向传播的波解，该方程在恢复力为重力和线性变化的科氏力控制的一层定常密度流体中的运动。根据这个系统的解，得到了现在熟知的赤道大气和海洋的波动，即</p>
+<p>Kelvin waves are a special type of atmospheric wave that exists near the equator. Named after Lord Kelvin, they have unique properties:</p>
 
 <ol>
-  <li>
-    <p>kelvin wave</p>
-  </li>
-  <li>
-    <p>equatorial Rossby wave</p>
-  </li>
-  <li>
-    <p>mixed Rossby-gravity wave</p>
-  </li>
-  <li>
-    <p>westward and eastward inertio-gravity wave (WIG and EIG)</p>
-  </li>
+  <li><strong>Equatorially trapped</strong>: Maximum amplitude at the equator, decreasing poleward</li>
+  <li><strong>Eastward propagating</strong>: Travel from west to east at typical speeds of 15-17 m/s</li>
+  <li><strong>No meridional velocity</strong>: Wind only blows east-west at the equator</li>
+  <li><strong>Geostrophic balance</strong>: Pressure gradient balanced by Coriolis force</li>
 </ol>
 
-<p> </p>
+<h3 id="mathematical-description">Mathematical Description</h3>
 
-<p>在其文章发表时，在赤道平流层对于MRG波[Yanai and Maruyama, 1966;
-Maruyama, 1967]和kelvin波[Wallace and Kousky,
-1968]的观测证据还没有被证实。 这些热带大气模态的发现，
-以及后续发展的著名的海洋模态，Gill响应[Wunsch and Gill,
-1976]是赤道浅水理论的重要突破。</p>
+<p>The governing equations for equatorial Kelvin waves can be derived from the shallow water equations:</p>
 
-<p> </p>
+\[\frac{\partial u}{\partial t} - \beta y v = -g \frac{\partial h}{\partial x}\]
 
-<p>其中，MRG波主要与经向流波动有关，而Kelvin波主要表现为纬向波动。这些被观测到的平流波动也被认为是”干”模态，认为没有和水汽耦合或者其他强迫。它们的初始能量源被假定为<strong>对流层中湿对流的非绝热加热</strong>，因为它们的垂直结构表明向上的能量频散，与下面的强迫一致[Holton,
-1972, 1973]。</p>
+\[\frac{\partial v}{\partial t} + \beta y u = -g \frac{\partial h}{\partial y}\]
 
-<p> </p>
+\[\frac{\partial h}{\partial t} + H \left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) = 0\]
 
-<p>平流层干Kelvin波和MRG波的发现，激发了人们极大的兴趣来确定这些模态的潜力，以解释平流层准两年振荡(
-QBO
-)的工作，即平流层低层向下传播的西风向东风气流转变的显著周期变化，周期为22个月左右[<em>Baldwin</em>
-et al . , 2001]。</p>
+<p>For Kelvin waves, we assume $v = 0$ at the equator, leading to solutions of the form:</p>
 
-<p> </p>
+\[u = u_0 \exp\left(-\frac{\beta y^2}{2c}\right) \cos(kx - \omega t)\]
 
-<p>后续几年，随着卫星数据被用来探测云团中西传和东传的扰动[Chang,1970;Yanai
-and Murakami, 1970a, 1970b; Wallace and Chang, 1972; Reed and Recker,
-1971]，激发了对流耦合对应浅水理论干模态的可能性。与此同时，光谱研究解释了了季节内振荡（MJO）[Madden
-and Julian 1971, 1972]，由一个约10000
-km尺度的深对流和多云的包络组成，东传相速度在$4~8 m s^{-1}$，并与大尺度环流相耦合.该包络一定程度上被认为是有组织的对流耦合赤道波动，伴随着MCSs的光谱。此外，更详细的关于卫星降水云团数据的研究Gruber
-[1974], Zangvil [1975], and Zangvil and Yanai [1980,
-1981],进一步证实了赤道浅水模态与深对流之前的强烈联系。</p>
+\[h = \frac{c}{g} u_0 \exp\left(-\frac{\beta y^2}{2c}\right) \cos(kx - \omega t)\]
 
-<p> </p>
+<p>where $c = \sqrt{gH}$ is the wave speed.</p>
 
-<p>尽管这些研究为对流耦合ER、MRG和Kelvin波的存在提供了充分的证据，但直到20世纪90年代才对它们进行了详细的观测研究，此时对MJO和干平流层模态的研究仍在继续。随着长周期全球卫星和业务数据的积累，Liebmann
-and Hendon [1990], Hendon and Liebmann [1991], and Takayabu and
-Nitta
-[1993]分离出了对流耦合MRG波的性质，并表明<strong>它们的垂直结构在对流层中低层表现出随高度的强烈倾斜</strong>，这与Reed和Recker
-[ 1971
-]研究的EWs非常相似。此外，更多的证据也表明了存在不同种类的Kelvin和MRG模式，其中一些是主要在平流层中出现的相对快速传播的干燥模式，而另一些是在对流层中与对流紧密耦合的更慢速传播的波Takayabu
-and Murakami [1991]。</p>
+<h3 id="observational-examples">Observational Examples</h3>
 
-<p> </p>
+<p>Let’s look at how to identify Kelvin waves in observational data:</p>
 
-<p>Takayabu [ 1994a
-]对高分辨率地球同步卫星图像进行了时空谱分析，检测到了与Kelvin波、ER波、MRG波和WIG波相对应的谱峰。Wheeler
-and Kiladis [ 1999 ] (以下简称WK99)在Takayabu [ 1994a
-]的工作基础上，建立了全球时空谱。图1显示了这样一种光谱，它是由卫星亮温中的原始功率除以其红色噪声背景(详见WK99)的估计得到的。</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
 
-<p><img src="https://s2.loli.net/2024/01/04/Qbjx9BfMpWwVP3J.png" alt="Fig1.png" /></p>
+<span class="c1"># Load zonal wind data from ERA5
+</span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s">'era5_u_component.nc'</span><span class="p">)</span>
+<span class="n">u_wind</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'u'</span><span class="p">].</span><span class="n">sel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">850</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 
-<p>值得注意的是，这些CCEW的频散特性和结构与线性理论预测的频散特性和结构大体一致，即使不考虑基态流的潜在影响，也不考虑与对流耦合产生的非线性。</p>
+<span class="c1"># Time-longitude plot (Hovmöller diagram)
+</span><span class="k">def</span> <span class="nf">plot_hovmoller</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="c1"># Average over equatorial band
+</span>    <span class="n">data_eq</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)).</span><span class="n">mean</span><span class="p">(</span><span class="s">'latitude'</span><span class="p">)</span>
+    
+    <span class="c1"># Create Hovmöller plot
+</span>    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">data_eq</span><span class="p">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">data_eq</span><span class="p">.</span><span class="n">time</span><span class="p">,</span> <span class="n">data_eq</span><span class="p">,</span> 
+                     <span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'RdBu_r'</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Longitude (°E)'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Time'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Zonal Wind (m/s)'</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
 
-<p> </p>
+<span class="c1"># Plot the Hovmöller diagram
+</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_hovmoller</span><span class="p">(</span><span class="n">u_wind</span><span class="p">,</span> <span class="s">'Equatorial Zonal Wind - Kelvin Wave Detection'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
 
-<h2 id="对流耦合赤道波动经典理论">对流耦合赤道波动经典理论</h2>
+<h3 id="filtering-for-kelvin-waves">Filtering for Kelvin Waves</h3>
 
-<p> </p>
+<p>To isolate Kelvin waves from other tropical disturbances:</p>
 
-<h3 id="21-浅水理论">2.1 浅水理论</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">kelvin_wave_filter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">min_period</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">max_period</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_speed</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">max_speed</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="s">"""
+    Filter data to isolate Kelvin wave signals.
+    
+    Parameters:
+    - min_period, max_period: Period range in days
+    - min_speed, max_speed: Eastward phase speed range in m/s
+    """</span>
+    
+    <span class="c1"># Convert to frequency-wavenumber space
+</span>    <span class="n">fft_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+    <span class="c1"># Define frequency and wavenumber arrays
+</span>    <span class="n">nt</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">shape</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># daily data
+</span>    <span class="n">dx</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># 2.5 degree longitude spacing
+</span>    
+    <span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">nt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">kx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+    
+    <span class="c1"># Create filter in frequency-wavenumber space
+</span>    <span class="n">freq_2d</span><span class="p">,</span> <span class="n">kx_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s">'ij'</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate phase speed
+</span>    <span class="n">phase_speed</span> <span class="o">=</span> <span class="n">freq_2d</span> <span class="o">/</span> <span class="n">kx_2d</span>
+    
+    <span class="c1"># Apply Kelvin wave criteria
+</span>    <span class="n">kelvin_mask</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">max_period</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">freq_2d</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">freq_2d</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">/</span><span class="n">min_period</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="c1"># Period range
+</span>        <span class="p">(</span><span class="n">min_speed</span> <span class="o">&lt;=</span> <span class="n">phase_speed</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">phase_speed</span> <span class="o">&lt;=</span> <span class="n">max_speed</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="c1"># Speed range
+</span>        <span class="p">(</span><span class="n">freq_2d</span> <span class="o">*</span> <span class="n">kx_2d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Eastward propagation
+</span>    <span class="p">)</span>
+    
+    <span class="c1"># Apply filter
+</span>    <span class="n">fft_filtered</span> <span class="o">=</span> <span class="n">fft_data</span> <span class="o">*</span> <span class="n">kelvin_mask</span>
+    <span class="n">kelvin_signal</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">fft_filtered</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">kelvin_signal</span>
+</code></pre></div></div>
 
-<p> </p>
+<h2 id="the-madden-julian-oscillation-mjo">The Madden-Julian Oscillation (MJO)</h2>
 
-<p>如前文所述，一部分热带深对流似乎是受动力学控制的，这与松野[ 1966
-]的SW理论相一致。但是应用这些理论到观测到的CCEWs仍然是缺少证据的[e.g.,
-Lindzen, 2003]。</p>
+<h3 id="what-makes-the-mjo-special">What Makes the MJO Special?</h3>
 
-<p> </p>
+<p>The MJO is the dominant mode of intraseasonal variability in the tropical atmosphere, with several unique characteristics:</p>
 
-<p>SW方程描述了旋转球体上单层不可压缩、均匀密度流体的垂向独立运动，也称为拉普拉斯潮汐方程。SW方程可以从完整的原始方程中流的垂直与水平和时变部分的数学分离中推导出来，尽管进行这种分离和推导运动的垂直依赖性所需的假设远非微不足道。</p>
+<ul>
+  <li><strong>30-90 day period</strong>: Much longer than typical weather disturbances</li>
+  <li><strong>Eastward propagation</strong>: Moves at ~5 m/s around the equator</li>
+  <li><strong>Planetary scale</strong>: Spans 12,000-20,000 km</li>
+  <li><strong>Coupled convection</strong>: Links deep convection with circulation</li>
+</ul>
 
-<p> </p>
+<h3 id="mjo-structure-and-dynamics">MJO Structure and Dynamics</h3>
 
-<p>松野[ 1966
-]考虑了关于静止基本状态线性化的无粘SW方程。科里奥利参数f被假设为与赤道(即f
-= $\beta$y)的距离成线性比例，赤道(即f =
-$\beta$y)是热带地区运动的一个适当有效的近似。公式为</p>
-
-<p> </p>
-
-\[\frac{\partial u_l}{\partial t} - \beta yv_l = - \frac{\partial \phi_l}{\partial x},\quad(1)\]
-
-<p> </p>
-
-\[\frac{\partial\nu_l}{\partial t}+\beta yu_l=-\frac{\partial\phi_l}{\partial y},\quad(2)\]
-
-<p> </p>
-
-\[\frac{\partial\phi_l}{\partial t}+gh_e\left(\frac{\partial u_l}{\partial x}+\frac{\partial\nu_l}{\partial y}\right)=0.\quad(3)\]
-
-<p> </p>
-
-<p>其中，$u_l$ 和 $v_l$ 是纬向和经向的速度，$\phi_l$是位势，g
-是重力加速度，$h_e$是 流体的深度。方程( 1 )和( 2 )是水平动量方程，( 3
-)是质量守恒的结果，将位势的变化与散度联系起来。我们用下标l表示在全三维大气流动的背景下，这些方程只模拟水平(
-x和y)和时间( t
-)变化的流动分量。也就是说，它们控制着一个特定的垂直模态的运动，l，为此他必须做出适当的选择。</p>
-
-<p> </p>
-
-<p>松野[ 1966 ]首次得到了这些方程[see also Andrews et al., 1987; Gill,
-1982a; Pedlosky, 1987; Wheeler, 2002; Holton,
-2004].的完整的带传播波解。简而言之，寻求该形式的纬向传播波解：</p>
-
-<p> </p>
-
-\[\left.\left(\begin{array}{c}u_l\\v_l\\\phi_l\end{array}\right.\right)=\left(\begin{array}{c}\hat{u}(y)\\\hat{v}(y)\\\hat{\phi}(y)\end{array}\right)\exp[i(kx-\omega t)],\quad\quad\quad(4)\]
-
-<p> </p>
-
-<p>其中，k是纬向波数，$\omega$是频率，代入得到$\hat{v}$中的二阶微分方程:</p>
-
-<p> </p>
-
-\[\left.\frac{d^2\hat{\nu}}{dy^2}+\left(\frac{\omega^2}{gh_e}-k^2-\frac k\omega\right.\beta-\frac{\beta^2y^2}{gh_e}\right)\hat{\nu}=0.\quad\quad\quad(5)\]
-
-<p> </p>
-
-<p>这个方程远离赤道衰减的解是众所周知的，从中可以看出括号中的系数的常数部分必须满足</p>
-
-<p> </p>
-
-\[\frac{\sqrt{gh_e}}\beta\left(\frac{\omega^2}{gh_e}-k^2-\frac k\omega\beta\right)=2n+1\quad n=0,1,2,\ldots.\quad(6)\]
-
-<p> </p>
-
-<p>这个方程对于每一个整数n，都给定了一个关于k和$\omega$之间的关系，也被认为是波动的频散关系.方程关于$\omega$为3次方，得到EIG、WIG和ER波对应的3类解。对于n
-= 0的解需要特别考虑，对应于MRG波。此外，将( 1 ) - ( 3 )未被( 5
-)覆盖的另一个解对应着kelvin波，当$\hat{v} =0$，对于所有的y，为了与(6)一致，将其标记为n=1.关于(
-6 )的所有解，以及Kelvin波频散关系，在图2中给出</p>
-
-<p> </p>
-
-<p><img src="https://s2.loli.net/2024/01/04/jrsvFkzHERZKiMl.png" alt="Fig2.png" /></p>
-
-<p> </p>
-
-<p>将式(5)中$\hat{v}$的解，代回式(1) 式(3)，就可以得到波解的水平结构。图3展示了Kelvin波，n
-= 1 ER波，MRG波，n = 0 EIG波，n = 1和n = 2 WIG波的完整结构。由于n对应于v
-(除Kelvin波外)经向剖面的节点数，故称其为经向模态数。这六种波型包括了所有被观测到的CCEW。其他赤道波动模态的水平结构都要复杂得多[Wheeler,
-2002].</p>
-
-<p> </p>
-
-<p><img src="https://s2.loli.net/2024/01/04/ACJloOSFPHeaiVt.png" alt="Fig3.png" /></p>
-
-<p> </p>
+<p>The MJO consists of:</p>
 
 <ol>
-  <li>
-    <p>由于原始的SW方程是线性化的，因此波解的任何线性组合也是一个解。</p>
-  </li>
-  <li>
-    <p>非频散波Kelvin波的相速度为$c=\sqrt{gh_e}$，所有类型的惯性重力波，无论向东还是向西，当k较大时，其相速度都渐近接近这一量级。</p>
-  </li>
-  <li>
-    <p>赤道Rossby形变半径由$Re=(\sqrt{gh_e}/\beta)^{1/2}$给出，它控制着解随离赤道距离的衰减速率，并被用来衡量图3中的水平长度。在实际应用中，CCEWs
-(见表1)的Re在纬度10 °量级。</p>
-  </li>
-  <li>
-    <p>波的水平能量频散由群速度$c_g^{(x)}\equiv \partial \omega / \partial k$决定，这可以从图2中估计出来。例如，MRG波具有向西的相位传播(
-$\omega$ / k为负数)，但向东的能量频散( $c_g^{(x)}$决为正)。</p>
-  </li>
-  <li>
-    <p>惯性重力波和Kelvin波的特征更趋向于发散，而MRG波和ER波的特征更趋向于旋转。</p>
-  </li>
-  <li>
-    <p>浅水深度$h_e$决定了波动的速度和尺度，对于整个大气层被称为等效深度(equivalent
-depth)</p>
-  </li>
+  <li><strong>Enhanced convection</strong>: Active phase with increased rainfall</li>
+  <li><strong>Suppressed convection</strong>: Inactive phase with reduced rainfall</li>
+  <li><strong>Circulation anomalies</strong>: Large-scale wind and pressure patterns</li>
+  <li><strong>Moisture variations</strong>: Changes in atmospheric water vapor</li>
 </ol>
 
-<p> </p>
-
-<p><img src="https://s2.loli.net/2024/01/04/THjowmeSxpEd7kK.png" alt="table1.png" /></p>
-
-<p> </p>
-
-<h3 id="22-将浅水方程和大气运动联系起来">2.2 将浅水方程和大气运动联系起来</h3>
-<p> </p>
-
-<p>虽然 SW 理论对 CCEW
-的适用性是显而易见的，但既没有独特的也没有标准的方法将大气运动的完整三维方程与
-SW 运动方程联系起来，特别是当环流受到对流加热的强制或耦合时。
-相反，有多种方法可以导出这种关系，其不同之处在于垂直结构的选择和包含非绝热效应的方式。
-在这里，我们总结了几种可能性，并注意到不同选择对相应理论色散特性和波浪结构的影响。</p>
-
-<p> </p>
-
-<h4 id="221-干波">2.2.1 干波</h4>
-
-<p> </p>
-
-<p>当忽略水汽的影响，特别是由于冷凝和蒸发而导致的加热和冷却时，导出其水平结构由
-SW 方程控制的大气波的解相对简单。 考虑具有对数压力垂直坐标 z
-的流体静力学基元方程 [e.g., Holton, 2004, p.
-317],，关于静止基本状态的线性化：</p>
-
-<p> </p>
-
-\[\begin{aligned}
-\begin{aligned}\frac{\partial u}{\partial t}-f\nu+\frac{\partial\phi}{\partial x}\end{aligned} =0, &amp; \left(7\right)  \\
-\frac{\partial\nu}{\partial t}+\textit{fi}+\frac{\partial\phi}{\partial y} =0, &amp; \left(8\right)  \\
-\frac{\partial u}{\partial x}+\frac{\partial\nu}{\partial y}+\rho_0^{-1}\frac{\partial(\rho_0w)}{\partial z}=0,&amp; \left(9\right) 
-\end{aligned}\]
-
-\[\quad\quad\quad\frac\partial{\partial t}\left(\frac{\partial\phi}{\partial z}\right)+wN^2=0,(10)\]
-
-<p> </p>
-
-<p>其中 $z=-Hlog(p/p_s)$，p 为压力，下标 s 表示固定表面值，$w$
-为垂直速度，$H = RT_m/g$为一层平均温度 $T_m$ 的刻度高度，R 为气体常数 ,
-$\rho_0(z)  = \rho_s exp(-z /H) , N^2 = (R/H)(dT_0 /dz+g/c_p)$
-是静态稳定性的度量，其中 $dT_0/dz$ 是平均失效率，$c_p$ 是
-恒压下干燥空气的比热。 为简单起见，我们假设 $N^2$
-是恒定的，并且忽略加热和摩擦效应。 结合(9)和(10)消除w，</p>
-
-<p> </p>
-
-\[\frac\partial{\partial t}L[\phi]-N^2\left(\frac{\partial u}{\partial x}+\frac{\partial\nu}{\partial y}\right)=0,\quad\quad\quad\quad(11)\]
-
-<p> </p>
-
-<p>其中 $L=(1/\rho)(\partial /\partial z)(\rho_0)(\partial / \partial z)$
-是线性运算符。 现在假设 $\phi$ 具有垂直结构$\phi_v$，即 L 的本征函数；
-那是，</p>
-
-<p> </p>
-
-\[L[\phi_{\nu}]=-\lambda\phi_{\nu},\quad\quad\quad\quad\quad\quad\quad(12)\]
-
-<p> </p>
-
-<p>其中，$\lambda$是常数，式(11)变为：</p>
-
-<p> </p>
-
-\[\frac{\partial\phi}{\partial t}+\frac{N^2}\lambda\left(\frac{\partial u}{\partial x}+\frac{\partial\nu}{\partial y}\right)=0.\quad\quad\quad\quad\quad(13)\]
-
-<p> </p>
-
-<p>请注意，(7)、(8) 和 (13) 在代数上等价于 SW 方程 (1) –
-(3)，其等效深度为:</p>
-
-<p> </p>
-
-\[h_e=N^2/(g\lambda)\quad\quad\quad\quad\quad\quad\quad(14)\]
-
-<p> </p>
-
-<p>并且该等价性与通过 f 平面或 $\beta$ 平面近似科里奥利参数的方法无关。
-因此，我们可以构造 (7) – (10) 的解，其水平结构来自 SW
-方程的解，其垂直结构来自 L
-的本征函数。我们可能期望这些解能够提供有关结构和色散性质的见解 观察到的
-CCEW。
-然而，第一个复杂之处是，即使对于干波，也有两种根本不同类型的垂直结构，它们是
-L 的本征函数：</p>
-
-<p> </p>
-
-\[\exp(z/2H)\exp(imz)\quad\quad\quad\quad(15\text{a})\]
-
-<p>or</p>
-
-<p> </p>
-
-\[\exp(z/2H)\sin(mz+b)\quad\quad\quad\quad(15\text{a})\]
-
-<p> </p>
-
-<p>其中 m 是垂直波数，b 是相位（常数）。 第一个结构 (15a)
-用于辐射上边界条件 [Lindzen, 1974, 2003]，而 (15b)
-用于上边界处的刚性盖 [参见 Haertel et al., 2008]。
-这些选择的实部本质上是相同的：振幅随高度增加的正弦函数。
-然而，当垂直结构是由虚部的水平结构相乘时，它们的虚部不同导致了不同的波动结构。例如，对于具有由方程（4）给出的水平结构的波浪，其纬向结构和垂直结构的实部如下：</p>
-
-\[\exp(z/2H)\cos(\textit{т}z+kx),\quad\quad\quad\quad\quad(1ба)\]
-
-<p> </p>
-
-\[\exp(z/2H)\sin(mz+b)\cos(kx).\quad\quad\quad\quad(16b)\]
-
-<p> </p>
-
-<p>图4显示了( 15a )和( 15b )垂直结构的干大气开尔文波。对于后者(图4b
-)，温度扰动表现出局部的极大值和极小值，但对于前者(图4a
-)，扰动是倾斜的脊和槽。如第4 -
-8节所示，CCEW的动力学结构类似于对流层的$exp(z 2H )\sin(mz + b)$结构和平流层的垂直辐射$exp(z/2H)\exp(imz)$结构。值得注意的是，图4所示的波是用一个垂直结构函数，或垂直模态和一个水平模态(
-Kelvin波)构造的，但一般来说，( 7 ) - ( 10
-)的解由这些波的叠加组成，并包含多个垂直和水平模态(第11节)。</p>
-
-<p> </p>
-
-<p><img src="https://s2.loli.net/2024/01/04/Ki7gkSOrmDM1Ean.png" alt="Fig4.png" />
- </p>
-
-<p>模式的垂直波长与相应的SW系统的等效深度he之间的关系是这里特别相关的一个话题。在具有恒定稳定度参数N的大气中，垂直模态关于z是正弦的，并对密度随高度的变化进行了修正。例如，通过组合(
-12 )，( 14 )，( 15a )和( 15b )得到</p>
-
-<p> </p>
-
-\[m\equiv\frac{2\pi}{L_z}=\left(\frac{N^2}{gh_e}-\frac1{4H^2}\right)^{1/2},\quad\quad\quad(17)\]
-
-<p> </p>
-
-<p>式中：$L_z$为垂直波长。然而，在实际的分层中，模式只是准正弦的，其局部垂直波长在大N
-(比如在平流层)区域较小，而在低N (例如在对流层[ Fulton and Schubert ,
-1985
-])区域较大。对于两种不同的代表性分层，表1给出了给定他所对应的局部垂直波长的实例值。</p>
-
-<p> </p>
-
-<h4 id="222-湿波">2.2.2 湿波</h4>
-
-<p> </p>
-
-<p>有很多方法可以将水分的影响纳入赤道波的理论处理中；
-因此，完整的讨论超出了本文的范围。
-这里我们简单地解决这个问题：包含凝结加热和冷却是否可以解释观测到的CCEW等效深度与具有类似对流层垂直结构的干波等效深度之间的差异？
-对（10）的检查提供了这个问题的答案。 首先，假设该方程中包含非绝热强迫项
-$Q$（请记住 $\partial \phi / \partial z$ 与温度扰动成正比）：</p>
-
-<p> </p>
-
-\[\frac\partial{\partial t}\left(\frac{\partial\phi}{\partial z}\right)+wN^2=Q.\quad\quad\quad\quad\quad\quad(18)\]
-
-<p> </p>
-
-<p>此外，假设加热扰动与向上运动扰动成正比，即 $Q=\alpha w N^2$（其中
-$\alpha$ 是任意常数），这一想法得到了观测支持[Haertel and Kiladis,
-2004; Haertel et al., 2008]. 那么(18)就变成了</p>
-
-<p> </p>
-
-\[\frac\partial{\partial t}\left(\frac{\partial\phi}{\partial z}\right)+w(1-\alpha)N^2=0.\quad\quad\quad\quad(19)\]
-
-<p> </p>
-
-<p>在这种情况下，加热有效地降低了气氛的稳定性。 如果 $\alpha$ 接近但略小于
-1（即扰动冷凝
-加热/冷却消除了由于垂直运动引起的大部分但不是全部温度变化），则大气的”有效静态稳定性”可能会降低到足以
-使波动等效深度的理论预测与 CCEW 的观测结果一致 [Gill, 1982b]。 解释
-CCEW 等效深度的问题被简化为确定
-$\alpha$的理论值，这可以通过使用总湿稳定性概念来完成第一斜压模式（即对流层中具有半垂直波长的模式）[Neelin
-and Held, 1987; Emanuel et al., 1994; Yu et al., 1998; Haertel and
-Kiladis,
-2004]，这本质上是由于<strong>对流加热和冷却而导致大尺度大气”感觉到”的稳定性降低</strong>。
-然而，这种湿波的垂直结构与观测到的CCEW的垂直结构之间仍然存在重要差异。</p>
-
-<p> </p>
-
-<h2 id="mixed-rossby-gravity-waves-混合罗斯贝重力波">MIXED ROSSBY-GRAVITY WAVES 混合罗斯贝重力波</h2>
-
-<p> </p>
-
-<p>MRG波是Matsuno[1966]预测的赤道波动模态中第一个被观测到，通过对平流层无线电探空数据中的风的波动进行检查[Yanai
-and Maruyama, 1966; Maruyama,
-1967]。后续的研究表明，MRG波也存在与对流层，且与对流耦合在一起[Zangvil,
-1975; Zangvil and Yanai,
-1981]，如理论中描述的向西传播。尽管MRG波于东风波EWs不同，但是他们与n=1的赤道罗斯贝波ER似乎共存于一个连续体中，一些扰动相互转换并发展出混合的结构，特别在西太平洋上空更为显著[Takayabu
-and Nitta, 1993; Dunkerton and Baldwin, 1995; Yang et al., 2007c]。</p>
-
-<p> </p>
-
-<h3 id="31-观测结构">3.1 观测结构</h3>
-
-<p> <img src="https://s2.loli.net/2024/01/04/BPvSYMGdR5QLOyT.png" alt="Fig12.png" /></p>
-
-<p>图12展示了基于EOF方法展示了这种转换过程，基于全球南北纬30°以内的2-10天带通滤波的OLR数据。</p>
-
-<p>可以发现，环流位于赤道中心，当波动异常向西移动时，他们转换为离开赤道的环流，然后向西北方向传播到菲律宾地区。这是在太平洋上空常见的起源于赤道波动的扰动的序列[Lau
-and Lau, 1990; Numaguti, 1995; Chang et al., 1996; Sobel and Bretherton,
-1999; Straub and Kiladis, 2003b].。</p>
-
-<p> </p>
-
-<p>相对快速的MRG波在对流层上层以及平流层低层占主导地位。虽然这些上层波动最初可能是由对流强迫产生的，但他们一般以干的模态传播。而与对流紧密耦合的MRG波具有相对较浅的等效深度，<strong>在对流层低层显示出较大的扰动</strong>[Liebmann
-and Hendon, 1990; Hendon and Liebmann, 1991; Dunkerton, 1993。</p>
-
-<p>对流耦合 MRG 波出现在反对称
-亮温谱的惯性重力波连续谱的向西传播部分，他们在卫星资料中的信号在西太平洋和中太平洋ITCZ地区最为突出。他们<strong>在北半球夏季和秋季是最强的，尽管有证据表明这些波全球都发生在所有的海洋辐合带中</strong>[Roundy
-and Frank, 2004a; WK99; WKW00]。</p>
-
-<p><img src="https://s2.loli.net/2024/01/04/vWESFP4uic6nhIw.png" alt="Fig13. Maps of anomalous Tb (shading), stream function (contours),
-and wind (vectors) associated with a -20 K perturbation in MRG wave Tb
-at the base point 7.5°N, 172.5°E, for (a) day 0 at 850 hPa, (b) day +1
-at 850 hPa, and (c) day 0 at 200 hPa. The contour interval is
-$4x10^5 m^2 s^{-1}$, with negative contours dashed. Dark (light) shading
-is for negative (positive) Tb perturbations of ±10 K and 3 K. Tb and
-wind vectors are locally significant at the 95" /></p>
-
-<p>在西太平洋上空，MRG 波的对流和动力信号以
-<strong>$15-25 m s^{-1}$的速度向西传播</strong>，并且通常显示出向东$5 m s^{-1}$
-的能量频散[Takayabu and Nitta, 1993; Hendon and Liebmann, 1991;
-Dunkerton and Baldwin, 1995; Sobel et al., 2004; WKW00]。</p>
-
-<p>下图展示了850hpa环流pattern与理论结构十分吻合，涡旋以赤道为中心且关于赤道对称，$T_b$信号反对对称。</p>
-
-<p>波长大约9000km</p>
-
-<p>对流在离开赤道的气流中增强，在向赤道的气流中被抑制；离开赤道后，赤道涡旋和相关的$T_b$信号传播的菲律宾的西北部.</p>
-
-<p>图13c中对应的200 h
-Pa模态<strong>在垂直方向上表现为强烈的倾斜</strong>，涡度和气压模态与850 h
-Pa模态接近正交。同时，涡旋在赤道以北略有偏移。虽然这种赤道外的涡旋可以被预期为对远离赤道的加热的响应[e.g.,
-Gill, 1980; Mapes, 1998; Sobel and Horinouchi,
-2000]，但基本流的不对称也可能是一个因素[e.g., Aiyyer and Molinari,
-2003]。</p>
-
-<p> </p>
-
-<p> MRG波经向风的垂直倾斜结构已经被证实，如图14所示。$T_b$最低时刻的对流层低层向极流从地面至750
-h Pa左右，然后向东倾斜至200 h Pa左右，对流层高层和平流层低层则相反。</p>
-
-<p> </p>
-
-<p><img src="https://s2.loli.net/2024/01/04/zVXcDsv8NP7Cjtu.png" alt="Fig14.png" /></p>
-
-<h3 id="32-mrg波的影响">3.2 MRG波的影响</h3>
-
-<p>当逆时针旋转的MRG波涡旋，当他们移出赤道并成为以气旋性涡旋为中心时，有利于进一步发展为热带气旋Frank
-and Roundy [2006]。在个别气旋的形成过程中，观察到了这样的序列Dickinson
-and Molinari [2002], Straub and Kiladis [2003b], and Zhou and Wang
-[2007]。</p>
-
-<p>这种MRG波向小尺度结构的转变，被认为受到了纬向流交汇区的正压变形的帮助，<strong>低层西风和东风在西太平洋上空交汇，导致纬向收缩和更小尺度的赤道外罗斯贝涡旋的发展</strong>[Kuo
-et al., 2001; Aiyyer and Molinari, 2003]。</p>
-
-<p>::: tcolorbox
-[这种辐合也可能是扰动通过”波能累积”的机制导致放大[e.g., Farrell and
-Watterson, 1985; Webster and Chang,
-1988].其中波的纬向群速度趋近于零，从而俘获了波的能量，创造了有利于热带气旋形成的环境[Holland,
-1995; Sobel and Bretherton, 1999]]{style=”color: yellow!70!black”}
-:::</p>
-
-<p>在印度扇区[Bessafi and Wheeler,
-2006]上空也有一些与MRG相关的热带气旋生成的证据，如图5所示。通过温带Rossby波在MRG结构上的投影，横向强迫激发MRG波，正如第4节讨论的Kelvin波一样，也被观测到的[Magan
-̃a and Yanai, 1995]和理论上的[Hoskins and Yang, 2000]所支持。</p>
-
-<p> 
- </p>
-
-<p> </p>
-
-<p> </p>
-
-<h2 id="ews-东风波">EWs 东风波</h2>
-
-<p> 虽然不是Matsuno[1966]的赤道浅水方程中的解，但是是第一个被证实的对流耦合波动。表现为：赤道外向西传播的罗斯贝涡旋在北半球赤道辐合带的信风场内表现为气压和风的"倒槽"
-。
-主要活跃在太平洋和大西洋，以及季风季节的撒哈拉沙漠以南的非洲。在ITCZ对流最活跃的季节时空谱中，东风波的信号最显著(5-10
-月 )(WK99).。</p>
-
-<p>早期观测研究发现，EWs的波长为2500-3500km，西传相速度为$8m s^{-1}$
-,周期为3-4天，最大经向风速异常在700-850hPa[Reed and Recker, 1971; Reed
-et al., 1977; Thompson et al.,
-1979]。在西非/东大西洋地区，对流的位相和波动特性随着纬度以及陆地和海洋之间的变化而变化[Reed
-et al., 1977; Kiladis et al., 2006]。此外，
-也有研究表明太平洋EWs的特征随着经度的变化而变化[Reed and Recker, 1971;
-Tam and Li, 2006; Serra et al., 2008]。</p>
-
-<p>大部分的观测中发现的太平洋EWs结构变化归因于<strong>整个太平洋背景平均垂向风切变的变化</strong>引起的[Holton,
-1971; Reed and Recker,
-1971]。水平和垂向风切变也强烈影响了非洲EWs的结构，同时其与热带气旋之间的关系被归因于纬向变化的纬向气流中的形变和波能积累的作用。
- 相反，热带气旋产生的Rossby波能量的向东频散被证明是EWs的一个来源[Holland,
-1995; Sobel and Bretherton, 1999; Krouse et al.,
-2008]，以及热带外强迫[Tam and Li,
-2006]和非洲东风急流区域内的潜热加热[e.g., Hsieh and Cook, 2007;
-Thorncroft et al., 2008]的潜在影响。</p>
-
-<p>EWs的垂向结构和尺度与MRG波十分相似，几乎难以区分[see Kiladis et al.,
-2006; Serra et al.,
-2008]。对非洲上空EWs的能量分析表明强的斜压转换使得从非洲东风急流内部的垂直切变中获取能量[Norquist
-et al., 1977; Kiladis et al., 2006; Hall et al., 2006; Hsieh and Cook,
-2007]。随着EWs离开海岸，正压转换变得更占优势，能量主要从基本态水平剪切中提取。在太平洋ITCZ，基本态的水平和垂直切变要少得多，能量学计算表明<strong>潜热加热一定是太平洋EWs的主要能量来源</strong>
-[Tai and Ogura, 1987; Lau and Lau, 1992; Tam and Li, 2006; Serra et
-al., 2008]。
-虽然<strong>潜热加热可能是大多数CCEW的主要能量来源，但强切变的存在，特别是在季风区，可能对它们的产生和维持也很重要</strong>
-。</p>
-
-<p>参考： Kiladis, G. N., M. C. Wheeler, P. T. Haertel, K. H. Straub, and
-P. E. Roundy (2009), Convectively coupled equatorial waves, Rev.
-Geophys., 47, RG2003, doi:10.1029/2008RG000266</p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> </p>
-
-<p> 
-:::</p>]]></content><author><name>Xianpu Ji</name><email>xianpuji@hhu.edu.cn</email></author><category term="科研" /><category term="热带气象" /><category term="赤道波" /><category term="对流耦合" /><category term="热带气象" /><category term="波动理论" /><summary type="html"><![CDATA[Convectively coupled equatorial waves]]></summary></entry></feed>
+<h3 id="real-time-mjo-monitoring">Real-Time MJO Monitoring</h3>
+
+<p>The MJO is commonly tracked using the Real-time Multivariate MJO (RMM) index:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_rmm_index</span><span class="p">(</span><span class="n">olr_data</span><span class="p">,</span> <span class="n">u850_data</span><span class="p">,</span> <span class="n">u200_data</span><span class="p">):</span>
+    <span class="s">"""
+    Calculate the Real-time Multivariate MJO index.
+    
+    Parameters:
+    - olr_data: Outgoing Longwave Radiation
+    - u850_data: Zonal wind at 850 hPa
+    - u200_data: Zonal wind at 200 hPa
+    """</span>
+    
+    <span class="c1"># Remove annual cycle and standardize
+</span>    <span class="k">def</span> <span class="nf">remove_annual_cycle</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">climatology</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.dayofyear'</span><span class="p">).</span><span class="n">mean</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+        <span class="n">anomaly</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.dayofyear'</span><span class="p">)</span> <span class="o">-</span> <span class="n">climatology</span>
+        <span class="k">return</span> <span class="n">anomaly</span> <span class="o">/</span> <span class="n">anomaly</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+    
+    <span class="n">olr_anom</span> <span class="o">=</span> <span class="n">remove_annual_cycle</span><span class="p">(</span><span class="n">olr_data</span><span class="p">)</span>
+    <span class="n">u850_anom</span> <span class="o">=</span> <span class="n">remove_annual_cycle</span><span class="p">(</span><span class="n">u850_data</span><span class="p">)</span>
+    <span class="n">u200_anom</span> <span class="o">=</span> <span class="n">remove_annual_cycle</span><span class="p">(</span><span class="n">u200_data</span><span class="p">)</span>
+    
+    <span class="c1"># Combine variables
+</span>    <span class="n">combined_data</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">olr_anom</span><span class="p">,</span> <span class="n">u850_anom</span><span class="p">,</span> <span class="n">u200_anom</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="s">'variable'</span><span class="p">)</span>
+    
+    <span class="c1"># Apply EOF analysis
+</span>    <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+    
+    <span class="c1"># Reshape for PCA
+</span>    <span class="n">data_reshaped</span> <span class="o">=</span> <span class="n">combined_data</span><span class="p">.</span><span class="n">stack</span><span class="p">(</span><span class="n">space</span><span class="o">=</span><span class="p">(</span><span class="s">'longitude'</span><span class="p">,</span> <span class="s">'latitude'</span><span class="p">)).</span><span class="n">T</span>
+    
+    <span class="c1"># Perform PCA
+</span>    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">mjo_pcs</span> <span class="o">=</span> <span class="n">pca</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_reshaped</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate RMM indices
+</span>    <span class="n">rmm1</span> <span class="o">=</span> <span class="n">mjo_pcs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">rmm2</span> <span class="o">=</span> <span class="n">mjo_pcs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate amplitude and phase
+</span>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rmm1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rmm2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">rmm2</span><span class="p">,</span> <span class="n">rmm1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span>
+    <span class="n">phase</span><span class="p">[</span><span class="n">phase</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">360</span>
+    
+    <span class="k">return</span> <span class="n">rmm1</span><span class="p">,</span> <span class="n">rmm2</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">,</span> <span class="n">phase</span>
+</code></pre></div></div>
+
+<h3 id="mjo-phase-diagram">MJO Phase Diagram</h3>
+
+<p>The MJO is often visualized in phase space:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plot_mjo_phase_diagram</span><span class="p">(</span><span class="n">rmm1</span><span class="p">,</span> <span class="n">rmm2</span><span class="p">,</span> <span class="n">dates</span><span class="p">):</span>
+    <span class="s">"""Plot MJO evolution in phase space."""</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s">'polar'</span><span class="p">))</span>
+    
+    <span class="c1"># Convert RMM to polar coordinates
+</span>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rmm1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rmm2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">rmm2</span><span class="p">,</span> <span class="n">rmm1</span><span class="p">)</span>
+    
+    <span class="c1"># Plot trajectory
+</span>    <span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">([</span><span class="n">phase</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">phase</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">amplitude</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">amplitude</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> 
+                <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Add phase labels
+</span>    <span class="n">phases</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Indian Ocean'</span><span class="p">,</span> <span class="s">'Maritime Continent'</span><span class="p">,</span> <span class="s">'Western Pacific'</span><span class="p">,</span> 
+              <span class="s">'Central Pacific'</span><span class="p">,</span> <span class="s">'Eastern Pacific'</span><span class="p">,</span> <span class="s">'Africa'</span><span class="p">,</span> <span class="s">'Western Hemisphere'</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">phases</span><span class="p">):</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">8</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> 
+                <span class="n">ha</span><span class="o">=</span><span class="s">'center'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">'center'</span><span class="p">)</span>
+    
+    <span class="c1"># Add amplitude circles
+</span>    <span class="n">ax</span><span class="p">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'MJO Phase Diagram'</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</code></pre></div></div>
+
+<h2 id="interactions-between-waves">Interactions Between Waves</h2>
+
+<h3 id="kelvin-waves-and-the-mjo">Kelvin Waves and the MJO</h3>
+
+<p>Recent research has revealed important interactions between these wave types:</p>
+
+<ol>
+  <li><strong>MJO initiation</strong>: Kelvin waves can trigger MJO events</li>
+  <li><strong>Wave modulation</strong>: The MJO modulates Kelvin wave activity</li>
+  <li><strong>Scale interactions</strong>: Energy transfer between different scales</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">analyze_wave_interactions</span><span class="p">(</span><span class="n">kelvin_data</span><span class="p">,</span> <span class="n">mjo_data</span><span class="p">):</span>
+    <span class="s">"""Analyze interactions between Kelvin waves and MJO."""</span>
+    
+    <span class="c1"># Calculate cross-correlation
+</span>    <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+    
+    <span class="n">correlations</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lags</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>  <span class="c1"># ±30 days
+</span>    
+    <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lag</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">mjo_lagged</span> <span class="o">=</span> <span class="n">mjo_data</span><span class="p">[</span><span class="n">lag</span><span class="p">:]</span>
+            <span class="n">kelvin_subset</span> <span class="o">=</span> <span class="n">kelvin_data</span><span class="p">[:</span><span class="o">-</span><span class="n">lag</span><span class="p">]</span> <span class="k">if</span> <span class="n">lag</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">kelvin_data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mjo_lagged</span> <span class="o">=</span> <span class="n">mjo_data</span><span class="p">[:</span><span class="n">lag</span><span class="p">]</span>
+            <span class="n">kelvin_subset</span> <span class="o">=</span> <span class="n">kelvin_data</span><span class="p">[</span><span class="o">-</span><span class="n">lag</span><span class="p">:]</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mjo_lagged</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">kelvin_subset</span><span class="p">):</span>
+            <span class="n">corr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">mjo_lagged</span><span class="p">,</span> <span class="n">kelvin_subset</span><span class="p">)</span>
+            <span class="n">correlations</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">corr</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">correlations</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+    
+    <span class="c1"># Plot results
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lags</span><span class="p">,</span> <span class="n">correlations</span><span class="p">,</span> <span class="s">'b-'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'k'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">'--'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Lag (days)'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Cross-correlation'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Kelvin Wave - MJO Interaction'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">correlations</span>
+</code></pre></div></div>
+
+<h2 id="impacts-on-weather-and-climate">Impacts on Weather and Climate</h2>
+
+<h3 id="tropical-cyclone-formation">Tropical Cyclone Formation</h3>
+
+<p>Both Kelvin waves and the MJO influence tropical cyclone development:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">analyze_tc_formation</span><span class="p">(</span><span class="n">tc_data</span><span class="p">,</span> <span class="n">wave_data</span><span class="p">):</span>
+    <span class="s">"""Analyze tropical cyclone formation in relation to tropical waves."""</span>
+    
+    <span class="c1"># Create composite analysis
+</span>    <span class="n">active_wave_periods</span> <span class="o">=</span> <span class="n">wave_data</span> <span class="o">&gt;</span> <span class="n">wave_data</span><span class="p">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">inactive_wave_periods</span> <span class="o">=</span> <span class="n">wave_data</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">wave_data</span><span class="p">.</span><span class="n">std</span><span class="p">()</span>
+    
+    <span class="c1"># Calculate TC formation rates
+</span>    <span class="n">tc_active</span> <span class="o">=</span> <span class="n">tc_data</span><span class="p">[</span><span class="n">active_wave_periods</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">tc_inactive</span> <span class="o">=</span> <span class="n">tc_data</span><span class="p">[</span><span class="n">inactive_wave_periods</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"TC formation rate during active wave periods: </span><span class="si">{</span><span class="n">tc_active</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">/month"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"TC formation rate during inactive wave periods: </span><span class="si">{</span><span class="n">tc_inactive</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">/month"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Ratio: </span><span class="si">{</span><span class="n">tc_active</span><span class="o">/</span><span class="n">tc_inactive</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">tc_active</span><span class="p">,</span> <span class="n">tc_inactive</span>
+</code></pre></div></div>
+
+<h3 id="monsoon-variability">Monsoon Variability</h3>
+
+<p>Tropical waves significantly affect monsoon systems:</p>
+
+<ul>
+  <li><strong>Onset timing</strong>: MJO can advance or delay monsoon onset</li>
+  <li><strong>Break periods</strong>: Related to suppressed convection phases</li>
+  <li><strong>Intensity variations</strong>: Wave-enhanced or weakened monsoon flow</li>
+</ul>
+
+<h2 id="numerical-modeling-challenges">Numerical Modeling Challenges</h2>
+
+<h3 id="model-resolution-requirements">Model Resolution Requirements</h3>
+
+<p>Simulating tropical waves requires careful consideration of:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example WRF namelist configuration for tropical waves
+</span><span class="n">wrf_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'dx'</span><span class="p">:</span> <span class="mi">25000</span><span class="p">,</span>  <span class="c1"># 25 km horizontal resolution
+</span>    <span class="s">'dt'</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>    <span class="c1"># 150 second time step
+</span>    <span class="s">'vertical_levels'</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="s">'physics_options'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'microphysics'</span><span class="p">:</span> <span class="s">'WSM6'</span><span class="p">,</span>
+        <span class="s">'cumulus'</span><span class="p">:</span> <span class="s">'Kain-Fritsch'</span><span class="p">,</span>
+        <span class="s">'pbl'</span><span class="p">:</span> <span class="s">'YSU'</span><span class="p">,</span>
+        <span class="s">'surface_layer'</span><span class="p">:</span> <span class="s">'MM5'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="common-modeling-issues">Common Modeling Issues</h3>
+
+<ol>
+  <li><strong>Convective parameterization</strong>: Critical for tropical wave simulation</li>
+  <li><strong>Boundary conditions</strong>: Proper initialization and lateral boundaries</li>
+  <li><strong>Ocean coupling</strong>: Important for longer simulations</li>
+  <li><strong>Computational cost</strong>: High-resolution simulations are expensive</li>
+</ol>
+
+<h2 id="future-research-directions">Future Research Directions</h2>
+
+<h3 id="machine-learning-applications">Machine Learning Applications</h3>
+
+<p>Emerging ML techniques for tropical wave research:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example: LSTM for MJO prediction
+</span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dense</span>
+
+<span class="k">def</span> <span class="nf">build_mjo_lstm</span><span class="p">(</span><span class="n">input_shape</span><span class="p">):</span>
+    <span class="s">"""Build LSTM model for MJO prediction."""</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+        <span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">),</span>
+        <span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+        <span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># RMM1 and RMM2
+</span>    <span class="p">])</span>
+    
+    <span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s">'mse'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></div>
+
+<h3 id="climate-change-impacts">Climate Change Impacts</h3>
+
+<p>Key research questions:</p>
+<ul>
+  <li>How will tropical waves change in a warming climate?</li>
+  <li>What are the implications for extreme weather?</li>
+  <li>How do we improve wave representation in climate models?</li>
+</ul>
+
+<h2 id="practical-applications">Practical Applications</h2>
+
+<h3 id="forecasting">Forecasting</h3>
+
+<p>Understanding tropical waves improves:</p>
+<ul>
+  <li><strong>Subseasonal forecasting</strong>: 2-8 week predictions</li>
+  <li><strong>Seasonal outlooks</strong>: Monsoon and hurricane season forecasts</li>
+  <li><strong>Climate projections</strong>: Long-term change assessments</li>
+</ul>
+
+<h3 id="early-warning-systems">Early Warning Systems</h3>
+
+<p>Wave monitoring contributes to:</p>
+<ul>
+  <li>Tropical cyclone formation alerts</li>
+  <li>Drought and flood predictions</li>
+  <li>Agricultural planning</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Tropical waves like Kelvin waves and the MJO are fundamental components of the climate system. My research has shown that:</p>
+
+<ol>
+  <li><strong>Wave interactions</strong> are more complex than previously thought</li>
+  <li><strong>High-resolution modeling</strong> reveals new physical insights</li>
+  <li><strong>Machine learning</strong> offers promising tools for analysis and prediction</li>
+  <li><strong>Climate change</strong> impacts require urgent investigation</li>
+</ol>
+
+<p>Understanding these phenomena is crucial for improving weather and climate predictions, with significant implications for billions of people living in tropical regions.</p>
+
+<h2 id="recommended-resources">Recommended Resources</h2>
+
+<h3 id="key-papers">Key Papers</h3>
+<ul>
+  <li>Madden and Julian (1971): “Detection of a 40-50 day oscillation in the zonal wind”</li>
+  <li>Wheeler and Hendon (2004): “An all-season real-time multivariate MJO index”</li>
+  <li>Kiladis et al. (2009): “A comparison of OLR and circulation-based indices for tracking the MJO”</li>
+</ul>
+
+<h3 id="data-sources">Data Sources</h3>
+<ul>
+  <li><a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/index.html">NOAA MJO Diagnostics</a></li>
+  <li><a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-pressure-levels">ERA5 Reanalysis</a></li>
+  <li><a href="https://gpm.nasa.gov/data">TRMM/GPM Precipitation</a></li>
+</ul>
+
+<h3 id="modeling-tools">Modeling Tools</h3>
+<ul>
+  <li><a href="https://www.mmm.ucar.edu/weather-research-and-forecasting-model">WRF Model</a></li>
+  <li><a href="https://www.clivar.org/clivar-panels/pacific">MJO Task Force</a></li>
+</ul>
+
+<hr />
+
+<p><em>Interested in collaborating on tropical wave research? I’m always looking for new partnerships and data sharing opportunities. Reach out via <a href="mailto:xianpuji@hhu.edu.cn">email</a> or connect on <a href="https://linkedin.com/in/">LinkedIn</a>.</em></p>]]></content><author><name>Your Name</name></author><category term="jekyll-blog-template" /><category term="research" /><category term="climate" /><category term="tropical-meteorology" /><category term="kelvin-waves" /><category term="mjo" /><category term="atmospheric-dynamics" /><summary type="html"><![CDATA[Exploring the fascinating world of tropical atmospheric waves, their dynamics, and their crucial role in global weather patterns.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://blissful-jasper.github.io/assets/images/posts/tropical-waves.jpg" /><media:content medium="image" url="https://blissful-jasper.github.io/assets/images/posts/tropical-waves.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

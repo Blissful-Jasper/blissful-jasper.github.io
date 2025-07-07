@@ -238,7 +238,14 @@
       </header>
 
       <div class="post-content">
-        <link rel="stylesheet" href="assets/blog-post-enhanced.css">
+        <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Blog Post</h1>
+  </header>
+
+  <div class="post-content">
+    <link rel="stylesheet" href="assets/blog-post-style.css">
+<link rel="stylesheet" href="assets/modern-theme.css">
 
 <div class="blog-post-container">
   <div class="blog-post-header">
@@ -247,125 +254,226 @@
       <span class="breadcrumb-separator">></span>
       <a href="/blog.html" class="breadcrumb-item">博客</a>
       <span class="breadcrumb-separator">></span>
-      <span class="breadcrumb-item current">文章详情</span>
+      <span class="breadcrumb-item current" id="current-post-title">文章详情</span>
     </nav>
   </div>
 
   <article class="blog-post-content">
     <div class="post-header">
-      <h1 class="post-title">博客文章</h1>
+      <h1 class="post-title" id="post-title">正在加载...</h1>
       <div class="post-meta">
         <div class="meta-item">
           <i class="fas fa-calendar"></i>
-          <span class="post-date">2025年07月07日</span>
+          <span class="post-date" id="post-date">-</span>
+        </div>
+        <div class="meta-item">
+          <i class="fas fa-folder"></i>
+          <span class="post-category" id="post-category">-</span>
         </div>
         <div class="meta-item">
           <i class="fas fa-user"></i>
           <span class="post-author">Xianpu Ji</span>
         </div>
-        <div class="meta-item">
-          <i class="fas fa-folder"></i>
-          <span class="post-category">学术</span>
-        </div>
       </div>
+      <div class="post-tags" id="post-tags"></div>
     </div>
 
     <div class="post-body">
-      <div class="post-content">
-        <h2>欢迎来到我的博客</h2>
-        
-        <p>这是一个博客文章页面的示例。在这里，您可以阅读各种关于我的研究、学习心得和技术分享的文章。</p>
-        
-        <h3>主要内容包括：</h3>
-        
-        <ul>
-          <li><strong>研究进展</strong>：分享我在热带气象学研究方面的最新发现和思考</li>
-          <li><strong>技术文章</strong>：深度学习、数据分析和科学计算的实用技巧</li>
-          <li><strong>学术资源</strong>：推荐有用的论文、工具和学习资料</li>
-          <li><strong>会议分享</strong>：参加学术会议的心得和收获</li>
-        </ul>
-        
-        <h3>关于我的研究</h3>
-        
-        <p>我的研究主要集中在以下几个方面：</p>
-        
-        <ol>
-          <li><strong>热带波动动力学</strong>：研究Kelvin波、MJO等热带波动的产生机制和传播特性</li>
-          <li><strong>降水时空变率</strong>：分析热带地区降水的时空分布规律及其与大气环流的关系</li>
-          <li><strong>气候模式评估</strong>：使用CMIP6等模式数据评估气候模式的预报能力</li>
-          <li><strong>机器学习应用</strong>：探索深度学习在气象预报中的创新应用</li>
-        </ol>
-        
-        <blockquote>
-          <p>"科学研究是一个持续探索的过程，每一个新的发现都可能开启全新的研究方向。"</p>
-        </blockquote>
-        
-        <h3>技术栈</h3>
-        
-        <p>在我的研究中，我主要使用以下工具和技术：</p>
-        
-        <ul>
-          <li><code>Python</code>：数据分析和机器学习</li>
-          <li><code>NCL</code>：气象数据处理和可视化</li>
-          <li><code>MATLAB</code>：数值计算和信号处理</li>
-          <li><code>R</code>：统计分析和数据挖掘</li>
-          <li><code>TensorFlow/PyTorch</code>：深度学习模型开发</li>
-        </ul>
-        
-        <h3>最新动态</h3>
-        
-        <p>我会定期更新博客，分享最新的研究进展和技术心得。您可以通过以下方式关注我的更新：</p>
-        
-        <ul>
-          <li>订阅RSS feed</li>
-          <li>关注我的学术社交媒体账号</li>
-          <li>定期访问网站查看最新内容</li>
-        </ul>
-        
-        <p>如果您对我的研究感兴趣，或者在相关领域有合作意向，欢迎随时与我联系！</p>
+      <div class="post-content" id="post-content">
+        <div class="loading-spinner">
+          <i class="fas fa-spinner fa-spin"></i>
+          <p>正在加载文章内容...</p>
+        </div>
       </div>
     </div>
 
     <div class="post-footer">
       <div class="post-actions">
-        <button class="action-btn" onclick="window.history.back()">
-          <i class="fas fa-arrow-left"></i>
-          <span>返回</span>
+        <button class="action-btn like-btn" id="like-btn">
+          <i class="far fa-heart"></i>
+          <span>喜欢</span>
         </button>
-        <button class="action-btn share-btn" onclick="sharePost()">
+        <button class="action-btn share-btn" id="share-btn">
           <i class="fas fa-share-alt"></i>
           <span>分享</span>
         </button>
-        <a href="/" class="action-btn">
-          <i class="fas fa-home"></i>
-          <span>首页</span>
-        </a>
+        <button class="action-btn bookmark-btn" id="bookmark-btn">
+          <i class="far fa-bookmark"></i>
+          <span>收藏</span>
+        </button>
       </div>
     </div>
   </article>
+
+  <div class="post-navigation">
+    <div class="nav-item prev-post" id="prev-post" style="display: none;">
+      <a href="#" class="nav-link">
+        <i class="fas fa-chevron-left"></i>
+        <div class="nav-content">
+          <span class="nav-label">上一篇</span>
+          <span class="nav-title"></span>
+        </div>
+      </a>
+    </div>
+    <div class="nav-item next-post" id="next-post" style="display: none;">
+      <a href="#" class="nav-link">
+        <div class="nav-content">
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title"></span>
+        </div>
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+  </div>
 </div>
 
 <script>
-function sharePost() {
-  const title = document.title;
-  const url = window.location.href;
+// 动态加载博客文章内容
+document.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const postFile = urlParams.get('file');
   
-  if (navigator.share) {
-    navigator.share({
-      title: title,
-      url: url
-    }).catch(err => console.log('Error sharing:', err));
-  } else {
-    // 复制链接到剪贴板
-    navigator.clipboard.writeText(url).then(() => {
-      alert('链接已复制到剪贴板！');
-    }).catch(err => {
-      console.error('无法复制链接:', err);
-      prompt('请复制以下链接:', url);
+  if (!postFile) {
+    document.getElementById('post-content').innerHTML = `
+      <div class="error-message">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>文章未找到</h3>
+        <p>请检查链接是否正确，或<a href="/blog.html">返回博客首页</a>。</p>
+      </div>
+    `;
+    return;
+  }
+
+  // 获取博客文章数据
+  fetch('/blog/' + postFile)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('文章加载失败');
+      }
+      return response.text();
+    })
+    .then(content => {
+      // 找到对应的博客文章信息
+      const blogData = [{"title":"Create a Jekyll Site","date":"2025-06-29","summary":"如何创建一个新的 Jekyll 网站。","file":"_posts/2025-06-29-create-site-jekyll.md","images":["/assets/images/blog/change.png"],"tags":["Jekyll","GitHub Pages","建站","博客"],"category":"技术","subcategory":"jekyll"},{"title":"Deep Learning in Meteorology","date":"2024-12-15","summary":"深度学习在气象领域的应用。","file":"_posts/2024-12-15-dl-meteorology.md","images":["/assets/images/blog/remotesensing.png"],"tags":["深度学习","机器学习","气象预报","人工智能"],"category":"科研","subcategory":"深度学习"},{"title":"CMIP6 Evaluation and Climate Change","date":"2025-06-29","summary":"CMIP6 模型评估与气候变化。","file":"_posts/2025-06-29-cmip6-evaluation.md","images":["/assets/images/blog/cckws.png"],"tags":["CMIP6","气候模式","模式评估","气候变化"],"category":"科研","subcategory":"气候变化"},{"title":"MRG Waves and Tropical Precipitation","date":"2025-06-29","summary":"MRG 波与热带降水的关系。","file":"_posts/2025-06-29-MRG-waves.md","images":["/assets/images/blog/MRG.png"],"tags":["MRG波","热带气象","降水","大气动力学"],"category":"科研","subcategory":"大气动力学"},{"title":"Welcome to My Blog","date":"2025-06-29","summary":"欢迎来到我的博客，分享研究经验与见解。","file":"_posts/2025-06-29-welcome-to-my-blog.md","images":["/assets/images/blog/scale.png"],"tags":["欢迎","博客","介绍"],"category":"杂谈","subcategory":"杂谈"},{"title":"Python-添加小地图","date":"2024-01-01","summary":"在Python项目中添加小地图功能。","file":"_posts/2024-01-01-Map-add-figure.md","images":["/assets/images/blog/ShangHai_map_add.png"],"tags":["Python","小地图","可视化"],"category":"技术","subcategory":"绘图"},{"title":"WRF修改geo_em变量","date":"2023-12-31","summary":"WRF模型中修改geo_em.d01.nc文件变量的方法。","file":"_posts/2023-12-31-WRF修改geo_em.md","images":["/assets/images/blog/wrf_geo.png"],"tags":["WRF","geo_em","Fortran","数值模拟"],"category":"技术","subcategory":"wrf"},{"title":"CCEWs对流耦合赤道波","date":"2024-01-04","summary":"对流耦合赤道波的研究和分析方法。","file":"_posts/2024-01-04-CCEWs.md","images":["/assets/images/blog/ccews.png"],"tags":["CCEWs","赤道波","对流","热带气象"],"category":"科研","subcategory":"热带气象"},{"title":"WRF with GFS Data","date":"2024-01-04","summary":"使用GFS数据驱动WRF模型的配置方法。","file":"_posts/2024-01-04-WRF-with-GFS-data.md","images":["/assets/images/blog/wrf_gfs.png"],"tags":["WRF","GFS","数值预报","气象数据"],"category":"技术","subcategory":"wrf"},{"title":"WRF重编译技巧","date":"2024-01-10","summary":"WRF模型重编译过程中的实用技巧和注意事项。","file":"_posts/2024-01-10-Tips-for-WRF-recompile.md","images":["/assets/images/blog/wrf_compile.png"],"tags":["WRF","编译","Fortran","调试"],"category":"技术","subcategory":"wrf"},{"title":"深度学习天气预报","date":"2025-07-01","summary":"深度学习在天气预报中的最新应用和发展。","file":"_posts/2025-07-01-deep-learning-weather-forecast.md","images":["/assets/images/blog/dl_weather.png"],"tags":["深度学习","天气预报","AI","机器学习"],"category":"科研","subcategory":"深度学习"},{"title":"GFS数据处理与可视化","date":"2025-07-03","summary":"全球预报系统（GFS）数据的下载、处理和可视化方法。","file":"_posts/2025-07-03-gfs-data-processing.md","images":["/assets/images/blog/WRF.png"],"tags":["GFS","数据处理","可视化","气象"],"category":"技术","subcategory":"气象数据"}];
+      const postInfo = blogData.find(post => post.file === postFile);
+      
+      if (postInfo) {
+        // 更新文章信息
+        document.getElementById('post-title').textContent = postInfo.title;
+        document.getElementById('current-post-title').textContent = postInfo.title;
+        document.getElementById('post-date').textContent = postInfo.date;
+        document.getElementById('post-category').textContent = postInfo.category;
+        
+        // 更新标签
+        const tagsContainer = document.getElementById('post-tags');
+        tagsContainer.innerHTML = '';
+        if (postInfo.tags && postInfo.tags.length > 0) {
+          postInfo.tags.forEach(tag => {
+            const tagSpan = document.createElement('span');
+            tagSpan.className = 'tag';
+            tagSpan.textContent = tag;
+            tagsContainer.appendChild(tagSpan);
+          });
+        }
+      }
+
+      // 处理Markdown内容
+      const contentDiv = document.getElementById('post-content');
+      
+      // 简单的Markdown解析（仅处理基本格式）
+      let htmlContent = content
+        .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+        .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+        .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+        .replace(/^\*\*(.*)\*\*/gm, '<strong>$1</strong>')
+        .replace(/^\*(.*)\*/gm, '<em>$1</em>')
+        .replace(/^\- (.*$)/gm, '<li>$1</li>')
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/^(?!<[h|l|p])/gm, '<p>')
+        .replace(/(?<!>)$/gm, '</p>')
+        .replace(/<p><\/p>/g, '')
+        .replace(/<p>(<h[1-6]>)/g, '$1')
+        .replace(/(<\/h[1-6]>)<\/p>/g, '$1')
+        .replace(/<p>(<li>)/g, '<ul>$1')
+        .replace(/(<\/li>)<\/p>/g, '$1</ul>');
+
+      contentDiv.innerHTML = htmlContent;
+      
+      // 添加导航
+      setupNavigation(postInfo, blogData);
+    })
+    .catch(error => {
+      console.error('Error loading post:', error);
+      document.getElementById('post-content').innerHTML = `
+        <div class="error-message">
+          <i class="fas fa-exclamation-triangle"></i>
+          <h3>加载失败</h3>
+          <p>无法加载文章内容，请稍后重试或<a href="/blog.html">返回博客首页</a>。</p>
+        </div>
+      `;
     });
+});
+
+function setupNavigation(currentPost, allPosts) {
+  const currentIndex = allPosts.findIndex(post => post.file === currentPost.file);
+  
+  // 上一篇
+  if (currentIndex > 0) {
+    const prevPost = allPosts[currentIndex - 1];
+    const prevElement = document.getElementById('prev-post');
+    const prevLink = prevElement.querySelector('.nav-link');
+    const prevTitle = prevElement.querySelector('.nav-title');
+    
+    prevLink.href = `blog-post-dynamic.html?file=${prevPost.file}`;
+    prevTitle.textContent = prevPost.title;
+    prevElement.style.display = 'block';
+  }
+  
+  // 下一篇
+  if (currentIndex < allPosts.length - 1) {
+    const nextPost = allPosts[currentIndex + 1];
+    const nextElement = document.getElementById('next-post');
+    const nextLink = nextElement.querySelector('.nav-link');
+    const nextTitle = nextElement.querySelector('.nav-title');
+    
+    nextLink.href = `blog-post-dynamic.html?file=${nextPost.file}`;
+    nextTitle.textContent = nextPost.title;
+    nextElement.style.display = 'block';
   }
 }
+
+// 文章操作功能
+document.getElementById('like-btn').addEventListener('click', function() {
+  this.classList.toggle('liked');
+  const icon = this.querySelector('i');
+  icon.classList.toggle('far');
+  icon.classList.toggle('fas');
+});
+
+document.getElementById('share-btn').addEventListener('click', function() {
+  if (navigator.share) {
+    navigator.share({
+      title: document.getElementById('post-title').textContent,
+      url: window.location.href
+    });
+  } else {
+    // 复制链接到剪贴板
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('链接已复制到剪贴板！');
+    });
+  }
+});
+
+document.getElementById('bookmark-btn').addEventListener('click', function() {
+  this.classList.toggle('bookmarked');
+  const icon = this.querySelector('i');
+  icon.classList.toggle('far');
+  icon.classList.toggle('fas');
+});
 </script>
+
+  </div>
+</article>
 
       </div>
 

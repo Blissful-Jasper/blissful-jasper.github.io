@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Understanding Tropical Waves: Kelvin Waves and the MJO | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Understanding Tropical Waves: Kelvin Waves and the MJO" />
+<meta name="author" content="Your Name" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Exploring the fascinating world of tropical atmospheric waves, their dynamics, and their crucial role in global weather patterns." />
+<meta property="og:description" content="Exploring the fascinating world of tropical atmospheric waves, their dynamics, and their crucial role in global weather patterns." />
+<link rel="canonical" href="https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/" />
+<meta property="og:url" content="https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:image" content="https://blissful-jasper.github.io/assets/images/posts/tropical-waves.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-10T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://blissful-jasper.github.io/assets/images/posts/tropical-waves.jpg" />
+<meta property="twitter:title" content="Understanding Tropical Waves: Kelvin Waves and the MJO" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Your Name"},"dateModified":"2024-01-10T00:00:00+00:00","datePublished":"2024-01-10T00:00:00+00:00","description":"Exploring the fascinating world of tropical atmospheric waves, their dynamics, and their crucial role in global weather patterns.","headline":"Understanding Tropical Waves: Kelvin Waves and the MJO","image":"https://blissful-jasper.github.io/assets/images/posts/tropical-waves.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/"},"url":"https://blissful-jasper.github.io/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/code-highlighting.css">
+  <link rel="stylesheet" href="/assets/gfs-data-styles.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+  
+  <!-- Load non-critical CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+  
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css"></noscript>
+  
+  <!-- MathJax - Load only when needed -->
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  </script>
+  
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  
+  <!-- Prism.js for code highlighting with better theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<!-- 全站通用功能样式 --><!-- 全站通用功能样式和脚本 -->
+
+<!-- Complete Theme System -->
+<link rel="stylesheet" href="/assets/theme-system-complete.css">
+<link rel="stylesheet" href="/assets/theme-switcher.css">
+
+<!-- 阅读进度条样式 -->
+<link rel="stylesheet" href="/assets/reading-progress.css">
+
+<!-- 访问统计和地图样式 -->
+<link rel="stylesheet" href="/assets/analytics-map.css">
+
+<!-- Enhanced Header Styles -->
+<link rel="stylesheet" href="/assets/header-styles.css">
+
+<!-- Modern Homepage Layout -->
+<link rel="stylesheet" href="/assets/homepage-layout.css">
+<link rel="stylesheet" href="/assets/homepage-gallery-journals.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 确保 Font Awesome 图标可用 -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<!-- Theme Initialization Script -->
+<script>
+  // Initialize theme from localStorage before page renders
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'blue';
+    const savedMode = localStorage.getItem('mode') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedMode);
+    document.documentElement.classList.add(`theme-${savedTheme}`);
+  })();
+</script>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Tropical Waves: Kelvin Waves and the MJO</title>
+    <script>
+        const AI_API_KEY = "";
+    </script>
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                
+                    <span class="logo-text">Xianpu Ji</span>
+                
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/journals.html" class="nav-link">Journals</a></li>
+            <li role="menuitem"><a href="/gallery.html" class="nav-link">Gallery</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/journals.html" class="mobile-nav-link">Journals</a></li>
+                <li><a href="/gallery.html" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <link rel="stylesheet" href="/assets/post-style.css">
+
+<article class="post-article">
+  <!-- 文章头部 -->
+  <header class="post-header">
+    <div class="post-meta-top">
+      <a href="/blog.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        返回博客
+      </a>
+      <div class="post-share">
+        <button class="share-btn" onclick="sharePost()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <h1 class="post-title">Understanding Tropical Waves: Kelvin Waves and the MJO</h1>
+    
+    <div class="post-meta">
+      <div class="meta-item">
+        <i class="far fa-calendar-alt"></i>
+        <time datetime="2024-01-10T00:00:00+00:00">
+          2024年1月10日
+        </time>
+      </div>
+      
+      
+      <div class="meta-item">
+        <i class="far fa-user"></i>
+        <span>Your Name</span>
+      </div>
+      
+      
+      
+      <div class="meta-item">
+        <i class="far fa-clock"></i>
+        <span>12 分钟阅读</span>
+      </div>
+      
+    </div>
+    
+    
+    <div class="post-tags">
+      
+      <span class="tag">tropical-meteorology</span>
+      
+      <span class="tag">kelvin-waves</span>
+      
+      <span class="tag">mjo</span>
+      
+      <span class="tag">atmospheric-dynamics</span>
+      
+    </div>
+    
+  </header>
+
+  <!-- 文章内容 -->
+  <div class="post-content">
+    <p>Tropical waves are among the most fascinating phenomena in atmospheric science. These large-scale disturbances shape weather patterns across the globe, influencing everything from monsoons to hurricanes. Today, I want to share insights from my recent research on two particularly important types of tropical waves: Kelvin waves and the Madden-Julian Oscillation (MJO).</p>
+
+<h2 id="what-are-tropical-waves">What Are Tropical Waves?</h2>
+
+<p>Tropical waves are organized disturbances in the tropical atmosphere that propagate across ocean basins. Unlike mid-latitude weather systems that are driven by temperature gradients, tropical waves are primarily driven by:</p>
+
+<ul>
+  <li><strong>Convective heating</strong>: Latent heat release from thunderstorms</li>
+  <li><strong>Wave dynamics</strong>: Mathematical solutions to atmospheric equations</li>
+  <li><strong>Air-sea interactions</strong>: Exchange of heat and moisture with the ocean</li>
+</ul>
+
+<p>These waves play crucial roles in:</p>
+<ul>
+  <li>Tropical cyclone formation</li>
+  <li>Monsoon variability</li>
+  <li>Global circulation patterns</li>
+  <li>Climate oscillations</li>
+</ul>
+
+<h2 id="kelvin-waves-the-equatorial-express">Kelvin Waves: The Equatorial Express</h2>
+
+<h3 id="basic-physics">Basic Physics</h3>
+
+<p>Kelvin waves are a special type of atmospheric wave that exists near the equator. Named after Lord Kelvin, they have unique properties:</p>
+
+<ol>
+  <li><strong>Equatorially trapped</strong>: Maximum amplitude at the equator, decreasing poleward</li>
+  <li><strong>Eastward propagating</strong>: Travel from west to east at typical speeds of 15-17 m/s</li>
+  <li><strong>No meridional velocity</strong>: Wind only blows east-west at the equator</li>
+  <li><strong>Geostrophic balance</strong>: Pressure gradient balanced by Coriolis force</li>
+</ol>
+
+<h3 id="mathematical-description">Mathematical Description</h3>
+
+<p>The governing equations for equatorial Kelvin waves can be derived from the shallow water equations:</p>
+
+\[\frac{\partial u}{\partial t} - \beta y v = -g \frac{\partial h}{\partial x}\]
+
+\[\frac{\partial v}{\partial t} + \beta y u = -g \frac{\partial h}{\partial y}\]
+
+\[\frac{\partial h}{\partial t} + H \left(\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y}\right) = 0\]
+
+<p>For Kelvin waves, we assume $v = 0$ at the equator, leading to solutions of the form:</p>
+
+\[u = u_0 \exp\left(-\frac{\beta y^2}{2c}\right) \cos(kx - \omega t)\]
+
+\[h = \frac{c}{g} u_0 \exp\left(-\frac{\beta y^2}{2c}\right) \cos(kx - \omega t)\]
+
+<p>where $c = \sqrt{gH}$ is the wave speed.</p>
+
+<h3 id="observational-examples">Observational Examples</h3>
+
+<p>Let’s look at how to identify Kelvin waves in observational data:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
+
+<span class="c1"># Load zonal wind data from ERA5
+</span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s">'era5_u_component.nc'</span><span class="p">)</span>
+<span class="n">u_wind</span> <span class="o">=</span> <span class="n">ds</span><span class="p">[</span><span class="s">'u'</span><span class="p">].</span><span class="n">sel</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">850</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="c1"># Time-longitude plot (Hovmöller diagram)
+</span><span class="k">def</span> <span class="nf">plot_hovmoller</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    
+    <span class="c1"># Average over equatorial band
+</span>    <span class="n">data_eq</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)).</span><span class="n">mean</span><span class="p">(</span><span class="s">'latitude'</span><span class="p">)</span>
+    
+    <span class="c1"># Create Hovmöller plot
+</span>    <span class="n">im</span> <span class="o">=</span> <span class="n">ax</span><span class="p">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">data_eq</span><span class="p">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">data_eq</span><span class="p">.</span><span class="n">time</span><span class="p">,</span> <span class="n">data_eq</span><span class="p">,</span> 
+                     <span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s">'RdBu_r'</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s">'both'</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s">'Longitude (°E)'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s">'Time'</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Zonal Wind (m/s)'</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+
+<span class="c1"># Plot the Hovmöller diagram
+</span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plot_hovmoller</span><span class="p">(</span><span class="n">u_wind</span><span class="p">,</span> <span class="s">'Equatorial Zonal Wind - Kelvin Wave Detection'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="filtering-for-kelvin-waves">Filtering for Kelvin Waves</h3>
+
+<p>To isolate Kelvin waves from other tropical disturbances:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">kelvin_wave_filter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">min_period</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">max_period</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">min_speed</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">max_speed</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
+    <span class="s">"""
+    Filter data to isolate Kelvin wave signals.
+    
+    Parameters:
+    - min_period, max_period: Period range in days
+    - min_speed, max_speed: Eastward phase speed range in m/s
+    """</span>
+    
+    <span class="c1"># Convert to frequency-wavenumber space
+</span>    <span class="n">fft_data</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    
+    <span class="c1"># Define frequency and wavenumber arrays
+</span>    <span class="n">nt</span><span class="p">,</span> <span class="n">nx</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">shape</span>
+    <span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># daily data
+</span>    <span class="n">dx</span> <span class="o">=</span> <span class="mf">2.5</span>  <span class="c1"># 2.5 degree longitude spacing
+</span>    
+    <span class="n">freqs</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">nt</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
+    <span class="n">kx</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">fftfreq</span><span class="p">(</span><span class="n">nx</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+    
+    <span class="c1"># Create filter in frequency-wavenumber space
+</span>    <span class="n">freq_2d</span><span class="p">,</span> <span class="n">kx_2d</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">freqs</span><span class="p">,</span> <span class="n">kx</span><span class="p">,</span> <span class="n">indexing</span><span class="o">=</span><span class="s">'ij'</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate phase speed
+</span>    <span class="n">phase_speed</span> <span class="o">=</span> <span class="n">freq_2d</span> <span class="o">/</span> <span class="n">kx_2d</span>
+    
+    <span class="c1"># Apply Kelvin wave criteria
+</span>    <span class="n">kelvin_mask</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">max_period</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">freq_2d</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">freq_2d</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="o">/</span><span class="n">min_period</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="c1"># Period range
+</span>        <span class="p">(</span><span class="n">min_speed</span> <span class="o">&lt;=</span> <span class="n">phase_speed</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">phase_speed</span> <span class="o">&lt;=</span> <span class="n">max_speed</span><span class="p">)</span> <span class="o">&amp;</span>  <span class="c1"># Speed range
+</span>        <span class="p">(</span><span class="n">freq_2d</span> <span class="o">*</span> <span class="n">kx_2d</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Eastward propagation
+</span>    <span class="p">)</span>
+    
+    <span class="c1"># Apply filter
+</span>    <span class="n">fft_filtered</span> <span class="o">=</span> <span class="n">fft_data</span> <span class="o">*</span> <span class="n">kelvin_mask</span>
+    <span class="n">kelvin_signal</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">real</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">fft</span><span class="p">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">fft_filtered</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">kelvin_signal</span>
+</code></pre></div></div>
+
+<h2 id="the-madden-julian-oscillation-mjo">The Madden-Julian Oscillation (MJO)</h2>
+
+<h3 id="what-makes-the-mjo-special">What Makes the MJO Special?</h3>
+
+<p>The MJO is the dominant mode of intraseasonal variability in the tropical atmosphere, with several unique characteristics:</p>
+
+<ul>
+  <li><strong>30-90 day period</strong>: Much longer than typical weather disturbances</li>
+  <li><strong>Eastward propagation</strong>: Moves at ~5 m/s around the equator</li>
+  <li><strong>Planetary scale</strong>: Spans 12,000-20,000 km</li>
+  <li><strong>Coupled convection</strong>: Links deep convection with circulation</li>
+</ul>
+
+<h3 id="mjo-structure-and-dynamics">MJO Structure and Dynamics</h3>
+
+<p>The MJO consists of:</p>
+
+<ol>
+  <li><strong>Enhanced convection</strong>: Active phase with increased rainfall</li>
+  <li><strong>Suppressed convection</strong>: Inactive phase with reduced rainfall</li>
+  <li><strong>Circulation anomalies</strong>: Large-scale wind and pressure patterns</li>
+  <li><strong>Moisture variations</strong>: Changes in atmospheric water vapor</li>
+</ol>
+
+<h3 id="real-time-mjo-monitoring">Real-Time MJO Monitoring</h3>
+
+<p>The MJO is commonly tracked using the Real-time Multivariate MJO (RMM) index:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">calculate_rmm_index</span><span class="p">(</span><span class="n">olr_data</span><span class="p">,</span> <span class="n">u850_data</span><span class="p">,</span> <span class="n">u200_data</span><span class="p">):</span>
+    <span class="s">"""
+    Calculate the Real-time Multivariate MJO index.
+    
+    Parameters:
+    - olr_data: Outgoing Longwave Radiation
+    - u850_data: Zonal wind at 850 hPa
+    - u200_data: Zonal wind at 200 hPa
+    """</span>
+    
+    <span class="c1"># Remove annual cycle and standardize
+</span>    <span class="k">def</span> <span class="nf">remove_annual_cycle</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">climatology</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.dayofyear'</span><span class="p">).</span><span class="n">mean</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+        <span class="n">anomaly</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'time.dayofyear'</span><span class="p">)</span> <span class="o">-</span> <span class="n">climatology</span>
+        <span class="k">return</span> <span class="n">anomaly</span> <span class="o">/</span> <span class="n">anomaly</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="s">'time'</span><span class="p">)</span>
+    
+    <span class="n">olr_anom</span> <span class="o">=</span> <span class="n">remove_annual_cycle</span><span class="p">(</span><span class="n">olr_data</span><span class="p">)</span>
+    <span class="n">u850_anom</span> <span class="o">=</span> <span class="n">remove_annual_cycle</span><span class="p">(</span><span class="n">u850_data</span><span class="p">)</span>
+    <span class="n">u200_anom</span> <span class="o">=</span> <span class="n">remove_annual_cycle</span><span class="p">(</span><span class="n">u200_data</span><span class="p">)</span>
+    
+    <span class="c1"># Combine variables
+</span>    <span class="n">combined_data</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">concat</span><span class="p">([</span><span class="n">olr_anom</span><span class="p">,</span> <span class="n">u850_anom</span><span class="p">,</span> <span class="n">u200_anom</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="s">'variable'</span><span class="p">)</span>
+    
+    <span class="c1"># Apply EOF analysis
+</span>    <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+    
+    <span class="c1"># Reshape for PCA
+</span>    <span class="n">data_reshaped</span> <span class="o">=</span> <span class="n">combined_data</span><span class="p">.</span><span class="n">stack</span><span class="p">(</span><span class="n">space</span><span class="o">=</span><span class="p">(</span><span class="s">'longitude'</span><span class="p">,</span> <span class="s">'latitude'</span><span class="p">)).</span><span class="n">T</span>
+    
+    <span class="c1"># Perform PCA
+</span>    <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">mjo_pcs</span> <span class="o">=</span> <span class="n">pca</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data_reshaped</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate RMM indices
+</span>    <span class="n">rmm1</span> <span class="o">=</span> <span class="n">mjo_pcs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="n">rmm2</span> <span class="o">=</span> <span class="n">mjo_pcs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate amplitude and phase
+</span>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rmm1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rmm2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">rmm2</span><span class="p">,</span> <span class="n">rmm1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span>
+    <span class="n">phase</span><span class="p">[</span><span class="n">phase</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">360</span>
+    
+    <span class="k">return</span> <span class="n">rmm1</span><span class="p">,</span> <span class="n">rmm2</span><span class="p">,</span> <span class="n">amplitude</span><span class="p">,</span> <span class="n">phase</span>
+</code></pre></div></div>
+
+<h3 id="mjo-phase-diagram">MJO Phase Diagram</h3>
+
+<p>The MJO is often visualized in phase space:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plot_mjo_phase_diagram</span><span class="p">(</span><span class="n">rmm1</span><span class="p">,</span> <span class="n">rmm2</span><span class="p">,</span> <span class="n">dates</span><span class="p">):</span>
+    <span class="s">"""Plot MJO evolution in phase space."""</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s">'polar'</span><span class="p">))</span>
+    
+    <span class="c1"># Convert RMM to polar coordinates
+</span>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">rmm1</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">rmm2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">rmm2</span><span class="p">,</span> <span class="n">rmm1</span><span class="p">)</span>
+    
+    <span class="c1"># Plot trajectory
+</span>    <span class="n">colors</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">cm</span><span class="p">.</span><span class="n">viridis</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">([</span><span class="n">phase</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">phase</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="n">amplitude</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">amplitude</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]],</span> 
+                <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    
+    <span class="c1"># Add phase labels
+</span>    <span class="n">phases</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Indian Ocean'</span><span class="p">,</span> <span class="s">'Maritime Continent'</span><span class="p">,</span> <span class="s">'Western Pacific'</span><span class="p">,</span> 
+              <span class="s">'Central Pacific'</span><span class="p">,</span> <span class="s">'Eastern Pacific'</span><span class="p">,</span> <span class="s">'Africa'</span><span class="p">,</span> <span class="s">'Western Hemisphere'</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">phases</span><span class="p">):</span>
+        <span class="n">angle</span> <span class="o">=</span> <span class="n">i</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="p">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">8</span>
+        <span class="n">ax</span><span class="p">.</span><span class="n">text</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> 
+                <span class="n">ha</span><span class="o">=</span><span class="s">'center'</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s">'center'</span><span class="p">)</span>
+    
+    <span class="c1"># Add amplitude circles
+</span>    <span class="n">ax</span><span class="p">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">set_title</span><span class="p">(</span><span class="s">'MJO Phase Diagram'</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span>
+</code></pre></div></div>
+
+<h2 id="interactions-between-waves">Interactions Between Waves</h2>
+
+<h3 id="kelvin-waves-and-the-mjo">Kelvin Waves and the MJO</h3>
+
+<p>Recent research has revealed important interactions between these wave types:</p>
+
+<ol>
+  <li><strong>MJO initiation</strong>: Kelvin waves can trigger MJO events</li>
+  <li><strong>Wave modulation</strong>: The MJO modulates Kelvin wave activity</li>
+  <li><strong>Scale interactions</strong>: Energy transfer between different scales</li>
+</ol>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">analyze_wave_interactions</span><span class="p">(</span><span class="n">kelvin_data</span><span class="p">,</span> <span class="n">mjo_data</span><span class="p">):</span>
+    <span class="s">"""Analyze interactions between Kelvin waves and MJO."""</span>
+    
+    <span class="c1"># Calculate cross-correlation
+</span>    <span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+    
+    <span class="n">correlations</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">lags</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>  <span class="c1"># ±30 days
+</span>    
+    <span class="k">for</span> <span class="n">lag</span> <span class="ow">in</span> <span class="n">lags</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lag</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">mjo_lagged</span> <span class="o">=</span> <span class="n">mjo_data</span><span class="p">[</span><span class="n">lag</span><span class="p">:]</span>
+            <span class="n">kelvin_subset</span> <span class="o">=</span> <span class="n">kelvin_data</span><span class="p">[:</span><span class="o">-</span><span class="n">lag</span><span class="p">]</span> <span class="k">if</span> <span class="n">lag</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">kelvin_data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">mjo_lagged</span> <span class="o">=</span> <span class="n">mjo_data</span><span class="p">[:</span><span class="n">lag</span><span class="p">]</span>
+            <span class="n">kelvin_subset</span> <span class="o">=</span> <span class="n">kelvin_data</span><span class="p">[</span><span class="o">-</span><span class="n">lag</span><span class="p">:]</span>
+        
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mjo_lagged</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">kelvin_subset</span><span class="p">):</span>
+            <span class="n">corr</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">pearsonr</span><span class="p">(</span><span class="n">mjo_lagged</span><span class="p">,</span> <span class="n">kelvin_subset</span><span class="p">)</span>
+            <span class="n">correlations</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">corr</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">correlations</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+    
+    <span class="c1"># Plot results
+</span>    <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lags</span><span class="p">,</span> <span class="n">correlations</span><span class="p">,</span> <span class="s">'b-'</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">'k'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s">'--'</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Lag (days)'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Cross-correlation'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Kelvin Wave - MJO Interaction'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="p">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">correlations</span>
+</code></pre></div></div>
+
+<h2 id="impacts-on-weather-and-climate">Impacts on Weather and Climate</h2>
+
+<h3 id="tropical-cyclone-formation">Tropical Cyclone Formation</h3>
+
+<p>Both Kelvin waves and the MJO influence tropical cyclone development:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">analyze_tc_formation</span><span class="p">(</span><span class="n">tc_data</span><span class="p">,</span> <span class="n">wave_data</span><span class="p">):</span>
+    <span class="s">"""Analyze tropical cyclone formation in relation to tropical waves."""</span>
+    
+    <span class="c1"># Create composite analysis
+</span>    <span class="n">active_wave_periods</span> <span class="o">=</span> <span class="n">wave_data</span> <span class="o">&gt;</span> <span class="n">wave_data</span><span class="p">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">inactive_wave_periods</span> <span class="o">=</span> <span class="n">wave_data</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">wave_data</span><span class="p">.</span><span class="n">std</span><span class="p">()</span>
+    
+    <span class="c1"># Calculate TC formation rates
+</span>    <span class="n">tc_active</span> <span class="o">=</span> <span class="n">tc_data</span><span class="p">[</span><span class="n">active_wave_periods</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">tc_inactive</span> <span class="o">=</span> <span class="n">tc_data</span><span class="p">[</span><span class="n">inactive_wave_periods</span><span class="p">].</span><span class="n">mean</span><span class="p">()</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"TC formation rate during active wave periods: </span><span class="si">{</span><span class="n">tc_active</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">/month"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"TC formation rate during inactive wave periods: </span><span class="si">{</span><span class="n">tc_inactive</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">/month"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Ratio: </span><span class="si">{</span><span class="n">tc_active</span><span class="o">/</span><span class="n">tc_inactive</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">tc_active</span><span class="p">,</span> <span class="n">tc_inactive</span>
+</code></pre></div></div>
+
+<h3 id="monsoon-variability">Monsoon Variability</h3>
+
+<p>Tropical waves significantly affect monsoon systems:</p>
+
+<ul>
+  <li><strong>Onset timing</strong>: MJO can advance or delay monsoon onset</li>
+  <li><strong>Break periods</strong>: Related to suppressed convection phases</li>
+  <li><strong>Intensity variations</strong>: Wave-enhanced or weakened monsoon flow</li>
+</ul>
+
+<h2 id="numerical-modeling-challenges">Numerical Modeling Challenges</h2>
+
+<h3 id="model-resolution-requirements">Model Resolution Requirements</h3>
+
+<p>Simulating tropical waves requires careful consideration of:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example WRF namelist configuration for tropical waves
+</span><span class="n">wrf_config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'dx'</span><span class="p">:</span> <span class="mi">25000</span><span class="p">,</span>  <span class="c1"># 25 km horizontal resolution
+</span>    <span class="s">'dt'</span><span class="p">:</span> <span class="mi">150</span><span class="p">,</span>    <span class="c1"># 150 second time step
+</span>    <span class="s">'vertical_levels'</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+    <span class="s">'physics_options'</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">'microphysics'</span><span class="p">:</span> <span class="s">'WSM6'</span><span class="p">,</span>
+        <span class="s">'cumulus'</span><span class="p">:</span> <span class="s">'Kain-Fritsch'</span><span class="p">,</span>
+        <span class="s">'pbl'</span><span class="p">:</span> <span class="s">'YSU'</span><span class="p">,</span>
+        <span class="s">'surface_layer'</span><span class="p">:</span> <span class="s">'MM5'</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="common-modeling-issues">Common Modeling Issues</h3>
+
+<ol>
+  <li><strong>Convective parameterization</strong>: Critical for tropical wave simulation</li>
+  <li><strong>Boundary conditions</strong>: Proper initialization and lateral boundaries</li>
+  <li><strong>Ocean coupling</strong>: Important for longer simulations</li>
+  <li><strong>Computational cost</strong>: High-resolution simulations are expensive</li>
+</ol>
+
+<h2 id="future-research-directions">Future Research Directions</h2>
+
+<h3 id="machine-learning-applications">Machine Learning Applications</h3>
+
+<p>Emerging ML techniques for tropical wave research:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example: LSTM for MJO prediction
+</span><span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">Dense</span>
+
+<span class="k">def</span> <span class="nf">build_mjo_lstm</span><span class="p">(</span><span class="n">input_shape</span><span class="p">):</span>
+    <span class="s">"""Build LSTM model for MJO prediction."""</span>
+    
+    <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">([</span>
+        <span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="n">input_shape</span><span class="p">),</span>
+        <span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+        <span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+        <span class="n">Dense</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># RMM1 and RMM2
+</span>    <span class="p">])</span>
+    
+    <span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s">'mse'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">model</span>
+</code></pre></div></div>
+
+<h3 id="climate-change-impacts">Climate Change Impacts</h3>
+
+<p>Key research questions:</p>
+<ul>
+  <li>How will tropical waves change in a warming climate?</li>
+  <li>What are the implications for extreme weather?</li>
+  <li>How do we improve wave representation in climate models?</li>
+</ul>
+
+<h2 id="practical-applications">Practical Applications</h2>
+
+<h3 id="forecasting">Forecasting</h3>
+
+<p>Understanding tropical waves improves:</p>
+<ul>
+  <li><strong>Subseasonal forecasting</strong>: 2-8 week predictions</li>
+  <li><strong>Seasonal outlooks</strong>: Monsoon and hurricane season forecasts</li>
+  <li><strong>Climate projections</strong>: Long-term change assessments</li>
+</ul>
+
+<h3 id="early-warning-systems">Early Warning Systems</h3>
+
+<p>Wave monitoring contributes to:</p>
+<ul>
+  <li>Tropical cyclone formation alerts</li>
+  <li>Drought and flood predictions</li>
+  <li>Agricultural planning</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Tropical waves like Kelvin waves and the MJO are fundamental components of the climate system. My research has shown that:</p>
+
+<ol>
+  <li><strong>Wave interactions</strong> are more complex than previously thought</li>
+  <li><strong>High-resolution modeling</strong> reveals new physical insights</li>
+  <li><strong>Machine learning</strong> offers promising tools for analysis and prediction</li>
+  <li><strong>Climate change</strong> impacts require urgent investigation</li>
+</ol>
+
+<p>Understanding these phenomena is crucial for improving weather and climate predictions, with significant implications for billions of people living in tropical regions.</p>
+
+<h2 id="recommended-resources">Recommended Resources</h2>
+
+<h3 id="key-papers">Key Papers</h3>
+<ul>
+  <li>Madden and Julian (1971): “Detection of a 40-50 day oscillation in the zonal wind”</li>
+  <li>Wheeler and Hendon (2004): “An all-season real-time multivariate MJO index”</li>
+  <li>Kiladis et al. (2009): “A comparison of OLR and circulation-based indices for tracking the MJO”</li>
+</ul>
+
+<h3 id="data-sources">Data Sources</h3>
+<ul>
+  <li><a href="https://www.cpc.ncep.noaa.gov/products/precip/CWlink/MJO/index.html">NOAA MJO Diagnostics</a></li>
+  <li><a href="https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-pressure-levels">ERA5 Reanalysis</a></li>
+  <li><a href="https://gpm.nasa.gov/data">TRMM/GPM Precipitation</a></li>
+</ul>
+
+<h3 id="modeling-tools">Modeling Tools</h3>
+<ul>
+  <li><a href="https://www.mmm.ucar.edu/weather-research-and-forecasting-model">WRF Model</a></li>
+  <li><a href="https://www.clivar.org/clivar-panels/pacific">MJO Task Force</a></li>
+</ul>
+
+<hr />
+
+<p><em>Interested in collaborating on tropical wave research? I’m always looking for new partnerships and data sharing opportunities. Reach out via <a href="mailto:xianpuji@hhu.edu.cn">email</a> or connect on <a href="https://linkedin.com/in/">LinkedIn</a>.</em></p>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <footer class="post-footer">
+    <!-- 上一篇/下一篇导航 -->
+    <div class="post-navigation">
+      
+      <div class="nav-item nav-prev">
+        <a href="/%E6%8A%80%E6%9C%AF/wrf/2024/01/10/Tips-for-WRF-recompile/" class="nav-link">
+          <i class="fas fa-chevron-left"></i>
+          <div class="nav-content">
+            <span class="nav-label">上一篇</span>
+            <span class="nav-title">关于重编译WRF时的一些建议</span>
+          </div>
+        </a>
+      </div>
+      
+      
+      
+      <div class="nav-item nav-next">
+        <a href="/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/" class="nav-link">
+          <div class="nav-content">
+            <span class="nav-label">下一篇</span>
+            <span class="nav-title">Getting Started with Machine Learning in Climat...</span>
+          </div>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+    </div>
+    
+    <!-- 分享按钮 -->
+    <div class="post-share-section">
+      <h4>分享这篇文章</h4>
+      <div class="share-buttons">
+        <a href="#" class="share-btn weibo" onclick="shareToWeibo()">
+          <i class="fab fa-weibo"></i>
+          微博
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+          <i class="fab fa-twitter"></i>
+          Twitter
+        </a>
+        <a href="#" class="share-btn copy" onclick="copyUrl()">
+          <i class="fas fa-link"></i>
+          复制链接
+        </a>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<!-- 目录悬浮窗 -->
+<div class="toc-container" id="tocContainer">
+  <div class="toc-header">
+    <h4>目录</h4>
+    <button class="toc-toggle" onclick="toggleToc()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="toc-content" id="tocContent">
+    <!-- 目录内容将由JavaScript生成 -->
+  </div>
+</div>
+
+<!-- 目录触发按钮 -->
+<button class="toc-trigger" onclick="toggleToc()">
+  <i class="fas fa-list"></i>
+</button>
+
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="/assets/post-script.js"></script>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Global Stats Display --><!-- 全局访问统计展示组件 -->
+<div id="global-stats-display" class="global-stats-container">
+  <div class="stats-toggle-btn" onclick="toggleGlobalStats()">
+    <i class="fas fa-chart-bar"></i>
+    <span class="stats-label">统计</span>
+  </div>
+  
+  <div class="stats-panel" id="global-stats-panel">
+    <div class="stats-header">
+      <h3><i class="fas fa-analytics"></i> 实时访问统计</h3>
+      <button class="close-stats" onclick="toggleGlobalStats()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="stats-content">
+      <div class="quick-stats">
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-total-visits">--</div>
+          <div class="stat-label">总访问量</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-today-visits">--</div>
+          <div class="stat-label">今日访问</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-online-users">--</div>
+          <div class="stat-label">在线用户</div>
+        </div>
+      </div>
+      
+      <div class="current-session">
+        <h4><i class="fas fa-user-clock"></i> 当前会话</h4>
+        <div class="session-info">
+          <div class="session-item">
+            <span class="session-label">访问时长:</span>
+            <span class="session-value" id="global-session-duration">00:00</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">页面浏览:</span>
+            <span class="session-value" id="global-page-views">1</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">设备类型:</span>
+            <span class="session-value" id="global-device-type">Desktop</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="last-update">
+        <i class="far fa-clock"></i>
+        最后更新: <span id="global-last-update">--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.global-stats-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-family: var(--font-family-sans, 'Inter', sans-serif);
+}
+
+.stats-toggle-btn {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.stats-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  filter: brightness(1.1);
+}
+
+.stats-panel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 320px;
+  background: var(--bg-primary, white);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.stats-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.stats-header {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  padding: 16px 20px;
+  border-radius: var(--radius-xl, 1rem) var(--radius-xl, 1rem) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-stats {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-stats:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.stats-content {
+  padding: 20px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quick-stat-item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-lg, 0.75rem);
+  transition: all 0.2s ease;
+}
+
+.quick-stat-item:hover {
+  background: var(--bg-tertiary, #f3f4f6);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #9ca3af);
+  font-weight: 500;
+}
+
+.current-session {
+  margin-bottom: 16px;
+}
+
+.current-session h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 13px;
+}
+
+.session-label {
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.session-value {
+  color: var(--text-primary, #1f2937);
+  font-weight: 600;
+}
+
+.last-update {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted, #9ca3af);
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .global-stats-container {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .stats-panel {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+function toggleGlobalStats() {
+  const panel = document.getElementById('global-stats-panel');
+  panel.classList.toggle('active');
+}
+
+// 初始化全局统计
+document.addEventListener('DOMContentLoaded', function() {
+  updateGlobalStats();
+  setInterval(updateGlobalStats, 30000); // 每30秒更新一次
+});
+
+function updateGlobalStats() {
+  // 模拟统计数据更新
+  const now = new Date();
+  
+  // 更新基本统计
+  document.getElementById('global-total-visits').textContent = Math.floor(Math.random() * 10000) + 5000;
+  document.getElementById('global-today-visits').textContent = Math.floor(Math.random() * 200) + 50;
+  document.getElementById('global-online-users').textContent = Math.floor(Math.random() * 20) + 5;
+  
+  // 更新会话信息
+  if (window.sessionStartTime) {
+    const duration = Math.floor((now - window.sessionStartTime) / 1000);
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    document.getElementById('global-session-duration').textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+  
+  // 检测设备类型
+  const deviceType = /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  document.getElementById('global-device-type').textContent = deviceType;
+  
+  // 更新时间
+  document.getElementById('global-last-update').textContent = now.toLocaleTimeString('zh-CN');
+}
+
+// 记录会话开始时间
+if (!window.sessionStartTime) {
+  window.sessionStartTime = new Date();
+}
+
+// 页面浏览量计数
+let pageViews = parseInt(sessionStorage.getItem('pageViews') || '0') + 1;
+sessionStorage.setItem('pageViews', pageViews.toString());
+if (document.getElementById('global-page-views')) {
+  document.getElementById('global-page-views').textContent = pageViews;
+}
+</script>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    <script src="/assets/js/performance-optimizations.js"></script>
+    
+    <script>
+    // Modal functionality
+    function openModal(src, alt) {
+      var modal = document.getElementById('galleryModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = src;
+      captionText.innerHTML = alt;
+    }
+
+    function closeModal() {
+      document.getElementById('galleryModal').style.display = "none";
+    }
+    </script>
+
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- 全站通用功能脚本 --><!-- 全站通用功能脚本 -->
+
+<!-- Theme Switcher -->
+<script src="/assets/theme-switcher.js"></script>
+
+<!-- 阅读进度条脚本（在支持的页面加载） -->
+
+<script src="/assets/blog-reading-progress.js"></script>
+
+
+<!-- 访问统计和地图脚本 -->
+<script src="/assets/analytics-map.js"></script>
+
+<script>
+// 全局页面增强
+document.addEventListener('DOMContentLoaded', function() {
+  // 标记当前页面为博客页面（用于阅读进度条）
+  const pageLayout = 'post';
+  const pageUrl = '/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/';
+  
+  if (pageLayout === 'post' || pageUrl.includes('/blog')) {
+    document.body.classList.add('blog-page');
+  }
+  
+  // 添加页面特定类名
+  if (pageUrl) {
+    const pageClass = pageUrl.replace(/\//g, '-').replace(/\.html$/, '');
+    if (pageClass) {
+      document.body.classList.add('page' + pageClass);
+    }
+  }
+  
+  // 确保访问统计在所有页面显示
+  if (typeof initializeAnalytics === 'function') {
+    initializeAnalytics();
+  }
+  
+  // 添加页面加载动画
+  document.body.classList.add('fade-in');
+});
+
+// 页面性能优化
+window.addEventListener('load', function() {
+  // 标记页面完全加载
+  document.body.classList.add('page-loaded');
+  
+  // 预加载重要资源
+  const preloadLinks = [
+    '/assets/theme-system.css',
+    '/assets/analytics-map.css',
+    '/assets/gallery-page.css'
+  ];
+  
+  preloadLinks.forEach(href => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'style';
+    link.href = href;
+    document.head.appendChild(link);
+  });
+});
+</script>
+<!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
+</html>

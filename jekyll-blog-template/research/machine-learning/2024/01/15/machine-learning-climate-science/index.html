@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+  <head><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Started with Machine Learning in Climate Science | Xianpu Ji</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Getting Started with Machine Learning in Climate Science" />
+<meta name="author" content="Your Name" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An introduction to applying machine learning techniques in climate science research, with practical examples and code snippets." />
+<meta property="og:description" content="An introduction to applying machine learning techniques in climate science research, with practical examples and code snippets." />
+<link rel="canonical" href="https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/" />
+<meta property="og:url" content="https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/" />
+<meta property="og:site_name" content="Xianpu Ji" />
+<meta property="og:image" content="https://blissful-jasper.github.io/assets/images/posts/ml-climate-intro.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-01-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://blissful-jasper.github.io/assets/images/posts/ml-climate-intro.jpg" />
+<meta property="twitter:title" content="Getting Started with Machine Learning in Climate Science" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Your Name"},"dateModified":"2024-01-15T00:00:00+00:00","datePublished":"2024-01-15T00:00:00+00:00","description":"An introduction to applying machine learning techniques in climate science research, with practical examples and code snippets.","headline":"Getting Started with Machine Learning in Climate Science","image":"https://blissful-jasper.github.io/assets/images/posts/ml-climate-intro.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/"},"url":"https://blissful-jasper.github.io/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="stylesheet" href="/assets/code-highlighting.css">
+  <link rel="stylesheet" href="/assets/gfs-data-styles.css"><link type="application/atom+xml" rel="alternate" href="https://blissful-jasper.github.io/feed.xml" title="Xianpu Ji" /><!-- DNS Prefetch for external resources -->
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  
+  <!-- Preload critical fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"></noscript>
+  
+  <!-- Load non-critical CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+  
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css"></noscript>
+  
+  <!-- MathJax - Load only when needed -->
+  
+  <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js">
+  </script>
+  
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true,
+        tags: 'ams'
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  
+  <!-- Prism.js for code highlighting with better theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css">
+</head>
+<!-- 全站通用功能样式 --><!-- 全站通用功能样式和脚本 -->
+
+<!-- Complete Theme System -->
+<link rel="stylesheet" href="/assets/theme-system-complete.css">
+<link rel="stylesheet" href="/assets/theme-switcher.css">
+
+<!-- 阅读进度条样式 -->
+<link rel="stylesheet" href="/assets/reading-progress.css">
+
+<!-- 访问统计和地图样式 -->
+<link rel="stylesheet" href="/assets/analytics-map.css">
+
+<!-- Enhanced Header Styles -->
+<link rel="stylesheet" href="/assets/header-styles.css">
+
+<!-- Modern Homepage Layout -->
+<link rel="stylesheet" href="/assets/homepage-layout.css">
+<link rel="stylesheet" href="/assets/homepage-gallery-journals.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- 确保 Font Awesome 图标可用 -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<!-- Theme Initialization Script -->
+<script>
+  // Initialize theme from localStorage before page renders
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'blue';
+    const savedMode = localStorage.getItem('mode') || 'light';
+    
+    document.documentElement.setAttribute('data-theme', savedMode);
+    document.documentElement.classList.add(`theme-${savedTheme}`);
+  })();
+</script>
+<!-- Modern Theme Styles -->
+    <link rel="stylesheet" href="/assets/modern-theme.css">
+    <link rel="stylesheet" href="/assets/header-styles.css">
+    <link rel="stylesheet" href="/assets/footer-styles.css">
+    
+    <!-- Page-specific styles -->
+    
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Preload critical scripts -->
+    <link rel="preload" href="/assets/modern-interactions.js" as="script">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Machine Learning in Climate Science</title>
+    <script>
+        const AI_API_KEY = "";
+    </script>
+  </head>
+
+  <body class="modern-layout">
+    <!-- Header --><header class="modern-header" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+        <div class="nav-brand">
+            <a href="/" class="logo" aria-label="Home">
+                
+                    <span class="logo-text">Xianpu Ji</span>
+                
+            </a>
+        </div>
+        
+        <ul class="nav-links" role="menubar">
+            <li role="menuitem"><a href="/about.html" class="nav-link">About</a></li>
+            <li role="menuitem"><a href="/research.html" class="nav-link">Research</a></li>
+            <li role="menuitem"><a href="/publications.html" class="nav-link">Publications</a></li>
+            <li role="menuitem"><a href="/blog.html" class="nav-link">Blog</a></li>
+            <li role="menuitem"><a href="/journals.html" class="nav-link">Journals</a></li>
+            <li role="menuitem"><a href="/gallery.html" class="nav-link">Gallery</a></li>
+            <li role="menuitem"><a href="/links.html" class="nav-link">Links</a></li>
+            <li role="menuitem"><a href="/maps.html" class="nav-link">Maps</a></li>
+            <li role="menuitem"><a href="/contact.html" class="nav-link">Contact</a></li>
+
+        </ul>
+        
+        <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                <i class="fas fa-moon" id="themeIcon" aria-hidden="true"></i>
+            </button>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" type="button">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobileMenu" role="menu">
+        <div class="mobile-menu-content">
+            <ul class="mobile-nav-links">
+                <li><a href="/about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="/research.html" class="mobile-nav-link">Research</a></li>
+                <li><a href="/publications.html" class="mobile-nav-link">Publications</a></li>
+                <li><a href="/blog.html" class="mobile-nav-link">Blog</a></li>
+                <li><a href="/journals.html" class="mobile-nav-link">Journals</a></li>
+                <li><a href="/gallery.html" class="mobile-nav-link">Gallery</a></li>
+                <li><a href="/links.html" class="mobile-nav-link">Links</a></li>
+                <li><a href="/maps.html" class="mobile-nav-link">Maps</a></li>
+                <li><a href="/contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!-- Main Content -->
+    <main class="main-content" role="main">
+      <div class="content-wrapper">
+        <link rel="stylesheet" href="/assets/post-style.css">
+
+<article class="post-article">
+  <!-- 文章头部 -->
+  <header class="post-header">
+    <div class="post-meta-top">
+      <a href="/blog.html" class="back-to-blog">
+        <i class="fas fa-arrow-left"></i>
+        返回博客
+      </a>
+      <div class="post-share">
+        <button class="share-btn" onclick="sharePost()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <h1 class="post-title">Getting Started with Machine Learning in Climate Science</h1>
+    
+    <div class="post-meta">
+      <div class="meta-item">
+        <i class="far fa-calendar-alt"></i>
+        <time datetime="2024-01-15T00:00:00+00:00">
+          2024年1月15日
+        </time>
+      </div>
+      
+      
+      <div class="meta-item">
+        <i class="far fa-user"></i>
+        <span>Your Name</span>
+      </div>
+      
+      
+      
+      <div class="meta-item">
+        <i class="far fa-clock"></i>
+        <span>8 分钟阅读</span>
+      </div>
+      
+    </div>
+    
+    
+    <div class="post-tags">
+      
+      <span class="tag">python</span>
+      
+      <span class="tag">tensorflow</span>
+      
+      <span class="tag">climate-modeling</span>
+      
+      <span class="tag">tutorial</span>
+      
+    </div>
+    
+  </header>
+
+  <!-- 文章内容 -->
+  <div class="post-content">
+    <p>Machine learning has revolutionized many fields of science, and climate science is no exception. In this post, I’ll share insights from my recent research and provide a practical introduction to applying ML techniques in atmospheric sciences.</p>
+
+<h2 id="why-machine-learning-in-climate-science">Why Machine Learning in Climate Science?</h2>
+
+<p>Climate data is characterized by:</p>
+<ul>
+  <li><strong>High dimensionality</strong>: Satellite observations, reanalysis data, and model outputs contain millions of data points</li>
+  <li><strong>Complex patterns</strong>: Non-linear relationships between variables that traditional statistical methods struggle to capture</li>
+  <li><strong>Temporal dependencies</strong>: Time series with multiple scales of variability</li>
+  <li><strong>Spatial correlations</strong>: Geographic patterns that span different scales</li>
+</ul>
+
+<p>Machine learning excels at finding patterns in such complex, high-dimensional datasets.</p>
+
+<h2 id="getting-started-essential-tools">Getting Started: Essential Tools</h2>
+
+<h3 id="python-libraries">Python Libraries</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="n">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="n">cfeature</span>
+
+<span class="c1"># Machine learning libraries
+</span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span>
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="k">as</span> <span class="n">tf</span>
+<span class="kn">from</span> <span class="nn">tensorflow</span> <span class="kn">import</span> <span class="n">keras</span>
+</code></pre></div></div>
+
+<h3 id="data-sources">Data Sources</h3>
+
+<p>Popular climate datasets for ML applications:</p>
+<ul>
+  <li><strong>ERA5 Reanalysis</strong>: High-resolution atmospheric reanalysis</li>
+  <li><strong>CHIRPS</strong>: Precipitation data for tropical regions</li>
+  <li><strong>MODIS</strong>: Satellite observations of clouds, vegetation, etc.</li>
+  <li><strong>CMIP6</strong>: Climate model ensemble data</li>
+</ul>
+
+<h2 id="practical-example-precipitation-prediction">Practical Example: Precipitation Prediction</h2>
+
+<p>Let’s build a simple model to predict precipitation using atmospheric variables.</p>
+
+<h3 id="1-data-preparation">1. Data Preparation</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="n">xr</span>
+
+<span class="c1"># Load ERA5 reanalysis data
+</span><span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="p">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s">'era5_data.nc'</span><span class="p">)</span>
+
+<span class="c1"># Select relevant variables
+</span><span class="n">variables</span> <span class="o">=</span> <span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">,</span> <span class="s">'relative_humidity'</span><span class="p">,</span> <span class="s">'sea_level_pressure'</span><span class="p">,</span> 
+             <span class="s">'wind_speed_10m'</span><span class="p">,</span> <span class="s">'total_precipitation'</span><span class="p">]</span>
+
+<span class="c1"># Extract data for a specific region (e.g., tropical Pacific)
+</span><span class="n">region_data</span> <span class="o">=</span> <span class="n">ds</span><span class="p">.</span><span class="n">sel</span><span class="p">(</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span>
+    <span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span> <span class="mi">280</span><span class="p">),</span>
+    <span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s">'2010-01-01'</span><span class="p">,</span> <span class="s">'2020-12-31'</span><span class="p">)</span>
+<span class="p">)[</span><span class="n">variables</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Data shape: </span><span class="si">{</span><span class="n">region_data</span><span class="p">.</span><span class="n">dims</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-feature-engineering">2. Feature Engineering</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">create_features</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="s">"""Create additional features from basic meteorological variables."""</span>
+    
+    <span class="c1"># Calculate gradients
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'temp_gradient_lat'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">].</span><span class="n">differentiate</span><span class="p">(</span><span class="s">'latitude'</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">'temp_gradient_lon'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">].</span><span class="n">differentiate</span><span class="p">(</span><span class="s">'longitude'</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate relative vorticity
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'vorticity'</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_vorticity</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s">'wind_u'</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s">'wind_v'</span><span class="p">])</span>
+    
+    <span class="c1"># Time-based features
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'day_of_year'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'time.dayofyear'</span><span class="p">]</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">'hour'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'time.hour'</span><span class="p">]</span>
+    
+    <span class="c1"># Lagged features (previous time steps)
+</span>    <span class="n">data</span><span class="p">[</span><span class="s">'temp_lag1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'temperature_2m'</span><span class="p">].</span><span class="n">shift</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">data</span><span class="p">[</span><span class="s">'precip_lag1'</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s">'total_precipitation'</span><span class="p">].</span><span class="n">shift</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">data</span>
+
+<span class="c1"># Apply feature engineering
+</span><span class="n">enhanced_data</span> <span class="o">=</span> <span class="n">create_features</span><span class="p">(</span><span class="n">region_data</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-model-training">3. Model Training</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prepare training data
+</span><span class="k">def</span> <span class="nf">prepare_ml_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target_var</span><span class="o">=</span><span class="s">'total_precipitation'</span><span class="p">):</span>
+    <span class="s">"""Convert xarray dataset to sklearn-compatible format."""</span>
+    
+    <span class="c1"># Stack spatial dimensions
+</span>    <span class="n">stacked</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">stack</span><span class="p">(</span><span class="n">sample</span><span class="o">=</span><span class="p">(</span><span class="s">'time'</span><span class="p">,</span> <span class="s">'latitude'</span><span class="p">,</span> <span class="s">'longitude'</span><span class="p">))</span>
+    
+    <span class="c1"># Convert to DataFrame
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">stacked</span><span class="p">.</span><span class="n">to_dataframe</span><span class="p">().</span><span class="n">dropna</span><span class="p">()</span>
+    
+    <span class="c1"># Separate features and target
+</span>    <span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">col</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span> <span class="k">if</span> <span class="n">col</span> <span class="o">!=</span> <span class="n">target_var</span><span class="p">]</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">feature_cols</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target_var</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">prepare_ml_data</span><span class="p">(</span><span class="n">enhanced_data</span><span class="p">)</span>
+
+<span class="c1"># Split data
+</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># Train Random Forest model
+</span><span class="n">rf_model</span> <span class="o">=</span> <span class="n">RandomForestRegressor</span><span class="p">(</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="n">rf_model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># Make predictions
+</span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">rf_model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="c1"># Evaluate
+</span><span class="n">rmse</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"RMSE: </span><span class="si">{</span><span class="n">rmse</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"R²: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="4-feature-importance-analysis">4. Feature Importance Analysis</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Analyze feature importance
+</span><span class="n">feature_importance</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'feature'</span><span class="p">:</span> <span class="n">X</span><span class="p">.</span><span class="n">columns</span><span class="p">,</span>
+    <span class="s">'importance'</span><span class="p">:</span> <span class="n">rf_model</span><span class="p">.</span><span class="n">feature_importances_</span>
+<span class="p">}).</span><span class="n">sort_values</span><span class="p">(</span><span class="s">'importance'</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">barh</span><span class="p">(</span><span class="n">feature_importance</span><span class="p">[</span><span class="s">'feature'</span><span class="p">][:</span><span class="mi">10</span><span class="p">],</span> <span class="n">feature_importance</span><span class="p">[</span><span class="s">'importance'</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Feature Importance'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">'Top 10 Most Important Features for Precipitation Prediction'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="deep-learning-for-climate-data">Deep Learning for Climate Data</h2>
+
+<p>For more complex patterns, deep learning can be powerful:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Build a simple neural network
+</span><span class="n">model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">X_train</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dropout</span><span class="p">(</span><span class="mf">0.3</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="n">model</span><span class="p">.</span><span class="nb">compile</span><span class="p">(</span>
+    <span class="n">optimizer</span><span class="o">=</span><span class="s">'adam'</span><span class="p">,</span>
+    <span class="n">loss</span><span class="o">=</span><span class="s">'mse'</span><span class="p">,</span>
+    <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s">'mae'</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="c1"># Train the model
+</span><span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span>
+    <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+    <span class="n">epochs</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># Evaluate
+</span><span class="n">nn_pred</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">nn_rmse</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">nn_pred</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Neural Network RMSE: </span><span class="si">{</span><span class="n">nn_rmse</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="challenges-and-best-practices">Challenges and Best Practices</h2>
+
+<h3 id="1-handling-missing-data">1. Handling Missing Data</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Interpolation for spatial gaps
+</span><span class="n">data_filled</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">interpolate_na</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s">'latitude'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s">'linear'</span><span class="p">)</span>
+
+<span class="c1"># Forward fill for temporal gaps
+</span><span class="n">data_filled</span> <span class="o">=</span> <span class="n">data_filled</span><span class="p">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s">'ffill'</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-cross-validation-with-time-series">2. Cross-Validation with Time Series</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">TimeSeriesSplit</span>
+
+<span class="n">tscv</span> <span class="o">=</span> <span class="n">TimeSeriesSplit</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cv_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">val_idx</span> <span class="ow">in</span> <span class="n">tscv</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+    <span class="n">X_train_cv</span><span class="p">,</span> <span class="n">X_val_cv</span> <span class="o">=</span> <span class="n">X</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">X</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+    <span class="n">y_train_cv</span><span class="p">,</span> <span class="n">y_val_cv</span> <span class="o">=</span> <span class="n">y</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">y</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">val_idx</span><span class="p">]</span>
+    
+    <span class="n">model</span><span class="p">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_cv</span><span class="p">,</span> <span class="n">y_train_cv</span><span class="p">)</span>
+    <span class="n">score</span> <span class="o">=</span> <span class="n">model</span><span class="p">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_val_cv</span><span class="p">,</span> <span class="n">y_val_cv</span><span class="p">)</span>
+    <span class="n">cv_scores</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">score</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Cross-validation scores: </span><span class="si">{</span><span class="n">cv_scores</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Mean CV score: </span><span class="si">{</span><span class="n">np</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s"> ± </span><span class="si">{</span><span class="n">np</span><span class="p">.</span><span class="n">std</span><span class="p">(</span><span class="n">cv_scores</span><span class="p">)</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="3-dealing-with-scale-differences">3. Dealing with Scale Differences</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="c1"># Normalize features
+</span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">X_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="p">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="advanced-applications">Advanced Applications</h2>
+
+<h3 id="convolutional-neural-networks-for-spatial-data">Convolutional Neural Networks for Spatial Data</h3>
+
+<p>For gridded climate data, CNNs can capture spatial patterns:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Reshape data for CNN (samples, height, width, channels)
+</span><span class="n">X_cnn</span> <span class="o">=</span> <span class="n">X_spatial</span><span class="p">.</span><span class="n">values</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_vars</span><span class="p">))</span>
+
+<span class="c1"># Build CNN model
+</span><span class="n">cnn_model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">5</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">MaxPooling2D</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Conv2D</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Flatten</span><span class="p">(),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s">'relu'</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="lstm-for-time-series-prediction">LSTM for Time Series Prediction</h3>
+
+<p>For capturing temporal dependencies:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Prepare sequence data
+</span><span class="k">def</span> <span class="nf">create_sequences</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">seq_length</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">-</span> <span class="n">seq_length</span><span class="p">):</span>
+        <span class="n">X</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">:(</span><span class="n">i</span> <span class="o">+</span> <span class="n">seq_length</span><span class="p">)])</span>
+        <span class="n">y</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">seq_length</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">X_seq</span><span class="p">,</span> <span class="n">y_seq</span> <span class="o">=</span> <span class="n">create_sequences</span><span class="p">(</span><span class="n">time_series_data</span><span class="p">)</span>
+
+<span class="c1"># LSTM model
+</span><span class="n">lstm_model</span> <span class="o">=</span> <span class="n">keras</span><span class="p">.</span><span class="n">Sequential</span><span class="p">([</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">seq_length</span><span class="p">,</span> <span class="n">n_features</span><span class="p">)),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">LSTM</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="bp">False</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">25</span><span class="p">),</span>
+    <span class="n">keras</span><span class="p">.</span><span class="n">layers</span><span class="p">.</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">])</span>
+</code></pre></div></div>
+
+<h2 id="evaluation-and-interpretation">Evaluation and Interpretation</h2>
+
+<h3 id="model-explainability">Model Explainability</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">shap</span>
+
+<span class="c1"># SHAP values for model interpretation
+</span><span class="n">explainer</span> <span class="o">=</span> <span class="n">shap</span><span class="p">.</span><span class="n">TreeExplainer</span><span class="p">(</span><span class="n">rf_model</span><span class="p">)</span>
+<span class="n">shap_values</span> <span class="o">=</span> <span class="n">explainer</span><span class="p">.</span><span class="n">shap_values</span><span class="p">(</span><span class="n">X_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+
+<span class="c1"># Plot SHAP summary
+</span><span class="n">shap</span><span class="p">.</span><span class="n">summary_plot</span><span class="p">(</span><span class="n">shap_values</span><span class="p">,</span> <span class="n">X_test</span><span class="p">[:</span><span class="mi">100</span><span class="p">])</span>
+</code></pre></div></div>
+
+<h3 id="physical-consistency-checks">Physical Consistency Checks</h3>
+
+<p>Always validate that your ML model results make physical sense:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Check if predictions follow physical laws
+</span><span class="k">def</span> <span class="nf">validate_physics</span><span class="p">(</span><span class="n">predictions</span><span class="p">,</span> <span class="n">inputs</span><span class="p">):</span>
+    <span class="s">"""Check basic physical consistency."""</span>
+    
+    <span class="c1"># Example: Precipitation should increase with humidity
+</span>    <span class="n">humidity</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="s">'relative_humidity'</span><span class="p">]</span>
+    <span class="n">precip</span> <span class="o">=</span> <span class="n">predictions</span>
+    
+    <span class="n">correlation</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">corrcoef</span><span class="p">(</span><span class="n">humidity</span><span class="p">,</span> <span class="n">precip</span><span class="p">)[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">assert</span> <span class="n">correlation</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">"Precipitation should correlate positively with humidity"</span>
+    
+    <span class="k">return</span> <span class="bp">True</span>
+</code></pre></div></div>
+
+<h2 id="resources-and-next-steps">Resources and Next Steps</h2>
+
+<h3 id="recommended-reading">Recommended Reading</h3>
+<ul>
+  <li>“Deep Learning for the Earth Sciences” by Reichstein et al.</li>
+  <li>“Machine Learning in Python for Climate Science” by Huntingford et al.</li>
+  <li>“AI for Earth” Microsoft documentation</li>
+</ul>
+
+<h3 id="datasets">Datasets</h3>
+<ul>
+  <li><a href="https://cds.climate.copernicus.eu/">Climate Data Store</a></li>
+  <li><a href="https://giovanni.gsfc.nasa.gov/">NASA Giovanni</a></li>
+  <li><a href="https://psl.noaa.gov/data/">NOAA Physical Sciences Laboratory</a></li>
+</ul>
+
+<h3 id="code-repositories">Code Repositories</h3>
+<ul>
+  <li><a href="https://github.com/climate-ml/examples">Climate ML Examples</a></li>
+  <li><a href="https://gallery.pangeo.io/">Pangeo Gallery</a></li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Machine learning offers powerful tools for climate science research, but success requires:</p>
+<ol>
+  <li>Understanding both the climate science and ML fundamentals</li>
+  <li>Careful data preprocessing and feature engineering</li>
+  <li>Appropriate validation strategies</li>
+  <li>Physical interpretation of results</li>
+</ol>
+
+<p>The combination of domain expertise and ML techniques can lead to breakthrough insights in our understanding of the climate system.</p>
+
+<p>In my next post, I’ll dive deeper into specific applications like tropical cyclone tracking and seasonal forecasting. Stay tuned!</p>
+
+<hr />
+
+<p><em>Have questions about applying ML to your climate research? Feel free to reach out via <a href="mailto:xianpuji@hhu.edu.cn">email</a> or connect with me on <a href="https://twitter.com/">Twitter</a>.</em></p>
+
+  </div>
+
+  <!-- 文章底部 -->
+  <footer class="post-footer">
+    <!-- 上一篇/下一篇导航 -->
+    <div class="post-navigation">
+      
+      <div class="nav-item nav-prev">
+        <a href="/jekyll-blog-template/research/climate/2024/01/10/tropical-waves-kelvin-mjo/" class="nav-link">
+          <i class="fas fa-chevron-left"></i>
+          <div class="nav-content">
+            <span class="nav-label">上一篇</span>
+            <span class="nav-title">Understanding Tropical Waves: Kelvin Waves and ...</span>
+          </div>
+        </a>
+      </div>
+      
+      
+      
+      <div class="nav-item nav-next">
+        <a href="/%E7%A7%91%E7%A0%94/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/2024/12/15/dl-meteorology/" class="nav-link">
+          <div class="nav-content">
+            <span class="nav-label">下一篇</span>
+            <span class="nav-title">Deep Learning in Meteorology</span>
+          </div>
+          <i class="fas fa-chevron-right"></i>
+        </a>
+      </div>
+      
+    </div>
+    
+    <!-- 分享按钮 -->
+    <div class="post-share-section">
+      <h4>分享这篇文章</h4>
+      <div class="share-buttons">
+        <a href="#" class="share-btn weibo" onclick="shareToWeibo()">
+          <i class="fab fa-weibo"></i>
+          微博
+        </a>
+        <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
+          <i class="fab fa-twitter"></i>
+          Twitter
+        </a>
+        <a href="#" class="share-btn copy" onclick="copyUrl()">
+          <i class="fas fa-link"></i>
+          复制链接
+        </a>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<!-- 目录悬浮窗 -->
+<div class="toc-container" id="tocContainer">
+  <div class="toc-header">
+    <h4>目录</h4>
+    <button class="toc-toggle" onclick="toggleToc()">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <div class="toc-content" id="tocContent">
+    <!-- 目录内容将由JavaScript生成 -->
+  </div>
+</div>
+
+<!-- 目录触发按钮 -->
+<button class="toc-trigger" onclick="toggleToc()">
+  <i class="fas fa-list"></i>
+</button>
+
+<!-- 回到顶部按钮 -->
+<button class="back-to-top" onclick="scrollToTop()">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="/assets/post-script.js"></script>
+
+      </div>
+    </main>
+
+    <!-- Footer --><footer class="modern-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <h3 class="footer-title">Xianpu Ji</h3>
+          <p class="footer-subtitle">Academic & Research Portfolio</p>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about.html" class="footer-link">About</a></li>
+          <li><a href="/research.html" class="footer-link">Research</a></li>
+          <li><a href="/publications.html" class="footer-link">Publications</a></li>
+          <li><a href="/blog.html" class="footer-link">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="/contact.html" class="footer-link">Contact</a></li>
+          <li><a href="/links.html" class="footer-link">Links</a></li>
+          <li><a href="/maps.html" class="footer-link">Maps</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4 class="footer-heading">External Links</h4>
+        <div class="external-links">
+          
+            <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener noreferrer" class="external-link" title="GitHub">
+              <i class="fas fa-external-link-alt"></i>
+              GitHub
+            </a>
+          
+            <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener noreferrer" class="external-link" title="ORCID">
+              <i class="fas fa-external-link-alt"></i>
+              ORCID
+            </a>
+          
+            <a href="https://www.researchgate.net/profile/Xianpu-Ji" target="_blank" rel="noopener noreferrer" class="external-link" title="ResearchGate">
+              <i class="fas fa-external-link-alt"></i>
+              ResearchGate
+            </a>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p class="copyright">
+          <p>© 2025 Xianpu Ji. Powered by <a href="https://jekyllrb.com/">Jekyll</a> and hosted on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+
+        </p>
+        <div class="footer-meta">
+          <span class="last-updated">Last updated: 2025-07-07</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Global Stats Display --><!-- 全局访问统计展示组件 -->
+<div id="global-stats-display" class="global-stats-container">
+  <div class="stats-toggle-btn" onclick="toggleGlobalStats()">
+    <i class="fas fa-chart-bar"></i>
+    <span class="stats-label">统计</span>
+  </div>
+  
+  <div class="stats-panel" id="global-stats-panel">
+    <div class="stats-header">
+      <h3><i class="fas fa-analytics"></i> 实时访问统计</h3>
+      <button class="close-stats" onclick="toggleGlobalStats()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="stats-content">
+      <div class="quick-stats">
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-total-visits">--</div>
+          <div class="stat-label">总访问量</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-today-visits">--</div>
+          <div class="stat-label">今日访问</div>
+        </div>
+        <div class="quick-stat-item">
+          <div class="stat-value" id="global-online-users">--</div>
+          <div class="stat-label">在线用户</div>
+        </div>
+      </div>
+      
+      <div class="current-session">
+        <h4><i class="fas fa-user-clock"></i> 当前会话</h4>
+        <div class="session-info">
+          <div class="session-item">
+            <span class="session-label">访问时长:</span>
+            <span class="session-value" id="global-session-duration">00:00</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">页面浏览:</span>
+            <span class="session-value" id="global-page-views">1</span>
+          </div>
+          <div class="session-item">
+            <span class="session-label">设备类型:</span>
+            <span class="session-value" id="global-device-type">Desktop</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="last-update">
+        <i class="far fa-clock"></i>
+        最后更新: <span id="global-last-update">--</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.global-stats-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  font-family: var(--font-family-sans, 'Inter', sans-serif);
+}
+
+.stats-toggle-btn {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: var(--shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+}
+
+.stats-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
+  filter: brightness(1.1);
+}
+
+.stats-panel {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  width: 320px;
+  background: var(--bg-primary, white);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow: var(--shadow-2xl, 0 25px 50px -12px rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.stats-panel.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.stats-header {
+  background: var(--gradient-primary, linear-gradient(135deg, #2563eb, #1e40af));
+  color: white;
+  padding: 16px 20px;
+  border-radius: var(--radius-xl, 1rem) var(--radius-xl, 1rem) 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.close-stats {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.close-stats:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.stats-content {
+  padding: 20px;
+}
+
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.quick-stat-item {
+  text-align: center;
+  padding: 12px 8px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-lg, 0.75rem);
+  transition: all 0.2s ease;
+}
+
+.quick-stat-item:hover {
+  background: var(--bg-tertiary, #f3f4f6);
+  transform: translateY(-2px);
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-muted, #9ca3af);
+  font-weight: 500;
+}
+
+.current-session {
+  margin-bottom: 16px;
+}
+
+.current-session h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary, #1f2937);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--bg-secondary, #f9fafb);
+  border-radius: var(--radius-md, 0.5rem);
+  font-size: 13px;
+}
+
+.session-label {
+  color: var(--text-secondary, #6b7280);
+  font-weight: 500;
+}
+
+.session-value {
+  color: var(--text-primary, #1f2937);
+  font-weight: 600;
+}
+
+.last-update {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted, #9ca3af);
+  padding-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .global-stats-container {
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  .stats-panel {
+    width: calc(100vw - 40px);
+    max-width: 300px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .stats-toggle-btn {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+</style>
+
+<script>
+function toggleGlobalStats() {
+  const panel = document.getElementById('global-stats-panel');
+  panel.classList.toggle('active');
+}
+
+// 初始化全局统计
+document.addEventListener('DOMContentLoaded', function() {
+  updateGlobalStats();
+  setInterval(updateGlobalStats, 30000); // 每30秒更新一次
+});
+
+function updateGlobalStats() {
+  // 模拟统计数据更新
+  const now = new Date();
+  
+  // 更新基本统计
+  document.getElementById('global-total-visits').textContent = Math.floor(Math.random() * 10000) + 5000;
+  document.getElementById('global-today-visits').textContent = Math.floor(Math.random() * 200) + 50;
+  document.getElementById('global-online-users').textContent = Math.floor(Math.random() * 20) + 5;
+  
+  // 更新会话信息
+  if (window.sessionStartTime) {
+    const duration = Math.floor((now - window.sessionStartTime) / 1000);
+    const minutes = Math.floor(duration / 60);
+    const seconds = duration % 60;
+    document.getElementById('global-session-duration').textContent = 
+      `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  }
+  
+  // 检测设备类型
+  const deviceType = /Mobile|Android|iPhone|iPad/.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+  document.getElementById('global-device-type').textContent = deviceType;
+  
+  // 更新时间
+  document.getElementById('global-last-update').textContent = now.toLocaleTimeString('zh-CN');
+}
+
+// 记录会话开始时间
+if (!window.sessionStartTime) {
+  window.sessionStartTime = new Date();
+}
+
+// 页面浏览量计数
+let pageViews = parseInt(sessionStorage.getItem('pageViews') || '0') + 1;
+sessionStorage.setItem('pageViews', pageViews.toString());
+if (document.getElementById('global-page-views')) {
+  document.getElementById('global-page-views').textContent = pageViews;
+}
+</script>
+<!-- JavaScript -->
+    <script src="/assets/modern-interactions.js"></script>
+    <script src="/assets/js/performance-optimizations.js"></script>
+    
+    <script>
+    // Modal functionality
+    function openModal(src, alt) {
+      var modal = document.getElementById('galleryModal');
+      var modalImg = document.getElementById("modalImage");
+      var captionText = document.getElementById("caption");
+      modal.style.display = "block";
+      modalImg.src = src;
+      captionText.innerHTML = alt;
+    }
+
+    function closeModal() {
+      document.getElementById('galleryModal').style.display = "none";
+    }
+    </script>
+
+    <!-- Page-specific scripts -->
+    
+    
+    <!-- 全站通用功能脚本 --><!-- 全站通用功能脚本 -->
+
+<!-- Theme Switcher -->
+<script src="/assets/theme-switcher.js"></script>
+
+<!-- 阅读进度条脚本（在支持的页面加载） -->
+
+<script src="/assets/blog-reading-progress.js"></script>
+
+
+<!-- 访问统计和地图脚本 -->
+<script src="/assets/analytics-map.js"></script>
+
+<script>
+// 全局页面增强
+document.addEventListener('DOMContentLoaded', function() {
+  // 标记当前页面为博客页面（用于阅读进度条）
+  const pageLayout = 'post';
+  const pageUrl = '/jekyll-blog-template/research/machine-learning/2024/01/15/machine-learning-climate-science/';
+  
+  if (pageLayout === 'post' || pageUrl.includes('/blog')) {
+    document.body.classList.add('blog-page');
+  }
+  
+  // 添加页面特定类名
+  if (pageUrl) {
+    const pageClass = pageUrl.replace(/\//g, '-').replace(/\.html$/, '');
+    if (pageClass) {
+      document.body.classList.add('page' + pageClass);
+    }
+  }
+  
+  // 确保访问统计在所有页面显示
+  if (typeof initializeAnalytics === 'function') {
+    initializeAnalytics();
+  }
+  
+  // 添加页面加载动画
+  document.body.classList.add('fade-in');
+});
+
+// 页面性能优化
+window.addEventListener('load', function() {
+  // 标记页面完全加载
+  document.body.classList.add('page-loaded');
+  
+  // 预加载重要资源
+  const preloadLinks = [
+    '/assets/theme-system.css',
+    '/assets/analytics-map.css',
+    '/assets/gallery-page.css'
+  ];
+  
+  preloadLinks.forEach(href => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'style';
+    link.href = href;
+    document.head.appendChild(link);
+  });
+});
+</script>
+<!-- Analytics or other tracking scripts can go here -->
+    
+  </body>
+
+</html>
