@@ -5,22 +5,22 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Jekyll博客写作指南 | Xianpu Ji</title>
+<title>Jekyll Writing Guide | Xianpu Ji</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Jekyll博客写作指南" />
+<meta property="og:title" content="Jekyll Writing Guide" />
 <meta name="author" content="Xianpu Ji" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="这篇文章将帮助你快速上手Jekyll博客的写作。" />
-<meta property="og:description" content="这篇文章将帮助你快速上手Jekyll博客的写作。" />
-<link rel="canonical" href="https://blissful-jasper.github.io/jekyll-blog-template/%E6%95%99%E7%A8%8B/jekyll/2025/07/07/jekyll-writing-guide/" />
-<meta property="og:url" content="https://blissful-jasper.github.io/jekyll-blog-template/%E6%95%99%E7%A8%8B/jekyll/2025/07/07/jekyll-writing-guide/" />
+<meta name="description" content="我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。" />
+<meta property="og:description" content="我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。" />
+<link rel="canonical" href="https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide/" />
+<meta property="og:url" content="https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide/" />
 <meta property="og:site_name" content="Xianpu Ji" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-07T03:00:00+00:00" />
+<meta property="article:published_time" content="2025-07-07T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Jekyll博客写作指南" />
+<meta property="twitter:title" content="Jekyll Writing Guide" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Xianpu Ji"},"dateModified":"2025-07-07T03:00:00+00:00","datePublished":"2025-07-07T03:00:00+00:00","description":"这篇文章将帮助你快速上手Jekyll博客的写作。","headline":"Jekyll博客写作指南","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/jekyll-blog-template/%E6%95%99%E7%A8%8B/jekyll/2025/07/07/jekyll-writing-guide/"},"url":"https://blissful-jasper.github.io/jekyll-blog-template/%E6%95%99%E7%A8%8B/jekyll/2025/07/07/jekyll-writing-guide/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Xianpu Ji"},"dateModified":"2025-07-07T00:00:00+00:00","datePublished":"2025-07-07T00:00:00+00:00","description":"我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。","headline":"Jekyll Writing Guide","mainEntityOfPage":{"@type":"WebPage","@id":"https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide/"},"url":"https://blissful-jasper.github.io/jekyll-blog-template/2025/07/07/jekyll-writing-guide/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="stylesheet" href="/assets/code-highlighting.css">
@@ -125,7 +125,7 @@
     <link rel="preload" href="/assets/modern-interactions.js" as="script">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jekyll博客写作指南</title>
+    <title>Jekyll Writing Guide</title>
     <script>
         const AI_API_KEY = "";
     </script>
@@ -204,12 +204,12 @@
       </div>
     </div>
     
-    <h1 class="post-title">Jekyll博客写作指南</h1>
+    <h1 class="post-title">Jekyll Writing Guide</h1>
     
     <div class="post-meta">
       <div class="meta-item">
         <i class="far fa-calendar-alt"></i>
-        <time datetime="2025-07-07T03:00:00+00:00">
+        <time datetime="2025-07-07T00:00:00+00:00">
           2025年7月7日
         </time>
       </div>
@@ -220,229 +220,11 @@
     </div>
     
     
-    <div class="post-tags">
-      
-      <span class="tag">Jekyll</span>
-      
-      <span class="tag">Markdown</span>
-      
-      <span class="tag">写作</span>
-      
-      <span class="tag">教程</span>
-      
-    </div>
-    
   </header>
 
   <!-- 文章内容 -->
   <div class="post-content">
-    <p>这篇文章将帮助你快速上手Jekyll博客的写作。</p>
-
-<h2 id="-文章结构">📝 文章结构</h2>
-
-<p>每篇文章都以Front Matter开始：</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章标题"</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">2025-07-07 10:00:00 +0800</span>
-<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">分类1</span><span class="pi">,</span> <span class="nv">分类2</span><span class="pi">]</span>
-<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">标签1</span><span class="pi">,</span> <span class="nv">标签2</span><span class="pi">,</span> <span class="nv">标签3</span><span class="pi">]</span>
-<span class="na">mathjax</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># 如果需要数学公式</span>
-<span class="nn">---</span>
-</code></pre></div></div>
-
-<h2 id="-文件组织">📁 文件组织</h2>
-
-<h3 id="文章命名">文章命名</h3>
-
-<p>文件名必须遵循格式：<code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code></p>
-
-<p>例如：</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">2025-07-07-jekyll-tutorial.md</code></li>
-  <li><code class="language-plaintext highlighter-rouge">2025-07-08-my-first-post.md</code></li>
-</ul>
-
-<h3 id="目录结构">目录结构</h3>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>_posts/
-├── 2025-07-07-welcome.md
-├── 2025-07-08-tutorial.md
-└── 2025-07-09-advanced-tips.md
-</code></pre></div></div>
-
-<h2 id="️-标签和分类">🏷️ 标签和分类</h2>
-
-<h3 id="分类-categories">分类 (Categories)</h3>
-
-<p>用于文章的主要分组：</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">技术</span><span class="pi">,</span> <span class="nv">前端开发</span><span class="pi">]</span>
-</code></pre></div></div>
-
-<h3 id="标签-tags">标签 (Tags)</h3>
-
-<p>用于更细粒度的标记：</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">JavaScript</span><span class="pi">,</span> <span class="nv">React</span><span class="pi">,</span> <span class="nv">教程</span><span class="pi">,</span> <span class="nv">入门</span><span class="pi">]</span>
-</code></pre></div></div>
-
-<h2 id="️-图片处理">🖼️ 图片处理</h2>
-
-<h3 id="本地图片">本地图片</h3>
-
-<p>将图片放在<code class="language-plaintext highlighter-rouge">assets/images/</code>目录下：</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">图片描述</span><span class="p">](</span><span class="sx">/assets/images/my-image.jpg</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="图片懒加载">图片懒加载</h3>
-
-<p>模板已内置懒加载功能，无需额外配置。</p>
-
-<h3 id="响应式图片">响应式图片</h3>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/images/example.jpg"</span> 
-     <span class="na">alt=</span><span class="s">"示例图片"</span> 
-     <span class="na">class=</span><span class="s">"responsive-image"</span><span class="nt">&gt;</span>
-</code></pre></div></div>
-
-<h2 id="-常用markdown语法">📋 常用Markdown语法</h2>
-
-<h3 id="标题">标题</h3>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># 一级标题</span>
-<span class="gu">## 二级标题</span>
-<span class="gu">### 三级标题</span>
-</code></pre></div></div>
-
-<h3 id="强调">强调</h3>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gs">**粗体文本**</span>
-<span class="ge">*斜体文本*</span>
-~~删除线~~
-==高亮文本==
-</code></pre></div></div>
-
-<h3 id="列表">列表</h3>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">-</span> 无序列表项1
-<span class="p">-</span> 无序列表项2
-<span class="p">  -</span> 嵌套项
-<span class="p">
-1.</span> 有序列表项1
-<span class="p">2.</span> 有序列表项2
-</code></pre></div></div>
-
-<h3 id="引用">引用</h3>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gt">&gt; 这是一个引用块</span>
-<span class="gt">&gt; </span>
-<span class="gt">&gt; 可以包含多行内容</span>
-</code></pre></div></div>
-
-<h3 id="代码">代码</h3>
-
-<p>行内代码：<code class="language-plaintext highlighter-rouge">`代码`</code></p>
-
-<p>代码块：</p>
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">language
-</span><span class="sb">代码内容</span>
-<span class="p">```</span>
-</code></pre></div></div>
-
-<h2 id="-链接处理">🔗 链接处理</h2>
-
-<h3 id="内部链接">内部链接</h3>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">关于页面</span><span class="p">](</span><span class="sx">/about/</span><span class="p">)</span>
-<span class="p">[</span><span class="nv">欢迎文章</span><span class="p">](</span><span class="sx">/jekyll-blog-template/2025/07/07/welcome-to-simple-jekyll-blog.html</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="外部链接">外部链接</h3>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">[</span><span class="nv">Google</span><span class="p">](</span><span class="sx">https://www.google.com</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h2 id="-表格">📊 表格</h2>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code>| 列1 | 列2 | 列3 |
-|-----|-----|-----|
-| 内容1 | 内容2 | 内容3 |
-| 内容4 | 内容5 | 内容6 |
-</code></pre></div></div>
-
-<h2 id="-写作技巧">💡 写作技巧</h2>
-
-<h3 id="1-使用清晰的标题结构">1. 使用清晰的标题结构</h3>
-
-<p>保持标题层次清晰，便于读者理解文章结构。</p>
-
-<h3 id="2-添加目录">2. 添加目录</h3>
-
-<p>对于长文章，考虑手动添加目录：</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gu">## 目录</span>
-<span class="p">-</span> <span class="p">[</span><span class="nv">第一部分</span><span class="p">](</span><span class="sx">#section1</span><span class="p">)</span>
-<span class="p">-</span> <span class="p">[</span><span class="nv">第二部分</span><span class="p">](</span><span class="sx">#section2</span><span class="p">)</span>
-<span class="p">-</span> <span class="p">[</span><span class="nv">第三部分</span><span class="p">](</span><span class="sx">#section3</span><span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="3-使用摘要">3. 使用摘要</h3>
-
-<p>在Front Matter中添加excerpt：</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">这是文章的简短摘要，会显示在文章列表中。"</span>
-</code></pre></div></div>
-
-<h3 id="4-优化seo">4. 优化SEO</h3>
-
-<ul>
-  <li>使用描述性的标题</li>
-  <li>合理使用标签和分类</li>
-  <li>添加meta描述</li>
-</ul>
-
-<h2 id="-发布流程">🎯 发布流程</h2>
-
-<ol>
-  <li><strong>写作</strong>：在<code class="language-plaintext highlighter-rouge">_posts</code>目录创建新文件</li>
-  <li><strong>预览</strong>：运行<code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code></li>
-  <li><strong>检查</strong>：确认格式和链接正确</li>
-  <li><strong>提交</strong>：推送到Git仓库</li>
-  <li><strong>发布</strong>：GitHub Pages自动构建</li>
-</ol>
-
-<h2 id="-模板示例">📝 模板示例</h2>
-
-<p>创建新文章时可以使用这个模板：</p>
-
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章标题"</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">YYYY-MM-DD HH:MM:SS +0800</span>
-<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">分类</span><span class="pi">]</span>
-<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">标签1</span><span class="pi">,</span> <span class="nv">标签2</span><span class="pi">]</span>
-<span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章摘要"</span>
-<span class="nn">---</span>
-
-文章内容开始...
-
-<span class="gu">## 第一个小节</span>
-
-内容...
-
-<span class="gu">## 第二个小节</span>
-
-内容...
-
-<span class="gu">## 总结</span>
-
-总结内容...
-</code></pre></div></div>
-
-<p>快乐写作！🎉</p>
+    
 
   </div>
 
@@ -452,11 +234,11 @@
     <div class="post-navigation">
       
       <div class="nav-item nav-prev">
-        <a href="/jekyll-blog-template/%E5%8D%9A%E5%AE%A2/jekyll/2025/07/07/welcome-to-simple-jekyll-blog/" class="nav-link">
+        <a href="/%E6%8A%80%E6%9C%AF/%E6%B0%94%E8%B1%A1%E6%95%B0%E6%8D%AE/2025/07/03/gfs-data-processing/" class="nav-link">
           <i class="fas fa-chevron-left"></i>
           <div class="nav-content">
             <span class="nav-label">上一篇</span>
-            <span class="nav-title">欢迎使用Simple Jekyll Blog</span>
+            <span class="nav-title">GFS数据处理与可视化</span>
           </div>
         </a>
       </div>
@@ -926,7 +708,7 @@ if (document.getElementById('global-page-views')) {
 document.addEventListener('DOMContentLoaded', function() {
   // 标记当前页面为博客页面（用于阅读进度条）
   const pageLayout = 'post';
-  const pageUrl = '/jekyll-blog-template/%E6%95%99%E7%A8%8B/jekyll/2025/07/07/jekyll-writing-guide/';
+  const pageUrl = '/jekyll-blog-template/2025/07/07/jekyll-writing-guide/';
   
   if (pageLayout === 'post' || pageUrl.includes('/blog')) {
     document.body.classList.add('blog-page');
