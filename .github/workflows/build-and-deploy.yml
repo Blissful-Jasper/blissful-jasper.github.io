@@ -5,6 +5,13 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限
+permissions:
+  contents: write  # 需要写入权限来推送到 gh-pages 分支
+  pages: write     # 需要页面写入权限
+  id-token: write  # 需要 ID token 写入权限
 
 jobs:
   build-and-deploy:

@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - main  # 或 master，取决于你的默认分支
+  workflow_dispatch:
 
+# 设置 GITHUB_TOKEN 的权限
 permissions:
-  contents: write  # 必须！
+  contents: write  # 需要写入权限来推送到 gh-pages 分支
+  pages: write     # 需要页面写入权限
+  id-token: write  # 需要 ID token 写入权限
 
 jobs:
   deploy:

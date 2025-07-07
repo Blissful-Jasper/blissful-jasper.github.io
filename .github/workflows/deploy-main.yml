@@ -1,5 +1,5 @@
-# Jekyll GitHub Pages 部署工作流
-name: Deploy Jekyll site to Pages
+# 主要的 Jekyll GitHub Pages 部署工作流
+name: Deploy Jekyll Site to GitHub Pages
 
 on:
   push:
@@ -12,11 +12,13 @@ permissions:
   pages: write
   id-token: write
 
+# 只允许一个并发部署，跳过正在运行的队列中的运行
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
+  # 构建作业
   build:
     runs-on: ubuntu-latest
     steps:
@@ -27,20 +29,16 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: false  # 暂时禁用缓存以确保依赖正确安装
+          bundler-cache: true  # 启用 bundler 缓存以加快构建速度
       
-      - name: Add platform support and install dependencies
-        run: |
-          # 添加平台支持
-          bundle lock --add-platform x86_64-linux
-          bundle lock --add-platform x86_64-darwin
-          
-          # 显示关键依赖版本信息
-          echo "Ruby version: $(ruby -v)"
-          echo "Bundler version: $(bundle -v)"
-          
-          # 安装依赖
-          bundle install --jobs 4 --retry 3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install Node.js dependencies
+        run: npm ci || npm install
       
       - name: Setup Pages
         id: pages
@@ -51,9 +49,18 @@ jobs:
         env:
           JEKYLL_ENV: production
       
+      - name: Optimize built site (optional)
+        run: |
+          echo "优化网站文件..."
+          # HTML 压缩
+          if command -v npx &> /dev/null; then
+            npx html-minifier-terser ./_site/**/*.html --remove-comments --collapse-whitespace --file-ext html || echo "HTML 压缩跳过"
+          fi
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
+  # 部署作业
   deploy:
     environment:
       name: github-pages
