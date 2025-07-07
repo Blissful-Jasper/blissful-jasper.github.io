@@ -26,8 +26,11 @@ kramdown:
       start_line: 1
 highlighter: rouge
 permalink: pretty
-paginate: 5
+paginate: 3
 paginate_path: "/blog/page:num/"
+
+# 限制数据处理以提高构建速度
+limit_posts: 50
 
 # MathJax配置
 mathjax:
@@ -160,3 +163,26 @@ exclude:
   - node_modules/
   - vendor/
   - README.md
+
+# 性能优化配置
+incremental: true
+future: false
+show_drafts: false
+unpublished: false
+lsi: false
+safe: true
+
+# 限制相关文章计算以提高速度
+lsi: false
+related_posts_limit: 5
+
+# 压缩配置
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [development]
+  blanklines: false
+  profile: false
+  startings: [html, head, body]

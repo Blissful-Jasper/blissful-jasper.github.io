@@ -3,12 +3,12 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 25px rgba(102, 126, 234, 0.3);
     transition: all 0.3s ease;
-    border-bottom: 1px solid rgba(79, 172, 254, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .nav-container {
@@ -26,7 +26,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--primary-blue, #2563eb);
+    color: white;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -34,12 +34,13 @@
 }
 
 .nav-brand .logo:hover {
-    color: var(--secondary-blue, #1e40af);
+    color: rgba(255, 255, 255, 0.9);
     transform: translateY(-1px);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .logo-text {
-    background: linear-gradient(135deg, var(--primary-blue, #2563eb), var(--secondary-blue, #1e40af));
+    background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.8));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -85,14 +86,15 @@
 
 .nav-link {
     text-decoration: none;
-    color: var(--text-primary, #1f2937);
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
     font-size: 0.95rem;
     padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    border-radius: 25px;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    backdrop-filter: blur(10px);
 }
 
 .nav-link::before {
@@ -102,19 +104,21 @@
     left: 0;
     right: 0;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-blue, #2563eb), var(--secondary-blue, #1e40af));
+    background: rgba(255, 255, 255, 0.2);
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: -1;
+    border-radius: 25px;
 }
 
 .nav-link:hover::before {
-    opacity: 0.1;
+    opacity: 1;
 }
 
 .nav-link:hover {
-    color: var(--primary-blue, #2563eb);
+    color: white;
     transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 /* Navigation Actions */
@@ -125,8 +129,8 @@
 }
 
 .theme-toggle {
-    background: none;
-    border: 2px solid var(--border-gray, #e5e7eb);
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     width: 2.5rem;
     height: 2.5rem;

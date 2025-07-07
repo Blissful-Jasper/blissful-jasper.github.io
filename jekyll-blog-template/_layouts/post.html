@@ -1,0 +1,98 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="post-meta-top">
+      <a href="/posts/" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        返回文章列表
+      </a>
+      
+      <div class="post-share">
+        <button class="share-btn" onclick="sharePost()">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+    </div>
+    
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+    
+    <div class="post-meta">
+      <div class="meta-item">
+        <i class="far fa-calendar-alt"></i>
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%Y年%-m月%-d日" }}
+        </time>
+      </div>
+      
+      {% if page.author %}
+      <div class="meta-item">
+        <i class="far fa-user"></i>
+        <span>{{ page.author }}</span>
+      </div>
+      {% endif %}
+      
+      {% assign words = content | number_of_words %}
+      {% assign reading_time = words | divided_by: 200 | plus: 1 %}
+      <div class="meta-item">
+        <i class="far fa-clock"></i>
+        <span>{{ reading_time }} 分钟阅读</span>
+      </div>
+    </div>
+    
+    {% if page.tags and page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <a href="/tags/#{{ tag | slugify }}" class="tag">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-nav">
+      {% if page.previous.url %}
+      <a class="prev-post" href="{{ page.previous.url | relative_url }}">
+        <i class="fas fa-chevron-left"></i>
+        <div>
+          <span class="nav-label">上一篇</span>
+          <span class="nav-title">{{ page.previous.title }}</span>
+        </div>
+      </a>
+      {% endif %}
+      
+      {% if page.next.url %}
+      <a class="next-post" href="{{ page.next.url | relative_url }}">
+        <div>
+          <span class="nav-label">下一篇</span>
+          <span class="nav-title">{{ page.next.title }}</span>
+        </div>
+        <i class="fas fa-chevron-right"></i>
+      </a>
+      {% endif %}
+    </div>
+  </footer>
+</article>
+
+<script>
+function sharePost() {
+  if (navigator.share) {
+    navigator.share({
+      title: '{{ page.title | escape }}',
+      text: '{{ page.excerpt | default: site.description | strip_html | escape }}',
+      url: window.location.href
+    });
+  } else {
+    // 降级方案：复制链接到剪贴板
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('链接已复制到剪贴板');
+    });
+  }
+}
+</script>

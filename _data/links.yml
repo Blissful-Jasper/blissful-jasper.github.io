@@ -2,22 +2,27 @@
   links:
     - name: Philosophies and concerns about ENSO
       url: https://iri.columbia.edu/
+      description: 哥伦比亚大学国际气候与社会研究所，提供ENSO研究的基础理论和关注点
       images:
         - /links/1.png
     - name: Why do we care about El Niño and La Niña?
       url: https://iri.columbia.edu/our-expertise/climate/enso/why-do-we-care-about-el-nino-and-la-nina/
+      description: 详细介绍为什么需要关注厄尔尼诺和拉尼娜现象及其重要性
       images:
         - /links/2.png
     - name: Watching for El Niño and La Niña
       url: https://www.climate.gov/news-features/understanding-climate/watching-el-ni%C3%B1o-and-la-ni%C3%B1a-noaa-adapts-global-warming
+      description: NOAA关于如何监测和观察ENSO现象的专业指南
       images:
         - /links/3.png
     - name: Why are there so many ENSO indexes?
       url: https://www.climate.gov/news-features/blogs/enso/why-are-there-so-many-enso-indexes-instead-just-one
+      description: 解释为什么存在多种ENSO指数而不是单一指标的科学原理
       images:
         - /links/4.png
     - name: How Good Have ENSO Forecasts Been Lately?
       url: https://www.climate.gov/news-features/blogs/enso/how-good-have-enso-forecasts-been-lately
+      description: 评估近期ENSO预测的准确性和预报技能水平
       images:
         - /links/5.png
 
@@ -25,26 +30,32 @@
   links:
     - name: Shallow water model (Matlab, barotropic instability)
       url: https://www.met.reading.ac.uk/~swrhgnrj/shallow_water_model/
+      description: Matlab浅水模式教程，用于学习正压不稳定性和地转流体动力学
       images:
         - /links/2.1.png
     - name: GFDL Dry spectral idealized model
       url: https://www.gfdl.noaa.gov/idealized-spectral-models-quickstart/
+      description: GFDL开发的干理想化谱模式，适用于大气动力学基础研究
       images:
         - /links/2.2.png
     - name: GFDL Dry model github
       url: https://github.com/gchenpu/idealized
+      description: GFDL干模式的GitHub代码库，包含详细的安装和使用说明
       images:
         - /links/2.3.png
     - name: GFDL Moist spectral idealized model
       url: https://www.gfdl.noaa.gov/idealized-moist-spectral-atmospheric-model-quickstart/
+      description: GFDL湿理想化谱模式，可研究湿对流和水汽反馈过程
       images:
         - /links/2.4.png
     - name: DART, GeoCAT, and VAPOR sites
       url: https://www2.cisl.ucar.edu/resources/legacy/spherepack
+      description: NCAR提供的球面调和函数包和大气科学可视化工具集
       images:
         - /links/2.5.png
     - name: Misc fluid simulators
       url: https://matthias-research.github.io/pages/tenMinutePhysics/index.html
+      description: 各种流体力学模拟器的在线演示和教程资源
       images:
         - /links/2.6.png
 
@@ -70,14 +81,17 @@
   links:
     - name: IRI Seasonal Climate Forecast
       url: https://iri.columbia.edu/our-expertise/climate/forecasts/seasonal-climate-forecasts/
+      description: 国际气候与社会研究所的权威季节气候预测产品和分析
       images:
         - /links/5.1.png
     - name: Seasonal Climate Forecast CFSv2
       url: https://www.cpc.ncep.noaa.gov/products/people/wwang/cfsv2fcst/
+      description: NOAA CPC基于CFSv2模式的季节气候预测系统
       images:
         - /links/5.2.png
     - name: World monsoons
       url: https://worldmonsoons.org/
+      description: 全球季风研究组织，提供最新的季风研究进展和数据
       images:
         - /links/5.3.png
 
@@ -85,30 +99,37 @@
   links:
     - name: CIMSS Satellite Blog
       url: https://cimss.ssec.wisc.edu/satellite-blog/
+      description: 威斯康星大学CIMSS的卫星气象学博客，提供最新卫星观测分析
       images:
         - /links/6.1.png
     - name: GOES Geostationary archive
       url: https://www.star.nesdis.noaa.gov/GOES/GOES16_CONUS.php
+      description: NOAA GOES地球静止卫星数据归档，包含高分辨率天气监测数据
       images:
         - /links/6.2.png
     - name: Grided Satellite data
       url: https://www.ncei.noaa.gov/products/satellite/gridded-data?name=gridsat-intro
+      description: NCEI格点化卫星数据产品，用于气候研究和长期趋势分析
       images:
         - /links/6.3.png
     - name: Sandro Lubis blog for equatorial waves
       url: https://sandrolubis.wordpress.com/
+      description: Sandro Lubis教授的博客，专注于赤道波动和平流层-对流层相互作用
       images:
         - /links/6.4.png
     - name: Carl Scherck tropical waves monitoring
       url: https://ncics.org/portfolio/monitor/mjo/
+      description: Carl Scherck的热带波动监测系统，包含MJO等重要信号的实时分析
       images:
         - /links/6.5.png
     - name: Kyle MacRitchie page
       url: https://www.kylemacritchie.com/
+      description: Kyle MacRitchie的个人页面，专业的热带气象学研究资源
       images:
         - /links/6.6.png
     - name: Micheal Ventrice page
       url: https://mikeventrice.weebly.com/
+      description: Michael Ventrice博士的研究页面，热带气象和季节预测专家
       images:
         - /links/6.7.png
 

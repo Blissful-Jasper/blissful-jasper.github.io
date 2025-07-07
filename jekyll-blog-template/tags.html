@@ -1,0 +1,154 @@
+---
+layout: page
+title: "标签"
+permalink: /tags/
+---
+
+<div class="tags-page">
+  <div class="tags-header">
+    <h1>标签云</h1>
+    <p>点击标签查看相关文章</p>
+  </div>
+
+  {% assign tags = site.tags | sort %}
+  
+  <div class="tag-cloud">
+    {% for tag in tags %}
+    {% assign count = tag[1].size %}
+    <a href="#{{ tag[0] | slugify }}" 
+       class="tag-link" 
+       data-count="{{ count }}"
+       style="font-size: {{ count | times: 0.5 | plus: 1 }}em">
+      {{ tag[0] }}
+      <span class="tag-count">{{ count }}</span>
+    </a>
+    {% endfor %}
+  </div>
+
+  <div class="tags-list">
+    {% for tag in tags %}
+    <section class="tag-section" id="{{ tag[0] | slugify }}">
+      <h2 class="tag-name">
+        {{ tag[0] }}
+        <span class="tag-count">{{ tag[1].size }} 篇文章</span>
+      </h2>
+      
+      <div class="tag-posts">
+        {% for post in tag[1] %}
+        <article class="tag-post-item">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+          <div class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%Y年%-m月%-d日" }}
+            </time>
+            {% if post.categories %}
+            <div class="post-categories">
+              {% for category in post.categories %}
+              <span class="category">{{ category }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% if post.excerpt %}
+          <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+          {% endif %}
+        </article>
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.tag-cloud {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.tag-link {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  color: #495057;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.tag-link:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tag-count {
+  font-size: 0.8em;
+  opacity: 0.7;
+  margin-left: 0.25rem;
+}
+
+.tag-section {
+  margin: 3rem 0;
+  padding: 2rem 0;
+  border-top: 1px solid #e9ecef;
+}
+
+.tag-name {
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.tag-posts {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tag-post-item {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.tag-post-item h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.tag-post-item h3 a {
+  color: #333;
+  text-decoration: none;
+}
+
+.tag-post-item h3 a:hover {
+  color: #007bff;
+}
+
+.post-excerpt {
+  color: #6c757d;
+  margin: 0.5rem 0 0 0;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 平滑滚动到对应标签
+  const tagLinks = document.querySelectorAll('.tag-link');
+  
+  tagLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      const target = document.querySelector(targetId);
+      
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+});
+</script>

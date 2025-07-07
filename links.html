@@ -4,10 +4,10 @@ title: Links
 permalink: /links.html
 ---
 
-<link rel="stylesheet" href="assets/links-modern.css">
+<link rel="stylesheet" href="{{ '/assets/links-modern.css' | relative_url }}">
 
 <div class="links-container">
-  <!-- Header Section -->
+  <!-- 页面头部 -->
   <div class="links-header">
     <div class="header-content">
       <h1 class="page-title">
@@ -15,118 +15,248 @@ permalink: /links.html
         学术链接
       </h1>
       <p class="page-subtitle">精选的学术研究工具、数据源和专业资源</p>
+      
+      <!-- 统计信息 -->
+      <div class="stats-bar">
+        {% assign total_links = 0 %}
+        {% for group in site.data.links %}
+          {% assign total_links = total_links | plus: group.links.size %}
+        {% endfor %}
+        <div class="stat-item">
+          <span class="stat-number">{{ total_links }}</span>
+          <span class="stat-label">个链接</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ site.data.links.size }}</span>
+          <span class="stat-label">个分类</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">免费资源</span>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- Search and Filter Bar -->
-  <div class="filter-controls">
-    <div class="search-container">
-      <input type="text" id="linksSearch" placeholder="搜索链接..." class="search-input">
-      <i class="fas fa-search search-icon"></i>
-    </div>
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-group="all">全部</button>
-      <button class="filter-btn" data-group="enso-气候现象">ENSO & 气候</button>
-      <button class="filter-btn" data-group="数值模式与流体模拟">数值模式</button>
-      <button class="filter-btn" data-group="数据与课程">数据课程</button>
-      <button class="filter-btn" data-group="卫星与波动监测">卫星监测</button>
-      <button class="filter-btn" data-group="python与大气科学">Python</button>
-      <button class="filter-btn" data-group="数据可视化与图形设计">可视化</button>
+  <!-- 搜索和过滤控制器 -->
+  <div class="control-section">
+    <div class="container">
+      <!-- 功能说明 -->
+      <div class="help-section">
+        <div class="help-content">
+          <h3><i class="fas fa-lightbulb"></i> 使用说明</h3>
+          <div class="help-tips">
+            <div class="tip-item">
+              <i class="fas fa-search"></i>
+              <span>搜索：输入关键词快速查找相关链接</span>
+            </div>
+            <div class="tip-item">
+              <i class="fas fa-filter"></i>
+              <span>过滤：点击分类标签筛选特定领域的资源</span>
+            </div>
+            <div class="tip-item">
+              <i class="fas fa-sort"></i>
+              <span>排序：按名称或分类重新组织显示顺序</span>
+            </div>
+            <div class="tip-item">
+              <i class="fas fa-keyboard"></i>
+              <span>快捷键：按 / 键聚焦搜索框，ESC清除筛选，↑↓键导航建议</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 搜索框 -->
+      <div class="search-container">
+        <div class="search-box">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" 
+                 id="searchInput" 
+                 placeholder="搜索链接名称、描述或URL..."
+                 class="search-input">
+          <button class="clear-search" id="clearSearch" style="display: none;">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="search-suggestions" id="searchSuggestions"></div>
+      </div>
+      
+      <!-- 分类过滤器 -->
+      <div class="filter-controls">
+        <div class="filter-label">
+          <i class="fas fa-filter"></i>
+          分类过滤:
+        </div>
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-category="all">
+            <span class="filter-icon">📚</span>
+            全部
+            <span class="count-badge">{{ total_links }}</span>
+          </button>
+          {% for group in site.data.links %}
+            <button class="filter-btn" data-category="{{ group.group | slugify }}">
+              <span class="filter-icon">
+                {% if group.group contains 'ENSO' %}🌊
+                {% elsif group.group contains '模式' %}🖥️
+                {% elsif group.group contains '数据' %}📊
+                {% elsif group.group contains '论文' %}📖
+                {% elsif group.group contains '预测' %}🔮
+                {% elsif group.group contains '卫星' %}🛰️
+                {% else %}🔗{% endif %}
+              </span>
+              {{ group.group }}
+              <span class="count-badge">{{ group.links.size }}</span>
+            </button>
+          {% endfor %}
+        </div>
+      </div>
+      
+      <!-- 排序选项 -->
+      <div class="sort-controls">
+        <label for="sortSelect">排序方式:</label>
+        <select id="sortSelect" class="sort-select">
+          <option value="default">默认排序</option>
+          <option value="name">按名称排序</option>
+          <option value="category">按分类排序</option>
+        </select>
+      </div>
     </div>
   </div>
 
-  <!-- Links Grid -->
-  <div class="links-grid">
+  <!-- 搜索结果统计 -->
+  <div class="results-info" id="resultsInfo" style="display: none;">
+    <div class="container">
+      <div class="results-summary">
+        <i class="fas fa-info-circle"></i>
+        <span id="resultsText">找到 0 个结果</span>
+        <button class="clear-all-filters" onclick="clearAllFilters()">
+          <i class="fas fa-undo"></i>
+          重置所有筛选
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 链接网格 -->
+  <div class="links-grid" id="linksGrid">
     {% for group in site.data.links %}
-      <div class="group-section">
-        <h2 class="group-title">
-          <i class="fas fa-folder-open"></i>
-          {{ group.group }}
-        </h2>
+      <div class="category-section" data-category="{{ group.group | slugify }}">
+        <div class="category-header">
+          <h2 class="category-title">
+            <span class="category-icon">
+              {% if group.group contains 'ENSO' %}🌊
+              {% elsif group.group contains '模式' %}🖥️
+              {% elsif group.group contains '数据' %}📊
+              {% elsif group.group contains '论文' %}📖
+              {% elsif group.group contains '预测' %}🔮
+              {% elsif group.group contains '卫星' %}🛰️
+              {% else %}🔗{% endif %}
+            </span>
+            {{ group.group }}
+            <span class="link-count">({{ group.links.size }} 个链接)</span>
+          </h2>
+        </div>
         
-        <div class="links-row">
+        <div class="links-list">
           {% for link in group.links %}
-            <div class="link-card" data-group="{{ group.group | slugify }}">
-              {% if link.images and link.images.size > 0 %}
-                <div class="link-image">
-                  <img src="{{ link.images[0] }}" alt="{{ link.name }}" loading="lazy">
-                  <div class="image-overlay">
-                    <div class="link-icon">
-                      <i class="fas fa-external-link-alt"></i>
-                    </div>
+            <a href="{{ link.url }}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="link-card"
+               data-name="{{ link.name | downcase }}"
+               data-url="{{ link.url | downcase }}"
+               data-category="{{ group.group | slugify }}"
+               data-group="{{ group.group }}">
+              
+              <div class="link-image-container">
+                {% if link.images and link.images[0] %}
+                  <img src="{{ link.images[0] | relative_url }}" 
+                       alt="{{ link.name }}" 
+                       class="link-image"
+                       loading="lazy">
+                {% else %}
+                  <div class="link-placeholder">
+                    <i class="fas fa-globe"></i>
                   </div>
-                </div>
-              {% endif %}
-              <div class="link-header">
-                {% unless link.images and link.images.size > 0 %}
-                  <div class="link-icon">
-                    <i class="fas fa-external-link-alt"></i>
-                  </div>
-                {% endunless %}
-                <div class="link-title-section">
-                  <h3 class="link-title">
-                    <a href="{{ link.url }}" target="_blank" rel="noopener">
-                      {{ link.name }}
-                    </a>
-                  </h3>
+                {% endif %}
+                <div class="link-overlay">
+                  <i class="fas fa-external-link-alt"></i>
                 </div>
               </div>
               
-              <div class="link-footer">
-                <div class="link-actions">
-                  <a href="{{ link.url }}" target="_blank" rel="noopener" class="visit-btn">
-                    <i class="fas fa-external-link-alt"></i>
-                    访问
-                  </a>
+              <div class="link-content">
+                <h3 class="link-title">{{ link.name }}</h3>
+                {% if link.description %}
+                  <p class="link-description">{{ link.description }}</p>
+                {% endif %}
+                <div class="link-meta">
+                  <span class="link-domain">{{ link.url | replace: 'https://', '' | replace: 'http://', '' | split: '/' | first }}</span>
+                  <span class="link-category">{{ group.group }}</span>
                 </div>
               </div>
-            </div>
+            </a>
           {% endfor %}
         </div>
       </div>
     {% endfor %}
   </div>
+
+  <!-- 无结果状态 -->
+  <div class="no-results" id="noResults" style="display: none;">
+    <div class="no-results-content">
+      <i class="fas fa-search"></i>
+      <h3>未找到匹配的链接</h3>
+      <p>请尝试使用不同的关键词或重置筛选条件</p>
+      <button class="reset-btn" onclick="clearAllFilters()">
+        <i class="fas fa-undo"></i>
+        重置筛选
+      </button>
+    </div>
+  </div>
+
+  <!-- 页面底部统计 -->
+  <div class="footer-stats">
+    <div class="container">
+      <div class="stats-content">
+        <div class="stat-group">
+          <h4>数据统计</h4>
+          <div class="stat-row">
+            <span>当前显示：</span>
+            <span id="visibleCount">{{ total_links }}</span>
+            <span>个链接</span>
+          </div>
+          <div class="stat-row">
+            <span>总计：</span>
+            <span>{{ total_links }}</span>
+            <span>个学术资源</span>
+          </div>
+          <div class="stat-row">
+            <span>分类：</span>
+            <span>{{ site.data.links.size }}</span>
+            <span>个专业领域</span>
+          </div>
+        </div>
+        <div class="stat-group">
+          <h4>快捷操作</h4>
+          <div class="quick-actions">
+            <button onclick="linksManager.clearAllFilters()" class="action-btn">
+              <i class="fas fa-undo"></i>
+              重置筛选
+            </button>
+            <button onclick="linksManager.exportResults()" class="action-btn">
+              <i class="fas fa-download"></i>
+              导出结果
+            </button>
+            <button onclick="linksManager.randomLink()" class="action-btn">
+              <i class="fas fa-random"></i>
+              随机访问
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<script>
-// Links Search and Filter Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const searchInput = document.getElementById('linksSearch');
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const linkCards = document.querySelectorAll('.link-card');
-  
-  // Search functionality
-  searchInput.addEventListener('input', function() {
-    const searchTerm = this.value.toLowerCase();
-    linkCards.forEach(card => {
-      const title = card.querySelector('.link-title').textContent.toLowerCase();
-      
-      if (title.includes(searchTerm)) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  });
-  
-  // Filter functionality
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      const group = this.dataset.group;
-      
-      // Update active button
-      filterButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-      
-      // Filter cards
-      linkCards.forEach(card => {
-        if (group === 'all' || card.dataset.group === group) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-});
-</script>
+<!-- JavaScript -->
+<script src="{{ '/assets/links-search.js' | relative_url }}"></script>

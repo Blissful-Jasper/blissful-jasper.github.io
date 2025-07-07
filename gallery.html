@@ -4,219 +4,636 @@ title: Gallery
 permalink: /gallery.html
 ---
 
-<link rel="stylesheet" href="{{ '/assets/gallery-page.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/modern-gallery.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/modern-gallery-advanced.css' | relative_url }}">
 
-<!-- 页面访问统计 -->
-<div class="page-stats-header">
-  <div class="stats-info">
-    <span class="current-time" id="currentTime"></span>
-    <span class="visitor-info" id="visitorInfo">正在加载访问信息...</span>
-  </div>
-</div>
-
-<!-- Main Gallery Container -->
-<div class="gallery-container">
+<!-- 现代化图片画廊 -->
+<div class="gallery-page">
   
-  <!-- ==================== Header Section ==================== -->
-  <div class="gallery-header">
-    <div class="header-content">
-      <h1 class="page-title">
-        <i class="fas fa-camera"></i>
-        摄影作品集
-      </h1>
-      <p class="page-subtitle">记录科研路上的美好瞬间</p>
-      
-      <!-- 实时统计信息 -->
-      <div class="header-stats">
-        <div class="quick-stats">
+  <!-- Hero Section -->
+  <section class="gallery-hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          <span class="title-icon">📸</span>
+          摄影作品集
+        </h1>
+        <p class="hero-subtitle">记录科研路上的美好瞬间</p>
+        
+        <!-- 快速统计 -->
+        <div class="hero-stats">
           {% assign total_photos = 0 %}
           {% for category in site.data.gallery %}
             {% assign total_photos = total_photos | plus: category.photos.size %}
           {% endfor %}
-          <span class="quick-stat-item">
-            <i class="fas fa-images"></i>
-            {{ total_photos }} 张照片
-          </span>
-          <span class="quick-stat-item">
-            <i class="fas fa-layer-group"></i>
-            {{ site.data.gallery.size }} 个分类
-          </span>
-          <span class="quick-stat-item">
-            <i class="fas fa-map-marker-alt"></i>
-            8 个地点
-          </span>
+          <div class="stat-item">
+            <span class="stat-number">{{ total_photos }}</span>
+            <span class="stat-label">张照片</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">{{ site.data.gallery.size }}</span>
+            <span class="stat-label">个分类</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">年拍摄</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+    
+    <!-- 动画背景 -->
+    <div class="hero-background">
+      <div class="bg-shape shape-1"></div>
+      <div class="bg-shape shape-2"></div>
+      <div class="bg-shape shape-3"></div>
+    </div>
+  </section>
 
-  <!-- ==================== Filter Section ==================== -->
-  <div class="gallery-filters">
-    <button class="filter-btn active" data-category="all">
-      <i class="fas fa-th"></i>
-      全部
-    </button>
-    {% for category in site.data.gallery %}
-      <button class="filter-btn" data-category="{{ category.id }}">
-        <i class="fas fa-{{ category.icon | default: 'images' }}"></i>
-        {{ category.title }}
-      </button>
-    {% endfor %}
-  </div>
+  <!-- 过滤器 -->
+  <section class="filter-section">
+    <div class="container">
+      <div class="filter-container">
+        <button class="filter-btn active" data-category="all">
+          <span class="filter-icon">🎯</span>
+          全部
+        </button>
+        {% for category in site.data.gallery %}
+          <button class="filter-btn" data-category="{{ category.id }}">
+            <span class="filter-icon">{{ category.icon | default: '📷' }}</span>
+            {{ category.title }}
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 
-  <!-- ==================== Gallery Grid ==================== -->
-  <div class="gallery-grid">
-    {% for category in site.data.gallery %}
-      {% for photo in category.photos %}
-        <div class="gallery-item" data-category="{{ category.id }}">
-          <div class="gallery-card">
-            <div class="image-container">
-              <img src="{{ photo.image | relative_url }}" alt="{{ photo.title }}" loading="lazy">
-              <div class="image-overlay">
-                <div class="overlay-content">
-                  <h3>{{ photo.title }}</h3>
-                  <p>{{ photo.description }}</p>
-                  <div class="photo-meta">
-                    {% if photo.location %}
-                      <span class="meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        {{ photo.location }}
-                      </span>
-                    {% endif %}
-                    {% if photo.date %}
-                      <span class="meta-item">
-                        <i class="fas fa-calendar"></i>
-                        {{ photo.date }}
-                      </span>
-                    {% endif %}
-                    {% if photo.camera %}
-                      <span class="meta-item">
-                        <i class="fas fa-camera"></i>
-                        {{ photo.camera }}
-                      </span>
-                    {% endif %}
+  <!-- 图片网格 -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+        {% for category in site.data.gallery %}
+          {% for photo in category.photos %}
+            <div class="gallery-item" data-category="{{ category.id }}" data-aos="fade-up">
+              <div class="photo-card">
+                <div class="photo-container">
+                  <img src="{{ photo.image | relative_url }}" 
+                       alt="{{ photo.title }}" 
+                       loading="lazy"
+                       class="photo-image clickable-image"
+                       onclick="try { viewOriginalImage('{{ photo.image | relative_url }}', '{{ photo.title | escape }}'); } catch(e) { console.error(e); simpleViewOriginal('{{ photo.image | relative_url }}', '{{ photo.title | escape }}'); }"
+                       title="点击查看原图 - {{ photo.title }}"
+                       style="cursor: pointer;">
+                  
+                  <!-- 点击提示图标 -->
+                  <div class="click-hint">
+                    <i class="fas fa-search-plus"></i>
+                    <span>点击查看原图</span>
+                  </div>
+                  
+                  <!-- 悬停覆盖层 -->
+                  <div class="photo-overlay">
+                    <div class="overlay-content">
+                      <h3 class="photo-title">{{ photo.title }}</h3>
+                      <p class="photo-description">{{ photo.description }}</p>
+                      
+                      <!-- 照片元信息 -->
+                      <div class="photo-meta">
+                        {% if photo.location %}
+                          <span class="meta-item">
+                            <i class="icon">📍</i>
+                            {{ photo.location }}
+                          </span>
+                        {% endif %}
+                        {% if photo.date %}
+                          <span class="meta-item">
+                            <i class="icon">📅</i>
+                            <time datetime="{{ photo.date }}"></time>{{ photo.date | date: "%Y年%m月%d日" }}</time>
+                          </span>
+                        {% endif %}
+                        {% if photo.camera %}
+                          <span class="meta-item">
+                            <i class="icon">📷</i>
+                            {{ photo.camera }}
+                          </span>
+                        {% endif %}
+                      </div>
+                      
+                      <!-- 操作按钮 -->
+                      <div class="photo-actions">
+                        <button class="action-btn primary" 
+                                onclick="try { openAdvancedLightbox('{{ photo.image | relative_url }}', '{{ photo.title | escape }}', '{{ photo.description | escape }}', '{{ photo.date }}', '{{ photo.location | escape }}', '{{ photo.camera | escape }}', '{{ photo.tags | join: "," | escape }}'); } catch(e) { console.error(e); simpleLightbox('{{ photo.image | relative_url }}', '{{ photo.title | escape }}', '{{ photo.description | escape }}'); }">
+                          <i class="icon">🔍</i>
+                          查看详情
+                        </button>
+                        <button class="action-btn secondary" 
+                                onclick="try { viewOriginalImage('{{ photo.image | relative_url }}', '{{ photo.title | escape }}'); } catch(e) { console.error(e); simpleViewOriginal('{{ photo.image | relative_url }}', '{{ photo.title | escape }}'); }">
+                          <i class="icon">🖼️</i>
+                          原图
+                        </button>
+                        <button class="action-btn tertiary" 
+                                onclick="try { sharePhoto('{{ photo.title | escape }}', '{{ photo.image | absolute_url }}'); } catch(e) { console.error(e); alert('分享功能：{{ photo.title | escape }}'); }">
+                          <i class="icon">📤</i>
+                          分享
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
+                
+                <!-- 照片标签 -->
+                {% if photo.tags %}
+                  <div class="photo-tags">
+                    {% for tag in photo.tags %}
+                      <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                  </div>
+                {% endif %}
               </div>
             </div>
-            <div class="photo-actions">
-              <button class="action-btn view-btn" 
-                      data-image="{{ photo.image | relative_url }}"
-                      data-title="{{ photo.title | escape }}"
-                      data-description="{{ photo.description | escape }}"
-                      data-original="{{ photo.image }}"
-                      data-location="{{ photo.location | escape }}"
-                      data-date="{{ photo.date | escape }}"
-                      data-camera="{{ photo.camera | escape }}"
-                      data-tags="{{ photo.tags | join: ',' | escape }}"
-                      onclick="openLightboxFromButton(this)">
-                <i class="fas fa-expand"></i>
-                <span class="btn-text">查看</span>
-              </button>
-                <button class="action-btn share-btn" 
-                      data-title="{{ photo.title | escape }}"
-                      data-image="{{ photo.image | absolute_url }}"
-                      onclick="sharePhotoFromButton(this)">
-                <i class="fas fa-share-alt"></i>
-                <span class="btn-text">分享</span>
-              </button>
-            </div>
-          </div>
-          <div class="photo-footer">
-            <div class="photo-tags">
-              {% for tag in photo.tags %}
-                <span class="tag" data-tag="{{ tag }}">{{ tag }}</span>
-              {% endfor %}
-            </div>
-            <div class="photo-category">
-              <span class="category-badge category-{{ category.id }}">{{ category.title }}</span>
-            </div>
-          </div>
-        </div>
-      {% endfor %}
-    {% endfor %}
-  </div>
-
-  <!-- ==================== Statistics Section ==================== -->
-  <div class="gallery-stats">
-    <div class="stat-item">
-      {% assign total_photos = 0 %}
-      {% for category in site.data.gallery %}
-        {% assign total_photos = total_photos | plus: category.photos.size %}
-      {% endfor %}
-      <span class="stat-number" id="totalPhotos">{{ total_photos }}</span>
-      <span class="stat-label">张照片</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">{{ site.data.gallery.size }}</span>
-      <span class="stat-label">个分类</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">5</span>
-      <span class="stat-label">年拍摄</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">8</span>
-      <span class="stat-label">个地点</span>
-    </div>
-  </div>
-  
-</div>
-
-<!-- ==================== Enhanced Lightbox Modal ==================== -->
-<div id="lightbox" class="lightbox">
-  <div class="lightbox-overlay" onclick="closeLightbox()"></div>
-  <div class="lightbox-content">
-    <div class="lightbox-header">
-      <div class="lightbox-controls">
-        <button class="control-btn" id="viewOriginalBtn" onclick="viewOriginalImage()" title="查看原图">
-          <i class="fas fa-expand-arrows-alt"></i>
-          <span>原图</span>
-        </button>
-        <button class="control-btn" id="downloadBtn" onclick="downloadImage()" title="下载图片">
-          <i class="fas fa-download"></i>
-          <span>下载</span>
-        </button>
-        <button class="control-btn" id="shareBtn" onclick="shareCurrentImage()" title="分享图片">
-          <i class="fas fa-share-alt"></i>
-          <span>分享</span>
+          {% endfor %}
+        {% endfor %}
+      </div>
+      
+      <!-- 加载更多按钮 -->
+      <div class="load-more-container">
+        <button class="load-more-btn" id="loadMoreBtn" style="display: none;">
+          <span class="btn-text">加载更多</span>
+          <i class="icon">⬇️</i>
         </button>
       </div>
-      <button class="lightbox-close" onclick="closeLightbox()" title="关闭">
-        <i class="fas fa-times"></i>
+    </div>
+  </section>
+</div>
+
+<!-- 现代化灯箱模态框 -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+  <div class="lightbox-container">
+    
+    <!-- 头部控制栏 -->
+    <div class="lightbox-header">
+      <div class="lightbox-title-area">
+        <h3 id="lightboxTitleHeader" class="lightbox-main-title"></h3>
+        <div class="lightbox-meta-quick">
+          <span id="lightboxDateHeader" class="meta-date"></span>
+          <span id="lightboxLocationHeader" class="meta-location"></span>
+        </div>
+      </div>
+      <div class="lightbox-controls">
+        <button class="control-btn tooltip" data-tooltip="查看原图" onclick="viewOriginalFromLightbox()">
+          <i class="icon">🖼️</i>
+          <span>原图</span>
+        </button>
+        <button class="control-btn tooltip" data-tooltip="下载图片" onclick="downloadImage()">
+          <i class="icon">⬇️</i>
+          <span>下载</span>
+        </button>
+        <button class="control-btn tooltip" data-tooltip="分享图片" onclick="shareCurrentImage()">
+          <i class="icon">📤</i>
+          <span>分享</span>
+        </button>
+        <button class="control-btn tooltip" data-tooltip="EXIF信息" onclick="toggleExifInfo()">
+          <i class="icon">ℹ️</i>
+          <span>信息</span>
+        </button>
+      </div>
+      <button class="close-btn tooltip" data-tooltip="关闭 (ESC)" onclick="closeLightbox()">
+        <i class="icon">✖️</i>
       </button>
     </div>
     
+    <!-- 图片容器 -->
     <div class="lightbox-image-container">
-      <img id="lightbox-image" src="" alt="" loading="lazy">
-      <div class="image-loading" id="imageLoading">
-        <i class="fas fa-spinner fa-spin"></i>
-        <span>加载中...</span>
+      <img id="lightboxImage" src="" alt="" class="lightbox-image">
+      <div class="image-loader" id="imageLoader">
+        <div class="loader-spinner"></div>
+        <span>高质量图片加载中...</span>
+      </div>
+      
+      <!-- 图片导航 -->
+      <div class="image-navigation">
+        <button class="nav-btn prev-btn tooltip" data-tooltip="上一张 (←)" onclick="navigateImage(-1)">
+          <i class="icon">◀️</i>
+        </button>
+        <button class="nav-btn next-btn tooltip" data-tooltip="下一张 (→)" onclick="navigateImage(1)">
+          <i class="icon">▶️</i>
+        </button>
+      </div>
+      
+      <!-- 缩放控制 -->
+      <div class="zoom-overlay">
+        <div class="zoom-controls">
+          <button class="zoom-btn tooltip" data-tooltip="放大 (+)" onclick="zoomImage(1.2)">
+            <i class="icon">🔍</i>
+          </button>
+          <button class="zoom-btn tooltip" data-tooltip="缩小 (-)" onclick="zoomImage(0.8)">
+            <i class="icon">🔍</i>
+          </button>
+          <button class="zoom-btn tooltip" data-tooltip="重置 (0)" onclick="resetZoom()">
+            <i class="icon">⚪</i>
+          </button>
+          <button class="zoom-btn tooltip" data-tooltip="全屏" onclick="toggleFullscreen()">
+            <i class="icon">⛶</i>
+          </button>
+        </div>
+        <div class="zoom-indicator">
+          <span id="zoomLevel">100%</span>
+        </div>
       </div>
     </div>
     
-    <div class="lightbox-info">
-      <div class="info-content">
-        <h3 id="lightbox-title">图片标题</h3>
-        <p id="lightbox-description">图片描述</p>
-        <div class="image-meta" id="lightbox-meta">
-          <!-- 元数据信息将通过JavaScript填充 -->
-        </div>
+    <!-- 详细信息面板 -->
+    <div class="lightbox-info-panel">
+      <div class="info-tabs">
+        <button class="tab-btn active" data-tab="details">详情</button>
+        <button class="tab-btn" data-tab="exif">EXIF</button>
+        <button class="tab-btn" data-tab="metadata">元数据</button>
       </div>
-      <div class="image-actions">
-        <button class="action-button zoom-in" onclick="zoomImage(1.2)" title="放大">
-          <i class="fas fa-search-plus"></i>
-        </button>
-        <button class="action-button zoom-out" onclick="zoomImage(0.8)" title="缩小">
-          <i class="fas fa-search-minus"></i>
-        </button>
-        <button class="action-button zoom-reset" onclick="resetZoom()" title="重置">
-          <i class="fas fa-compress"></i>
-        </button>
+      
+      <div class="tab-content">
+        <div class="tab-panel active" id="details-panel">
+          <h3 id="lightboxTitle" class="info-title"></h3>
+          <p id="lightboxDescription" class="info-description"></p>
+          
+          <div class="detailed-meta">
+            <div class="meta-grid">
+              <div class="meta-row">
+                <span class="meta-label">📅 拍摄时间</span>
+                <span id="lightboxDate" class="meta-value"></span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">📍 拍摄地点</span>
+                <span id="lightboxLocation" class="meta-value"></span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">📷 拍摄设备</span>
+                <span id="lightboxCamera" class="meta-value"></span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">🏷️ 标签</span>
+                <div id="lightboxTags" class="meta-tags"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-panel" id="exif-panel">
+          <div id="exifData" class="exif-container">
+            <div class="exif-loading">
+              <div class="loader-spinner small"></div>
+              <span>读取EXIF信息中...</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-panel" id="metadata-panel">
+          <div class="metadata-container">
+            <div class="meta-row">
+              <span class="meta-label">📁 文件大小</span>
+              <span id="fileSize" class="meta-value">计算中...</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">📐 图片尺寸</span>
+              <span id="imageDimensions" class="meta-value">测量中...</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">🎨 色彩空间</span>
+              <span id="colorSpace" class="meta-value">sRGB</span>
+            </div>
+            <div class="meta-row">
+              <span class="meta-label">🔗 图片URL</span>
+              <input type="text" id="imageUrl" class="url-input" readonly>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- External JavaScript -->
-<script src="{{ '/assets/gallery-page.js' | relative_url }}"></script>
+<!-- 原图查看器 -->
+<div class="original-viewer" id="originalViewer">
+  <div class="original-backdrop" onclick="closeOriginalViewer()"></div>
+  <div class="original-container">
+    <div class="original-header">
+      <h3 class="original-title">原图查看</h3>
+      <div class="original-controls">
+        <button class="control-btn" onclick="downloadOriginalImage()">
+          <i class="icon">⬇️</i>
+          下载原图
+        </button>
+        <button class="close-btn" onclick="closeOriginalViewer()">
+          <i class="icon">✖️</i>
+        </button>
+      </div>
+    </div>
+    <div class="original-image-container">
+      <img id="originalImage" src="" alt="" class="original-image">
+      <div class="original-loader" id="originalLoader">
+        <div class="loader-spinner"></div>
+        <span>加载原始分辨率图片...</span>
+        <div class="loading-progress">
+          <div class="progress-bar" id="loadingProgress"></div>
+        </div>
+      </div>
+    </div>
+    <div class="original-info">
+      <div class="resolution-info">
+        <span id="originalResolution">加载中...</span>
+      </div>
+      <div class="zoom-info">
+        <span>使用鼠标滚轮缩放，拖拽移动</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/modern-gallery.js' | relative_url }}"></script>
+
+<!-- 调试脚本 -->
+<script>
+// 调试功能 - 确保函数正常工作
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Gallery page loaded');
+  
+  // 测试函数是否存在
+  setTimeout(() => {
+    console.log('modernGallery instance:', window.modernGallery);
+    console.log('viewOriginalImage function:', typeof viewOriginalImage);
+    console.log('openAdvancedLightbox function:', typeof openAdvancedLightbox);
+    
+    // 添加错误处理
+    window.addEventListener('error', function(e) {
+      console.error('Gallery error:', e.error, e.filename, e.lineno);
+    });
+    
+    // 测试按钮点击事件
+    const actionButtons = document.querySelectorAll('.action-btn');
+    console.log('Found action buttons:', actionButtons.length);
+    
+    actionButtons.forEach((btn, index) => {
+      console.log(`Button ${index}:`, btn.onclick);
+    });
+  }, 1000);
+});
+
+// 确保点击查看原图功能始终可用
+document.addEventListener('DOMContentLoaded', function() {
+  // 为所有图片添加点击事件监听器作为备选方案
+  setTimeout(() => {
+    const images = document.querySelectorAll('.photo-image');
+    images.forEach(img => {
+      // 如果图片没有onclick事件，添加一个
+      if (!img.onclick) {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', function() {
+          const title = this.alt || '未命名图片';
+          const imageSrc = this.src;
+          
+          // 尝试调用原图查看函数
+          if (typeof simpleViewOriginal === 'function') {
+            simpleViewOriginal(imageSrc, title);
+          } else {
+            // 最简单的备选方案
+            window.open(imageSrc, '_blank');
+          }
+        });
+      }
+    });
+    
+    console.log('Gallery: 已为', images.length, '张图片添加点击事件');
+  }, 1000);
+});
+
+// 备用全局函数 - 如果主函数失败
+window.testViewOriginal = function(imageSrc, title) {
+  console.log('Test view original called:', imageSrc, title);
+  alert('查看原图功能被调用: ' + title);
+};
+
+window.testLightbox = function(imageSrc, title, description, date, location, camera) {
+  console.log('Test lightbox called:', arguments);
+  alert('灯箱功能被调用: ' + title);
+};
+
+// 简化版的图片查看功能作为备选方案
+function simpleViewOriginal(imageSrc, title) {
+  console.log('Simple view original called:', imageSrc, title);
+  
+  // 创建一个现代化的全屏图片查看器
+  const overlay = document.createElement('div');
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: zoom-out;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  `;
+  
+  // 创建加载指示器
+  const loader = document.createElement('div');
+  loader.style.cssText = `
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  `;
+  loader.innerHTML = `
+    <div style="
+      width: 20px;
+      height: 20px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    "></div>
+    正在加载原图...
+  `;
+  
+  // 添加旋转动画
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  const img = document.createElement('img');
+  img.style.cssText = `
+    max-width: 95%;
+    max-height: 85%;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    cursor: zoom-in;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.4s ease;
+  `;
+  
+  const titleEl = document.createElement('div');
+  titleEl.textContent = title;
+  titleEl.style.cssText = `
+    color: white;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    max-width: 80%;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  `;
+  
+  const controls = document.createElement('div');
+  controls.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 10001;
+  `;
+  
+  const downloadBtn = document.createElement('button');
+  downloadBtn.innerHTML = '⬇️ 下载';
+  downloadBtn.style.cssText = `
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  `;
+  downloadBtn.onmouseover = () => downloadBtn.style.background = 'white';
+  downloadBtn.onmouseout = () => downloadBtn.style.background = 'rgba(255, 255, 255, 0.9)';
+  downloadBtn.onclick = (e) => {
+    e.stopPropagation();
+    const link = document.createElement('a');
+    link.href = imageSrc;
+    link.download = title.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.jpg';
+    link.click();
+  };
+  
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '✖️ 关闭';
+  closeBtn.style.cssText = `
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+  `;
+  closeBtn.onmouseover = () => closeBtn.style.background = 'white';
+  closeBtn.onmouseout = () => closeBtn.style.background = 'rgba(255, 255, 255, 0.9)';
+  
+  const closeFunction = () => {
+    overlay.style.opacity = '0';
+    setTimeout(() => {
+      if (document.body.contains(overlay)) {
+        document.body.removeChild(overlay);
+      }
+      document.removeEventListener('keydown', escHandler);
+      document.head.removeChild(style);
+    }, 300);
+  };
+  
+  controls.appendChild(downloadBtn);
+  controls.appendChild(closeBtn);
+  
+  overlay.appendChild(controls);
+  overlay.appendChild(loader);
+  overlay.appendChild(img);
+  overlay.appendChild(titleEl);
+  
+  // 图片加载完成事件
+  img.onload = () => {
+    loader.style.display = 'none';
+    img.style.opacity = '1';
+    img.style.transform = 'scale(1)';
+    
+    // 添加缩放功能
+    let isZoomed = false;
+    img.onclick = (e) => {
+      e.stopPropagation();
+      if (!isZoomed) {
+        img.style.maxWidth = 'none';
+        img.style.maxHeight = 'none';
+        img.style.width = 'auto';
+        img.style.height = 'auto';
+        img.style.cursor = 'zoom-out';
+        isZoomed = true;
+      } else {
+        img.style.maxWidth = '95%';
+        img.style.maxHeight = '85%';
+        img.style.cursor = 'zoom-in';
+        isZoomed = false;
+      }
+    };
+  };
+  
+  img.onerror = () => {
+    loader.innerHTML = `
+      <div style="color: #ff6b6b; text-align: center;">
+        <div style="font-size: 2rem; margin-bottom: 0.5rem;">😞</div>
+        原图加载失败，请稍后重试
+      </div>
+    `;
+  };
+  
+  // 点击关闭
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) {
+      closeFunction();
+    }
+  });
+  
+  closeBtn.addEventListener('click', closeFunction);
+  
+  // ESC键关闭
+  const escHandler = function(e) {
+    if (e.key === 'Escape') {
+      closeFunction();
+    }
+  };
+  document.addEventListener('keydown', escHandler);
+  
+  document.body.appendChild(overlay);
+  
+  // 设置图片源
+  img.src = imageSrc;
+  
+  // 淡入效果
+  setTimeout(() => {
+    overlay.style.opacity = '1';
+  }, 10);
+}
+
+// 简化版灯箱函数
+function simpleLightbox(imageSrc, title, description) {
+  console.log('Simple lightbox called:', imageSrc, title);
+  simpleViewOriginal(imageSrc, title + (description ? ' - ' + description : ''));
+}
+</script>
