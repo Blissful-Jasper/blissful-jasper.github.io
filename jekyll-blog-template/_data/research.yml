@@ -1,0 +1,80 @@
+- title: "Machine Learning for Climate Pattern Recognition"
+  description: "Developing deep learning models to identify and predict climate patterns in tropical regions using satellite data and reanalysis datasets."
+  status: "Active"
+  start_date: "2023-09-01"
+  image: "/assets/images/research/ml-climate.jpg"
+  collaborators:
+    - "Dr. Jane Smith - Climate Modeling Lab"
+    - "Prof. John Doe - AI Research Institute"
+  funding: "NSF Graduate Research Fellowship"
+  publications:
+    - "Deep Learning Approaches for Tropical Cyclone Detection"
+    - "Neural Networks in Climate Science: A Review"
+  links:
+    - url: "/research/ml-climate-patterns"
+      text: "Project Details"
+    - url: "https://github.com/username/ml-climate"
+      text: "GitHub Repository"
+
+- title: "High-Resolution WRF Modeling of Tropical Waves"
+  description: "Using the Weather Research and Forecasting (WRF) model to study the dynamics of tropical waves and their role in weather systems."
+  status: "Active"
+  start_date: "2022-01-15"
+  image: "/assets/images/research/wrf-modeling.jpg"
+  collaborators:
+    - "Dr. Maria Garcia - Atmospheric Dynamics Group"
+  funding: "University Research Grant"
+  publications:
+    - "WRF Model Configuration for Tropical Wave Studies"
+  links:
+    - url: "/research/wrf-tropical-waves"
+      text: "Project Details"
+
+- title: "Satellite Data Assimilation for Precipitation Forecasting"
+  description: "Improving numerical weather prediction by incorporating satellite observations into model initial conditions through advanced data assimilation techniques."
+  status: "Planning"
+  start_date: "2024-06-01"
+  image: "/assets/images/research/satellite-da.jpg"
+  collaborators:
+    - "Dr. Robert Wilson - Remote Sensing Lab"
+    - "Dr. Lisa Chen - Data Assimilation Group"
+  funding: "Applied for NSF Grant"
+  links:
+    - url: "/research/satellite-data-assimilation"
+      text: "Project Proposal"
+
+- title: "Climate Change Impacts on Extreme Weather Events"
+  description: "Analyzing long-term trends in extreme weather events and their relationship to climate change using ensemble modeling approaches."
+  status: "Completed"
+  start_date: "2021-09-01"
+  end_date: "2023-05-31"
+  image: "/assets/images/research/climate-extremes.jpg"
+  collaborators:
+    - "Prof. Sarah Johnson - Climate Change Institute"
+  funding: "Department Fellowship"
+  publications:
+    - "Trends in Extreme Precipitation Events: A Regional Analysis"
+    - "Climate Model Ensemble Analysis of Future Extremes"
+  links:
+    - url: "/research/climate-extremes"
+      text: "Final Report"
+    - url: "/assets/papers/climate-extremes-final.pdf"
+      text: "Technical Report (PDF)"
+
+- title: "Open Source Tools for Atmospheric Data Analysis"
+  description: "Developing and maintaining Python packages for processing and visualizing atmospheric science data, with focus on ease of use and performance."
+  status: "Ongoing"
+  start_date: "2022-03-01"
+  image: "/assets/images/research/open-source.jpg"
+  collaborators:
+    - "Open Source Community"
+    - "Atmospheric Sciences Software Consortium"
+  publications:
+    - "AtmosPy: A Python Package for Atmospheric Data Analysis"
+  links:
+    - url: "https://github.com/username/atmospy"
+      text: "AtmosPy Package"
+    - url: "https://atmospherics-toolkit.readthedocs.io"
+      text: "Documentation"
+    - url: "/research/open-source-tools"
+      text: "Project Overview"

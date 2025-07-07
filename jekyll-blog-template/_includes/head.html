@@ -1,0 +1,69 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Title -->
+<title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+
+<!-- Description -->
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+<!-- Keywords -->
+{% if page.tags %}
+<meta name="keywords" content="{{ page.tags | join: ', ' | escape }}">
+{% endif %}
+
+<!-- Author -->
+<meta name="author" content="{{ page.author | default: site.author.name | escape }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Theme color -->
+<meta name="theme-color" content="#2c3e50">
+<meta name="msapplication-TileColor" content="#2c3e50">
+
+<!-- Open Graph -->
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
+<meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
+<meta property="og:site_name" content="{{ site.title | escape }}">
+{% if page.image %}
+<meta property="og:image" content="{{ page.image | absolute_url }}">
+{% elsif site.author.avatar %}
+<meta property="og:image" content="{{ site.author.avatar | absolute_url }}">
+{% endif %}
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}">
+<meta name="twitter:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+{% if site.social.twitter %}
+<meta name="twitter:site" content="@{{ site.social.twitter }}">
+<meta name="twitter:creator" content="@{{ site.social.twitter }}">
+{% endif %}
+{% if page.image %}
+<meta name="twitter:image" content="{{ page.image | absolute_url }}">
+{% elsif site.author.avatar %}
+<meta name="twitter:image" content="{{ site.author.avatar | absolute_url }}">
+{% endif %}
+
+<!-- SEO Plugin -->
+{% seo title=false %}

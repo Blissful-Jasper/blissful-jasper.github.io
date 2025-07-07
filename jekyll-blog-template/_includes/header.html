@@ -1,0 +1,81 @@
+<header class="site-header">
+  <nav class="navbar">
+    <div class="container">
+      <!-- Logo/Brand -->
+      <div class="navbar-brand">
+        <a href="{{ '/' | relative_url }}" class="brand-link">
+          {% if site.author.avatar %}
+          <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="brand-avatar">
+          {% endif %}
+          <span class="brand-text">{{ site.title }}</span>
+        </a>
+      </div>
+
+      <!-- Mobile menu toggle -->
+      <button class="navbar-toggle" type="button" aria-label="Toggle navigation">
+        <span class="navbar-toggle-icon"></span>
+      </button>
+
+      <!-- Navigation menu -->
+      <div class="navbar-menu">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">
+              <i class="fas fa-home"></i>
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/about/' | relative_url }}" class="nav-link {% if page.url contains '/about/' %}active{% endif %}">
+              <i class="fas fa-user"></i>
+              About
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/blog/' | relative_url }}" class="nav-link {% if page.url contains '/blog/' %}active{% endif %}">
+              <i class="fas fa-blog"></i>
+              Blog
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/research/' | relative_url }}" class="nav-link {% if page.url contains '/research/' %}active{% endif %}">
+              <i class="fas fa-flask"></i>
+              Research
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/publications/' | relative_url }}" class="nav-link {% if page.url contains '/publications/' %}active{% endif %}">
+              <i class="fas fa-graduation-cap"></i>
+              Publications
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ '/contact/' | relative_url }}" class="nav-link {% if page.url contains '/contact/' %}active{% endif %}">
+              <i class="fas fa-envelope"></i>
+              Contact
+            </a>
+          </li>
+        </ul>
+
+        <!-- Search -->
+        {% if site.enable_search %}
+        <div class="navbar-search">
+          <form class="search-form" action="{{ '/search/' | relative_url }}" method="get">
+            <input type="text" name="q" class="search-input" placeholder="Search..." aria-label="Search">
+            <button type="submit" class="search-button" aria-label="Submit search">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
+        {% endif %}
+
+        <!-- Theme toggle -->
+        {% if site.enable_dark_theme %}
+        <button class="theme-toggle" type="button" aria-label="Toggle dark theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</header>

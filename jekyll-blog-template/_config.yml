@@ -1,0 +1,112 @@
+# Site settings
+title: "Modern Academic Blog"
+description: "A modern Jekyll template for researchers and academics"
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# Author information
+author:
+  name: "Your Name"
+  email: "your.email@example.com"
+  bio: "Researcher in Climate Science and Machine Learning"
+  avatar: "/assets/images/avatar.jpg"
+  location: "Your Location"
+  website: "https://yourdomain.com"
+
+# Social media
+social:
+  github: "yourusername"
+  twitter: "yourusername"
+  linkedin: "yourprofile"
+  orcid: "0000-0000-0000-0000"
+  researchgate: "Your_ResearchGate_Profile"
+  scholar: "your-google-scholar-id"
+
+# Site features
+enable_mathjax: true
+enable_search: true
+enable_comments: false
+enable_analytics: false
+enable_dark_theme: true
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:year/:month/:day/:title/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# Pagination
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Collections
+collections:
+  research:
+    output: true
+    permalink: /:collection/:name/
+  publications:
+    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research"
+  - scope:
+      path: ""
+      type: "publications"
+    values:
+      layout: "publication"
+
+# Kramdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/
+  - README.md
+  - LICENSE
+  - start-jekyll.bat
+  - start-jekyll.sh
+
+# Include files
+include:
+  - _pages
+
+# RSS settings
+feed:
+  categories:
+    - blog
+    - research
+    - publications

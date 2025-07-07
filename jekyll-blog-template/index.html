@@ -1,0 +1,131 @@
+---
+layout: default
+title: "Home"
+description: "Welcome to my academic blog"
+---
+
+<!-- Hero section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Welcome to {{ site.title }}</h1>
+        <p class="hero-subtitle">{{ site.description }}</p>
+        <p class="hero-description">{{ site.author.bio }}</p>
+        <div class="hero-actions">
+          <a href="{{ '/about/' | relative_url }}" class="btn btn-primary">Learn More</a>
+          <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">Read Blog</a>
+        </div>
+      </div>
+      {% if site.author.avatar %}
+      <div class="hero-image">
+        <img src="{{ site.author.avatar | relative_url }}" alt="{{ site.author.name }}" class="hero-avatar">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Latest posts section -->
+<section class="latest-posts">
+  <div class="container">
+    <h2 class="section-title">Latest Posts</h2>
+    <div class="posts-grid">
+      {% for post in site.posts limit:6 %}
+      <article class="post-card">
+        {% if post.image %}
+        <div class="post-card-image">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            {% if post.categories %}
+            <span class="post-card-category">{{ post.categories | first }}</span>
+            {% endif %}
+          </div>
+          <h3 class="post-card-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <a href="{{ post.url | relative_url }}" class="post-card-link">Read more</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="section-actions">
+      <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">View All Posts</a>
+    </div>
+  </div>
+</section>
+
+<!-- Research highlights -->
+<section class="research-highlights">
+  <div class="container">
+    <h2 class="section-title">Research Highlights</h2>
+    <div class="research-grid">
+      {% for research in site.data.research limit:3 %}
+      <div class="research-card">
+        {% if research.image %}
+        <div class="research-card-image">
+          <img src="{{ research.image | relative_url }}" alt="{{ research.title }}">
+        </div>
+        {% endif %}
+        <div class="research-card-content">
+          <h3 class="research-card-title">{{ research.title }}</h3>
+          <p class="research-card-description">{{ research.description | truncate: 150 }}</p>
+          {% if research.status %}
+          <span class="research-card-status status-{{ research.status | slugify }}">{{ research.status }}</span>
+          {% endif %}
+          {% if research.link %}
+          <a href="{{ research.link | relative_url }}" class="research-card-link">Learn More</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section-actions">
+      <a href="{{ '/research/' | relative_url }}" class="btn btn-outline">View All Research</a>
+    </div>
+  </div>
+</section>
+
+<!-- Recent publications -->
+<section class="recent-publications">
+  <div class="container">
+    <h2 class="section-title">Recent Publications</h2>
+    <div class="publications-list">
+      {% for publication in site.data.publications limit:3 %}
+      <div class="publication-item">
+        <div class="publication-content">
+          <h3 class="publication-title">{{ publication.title }}</h3>
+          <p class="publication-authors">{{ publication.authors }}</p>
+          <p class="publication-venue">
+            <em>{{ publication.journal }}</em>
+            {% if publication.year %} ({{ publication.year }}){% endif %}
+          </p>
+          <div class="publication-links">
+            {% if publication.doi %}
+            <a href="https://doi.org/{{ publication.doi }}" target="_blank" rel="noopener" class="publication-link">
+              <i class="fas fa-external-link-alt"></i> DOI
+            </a>
+            {% endif %}
+            {% if publication.pdf %}
+            <a href="{{ publication.pdf | relative_url }}" target="_blank" class="publication-link">
+              <i class="fas fa-file-pdf"></i> PDF
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% if publication.type %}
+        <span class="publication-type">{{ publication.type }}</span>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section-actions">
+      <a href="{{ '/publications/' | relative_url }}" class="btn btn-outline">View All Publications</a>
+    </div>
+  </div>
+</section>

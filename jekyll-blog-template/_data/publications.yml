@@ -1,0 +1,112 @@
+- title: "Deep Learning Approaches for Tropical Cyclone Detection in Satellite Imagery"
+  authors: "Your Name, Dr. Jane Smith, Prof. John Doe"
+  journal: "Journal of Climate Science and Machine Learning"
+  year: 2024
+  volume: 15
+  pages: "123-145"
+  doi: "10.1000/jcsml.2024.001"
+  type: "Journal Article"
+  status: "Published"
+  abstract: "This study presents a novel deep learning framework for automated tropical cyclone detection and classification using satellite imagery. Our approach achieves 95% accuracy in cyclone identification and provides significant improvements over traditional methods."
+  pdf: "/assets/papers/cyclone-detection-2024.pdf"
+  supplementary: "/assets/papers/cyclone-detection-2024-supplement.pdf"
+  code: "https://github.com/username/cyclone-detection"
+  featured: true
+
+- title: "WRF Model Configuration Optimization for Tropical Wave Studies"
+  authors: "Your Name, Dr. Maria Garcia"
+  journal: "Atmospheric Research"
+  year: 2023
+  volume: 287
+  pages: "106-118"
+  doi: "10.1016/j.atmosres.2023.001"
+  type: "Journal Article"
+  status: "Published"
+  abstract: "We present an optimized configuration of the Weather Research and Forecasting (WRF) model specifically designed for high-resolution studies of tropical wave dynamics."
+  pdf: "/assets/papers/wrf-optimization-2023.pdf"
+
+- title: "Neural Networks in Climate Science: Applications and Challenges"
+  authors: "Your Name, Dr. Robert Wilson, Prof. Sarah Johnson"
+  journal: "Nature Climate Change"
+  year: 2023
+  volume: 13
+  pages: "892-904"
+  doi: "10.1038/s41558-023-001"
+  type: "Review Article"
+  status: "Published"
+  abstract: "A comprehensive review of neural network applications in climate science, highlighting recent advances and identifying key challenges for future research."
+  pdf: "/assets/papers/nn-climate-review-2023.pdf"
+  featured: true
+
+- title: "Trends in Extreme Precipitation Events: A Regional Climate Model Analysis"
+  authors: "Your Name, Prof. Sarah Johnson, Dr. Lisa Chen"
+  journal: "Climate Dynamics"
+  year: 2023
+  volume: 60
+  pages: "2341-2358"
+  doi: "10.1007/s00382-023-001"
+  type: "Journal Article"
+  status: "Published"
+  abstract: "Regional climate model simulations reveal significant trends in extreme precipitation events across tropical regions, with implications for water resource management."
+  pdf: "/assets/papers/extreme-precipitation-2023.pdf"
+
+- title: "AtmosPy: An Open-Source Python Package for Atmospheric Data Analysis"
+  authors: "Your Name, Atmospheric Sciences Software Consortium"
+  journal: "Journal of Open Source Software"
+  year: 2023
+  volume: 8
+  issue: 82
+  pages: "4521"
+  doi: "10.21105/joss.04521"
+  type: "Software Paper"
+  status: "Published"
+  abstract: "AtmosPy is a comprehensive Python package designed for atmospheric data analysis, providing tools for data processing, visualization, and statistical analysis."
+  pdf: "/assets/papers/atmospy-joss-2023.pdf"
+  code: "https://github.com/username/atmospy"
+
+- title: "Satellite Data Assimilation for Improved Precipitation Forecasting"
+  authors: "Your Name, Dr. Robert Wilson, Dr. Maria Garcia"
+  conference: "American Meteorological Society Annual Meeting"
+  year: 2024
+  type: "Conference Presentation"
+  status: "Presented"
+  location: "Baltimore, MD"
+  abstract: "We demonstrate improved precipitation forecasting accuracy through the assimilation of high-resolution satellite observations into numerical weather prediction models."
+  slides: "/assets/presentations/ams2024-data-assimilation.pdf"
+
+- title: "Machine Learning for Climate Pattern Recognition: Challenges and Opportunities"
+  authors: "Your Name"
+  conference: "International Conference on Climate Science and AI"
+  year: 2023
+  type: "Invited Talk"
+  status: "Presented"
+  location: "Paris, France"
+  abstract: "An overview of current machine learning applications in climate science and discussion of future research directions."
+  slides: "/assets/presentations/iccsai2023-invited.pdf"
+  video: "https://youtube.com/watch?v=example"
+
+- title: "Improving Tropical Cyclone Intensity Prediction with Deep Learning"
+  authors: "Your Name, Dr. Jane Smith"
+  journal: "Geophysical Research Letters"
+  year: 2024
+  type: "Journal Article"
+  status: "Under Review"
+  abstract: "A novel deep learning approach for predicting tropical cyclone intensity changes using multi-modal satellite and reanalysis data."
+  preprint: "https://arxiv.org/abs/2024.001"
+
+- title: "High-Resolution Climate Modeling of Urban Heat Islands"
+  authors: "Your Name, Dr. Urban Climate Lab"
+  journal: "Urban Climate"
+  year: 2024
+  type: "Journal Article"
+  status: "In Preparation"
+  abstract: "Using high-resolution climate models to study urban heat island effects and their impact on local weather patterns."
+
+- title: "AI-Driven Weather Prediction: From Nowcasting to Seasonal Forecasting"
+  authors: "Your Name, International Weather AI Consortium"
+  book: "Artificial Intelligence in Earth System Sciences"
+  year: 2024
+  type: "Book Chapter"
+  status: "Accepted"
+  publisher: "Springer"
+  abstract: "A comprehensive overview of AI applications in weather prediction across different time scales."
