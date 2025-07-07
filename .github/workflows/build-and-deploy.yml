@@ -41,9 +41,17 @@ jobs:
       
     - name: Minify files 🗜️ (Optional)
       run: |
-        npx html-minifier-terser ./_site/**/*.html --remove-comments --collapse-whitespace --file-ext html || echo "HTML minification skipped"
-        npx cleancss ./_site/**/*.css --batch --batch-suffix "" || echo "CSS minification skipped"
-        npx uglifyjs ./_site/**/*.js -c -m || echo "JS minification skipped"
+        echo "安装压缩工具..."
+        npm install -g html-minifier-terser clean-css-cli uglify-js || echo "工具安装失败，跳过压缩"
+        
+        echo "压缩HTML文件..."
+        find ./_site -name "*.html" | xargs -r -I {} html-minifier-terser {} --remove-comments --collapse-whitespace --file-ext html || echo "HTML压缩跳过"
+        
+        echo "压缩CSS文件..."
+        find ./_site -name "*.css" | xargs -r -I {} cleancss {} -o {} || echo "CSS压缩跳过"
+        
+        echo "压缩JS文件..."
+        find ./_site -name "*.js" | xargs -r -I {} uglifyjs {} -c -m -o {} || echo "JS压缩跳过"
         
     - name: Deploy to GitHub Pages 🚀
       if: github.ref == 'refs/heads/main'

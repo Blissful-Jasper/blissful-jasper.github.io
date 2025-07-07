@@ -4,6 +4,13 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  workflow_dispatch:
+
+# 设置 GITHUB_TOKEN 的权限
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -20,21 +27,27 @@ jobs:
         bundler-cache: true
         
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
         node-version: '18'
         cache: 'npm'
         
-    - name: Install Dependencies
+    - name: Install Node.js dependencies
       run: |
-        bundle install
-        npm install -g imagemin-cli imagemin-webp imagemin-mozjpeg imagemin-pngquant
+        npm install -g html-minifier-terser clean-css-cli uglify-js imagemin-cli imagemin-webp imagemin-mozjpeg imagemin-pngquant
+    - name: Install Ruby dependencies
+      run: bundle install
         
     - name: Optimize Images
       run: |
-        find ./pictures -name "*.jpg" -o -name "*.jpeg" | xargs -I {} imagemin {} --out-dir=./pictures --plugin=mozjpeg
-        find ./pictures -name "*.png" | xargs -I {} imagemin {} --out-dir=./pictures --plugin=pngquant
-        find ./pictures -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" | xargs -I {} imagemin {} --out-dir=./pictures --plugin=webp
+        if [ -d "./pictures" ]; then
+          echo "优化图片..."
+          find ./pictures -name "*.jpg" -o -name "*.jpeg" | xargs -r -I {} imagemin {} --out-dir=./pictures --plugin=mozjpeg || echo "JPEG优化跳过"
+          find ./pictures -name "*.png" | xargs -r -I {} imagemin {} --out-dir=./pictures --plugin=pngquant || echo "PNG优化跳过"
+          find ./pictures -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" | xargs -r -I {} imagemin {} --out-dir=./pictures --plugin=webp || echo "WebP转换跳过"
+        else
+          echo "pictures目录不存在，跳过图片优化"
+        fi
         
     - name: Build Site
       run: |
@@ -42,9 +55,14 @@ jobs:
         
     - name: Minify HTML, CSS, JS
       run: |
-        find ./_site -name "*.html" | xargs -I {} htmlmin {} --remove-comments --collapse-whitespace --output {}
-        find ./_site -name "*.css" | xargs -I {} cleancss {} -o {}
-        find ./_site -name "*.js" | xargs -I {} uglifyjs {} -c -m -o {}
+        echo "压缩HTML文件..."
+        find ./_site -name "*.html" | xargs -r -I {} html-minifier-terser {} --remove-comments --collapse-whitespace --file-ext html || echo "HTML压缩跳过"
+        
+        echo "压缩CSS文件..."
+        find ./_site -name "*.css" | xargs -r -I {} cleancss {} -o {} || echo "CSS压缩跳过"
+        
+        echo "压缩JS文件..."
+        find ./_site -name "*.js" | xargs -r -I {} uglifyjs {} -c -m -o {} || echo "JS压缩跳过"
         
     - name: Generate sitemap
       run: |

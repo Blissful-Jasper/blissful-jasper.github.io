@@ -1,5 +1,5 @@
-# 主要的 Jekyll GitHub Pages 部署工作流
-name: Deploy Jekyll Site to GitHub Pages
+# 推荐的 Jekyll GitHub Pages 部署工作流（简化版）
+name: Deploy Jekyll Site (Recommended)
 
 on:
   push:
@@ -31,15 +31,6 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true  # 启用 bundler 缓存以加快构建速度
       
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-      
-      - name: Install Node.js dependencies
-        run: npm ci || npm install
-      
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
@@ -48,27 +39,6 @@ jobs:
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      
-      - name: Optimize built site (optional)
-        run: |
-          echo "优化网站文件..."
-          # 安装压缩工具
-          npm install -g html-minifier-terser clean-css-cli uglify-js || echo "工具安装失败，跳过优化"
-          
-          # HTML 压缩
-          if command -v html-minifier-terser &> /dev/null; then
-            find ./_site -name "*.html" | xargs -r -I {} html-minifier-terser {} --remove-comments --collapse-whitespace --file-ext html || echo "HTML压缩跳过"
-          fi
-          
-          # CSS 压缩
-          if command -v cleancss &> /dev/null; then
-            find ./_site -name "*.css" | xargs -r -I {} cleancss {} -o {} || echo "CSS压缩跳过"
-          fi
-          
-          # JS 压缩
-          if command -v uglifyjs &> /dev/null; then
-            find ./_site -name "*.js" | xargs -r -I {} uglifyjs {} -c -m -o {} || echo "JS压缩跳过"
-          fi
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
