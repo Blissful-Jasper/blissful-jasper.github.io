@@ -14,6 +14,14 @@
       category: waves
       abstract: "本研究系统评估了CMIP6气候模式对对流耦合赤道波的模拟能力，重点分析了这些波动对热带降水变率的影响。"
       
+    - title: Three-Dimensional Thermohaline Reconstruction Driven by Satellite Sea Surface Data Based on Sea Ice Seasonal Variation in the Arctic Ocean
+      authors: Wu, X., Li, J., Wang, X., He, Z., Chen, Z., Ren, S., Liang, X.
+      journal: Remote Sensing
+      journal_short: Remote Sens.
+      doi: https://doi.org/10.3390/rs16214072
+      pdf: /publications/Li-2025.pdf
+      status: published
+      category: ocean  
 - year: 2024
   papers:
     - title: Oceanic Precipitation Nowcasting Using a UNet-Based Residual and Attention Network and Real-Time Himawari-8 Images
@@ -35,3 +43,4 @@
       status: published
       category: precipitation
       abstract: "针对热带海洋降水的区域化特征及其相关的大气背景环境特征进行深入分析和研究。"
+

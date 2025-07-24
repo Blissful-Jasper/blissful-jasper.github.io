@@ -1,7 +1,7 @@
 title: "Xianpu Ji"
 email: xianpuji@hhu.edu.cn
 description: >-
-      我的研究方向包括热带波动（Kelvin waves, MJO 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。
+      我的研究方向包括热带波动（Kelvin waves, MRG 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。
 baseurl: "" 
 url: "https://blissful-jasper.github.io"
 theme: minima
@@ -61,7 +61,7 @@ page_sections:
   about:
     enabled: true
     title: "关于我"
-    subtitle: "热带大气动力学研究者"
+    subtitle: "热带大气动力学研究"
     icon: "fas fa-user"
   research:
     enabled: true
@@ -107,9 +107,9 @@ page_sections:
 # Section 内容配置
 sections:
   about:
-    name: "季先朴"
+    name: "纪献普"
     title: "博士研究生"
-    affiliation: "河海大学海洋科学系"
+    affiliation: "河海大学海洋学院海洋科学专业"
     location: "南京, 中国"
     bio: "专注于热带大气动力学研究，探索对流耦合赤道波、热带降水变率等关键科学问题。结合机器学习技术，推动气象预报和气候模拟的创新发展。"
     
@@ -117,20 +117,20 @@ sections:
     overview: "致力于深入理解热带大气动力学机制，探索对流耦合赤道波、热带降水变率等关键科学问题。结合机器学习技术，推动气象预报和气候模拟的创新发展。"
     stats:
       directions: 3
-      papers: 8
-      citations: "150+"
+      papers: 3
+      citations: ""
       
   publications:
     stats:
-      total_papers: 8
-      journal_level: "Q1"
-      total_citations: "150+"
-      international_journals: 3
+      total_papers: 3
+      journal_level: ""
+      total_citations: ""
+      international_journals: 2
       
   contact:
     email: "xianpuji@hhu.edu.cn"
     phone: ""
-    address: "河海大学海洋科学系, 南京, 中国"
+    address: "河海大学海洋学院, 南京, 中国"
     office: ""
 
 # 不手动设置 layout，交由 theme: minima 自动处理
