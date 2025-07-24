@@ -1,1 +1,150 @@
-body{background:#fff;margin:0;padding:0}.section-wrapper{background:#fff!important;position:relative;overflow:hidden}.section-wrapper::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(59,130,246,.02) 0,rgba(16,185,129,.02) 100%);z-index:-1}.section-wrapper:nth-child(2n){background:#f8fafc!important}.section-wrapper:nth-child(2n)::before{background:linear-gradient(135deg,rgba(16,185,129,.02) 0,rgba(59,130,246,.02) 100%)}.section-wrapper>*{position:relative;z-index:1}.container{background:0 0;position:relative}.section-wrapper{padding:5rem 0;margin:0;min-height:auto}.section-wrapper .unified-card{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}.section-header{background:0 0;position:relative;z-index:2}.about-section{background:0 0!important}.about-section .container{background:0 0!important}.research-section{background:0 0!important}.publications-section{background:0 0!important}.journals-section{background:0 0!important}.blog-section{background:0 0!important}.links-section{background:0 0!important}.contact-section{background:0 0!important}html{scroll-behavior:smooth}.section-wrapper{display:block;width:100%}@media (max-width:768px){.section-wrapper{padding:3rem 0}}.section-wrapper:first-child{z-index:10}.section-wrapper:nth-child(2){z-index:9}.section-wrapper:nth-child(3){z-index:8}.section-wrapper:nth-child(4){z-index:7}.section-wrapper:nth-child(5){z-index:6}.section-wrapper:nth-child(6){z-index:5}.section-wrapper:nth-child(7){z-index:4}.section-wrapper:nth-child(8){z-index:3}body{overflow-x:hidden}.section-wrapper:first-child{margin-top:0}.section-wrapper:last-child{margin-bottom:0}
+/* 主页背景一致性修复 */
+
+/* 确保所有section wrapper都有正确的背景 */
+body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* 重置所有section的背景，确保一致性 */
+.section-wrapper {
+  background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 为每个section添加渐变背景效果 */
+.section-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.02) 0%, rgba(16, 185, 129, 0.02) 100%);
+  z-index: -1;
+}
+
+/* 交替的section使用稍微不同的背景 */
+.section-wrapper:nth-child(even) {
+  background: #f8fafc !important;
+}
+
+.section-wrapper:nth-child(even)::before {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.02) 0%, rgba(59, 130, 246, 0.02) 100%);
+}
+
+/* 确保所有section的内容都有正确的层级 */
+.section-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* 修复容器的背景 */
+.container {
+  background: transparent;
+  position: relative;
+}
+
+/* 统一的section间距 */
+.section-wrapper {
+  padding: 5rem 0;
+  margin: 0;
+  min-height: auto;
+}
+
+/* 移除可能导致背景不一致的样式 */
+.section-wrapper .unified-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 确保section标题的背景透明 */
+.section-header {
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+/* 修复about section的特殊样式 */
+.about-section {
+  background: transparent !important;
+}
+
+.about-section .container {
+  background: transparent !important;
+}
+
+/* 修复research section的背景 */
+.research-section {
+  background: transparent !important;
+}
+
+/* 修复publications section的背景 */
+.publications-section {
+  background: transparent !important;
+}
+
+/* 修复journals section的背景 */
+.journals-section {
+  background: transparent !important;
+}
+
+/* 修复blog section的背景 */
+.blog-section {
+  background: transparent !important;
+}
+
+/* 修复links section的背景 */
+.links-section {
+  background: transparent !important;
+}
+
+/* 修复contact section的背景 */
+.contact-section {
+  background: transparent !important;
+}
+
+/* 确保页面整体的平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 修复可能的布局问题 */
+.section-wrapper {
+  display: block;
+  width: 100%;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding: 3rem 0;
+  }
+}
+
+/* 确保所有section都有正确的层叠顺序 */
+.section-wrapper:nth-child(1) { z-index: 10; }
+.section-wrapper:nth-child(2) { z-index: 9; }
+.section-wrapper:nth-child(3) { z-index: 8; }
+.section-wrapper:nth-child(4) { z-index: 7; }
+.section-wrapper:nth-child(5) { z-index: 6; }
+.section-wrapper:nth-child(6) { z-index: 5; }
+.section-wrapper:nth-child(7) { z-index: 4; }
+.section-wrapper:nth-child(8) { z-index: 3; }
+
+/* 修复可能的滚动问题 */
+body {
+  overflow-x: hidden;
+}
+
+/* 确保页面没有不必要的空白 */
+.section-wrapper:first-child {
+  margin-top: 0;
+}
+
+.section-wrapper:last-child {
+  margin-bottom: 0;
+}

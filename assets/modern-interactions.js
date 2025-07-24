@@ -1,1 +1,454 @@
-(()=>{let e={init(){this.themeToggle=document.getElementById("themeToggle"),this.themeIcon=document.getElementById("themeIcon"),this.currentTheme=localStorage.getItem("theme")||"light",this.setTheme(this.currentTheme),this.bindEvents()},bindEvents(){this.themeToggle&&this.themeToggle.addEventListener("click",()=>{this.toggleTheme()})},setTheme(e){document.documentElement.setAttribute("data-theme",e),localStorage.setItem("theme",e),this.currentTheme=e,this.themeIcon&&(this.themeIcon.className="dark"===e?"fas fa-sun":"fas fa-moon")},toggleTheme(){var e="light"===this.currentTheme?"dark":"light";this.setTheme(e)}},t={init(){this.menuToggle=document.getElementById("mobileMenuToggle"),this.mobileMenu=document.getElementById("mobileMenu"),this.isOpen=!1,this.bindEvents()},bindEvents(){this.menuToggle&&this.menuToggle.addEventListener("click",()=>{this.toggleMenu()}),this.mobileMenu&&this.mobileMenu.addEventListener("click",e=>{e.target===this.mobileMenu&&this.closeMenu()}),document.addEventListener("keydown",e=>{"Escape"===e.key&&this.isOpen&&this.closeMenu()})},toggleMenu(){this.isOpen?this.closeMenu():this.openMenu()},openMenu(){this.mobileMenu&&(this.mobileMenu.classList.add("active"),document.body.style.overflow="hidden",this.isOpen=!0)},closeMenu(){this.mobileMenu&&(this.mobileMenu.classList.remove("active"),document.body.style.overflow="",this.isOpen=!1)}},i={init(){this.skillBars=document.querySelectorAll(".skill-bar"),this.isAnimated=!1,0<this.skillBars.length&&this.bindEvents()},bindEvents(){var e=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&!this.isAnimated&&(this.animateSkills(),this.isAnimated=!0)})},{threshold:.3}),t=document.querySelector(".skills-section");t&&e.observe(t)},animateSkills(){this.skillBars.forEach((e,t)=>{let i=e.getAttribute("data-level")||0;setTimeout(()=>{e.style.width=i+"%"},200*t)})}},s={init(){document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",this.handleClick.bind(this))})},handleClick(e){e.preventDefault();var t,e=e.currentTarget.getAttribute("href"),e=document.querySelector(e);e&&(t=document.querySelector(".modern-header")?.offsetHeight||0,e=e.offsetTop-t-20,window.scrollTo({top:e,behavior:"smooth"}))}},r={init(){this.searchInputs=document.querySelectorAll(".search-input"),this.bindEvents()},bindEvents(){this.searchInputs.forEach(e=>{e.addEventListener("input",this.handleSearch.bind(this))})},handleSearch(e){let i=e.target.value.toLowerCase();var t,e=e.target.closest(".search-container");e&&(e.querySelectorAll(".searchable-item").forEach(e=>{var t=e.textContent.toLowerCase().includes(i);e.style.display=t?"":"none",t&&(e.style.opacity="0",setTimeout(()=>{e.style.opacity="1"},50))}),t=e.querySelectorAll('.searchable-item:not([style*="display: none"])'),e=e.querySelector(".results-count"))&&(e.textContent=t.length+" results")}},n={init(){this.cards=document.querySelectorAll(".card, .post-card, .skill-item, .link-card, .map-card"),this.bindEvents()},bindEvents(){this.cards.forEach(e=>{e.addEventListener("mouseenter",this.handleMouseEnter.bind(this)),e.addEventListener("mouseleave",this.handleMouseLeave.bind(this))})},handleMouseEnter(e){e.currentTarget.style.transition="all 0.3s ease"},handleMouseLeave(e){e.currentTarget}},o={init(){var e=document.querySelectorAll("img[data-src]");if("IntersectionObserver"in window){let t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&((e=e.target).src=e.dataset.src,e.classList.remove("lazy"),t.unobserve(e))})});e.forEach(e=>t.observe(e))}else e.forEach(e=>{e.src=e.dataset.src})}},l={init(){document.querySelector(".blog-post-content")&&(this.createProgressBar(),this.bindEvents())},createProgressBar(){var e=document.createElement("div");e.className="reading-progress",e.innerHTML='<div class="reading-progress-bar"></div>',document.body.appendChild(e),this.progressBar=e.querySelector(".reading-progress-bar")},bindEvents(){window.addEventListener("scroll",this.updateProgress.bind(this))},updateProgress(){var e,t=document.querySelector(".blog-post-content");t&&(e=t.offsetHeight,t=window.scrollY-t.offsetTop,t=Math.min(Math.max(t/e,0),1),this.progressBar)&&(this.progressBar.style.width=100*t+"%")}},a={init(){this.forms=document.querySelectorAll("form"),this.bindEvents()},bindEvents(){this.forms.forEach(e=>{e.addEventListener("submit",this.handleSubmit.bind(this)),e.querySelectorAll("input, textarea").forEach(e=>{e.addEventListener("blur",this.validateField.bind(this)),e.addEventListener("focus",this.clearErrors.bind(this))})})},handleSubmit(e){e.preventDefault();e=e.target;this.validateForm(e)&&this.showSuccess(e)},validateForm(e){let t=!0;return e.querySelectorAll("input[required], textarea[required]").forEach(e=>{this.validateField({target:e})||(t=!1)}),t},validateField(e){var e=e.target,t=e.value.trim();let i=!0;return this.clearFieldError(e),e.hasAttribute("required")&&!t&&(this.showFieldError(e,"This field is required"),i=!1),"email"===e.type&&t&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(t)&&(this.showFieldError(e,"Please enter a valid email address"),i=!1),i},showFieldError(e,t){e.classList.add("error");let i=e.parentNode.querySelector(".field-error");i||((i=document.createElement("div")).className="field-error",e.parentNode.appendChild(i)),i.textContent=t},clearFieldError(e){e.classList.remove("error");e=e.parentNode.querySelector(".field-error");e&&e.remove()},clearErrors(e){this.clearFieldError(e.target)},showSuccess(e){let t=document.createElement("div");t.className="form-success",t.textContent="Message sent successfully!",e.appendChild(t),setTimeout(()=>{t.remove(),e.reset()},3e3)}};document.addEventListener("DOMContentLoaded",function(){e.init(),t.init(),i.init(),s.init(),r.init(),n.init(),o.init(),l.init(),a.init(),document.body.classList.add("loaded"),document.querySelectorAll("[data-tooltip]").forEach(e=>{e.addEventListener("mouseenter",function(){var e=document.createElement("div"),t=(e.className="tooltip",e.textContent=this.getAttribute("data-tooltip"),document.body.appendChild(e),this.getBoundingClientRect());e.style.left=t.left+t.width/2+"px",e.style.top=t.top-e.offsetHeight-10+"px",this._tooltip=e}),e.addEventListener("mouseleave",function(){this._tooltip&&(this._tooltip.remove(),this._tooltip=null)})})}),document.addEventListener("visibilitychange",function(){document.hidden?document.title="(Away) "+document.title.replace("(Away) ",""):document.title=document.title.replace("(Away) ","")})})();
+/**
+ * Modern Interactions JavaScript
+ * Handles theme toggling, skill animations, and other interactive features
+ */
+
+(function() {
+    'use strict';
+    
+    // Theme Management
+    const ThemeManager = {
+        init() {
+            this.themeToggle = document.getElementById('themeToggle');
+            this.themeIcon = document.getElementById('themeIcon');
+            this.currentTheme = localStorage.getItem('theme') || 'light';
+            
+            this.setTheme(this.currentTheme);
+            this.bindEvents();
+        },
+        
+        bindEvents() {
+            if (this.themeToggle) {
+                this.themeToggle.addEventListener('click', () => {
+                    this.toggleTheme();
+                });
+            }
+        },
+        
+        setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            this.currentTheme = theme;
+            
+            if (this.themeIcon) {
+                this.themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            }
+        },
+        
+        toggleTheme() {
+            const newTheme = this.currentTheme === 'light' ? 'dark' : 'light';
+            this.setTheme(newTheme);
+        }
+    };
+    
+    // Mobile Menu Management
+    const MobileMenu = {
+        init() {
+            this.menuToggle = document.getElementById('mobileMenuToggle');
+            this.mobileMenu = document.getElementById('mobileMenu');
+            this.isOpen = false;
+            
+            this.bindEvents();
+        },
+        
+        bindEvents() {
+            if (this.menuToggle) {
+                this.menuToggle.addEventListener('click', () => {
+                    this.toggleMenu();
+                });
+            }
+            
+            if (this.mobileMenu) {
+                this.mobileMenu.addEventListener('click', (e) => {
+                    if (e.target === this.mobileMenu) {
+                        this.closeMenu();
+                    }
+                });
+            }
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isOpen) {
+                    this.closeMenu();
+                }
+            });
+        },
+        
+        toggleMenu() {
+            this.isOpen ? this.closeMenu() : this.openMenu();
+        },
+        
+        openMenu() {
+            if (this.mobileMenu) {
+                this.mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                this.isOpen = true;
+            }
+        },
+        
+        closeMenu() {
+            if (this.mobileMenu) {
+                this.mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                this.isOpen = false;
+            }
+        }
+    };
+    
+    // Skills Animation
+    const SkillsAnimation = {
+        init() {
+            this.skillBars = document.querySelectorAll('.skill-bar');
+            this.isAnimated = false;
+            
+            if (this.skillBars.length > 0) {
+                this.bindEvents();
+            }
+        },
+        
+        bindEvents() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !this.isAnimated) {
+                        this.animateSkills();
+                        this.isAnimated = true;
+                    }
+                });
+            }, { threshold: 0.3 });
+            
+            const skillsSection = document.querySelector('.skills-section');
+            if (skillsSection) {
+                observer.observe(skillsSection);
+            }
+        },
+        
+        animateSkills() {
+            this.skillBars.forEach((bar, index) => {
+                const level = bar.getAttribute('data-level') || 0;
+                
+                setTimeout(() => {
+                    bar.style.width = level + '%';
+                }, index * 200);
+            });
+        }
+    };
+    
+    // Smooth Scrolling for Anchor Links
+    const SmoothScroll = {
+        init() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', this.handleClick.bind(this));
+            });
+        },
+        
+        handleClick(e) {
+            e.preventDefault();
+            const targetId = e.currentTarget.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                const headerHeight = document.querySelector('.modern-header')?.offsetHeight || 0;
+                const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    };
+    
+    // Search Functionality (for blog and other sections)
+    const SearchManager = {
+        init() {
+            this.searchInputs = document.querySelectorAll('.search-input');
+            this.bindEvents();
+        },
+        
+        bindEvents() {
+            this.searchInputs.forEach(input => {
+                input.addEventListener('input', this.handleSearch.bind(this));
+            });
+        },
+        
+        handleSearch(e) {
+            const query = e.target.value.toLowerCase();
+            const targetContainer = e.target.closest('.search-container');
+            
+            if (!targetContainer) return;
+            
+            const items = targetContainer.querySelectorAll('.searchable-item');
+            
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                const isVisible = text.includes(query);
+                
+                item.style.display = isVisible ? '' : 'none';
+                
+                // Add fade animation
+                if (isVisible) {
+                    item.style.opacity = '0';
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                    }, 50);
+                }
+            });
+            
+            // Update results count if exists
+            const visibleItems = targetContainer.querySelectorAll('.searchable-item:not([style*="display: none"])');
+            const countElement = targetContainer.querySelector('.results-count');
+            if (countElement) {
+                countElement.textContent = `${visibleItems.length} results`;
+            }
+        }
+    };
+    
+    // Card Hover Effects
+    const CardEffects = {
+        init() {
+            this.cards = document.querySelectorAll('.card, .post-card, .skill-item, .link-card, .map-card');
+            this.bindEvents();
+        },
+        
+        bindEvents() {
+            this.cards.forEach(card => {
+                card.addEventListener('mouseenter', this.handleMouseEnter.bind(this));
+                card.addEventListener('mouseleave', this.handleMouseLeave.bind(this));
+            });
+        },
+        
+        handleMouseEnter(e) {
+            const card = e.currentTarget;
+            card.style.transition = 'all 0.3s ease';
+        },
+        
+        handleMouseLeave(e) {
+            const card = e.currentTarget;
+            // Reset any custom styles if needed
+        }
+    };
+    
+    // Lazy Loading for Images
+    const LazyLoading = {
+        init() {
+            const images = document.querySelectorAll('img[data-src]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src;
+                            img.classList.remove('lazy');
+                            imageObserver.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for older browsers
+                images.forEach(img => {
+                    img.src = img.dataset.src;
+                });
+            }
+        }
+    };
+    
+    // Reading Progress Bar (for blog posts)
+    const ReadingProgress = {
+        init() {
+            if (document.querySelector('.blog-post-content')) {
+                this.createProgressBar();
+                this.bindEvents();
+            }
+        },
+        
+        createProgressBar() {
+            const progressBar = document.createElement('div');
+            progressBar.className = 'reading-progress';
+            progressBar.innerHTML = '<div class="reading-progress-bar"></div>';
+            document.body.appendChild(progressBar);
+            
+            this.progressBar = progressBar.querySelector('.reading-progress-bar');
+        },
+        
+        bindEvents() {
+            window.addEventListener('scroll', this.updateProgress.bind(this));
+        },
+        
+        updateProgress() {
+            const content = document.querySelector('.blog-post-content');
+            if (!content) return;
+            
+            const contentHeight = content.offsetHeight;
+            const contentTop = content.offsetTop;
+            const scrolled = window.scrollY - contentTop;
+            const progress = Math.min(Math.max(scrolled / contentHeight, 0), 1);
+            
+            if (this.progressBar) {
+                this.progressBar.style.width = (progress * 100) + '%';
+            }
+        }
+    };
+    
+    // Form Validation and Enhancement
+    const FormManager = {
+        init() {
+            this.forms = document.querySelectorAll('form');
+            this.bindEvents();
+        },
+        
+        bindEvents() {
+            this.forms.forEach(form => {
+                form.addEventListener('submit', this.handleSubmit.bind(this));
+                
+                const inputs = form.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('blur', this.validateField.bind(this));
+                    input.addEventListener('focus', this.clearErrors.bind(this));
+                });
+            });
+        },
+        
+        handleSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            
+            if (this.validateForm(form)) {
+                this.showSuccess(form);
+                // Here you would typically send the form data
+            }
+        },
+        
+        validateForm(form) {
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            
+            inputs.forEach(input => {
+                if (!this.validateField({ target: input })) {
+                    isValid = false;
+                }
+            });
+            
+            return isValid;
+        },
+        
+        validateField(e) {
+            const field = e.target;
+            const value = field.value.trim();
+            let isValid = true;
+            
+            // Clear previous errors
+            this.clearFieldError(field);
+            
+            // Required field validation
+            if (field.hasAttribute('required') && !value) {
+                this.showFieldError(field, 'This field is required');
+                isValid = false;
+            }
+            
+            // Email validation
+            if (field.type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    this.showFieldError(field, 'Please enter a valid email address');
+                    isValid = false;
+                }
+            }
+            
+            return isValid;
+        },
+        
+        showFieldError(field, message) {
+            field.classList.add('error');
+            
+            let errorElement = field.parentNode.querySelector('.field-error');
+            if (!errorElement) {
+                errorElement = document.createElement('div');
+                errorElement.className = 'field-error';
+                field.parentNode.appendChild(errorElement);
+            }
+            
+            errorElement.textContent = message;
+        },
+        
+        clearFieldError(field) {
+            field.classList.remove('error');
+            const errorElement = field.parentNode.querySelector('.field-error');
+            if (errorElement) {
+                errorElement.remove();
+            }
+        },
+        
+        clearErrors(e) {
+            this.clearFieldError(e.target);
+        },
+        
+        showSuccess(form) {
+            const successMessage = document.createElement('div');
+            successMessage.className = 'form-success';
+            successMessage.textContent = 'Message sent successfully!';
+            
+            form.appendChild(successMessage);
+            
+            setTimeout(() => {
+                successMessage.remove();
+                form.reset();
+            }, 3000);
+        }
+    };
+    
+    // Initialize all modules when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        ThemeManager.init();
+        MobileMenu.init();
+        SkillsAnimation.init();
+        SmoothScroll.init();
+        SearchManager.init();
+        CardEffects.init();
+        LazyLoading.init();
+        ReadingProgress.init();
+        FormManager.init();
+        
+        // Add loading class removal
+        document.body.classList.add('loaded');
+        
+        // Initialize tooltips if any
+        const tooltips = document.querySelectorAll('[data-tooltip]');
+        tooltips.forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = this.getAttribute('data-tooltip');
+                document.body.appendChild(tooltip);
+                
+                const rect = this.getBoundingClientRect();
+                tooltip.style.left = rect.left + (rect.width / 2) + 'px';
+                tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+                
+                this._tooltip = tooltip;
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                if (this._tooltip) {
+                    this._tooltip.remove();
+                    this._tooltip = null;
+                }
+            });
+        });
+    });
+    
+    // Handle page visibility changes
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            // Page is hidden
+            document.title = '(Away) ' + document.title.replace('(Away) ', '');
+        } else {
+            // Page is visible
+            document.title = document.title.replace('(Away) ', '');
+        }
+    });
+    
+})();

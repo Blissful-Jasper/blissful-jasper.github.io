@@ -1,1 +1,227 @@
-.content-wrapper{max-width:1200px;margin:0 auto;padding:2rem 1.5rem}.publications-content{width:100%}.publications-content .publications-section{background:var(--bg-white,#fff);border-radius:1rem;box-shadow:0 4px 20px rgba(0,0,0,.08);padding:3rem;margin-bottom:2rem;border:1px solid var(--border-gray,#e5e7eb)}.publications-content .section-title{font-size:2.5rem;font-weight:700;color:var(--text-primary,#1f2937);margin-bottom:2rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:1rem}.publications-content .section-title i{color:var(--primary-blue,#2563eb);font-size:2rem}.publication-list{margin-top:2rem}.publication-card{margin-bottom:2.5rem;border-bottom:2px solid var(--border-gray,#e5e7eb);padding-bottom:1.5rem}.publication-card:last-child{border-bottom:none;margin-bottom:0}.publication-year{font-size:1.5rem;font-weight:700;color:var(--primary-blue,#2563eb);margin-bottom:1.5rem;text-align:center;position:relative}.publication-year::after{content:'';position:absolute;bottom:-.5rem;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--primary-blue,#2563eb),var(--secondary-blue,#1e40af));border-radius:2px}.publications-content .publication-item{background:var(--bg-gray-50,#f9fafb);border-radius:.75rem;border:1px solid var(--border-gray,#e5e7eb);padding:2rem;margin-bottom:1.5rem;border-left:4px solid var(--primary-blue,#2563eb);transition:all .3s ease;position:relative}.publications-content .publication-item:hover{background:var(--bg-white,#fff);box-shadow:0 8px 25px rgba(0,0,0,.1);transform:translateX(5px);border-left-color:var(--secondary-blue,#1e40af)}.publications-content .publication-title{font-size:1.2rem;font-weight:600;margin-bottom:.75rem;line-height:1.4}.pub-link{color:var(--primary-blue,#2563eb);text-decoration:none;transition:color .2s ease}.pub-link:hover{color:var(--secondary-blue,#1e40af);text-decoration:underline}.publication-authors{color:var(--text-secondary,#6b7280);margin-bottom:.5rem;font-size:1rem;line-height:1.4}.publication-authors strong{color:var(--text-primary,#1f2937);font-weight:600}.publication-venue{color:var(--text-muted,#9ca3af);font-style:italic;font-size:.95rem}.publications-stats{background:linear-gradient(135deg,var(--primary-blue,#2563eb),var(--secondary-blue,#1e40af));color:#fff;padding:2rem;border-radius:1rem;margin-bottom:2rem;text-align:center}.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-top:1rem}.stat-item{text-align:center}.stat-number{font-size:2rem;font-weight:700;display:block}.stat-label{font-size:.9rem;opacity:.9}@media (max-width:768px){.content-wrapper{padding:1rem}.publications-content .publications-section{padding:2rem 1.5rem}.publications-content .section-title{font-size:2rem;flex-direction:column;gap:.5rem}.publications-content .publication-item{padding:1.5rem}.publications-content .publication-title{font-size:1.1rem}.stats-grid{grid-template-columns:repeat(2,1fr)}}@media (max-width:480px){.publications-content .publications-section{padding:1.5rem 1rem}.publications-content .section-title{font-size:1.75rem}.publications-content .publication-item{padding:1rem}.stats-grid{grid-template-columns:1fr}}:root{--primary-blue:#2563eb;--secondary-blue:#1e40af;--light-blue:#dbeafe;--text-primary:#1f2937;--text-secondary:#6b7280;--text-muted:#9ca3af;--bg-white:#ffffff;--bg-gray-50:#f9fafb;--bg-gray-100:#f3f4f6;--border-gray:#e5e7eb;--shadow-sm:0 1px 2px 0 rgba(0, 0, 0, 0.05);--shadow-md:0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);--shadow-lg:0 10px 15px -3px rgba(0, 0, 0, 0.1),0 4px 6px -2px rgba(0, 0, 0, 0.05)}
+/* Publications Page 独立页面样式 */
+
+/* 页面整体布局 */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.publications-content {
+  width: 100%;
+}
+
+/* Publications Page Section 样式 */
+.publications-content .publications-section {
+  background: var(--bg-white, #ffffff);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 3rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-gray, #e5e7eb);
+}
+
+.publications-content .section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary, #1f2937);
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.publications-content .section-title i {
+  color: var(--primary-blue, #2563eb);
+  font-size: 2rem;
+}
+
+/* 论文列表样式 */
+.publication-list {
+  margin-top: 2rem;
+}
+
+.publication-card {
+  margin-bottom: 2.5rem;
+  border-bottom: 2px solid var(--border-gray, #e5e7eb);
+  padding-bottom: 1.5rem;
+}
+
+.publication-card:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.publication-year {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue, #2563eb);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.publication-year::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue, #2563eb), var(--secondary-blue, #1e40af));
+  border-radius: 2px;
+}
+
+/* 论文项目样式 */
+.publications-content .publication-item {
+  background: var(--bg-gray-50, #f9fafb);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-gray, #e5e7eb);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--primary-blue, #2563eb);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.publications-content .publication-item:hover {
+  background: var(--bg-white, #ffffff);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transform: translateX(5px);
+  border-left-color: var(--secondary-blue, #1e40af);
+}
+
+.publications-content .publication-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.pub-link {
+  color: var(--primary-blue, #2563eb);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.pub-link:hover {
+  color: var(--secondary-blue, #1e40af);
+  text-decoration: underline;
+}
+
+.publication-authors {
+  color: var(--text-secondary, #6b7280);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.publication-authors strong {
+  color: var(--text-primary, #1f2937);
+  font-weight: 600;
+}
+
+.publication-venue {
+  color: var(--text-muted, #9ca3af);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+/* 统计信息区域 */
+.publications-stats {
+  background: linear-gradient(135deg, var(--primary-blue, #2563eb), var(--secondary-blue, #1e40af));
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+  
+  .publications-content .publications-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .publications-content .section-title {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .publications-content .publication-item {
+    padding: 1.5rem;
+  }
+  
+  .publications-content .publication-title {
+    font-size: 1.1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .publications-content .publications-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .publications-content .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .publications-content .publication-item {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CSS变量定义（如果没有全局定义的话） */
+:root {
+  --primary-blue: #2563eb;
+  --secondary-blue: #1e40af;
+  --light-blue: #dbeafe;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  --bg-white: #ffffff;
+  --bg-gray-50: #f9fafb;
+  --bg-gray-100: #f3f4f6;
+  --border-gray: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}

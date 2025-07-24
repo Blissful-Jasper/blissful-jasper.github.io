@@ -1,4 +1,151 @@
-function initializeTOC(){var e=document.querySelectorAll(".post-content h1, .post-content h2, .post-content h3, .post-content h4"),t=document.getElementById("tocContent");if(0===e.length)document.querySelector(".toc-trigger").style.display="none";else{let i=document.createElement("ul");e.forEach((e,t)=>{let o="heading-"+t;e.id=o;var t=document.createElement("li"),n=document.createElement("a");n.href="#"+o,n.textContent=e.textContent,n.className="toc-level-"+e.tagName.toLowerCase(),n.addEventListener("click",function(e){e.preventDefault(),document.getElementById(o).scrollIntoView({behavior:"smooth"}),window.innerWidth<=768&&toggleToc()}),t.appendChild(n),i.appendChild(t)}),t.appendChild(i),window.addEventListener("scroll",updateTOCHighlight)}}function updateTOCHighlight(){var e=document.querySelectorAll(".post-content h1, .post-content h2, .post-content h3, .post-content h4"),t=document.querySelectorAll(".toc-content a");let o=null;window.pageYOffset;e.forEach((e,t)=>{e.getBoundingClientRect().top<=100&&(o=t)}),t.forEach((e,t)=>{e.classList.toggle("active",t===o)})}function toggleToc(){document.getElementById("tocContainer").classList.toggle("active")}function initializeBackToTop(){let e=document.querySelector(".back-to-top");window.addEventListener("scroll",function(){300<window.pageYOffset?e.classList.add("visible"):e.classList.remove("visible")})}function scrollToTop(){window.scrollTo({top:0,behavior:"smooth"})}function sharePost(){navigator.share?navigator.share({title:document.title,url:window.location.href}):copyUrl()}function shareToWeibo(){var e=encodeURIComponent(window.location.href),t=encodeURIComponent(document.title);window.open(`https://service.weibo.com/share/share.php?url=${e}&title=`+t,"_blank")}function shareToTwitter(){var e=encodeURIComponent(window.location.href),t=encodeURIComponent(document.title);window.open(`https://twitter.com/intent/tweet?url=${e}&text=`+t,"_blank")}function copyUrl(){navigator.clipboard.writeText(window.location.href).then(function(){showToast("链接已复制到剪贴板！")},function(){var e=document.createElement("textarea");e.value=window.location.href,document.body.appendChild(e),e.select(),document.execCommand("copy"),document.body.removeChild(e),showToast("链接已复制到剪贴板！")})}function showToast(e){let t=document.createElement("div");t.className="toast",t.textContent=e,t.style.cssText=`
+// 博客文章页面功能
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTOC();
+    initializeBackToTop();
+    initializeImageZoom();
+    initializeCodeHighlight();
+    initializeScrollProgress();
+});
+
+// 初始化目录
+function initializeTOC() {
+    const headings = document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3, .post-content h4');
+    const tocContent = document.getElementById('tocContent');
+    
+    if (headings.length === 0) {
+        document.querySelector('.toc-trigger').style.display = 'none';
+        return;
+    }
+    
+    const tocList = document.createElement('ul');
+    
+    headings.forEach((heading, index) => {
+        // 为标题添加ID
+        const id = `heading-${index}`;
+        heading.id = id;
+        
+        // 创建目录项
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = `#${id}`;
+        link.textContent = heading.textContent;
+        link.className = `toc-level-${heading.tagName.toLowerCase()}`;
+        
+        // 添加点击事件
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById(id).scrollIntoView({
+                behavior: 'smooth'
+            });
+            
+            // 在移动设备上自动关闭目录
+            if (window.innerWidth <= 768) {
+                toggleToc();
+            }
+        });
+        
+        listItem.appendChild(link);
+        tocList.appendChild(listItem);
+    });
+    
+    tocContent.appendChild(tocList);
+    
+    // 监听滚动，高亮当前标题
+    window.addEventListener('scroll', updateTOCHighlight);
+}
+
+// 更新目录高亮
+function updateTOCHighlight() {
+    const headings = document.querySelectorAll('.post-content h1, .post-content h2, .post-content h3, .post-content h4');
+    const tocLinks = document.querySelectorAll('.toc-content a');
+    
+    let currentHeading = null;
+    const scrollTop = window.pageYOffset;
+    
+    headings.forEach((heading, index) => {
+        const rect = heading.getBoundingClientRect();
+        if (rect.top <= 100) {
+            currentHeading = index;
+        }
+    });
+    
+    tocLinks.forEach((link, index) => {
+        link.classList.toggle('active', index === currentHeading);
+    });
+}
+
+// 切换目录显示
+function toggleToc() {
+    const tocContainer = document.getElementById('tocContainer');
+    tocContainer.classList.toggle('active');
+}
+
+// 初始化回到顶部
+function initializeBackToTop() {
+    const backToTopBtn = document.querySelector('.back-to-top');
+    
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+}
+
+// 回到顶部
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// 分享功能
+function sharePost() {
+    if (navigator.share) {
+        navigator.share({
+            title: document.title,
+            url: window.location.href
+        });
+    } else {
+        copyUrl();
+    }
+}
+
+function shareToWeibo() {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    window.open(`https://service.weibo.com/share/share.php?url=${url}&title=${title}`, '_blank');
+}
+
+function shareToTwitter() {
+    const url = encodeURIComponent(window.location.href);
+    const title = encodeURIComponent(document.title);
+    window.open(`https://twitter.com/intent/tweet?url=${url}&text=${title}`, '_blank');
+}
+
+function copyUrl() {
+    navigator.clipboard.writeText(window.location.href).then(function() {
+        showToast('链接已复制到剪贴板！');
+    }, function() {
+        // 降级方案
+        const textArea = document.createElement('textarea');
+        textArea.value = window.location.href;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        showToast('链接已复制到剪贴板！');
+    });
+}
+
+// 显示提示消息
+function showToast(message) {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.textContent = message;
+    toast.style.cssText = `
         position: fixed;
         top: 20px;
         left: 50%;
@@ -10,15 +157,49 @@ function initializeTOC(){var e=document.querySelectorAll(".post-content h1, .pos
         z-index: 9999;
         opacity: 0;
         transition: opacity 0.3s ease;
-    `,document.body.appendChild(t),setTimeout(()=>{t.style.opacity="1"},10),setTimeout(()=>{t.style.opacity="0",setTimeout(()=>{document.body.removeChild(t)},300)},3e3)}function initializeImageZoom(){document.querySelectorAll(".post-content img").forEach(e=>{e.style.cursor="zoom-in",e.addEventListener("click",function(){openImageModal(this)})})}function openImageModal(e){let t=document.createElement("div");t.className="image-modal",t.innerHTML=`
+    `;
+    
+    document.body.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.style.opacity = '1';
+    }, 10);
+    
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => {
+            document.body.removeChild(toast);
+        }, 300);
+    }, 3000);
+}
+
+// 初始化图片缩放
+function initializeImageZoom() {
+    const images = document.querySelectorAll('.post-content img');
+    
+    images.forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function() {
+            openImageModal(this);
+        });
+    });
+}
+
+// 打开图片模态框
+function openImageModal(img) {
+    const modal = document.createElement('div');
+    modal.className = 'image-modal';
+    modal.innerHTML = `
         <div class="modal-backdrop" onclick="closeImageModal(this)"></div>
         <div class="modal-content">
-            <img src="${e.src}" alt="${e.alt}" style="max-width: 90vw; max-height: 90vh;">
+            <img src="${img.src}" alt="${img.alt}" style="max-width: 90vw; max-height: 90vh;">
             <button class="modal-close" onclick="closeImageModal(this)">
                 <i class="fas fa-times"></i>
             </button>
         </div>
-    `,t.style.cssText=`
+    `;
+    
+    modal.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
@@ -31,11 +212,17 @@ function initializeTOC(){var e=document.querySelectorAll(".post-content h1, .pos
         z-index: 9999;
         opacity: 0;
         transition: opacity 0.3s ease;
-    `,t.querySelector(".modal-content").style.cssText=`
+    `;
+    
+    const modalContent = modal.querySelector('.modal-content');
+    modalContent.style.cssText = `
         position: relative;
         max-width: 90vw;
         max-height: 90vh;
-    `,t.querySelector(".modal-close").style.cssText=`
+    `;
+    
+    const closeBtn = modal.querySelector('.modal-close');
+    closeBtn.style.cssText = `
         position: absolute;
         top: -40px;
         right: -40px;
@@ -47,7 +234,39 @@ function initializeTOC(){var e=document.querySelectorAll(".post-content h1, .pos
         cursor: pointer;
         font-size: 1.2rem;
         color: #333;
-    `,document.body.appendChild(t),setTimeout(()=>{t.style.opacity="1"},10),document.body.style.overflow="hidden"}function closeImageModal(e){let t=e.closest(".image-modal");t.style.opacity="0",setTimeout(()=>{document.body.removeChild(t),document.body.style.overflow="auto"},300)}function initializeCodeHighlight(){document.querySelectorAll("pre code").forEach(e=>{let t=document.createElement("button");t.className="code-copy-btn",t.innerHTML='<i class="fas fa-copy"></i>',t.style.cssText=`
+    `;
+    
+    document.body.appendChild(modal);
+    
+    setTimeout(() => {
+        modal.style.opacity = '1';
+    }, 10);
+    
+    // 阻止body滚动
+    document.body.style.overflow = 'hidden';
+}
+
+// 关闭图片模态框
+function closeImageModal(element) {
+    const modal = element.closest('.image-modal');
+    modal.style.opacity = '0';
+    
+    setTimeout(() => {
+        document.body.removeChild(modal);
+        document.body.style.overflow = 'auto';
+    }, 300);
+}
+
+// 初始化代码高亮
+function initializeCodeHighlight() {
+    const codeBlocks = document.querySelectorAll('pre code');
+    
+    codeBlocks.forEach(block => {
+        // 添加复制按钮
+        const copyBtn = document.createElement('button');
+        copyBtn.className = 'code-copy-btn';
+        copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+        copyBtn.style.cssText = `
             position: absolute;
             top: 10px;
             right: 10px;
@@ -59,7 +278,36 @@ function initializeTOC(){var e=document.querySelectorAll(".post-content h1, .pos
             cursor: pointer;
             opacity: 0;
             transition: opacity 0.3s ease;
-        `;var o=e.parentNode;o.style.position="relative",o.appendChild(t),o.addEventListener("mouseenter",()=>{t.style.opacity="1"}),o.addEventListener("mouseleave",()=>{t.style.opacity="0"}),t.addEventListener("click",()=>{navigator.clipboard.writeText(e.textContent).then(()=>{t.innerHTML='<i class="fas fa-check"></i>',setTimeout(()=>{t.innerHTML='<i class="fas fa-copy"></i>'},2e3)})})})}function initializeScrollProgress(){let t=document.createElement("div");t.className="scroll-progress",t.style.cssText=`
+        `;
+        
+        const pre = block.parentNode;
+        pre.style.position = 'relative';
+        pre.appendChild(copyBtn);
+        
+        pre.addEventListener('mouseenter', () => {
+            copyBtn.style.opacity = '1';
+        });
+        
+        pre.addEventListener('mouseleave', () => {
+            copyBtn.style.opacity = '0';
+        });
+        
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(block.textContent).then(() => {
+                copyBtn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    copyBtn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        });
+    });
+}
+
+// 初始化滚动进度
+function initializeScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    progressBar.style.cssText = `
         position: fixed;
         top: 0;
         left: 0;
@@ -68,4 +316,89 @@ function initializeTOC(){var e=document.querySelectorAll(".post-content h1, .pos
         background: linear-gradient(90deg, #3498db, #2ecc71);
         z-index: 9999;
         transition: width 0.1s ease;
-    `,document.body.appendChild(t),window.addEventListener("scroll",()=>{var e=window.pageYOffset/(document.body.scrollHeight-window.innerHeight)*100;t.style.width=e+"%"})}function initializeLazyLoading(){var e=document.querySelectorAll("img[data-src]");let t=new IntersectionObserver((e,t)=>{e.forEach(e=>{e.isIntersecting&&((e=e.target).src=e.dataset.src,e.classList.remove("lazy"),t.unobserve(e))})});e.forEach(e=>t.observe(e))}function calculateReadingTime(){var e,t=document.querySelector(".post-content");t&&(t=t.textContent.length,t=Math.ceil(t/200),e=document.querySelector(".reading-time"))&&(e.textContent=t+" 分钟阅读")}document.addEventListener("DOMContentLoaded",function(){initializeTOC(),initializeBackToTop(),initializeImageZoom(),initializeCodeHighlight(),initializeScrollProgress()}),document.addEventListener("keydown",function(e){"Escape"===e.key&&document.getElementById("tocContainer").classList.contains("active")&&toggleToc(),"t"!==e.key&&"T"!==e.key||e.ctrlKey||e.altKey||e.shiftKey||(e.preventDefault(),toggleToc()),"Home"===e.key&&(e.preventDefault(),scrollToTop())}),document.addEventListener("click",function(e){"A"===e.target.tagName&&e.target.getAttribute("href").startsWith("#")&&(e.preventDefault(),e=e.target.getAttribute("href").substring(1),e=document.getElementById(e))&&e.scrollIntoView({behavior:"smooth"})});
+    `;
+    
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        
+        progressBar.style.width = scrollPercent + '%';
+    });
+}
+
+// 键盘快捷键
+document.addEventListener('keydown', function(e) {
+    // ESC 键关闭目录
+    if (e.key === 'Escape') {
+        const tocContainer = document.getElementById('tocContainer');
+        if (tocContainer.classList.contains('active')) {
+            toggleToc();
+        }
+    }
+    
+    // T 键切换目录
+    if (e.key === 't' || e.key === 'T') {
+        if (!e.ctrlKey && !e.altKey && !e.shiftKey) {
+            e.preventDefault();
+            toggleToc();
+        }
+    }
+    
+    // 上箭头键回到顶部
+    if (e.key === 'Home') {
+        e.preventDefault();
+        scrollToTop();
+    }
+});
+
+// 平滑滚动到锚点
+document.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        const targetId = e.target.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
+});
+
+// 懒加载图片
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// 文章阅读时间计算
+function calculateReadingTime() {
+    const content = document.querySelector('.post-content');
+    if (!content) return;
+    
+    const text = content.textContent;
+    const wordsPerMinute = 200; // 假设每分钟阅读200个字
+    const words = text.length;
+    const readingTime = Math.ceil(words / wordsPerMinute);
+    
+    const readingTimeElement = document.querySelector('.reading-time');
+    if (readingTimeElement) {
+        readingTimeElement.textContent = `${readingTime} 分钟阅读`;
+    }
+}

@@ -1,1 +1,495 @@
-.profile-section,.research-section,.skills-section{max-width:800px;width:96vw;margin:0 auto 2.5rem auto;background:#fff;border-radius:1rem;box-shadow:0 2px 12px rgba(44,62,80,.06);padding:0;display:flex;flex-direction:row;align-items:center;gap:2.2rem;min-height:260px}.skills-container{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.skill-card{background:#f8f9fa;padding:10px;border-radius:12px;box-shadow:0 2px 12px rgba(44,62,80,.06);font-size:1.1em;cursor:pointer;display:flex;align-items:center;gap:10px;border-left:4px solid #db8d34}.profile-section{border:6px solid #3b6fd9;flex-wrap:wrap}.research-section,.skills-section{border:none;flex-direction:column;align-items:stretch;padding:2.2rem 2.2rem 2.2rem 1rem;gap:20px}.profile-img{width:150px;height:150px;border-radius:50%;box-shadow:0 2px 8px rgba(44,62,80,.1);object-fit:cover;border:4px solid #fff}.profile-info{flex:1;min-width:340px;padding:1.5rem 2.2rem 1.5rem 0;display:flex;flex-direction:column;justify-content:center}.profile-name{font-size:2.1rem;font-weight:700;color:#2c3e50;margin-bottom:.2rem;text-align:center}.profile-title{font-size:1.15rem;color:#6c757d;margin-bottom:.7rem;text-align:center}.profile-bio{font-size:1.05rem;color:#444;margin-bottom:1.1rem;line-height:1.7;text-align:center}.social-links{margin-bottom:1.1rem;display:flex;gap:20px;justify-content:center}.social-links a{background:#3b6fd9;color:#fff;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:1.2rem;text-decoration:none;transition:background .3s}.social-links a:hover{background:#2980b9}.profile-contact{display:flex;gap:32px;flex-wrap:nowrap;color:#222;font-size:1.08rem;align-items:center;justify-content:center}.profile-contact span{white-space:nowrap}.publications-section h2,.publications-title,.research-section h2,.skills-section h2{font-size:28px;margin-bottom:30px;color:#2c3e50;border-bottom:3px solid #3c9ae7;padding-bottom:10px}.publications-title{border-bottom-color:#e74c3c}.skills-section h2{font-size:28px;margin-bottom:20px;color:#2c3e50;border-bottom:3px solid #3cbce7;padding-bottom:10px}.publication-list,.research-grid{display:grid;grid-template-columns:1fr;gap:20px;width:100%}.publication-card,.research-card{background:#f8f9fa;padding:25px;border-radius:8px;transition:transform .3s;width:100%;box-sizing:border-box}.research-card{border-left:4px solid #3498db}.publication-card{border-left:4px solid #e74c3c}.research-card h3{margin-bottom:20px;color:#228be6}.research-card p{margin-bottom:30px;line-height:2}.research-card .btn-primary{margin-top:10px}.publications-section{background:#fff;border-radius:.5rem;border:1px solid #e0e4ea;padding:2.5rem;max-width:1000px;margin:2rem auto}.publication-card{background:#f8f9fa;padding:25px;border-radius:8px;border-left:4px solid #e74c3c;margin-bottom:20px;transition:transform .3s}.publication-card:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,.1)}.publication-year{font-size:1.2rem;color:#2c3e50;margin-bottom:10px}.publication-title a{font-weight:700;color:#3498db;text-decoration:none}.publication-title a:hover{color:#2980b9}.publication-authors{color:#7f8c8d;margin-bottom:5px}.publication-venue{color:#27ae60;font-style:italic}.btn-primary{margin-top:10px;background:#68af0b;color:#fff;border:none;border-radius:4px;padding:8px 18px;font-size:1rem;cursor:pointer;text-decoration:none;display:inline-block;transition:background .3s}.btn-primary:hover{background:#2980b9}@media (max-width:1000px){.profile-section,.publications-section,.research-section,.skills-section{flex-direction:column;align-items:center;min-width:0;max-width:98vw;padding:0 1rem}.profile-info{padding:1.2rem 0 1.2rem 0}.publications-section,.research-section,.skills-section{padding:1.2rem 1rem 1.2rem 1rem}}.markdown-body pre{background:#f8f9fa;border-radius:8px;padding:15px;font-family:'JetBrains Mono',monospace;font-size:14px;line-height:1.6;color:#2c3e50;box-shadow:0 2px 5px rgba(0,0,0,.1);overflow-x:auto}.markdown-body code{background:#f8f9fa;border-radius:4px;padding:2px 4px;font-family:'JetBrains Mono',monospace;font-size:14px;color:#e74c3c}.markdown-body pre code{background:0 0;padding:0;color:inherit}.markdown-body p img{max-width:100%;height:auto;border-radius:8px;margin:1rem 0}.sidebar{background:#f8f9fa;padding:40px 20px;border-radius:50px;height:fit-content;position:fixed;top:8%;right:3vw;width:320px;z-index:10;box-shadow:0 2px 8px rgba(44,62,80,.08)}.sidebar h3{margin-bottom:40px;color:#2c3e50;border-bottom:2px solid #3498db;padding-bottom:10px}.sidebar-section{margin-bottom:1.5rem}.sidebar-section h3{font-size:1.2rem;color:#2c3e50;margin-bottom:1rem}.sidebar-section ul{list-style:none;padding:0}.sidebar-section li{margin-bottom:.8rem}.news-item,.post-item{font-size:.9rem;color:#34495e}.news-item a,.post-item a{text-decoration:none;color:#3498db}.news-item a:hover,.post-item a:hover{text-decoration:underline}.news-date,.post-date{font-size:.8rem;color:#7f8c8d;display:block;margin-top:.2rem}@media (max-width:1200px){.sidebar{position:static;width:100%;margin-top:2rem;box-shadow:0 2px 5px rgba(0,0,0,.08)}}.main-container{max-width:1100px;margin:0 auto;padding:0 2rem}.main-flex{display:flex;flex-direction:row;justify-content:center;gap:3rem;padding:3rem 0}.main-content-area{flex:1 1 0;max-width:760px;margin:0 auto}@media (max-width:1200px){.main-flex{flex-direction:column;gap:1.5rem;padding:1.5rem 0}.sidebar{position:static;width:100%;margin-top:2rem;box-shadow:0 2px 5px rgba(0,0,0,.08)}}body,html{height:100%;min-height:100vh}body{display:flex;flex-direction:column;min-height:100vh}.main-container{flex:1 0 auto}.site-footer{flex-shrink:0}.site-footer{width:100%;background:#2c3e50;color:#fff;padding:1.2rem 0 .5rem 0;text-align:center;position:relative;bottom:0;left:0;font-size:1rem;z-index:100}.site-footer .footer-bottom{margin:0 auto;max-width:900px}.site-footer .footer-links{margin-top:.5rem}.site-footer .footer-links a{color:#b3d1f7;text-decoration:none;margin:0 .2em;font-size:1rem}.site-footer .footer-links a:hover{color:#fff;text-decoration:underline}@media (max-width:800px){.site-footer{font-size:.95rem;padding:1rem 0 .3rem 0}.site-footer .footer-bottom{max-width:98vw}}
+/* =====================
+   主页卡片与研究兴趣区块
+   ===================== */
+
+.profile-section, .research-section, .skills-section {
+    /* 最大宽度，保证卡片不至于过宽 */
+    max-width: 800px;
+    width: 96vw;
+    margin: 0 auto 2.5rem auto;
+    background: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.06);
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2.2rem;
+    min-height: 260px;
+}
+
+/* =====================
+   技能区块样式
+   ===================== */
+
+
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 每行显示3个 */
+  gap: 20px; /* 调整间距 */
+}
+
+.skill-card {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(44, 62, 80, 0.06); /* 调整卡片阴影为一致 */
+  font-size: 1.1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-left: 4px solid #db8d34; /* 左侧蓝色条，与 publications-section 风格一致 */
+}
+
+.profile-section {
+    border: 6px solid #3b6fd9; /* 主页卡片蓝色边框 */
+    flex-wrap: wrap;
+}
+
+.research-section, .skills-section {
+    border: none; /* 研究兴趣区块无边框 */
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2.2rem 2.2rem 2.2rem 1rem;
+    gap: 20px;
+}
+
+/* 头像样式 */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    object-fit: cover;
+    border: 4px solid #fff;
+}
+
+/* 个人信息区块 */
+.profile-info {
+    flex: 1;
+    min-width: 340px;
+    padding: 1.5rem 2.2rem 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.profile-name {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.profile-title {
+    font-size: 1.15rem;
+    color: #6c757d;
+    margin-bottom: 0.7rem;
+    text-align: center;
+}
+
+.profile-bio {
+    font-size: 1.05rem;
+    color: #444;
+    margin-bottom: 1.1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+/* 社交图标区块 */
+.social-links {
+    margin-bottom: 1.1rem;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-links a {
+    background: #3b6fd9;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-links a:hover {
+    background: #2980b9;
+}
+
+/* 联系方式区块 */
+.profile-contact {
+    display: flex;
+    gap: 32px;
+    flex-wrap: nowrap;
+    color: #222;
+    font-size: 1.08rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-contact span {
+    white-space: nowrap;
+}
+
+/* 研究兴趣区块标题 */
+.research-section h2, .publications-title,.publications-section h2, .skills-section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    border-bottom: 3px solid #3c9ae7; /* 与 publications-section 的样式一致 */
+    padding-bottom: 10px;
+}
+
+.publications-title {
+    border-bottom-color: #e74c3c;
+}
+
+/* 技能区块标题样式调整 */
+.skills-section h2 {
+  font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 3px solid #3cbce7; /* 与 publications-section 的样式一致 */
+    padding-bottom: 10px;
+}
+
+/* 研究兴趣区块标题与内容间距调整 */
+
+
+/* 研究兴趣卡片布局 */
+.research-grid, .publication-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    width: 100%;
+}
+
+.research-card, .publication-card {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.research-card {
+    border-left: 4px solid #3498db; /* 左侧蓝色条 */
+}
+
+.publication-card {
+    border-left: 4px solid #e74c3c; /* 左侧红色条 */
+}
+
+.research-card h3 {
+    margin-bottom: 20px; /* 增加标题与摘要之间的间隔 */
+    color: #228be6; /* 突出标题颜色 */
+}
+
+.research-card p {
+    margin-bottom: 30px; /* 增加摘要与按钮之间的间隔 */
+    line-height: 2; /* 提升文字可读性 */
+}
+
+.research-card .btn-primary {
+    margin-top: 10px; /* 确保按钮与文字间距舒适 */
+}
+
+/* Publications Section */
+.publications-section {
+  background: #fff;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e4ea;
+  padding: 2.5rem;
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.publication-card {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #e74c3c;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.publication-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.publication-year {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.publication-title a {
+  font-weight: bold;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.publication-title a:hover {
+  color: #2980b9;
+}
+
+.publication-authors {
+  color: #7f8c8d;
+  margin-bottom: 5px;
+}
+
+.publication-venue {
+  color: #27ae60;
+  font-style: italic;
+}
+
+/* 阅读文章按钮 */
+.btn-primary {
+    margin-top: 10px;
+    background: #68af0b;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 18px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+}
+
+@media (max-width: 1000px) {
+    .profile-section, .research-section, .publications-section, .skills-section {
+        flex-direction: column;
+        align-items: center;
+        min-width: 0;
+        max-width: 98vw;
+        padding: 0 1rem;
+    }
+    .profile-info {
+        padding: 1.2rem 0 1.2rem 0;
+    }
+    .research-section, .publications-section, .skills-section {
+        padding: 1.2rem 1rem 1.2rem 1rem;
+    }
+}
+
+/* ===============
+   Markdown代码块
+   =============== */
+
+.markdown-body pre {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #2c3e50;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.markdown-body code {
+    background: #f8f9fa;
+    border-radius: 4px;
+    padding: 2px 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: #e74c3c;
+}
+
+.markdown-body pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.markdown-body p img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* =====================
+   侧边栏 sidebar 样式
+   ===================== */
+
+.sidebar {
+    background: #f8f9fa; /* 浅灰背景 */
+    padding: 40px 20px;
+    border-radius: 50px;
+    height: fit-content;
+    position: fixed; /* 固定在页面右侧 */
+    top: 8%;
+    right: 3vw;
+    width: 320px;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+}
+
+.sidebar h3 {
+    margin-bottom: 40px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.sidebar-section {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-section h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-section li {
+  margin-bottom: 0.8rem;
+}
+
+.news-item, .post-item {
+  font-size: 0.9rem;
+  color: #34495e;
+}
+
+.news-item a, .post-item a {
+  text-decoration: none;
+  color: #3498db;
+}
+
+.news-item a:hover, .post-item a:hover {
+  text-decoration: underline;
+}
+
+.news-date, .post-date {
+  font-size: 0.8rem;
+  color: #7f8c8d;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 1200px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        margin-top: 2rem;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+}
+
+/* ===============
+   主体布局样式
+   =============== */
+.main-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.main-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
+  padding: 3rem 0;
+}
+.main-content-area {
+  flex: 1 1 0;
+  max-width: 760px;
+  margin: 0 auto;
+}
+@media (max-width: 1200px) {
+  .main-flex {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .sidebar {
+    position: static;
+    width: 100%;
+    margin-top: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+  }
+}
+
+/* ===============
+   页面整体高度与页脚固定底部
+   =============== */
+html, body {
+  height: 100%;
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-container {
+  flex: 1 0 auto;
+}
+.site-footer {
+  flex-shrink: 0;
+}
+
+/* =====================
+   页脚 footer 样式
+   ===================== */
+.site-footer {
+  width: 100%;
+  background: #2c3e50;
+  color: #fff;
+  padding: 1.2rem 0 0.5rem 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  font-size: 1rem;
+  z-index: 100;
+}
+.site-footer .footer-bottom {
+  margin: 0 auto;
+  max-width: 900px;
+}
+.site-footer .footer-links {
+  margin-top: 0.5rem;
+}
+.site-footer .footer-links a {
+  color: #b3d1f7;
+  text-decoration: none;
+  margin: 0 0.2em;
+  font-size: 1rem;
+}
+.site-footer .footer-links a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  .site-footer {
+    font-size: 0.95rem;
+    padding: 1rem 0 0.3rem 0;
+  }
+  .site-footer .footer-bottom {
+    max-width: 98vw;
+  }
+}

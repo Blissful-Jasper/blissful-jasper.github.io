@@ -1,1 +1,20 @@
-let fs=require("fs"),path=require("path"),marked=require("marked"),inputDir="./blog",outputDir="./blog-html";fs.existsSync(outputDir)||fs.mkdirSync(outputDir),fs.readdirSync(inputDir).forEach(t=>{var r,e;".md"===path.extname(t)&&(r=fs.readFileSync(path.join(inputDir,t),"utf-8"),r=marked(r),e=path.join(outputDir,path.basename(t,".md")+".html"),fs.writeFileSync(e,r),console.log(`Converted: ${t} -> `+e))});
+const fs = require('fs');
+const path = require('path');
+const marked = require('marked');
+
+const inputDir = './blog';
+const outputDir = './blog-html';
+
+if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+}
+
+fs.readdirSync(inputDir).forEach(file => {
+    if (path.extname(file) === '.md') {
+        const markdown = fs.readFileSync(path.join(inputDir, file), 'utf-8');
+        const html = marked(markdown);
+        const outputFile = path.join(outputDir, path.basename(file, '.md') + '.html');
+        fs.writeFileSync(outputFile, html);
+        console.log(`Converted: ${file} -> ${outputFile}`);
+    }
+});

@@ -1,1 +1,340 @@
-*{box-sizing:border-box}body{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1e293b;background:#fff;margin:0;padding:0;overflow-x:hidden}.section-wrapper{width:100%;margin:0;padding:5rem 0!important;background:#fff!important;position:relative;overflow:hidden}.section-wrapper:nth-child(2n){background:#f8fafc!important}.container{max-width:1200px!important;margin:0 auto!important;padding:0 2rem!important;position:relative;z-index:1}.section-header{text-align:center;margin-bottom:3rem;position:relative}.section-title{font-size:2.5rem!important;font-weight:700!important;color:#1e293b!important;margin-bottom:1rem!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:1rem!important}.section-title i{color:#3b82f6}.section-subtitle{font-size:1.1rem!important;color:#64748b!important;max-width:600px!important;margin:0 auto!important;line-height:1.6!important}.unified-card{background:rgba(255,255,255,.95)!important;border:1px solid #e2e8f0!important;border-radius:16px!important;padding:2rem!important;box-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06)!important;transition:all .3s ease!important;position:relative;overflow:hidden}.unified-card:hover{transform:translateY(-4px)!important;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 10px 10px -5px rgba(0,0,0,.04)!important}.unified-grid{display:grid!important;gap:2rem!important}.unified-grid-2{grid-template-columns:repeat(auto-fit,minmax(350px,1fr))!important}.unified-grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))!important}.unified-btn{display:inline-flex!important;align-items:center!important;gap:.5rem!important;padding:.75rem 1.5rem!important;background:#3b82f6!important;color:#fff!important;text-decoration:none!important;border-radius:8px!important;font-weight:500!important;transition:all .3s ease!important;border:none!important;cursor:pointer!important}.unified-btn:hover{background:#2563eb!important;transform:translateY(-2px)!important;box-shadow:0 4px 6px -1px rgba(0,0,0,.1)!important}.unified-btn-secondary{background:#f1f5f9!important;color:#475569!important}.unified-btn-secondary:hover{background:#e2e8f0!important;color:#334155!important}.unified-tag{display:inline-block!important;background:#f1f5f9!important;color:#475569!important;padding:.25rem .75rem!important;border-radius:20px!important;font-size:.85rem!important;font-weight:500!important;margin-right:.5rem!important;margin-bottom:.5rem!important;transition:all .2s ease!important}.unified-tag:hover{background:#e2e8f0!important;transform:translateY(-1px)!important}.unified-badge{display:inline-flex!important;align-items:center!important;gap:.25rem!important;padding:.25rem .75rem!important;background:#10b981!important;color:#fff!important;border-radius:20px!important;font-size:.75rem!important;font-weight:600!important;text-transform:uppercase!important;letter-spacing:.025em!important}.about-section{background:0 0!important}.about-section .container{background:0 0!important}.research-section{background:0 0!important}.publications-section{background:0 0!important}.blog-section{background:0 0!important}.blog-section .post-card{background:rgba(255,255,255,.95)!important;border:1px solid #e2e8f0!important;border-radius:12px!important;padding:1.5rem!important;transition:all .3s ease!important}.blog-section .post-card:hover{transform:translateY(-2px)!important;box-shadow:0 10px 15px -3px rgba(0,0,0,.1)!important}.blog-section .post-title a{color:#1e293b!important;text-decoration:none!important;font-weight:600!important;transition:color .3s ease!important}.blog-section .post-title a:hover{color:#3b82f6!important}.contact-section{background:0 0!important}.links-section{background:0 0!important}@media (max-width:768px){.container{padding:0 1rem!important}.section-wrapper{padding:3rem 0!important}.section-title{font-size:2rem!important}.section-subtitle{font-size:1rem!important}.unified-card{padding:1.5rem!important}.unified-grid-2,.unified-grid-3{grid-template-columns:1fr!important}}@keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}.section-wrapper{animation:fadeInUp .6s ease-out}html{scroll-behavior:smooth}@media print{.section-wrapper{break-inside:avoid;page-break-inside:avoid}.unified-card{box-shadow:none!important;border:1px solid #ccc!important}}@media (prefers-contrast:high){.unified-card{border:2px solid #000!important}.unified-btn{border:2px solid #000!important}}@media (prefers-reduced-motion:reduce){*{animation-duration:0s!important;animation-iteration-count:1!important;transition-duration:0s!important}}.unified-btn:focus,.unified-card:focus{outline:2px solid #3b82f6;outline-offset:2px}.section-wrapper:first-child{margin-top:0}.section-wrapper:last-child{margin-bottom:0}.section-wrapper{overflow:visible}.container{overflow:visible}.section-wrapper *{word-wrap:break-word;hyphens:auto}
+/* 主页布局优化和问题修复 */
+
+/* 1. 全局重置和基础样式 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 2. 主页section布局修复 */
+.section-wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 5rem 0 !important;
+  background: #ffffff !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 交替背景色 */
+.section-wrapper:nth-child(even) {
+  background: #f8fafc !important;
+}
+
+/* 3. 容器统一样式 */
+.container {
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* 4. section标题统一样式 */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  margin-bottom: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1rem !important;
+}
+
+.section-title i {
+  color: #3b82f6;
+}
+
+.section-subtitle {
+  font-size: 1.1rem !important;
+  color: #64748b !important;
+  max-width: 600px !important;
+  margin: 0 auto !important;
+  line-height: 1.6 !important;
+}
+
+/* 5. 卡片统一样式 */
+.unified-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 16px !important;
+  padding: 2rem !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* 6. 网格布局统一 */
+.unified-grid {
+  display: grid !important;
+  gap: 2rem !important;
+}
+
+.unified-grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+}
+
+.unified-grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+}
+
+/* 7. 按钮统一样式 */
+.unified-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.75rem 1.5rem !important;
+  background: #3b82f6 !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.unified-btn:hover {
+  background: #2563eb !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+}
+
+.unified-btn-secondary {
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+.unified-btn-secondary:hover {
+  background: #e2e8f0 !important;
+  color: #334155 !important;
+}
+
+/* 8. 标签统一样式 */
+.unified-tag {
+  display: inline-block !important;
+  background: #f1f5f9 !important;
+  color: #475569 !important;
+  padding: 0.25rem 0.75rem !important;
+  border-radius: 20px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  margin-right: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.unified-tag:hover {
+  background: #e2e8f0 !important;
+  transform: translateY(-1px) !important;
+}
+
+/* 9. 徽章统一样式 */
+.unified-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.25rem !important;
+  padding: 0.25rem 0.75rem !important;
+  background: #10b981 !important;
+  color: white !important;
+  border-radius: 20px !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.025em !important;
+}
+
+/* 10. 特定section的修复 */
+
+/* About Section */
+.about-section {
+  background: transparent !important;
+}
+
+.about-section .container {
+  background: transparent !important;
+}
+
+/* Research Section */
+.research-section {
+  background: transparent !important;
+}
+
+/* Publications Section */
+.publications-section {
+  background: transparent !important;
+}
+
+/* Blog Section */
+.blog-section {
+  background: transparent !important;
+}
+
+.blog-section .post-card {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 12px !important;
+  padding: 1.5rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.blog-section .post-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
+}
+
+.blog-section .post-title a {
+  color: #1e293b !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease !important;
+}
+
+.blog-section .post-title a:hover {
+  color: #3b82f6 !important;
+}
+
+/* Contact Section */
+.contact-section {
+  background: transparent !important;
+}
+
+/* Links Section */
+.links-section {
+  background: transparent !important;
+}
+
+/* 11. 响应式布局 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem !important;
+  }
+  
+  .section-wrapper {
+    padding: 3rem 0 !important;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .unified-card {
+    padding: 1.5rem !important;
+  }
+  
+  .unified-grid-2,
+  .unified-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 12. 动画和过渡效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-wrapper {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 13. 滚动行为优化 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 14. 打印样式 */
+@media print {
+  .section-wrapper {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  
+  .unified-card {
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+}
+
+/* 15. 高对比度模式支持 */
+@media (prefers-contrast: high) {
+  .unified-card {
+    border: 2px solid #000 !important;
+  }
+  
+  .unified-btn {
+    border: 2px solid #000 !important;
+  }
+}
+
+/* 16. 减少动画模式支持 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 17. 焦点可见性 */
+.unified-btn:focus,
+.unified-card:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* 18. 确保内容不会被遮挡 */
+.section-wrapper:first-child {
+  margin-top: 0;
+}
+
+.section-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* 19. 修复可能的溢出问题 */
+.section-wrapper {
+  overflow: visible;
+}
+
+.container {
+  overflow: visible;
+}
+
+/* 20. 确保所有文本都可读 */
+.section-wrapper * {
+  word-wrap: break-word;
+  hyphens: auto;
+}

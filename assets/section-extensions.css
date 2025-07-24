@@ -1,1 +1,264 @@
-.contact-section .contact-info{display:flex;flex-direction:column;gap:1.5rem}.contact-section .contact-item{display:flex;align-items:center;gap:1rem;padding:1rem;background:rgba(255,255,255,.05);border-radius:12px;border:1px solid rgba(255,255,255,.1)}.contact-section .contact-details h4{margin:0 0 .5rem 0;color:var(--text-color);font-weight:600}.contact-section .contact-details p{margin:0;color:var(--text-secondary)}.contact-section .contact-link{color:var(--primary-color);text-decoration:none;font-weight:500;transition:color .3s ease}.contact-section .contact-link:hover{color:var(--secondary-color)}.contact-section .academic-links{display:flex;flex-wrap:wrap;gap:1rem}.maps-section .map-image{width:100%;height:200px;object-fit:cover;border-radius:8px;margin-bottom:1rem}.maps-section .map-placeholder{width:100%;height:200px;background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(59,130,246,.1));border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text-secondary);margin-bottom:1rem}.maps-section .map-placeholder i{font-size:2rem;margin-bottom:.5rem}.maps-section .map-info{margin-top:1rem}.maps-section .map-meta{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1rem}.maps-section .meta-item{display:flex;align-items:center;gap:.5rem;color:var(--text-secondary);font-size:.9rem}.maps-section .map-features{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem}.maps-section .map-actions{margin-top:1rem}.blog-section .blog-stats-card{margin-bottom:2rem}.blog-section .post-card{height:100%;display:flex;flex-direction:column}.blog-section .post-link{color:var(--text-color);text-decoration:none;font-weight:600;transition:color .3s ease}.blog-section .post-link:hover{color:var(--primary-color)}.blog-section .post-badges{display:flex;gap:.5rem;align-items:center}.blog-section .post-meta{display:flex;flex-wrap:wrap;gap:1rem;margin:1rem 0}.blog-section .meta-item{display:flex;align-items:center;gap:.5rem;color:var(--text-secondary);font-size:.9rem}.blog-section .post-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0}.blog-section .post-actions{margin-top:auto;padding-top:1rem}.blog-section .section-footer{text-align:center;margin-top:2rem}.journals-section .journal-card{height:100%;display:flex;flex-direction:column}.journals-section .journal-description{margin-bottom:1rem}.journals-section .journal-actions{display:flex;gap:1rem;margin-top:auto;padding-top:1rem}.filter-btn{position:relative;overflow:hidden}.filter-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:left .5s ease}.filter-btn:hover::before{left:100%}.unified-card{position:relative;overflow:hidden}.unified-card::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(135deg,rgba(16,185,129,.05),rgba(59,130,246,.05));opacity:0;transition:opacity .3s ease;pointer-events:none}.unified-card:hover::after{opacity:1}@media (max-width:768px){.contact-section .academic-links{flex-direction:column}.maps-section .map-meta{flex-direction:column;gap:.5rem}.blog-section .post-meta{flex-direction:column;gap:.5rem}.journals-section .journal-actions{flex-direction:column;gap:.5rem}}.loading-placeholder{background:linear-gradient(90deg,rgba(255,255,255,.1),rgba(255,255,255,.2),rgba(255,255,255,.1));background-size:200% 100%;animation:loading 1.5s infinite}@keyframes loading{0%{background-position:200% 0}100%{background-position:-200% 0}}
+/* Section-specific styles that extend universal-sections.css */
+/* ======================================================== */
+
+/* Contact Section Specific */
+.contact-section .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-section .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-section .contact-details h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.contact-section .contact-details p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.contact-section .contact-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-section .contact-link:hover {
+  color: var(--secondary-color);
+}
+
+.contact-section .academic-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Maps Section Specific */
+.maps-section .map-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.maps-section .map-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.maps-section .map-placeholder i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.maps-section .map-info {
+  margin-top: 1rem;
+}
+
+.maps-section .map-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.maps-section .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.maps-section .map-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.maps-section .map-actions {
+  margin-top: 1rem;
+}
+
+/* Blog Section Specific */
+.blog-section .blog-stats-card {
+  margin-bottom: 2rem;
+}
+
+.blog-section .post-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-section .post-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.blog-section .post-link:hover {
+  color: var(--primary-color);
+}
+
+.blog-section .post-badges {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.blog-section .post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.blog-section .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.blog-section .post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.blog-section .post-actions {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.blog-section .section-footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Journals Section Specific */
+.journals-section .journal-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.journals-section .journal-description {
+  margin-bottom: 1rem;
+}
+
+.journals-section .journal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* Filter animations */
+.filter-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.filter-btn:hover::before {
+  left: 100%;
+}
+
+/* Card hover effects */
+.unified-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.unified-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(59, 130, 246, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.unified-card:hover::after {
+  opacity: 1;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .contact-section .academic-links {
+    flex-direction: column;
+  }
+  
+  .maps-section .map-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .blog-section .post-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .journals-section .journal-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Loading states */
+.loading-placeholder {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

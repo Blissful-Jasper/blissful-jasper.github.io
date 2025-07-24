@@ -1,1 +1,245 @@
-class SimpleRSSParser{constructor(){this.corsProxy="https://api.allorigins.win/raw?url=",this.debug=!0}log(...t){this.debug&&console.log("[Simple RSS Parser]",...t)}safeGetText(t,e){try{var r=t.querySelector(e);if(r)return r.textContent.trim();if(e.includes(":")){var a=e.split(":"),i=a[a.length-1],n=t.getElementsByTagName(e);if(0<n.length)return n[0].textContent.trim();var s,l=t.getElementsByTagName(i);if(0<l.length)return l[0].textContent.trim();for(s of t.querySelectorAll("*"))if(s.tagName===e||s.tagName===i||s.tagName.endsWith(":"+i)||s.localName===i)return s.textContent.trim()}return null}catch(t){return this.log(`Error getting text for ${e}:`,t.message),null}}extractSimpleArticle(r,a){try{this.log(`Processing item ${a+1}:`,r.tagName);var i=this.safeGetText(r,"title")||"Article "+(a+1);let t="#";try{var n,s=r.querySelector("link");"#"===(t=s?s.textContent.trim()||s.getAttribute("href")||"#":t)&&(n=r.querySelector("guid"))&&n.textContent.startsWith("http")&&(t=n.textContent.trim())}catch(t){this.log("Link extraction error:",t.message)}var l,o=this.safeGetText(r,"description")||this.safeGetText(r,"summary")||this.safeGetText(r,"content")||"暂无摘要";let e="Unknown Author";try{(e=this.safeGetText(r,"author")||this.safeGetText(r,"creator")||this.safeGetText(r,"managingEditor")||"Multiple Authors")&&"Multiple Authors"!==e||0<(l=r.getElementsByTagName("creator")).length&&(e=l[0].textContent.trim())}catch(t){this.log("Author extraction error:",t.message)}var c=this.safeGetText(r,"pubDate")||this.safeGetText(r,"published")||this.safeGetText(r,"updated")||(new Date).toISOString(),h={id:`simple_article_${Date.now()}_`+a,title:this.cleanText(i),abstract:this.cleanText(o),link:t,publishDate:this.parseDate(c),authors:this.cleanText(e),image:null,category:this.safeGetText(r,"category")||"General",journal:"Academic Journal"};return this.log("Successfully extracted: "+h.title),h}catch(t){return console.error(`Failed to extract article ${a+1}:`,t),{id:`error_article_${Date.now()}_`+a,title:"解析错误 - 文章 "+(a+1),abstract:"该文章在解析时发生错误，请稍后重试或直接访问原文。",link:"#",publishDate:(new Date).toISOString(),authors:"System",image:null,category:"Error",journal:"Error",isError:!0}}}cleanText(t){return t?t.replace(/<[^>]*>/g,"").replace(/\s+/g," ").trim().substring(0,500):""}parseDate(t){try{var e;return t?(e=new Date(t),(isNaN(e.getTime())?new Date:e).toISOString()):(new Date).toISOString()}catch(t){return(new Date).toISOString()}}async parseRSSSimple(r){try{this.log("Parsing RSS:",r);var t=await(await fetch(this.corsProxy+encodeURIComponent(r))).text();if(!t||t.length<100)throw new Error("Empty or invalid RSS response");var a=(new DOMParser).parseFromString(t,"text/xml"),i=a.querySelector("parsererror");if(i)throw new Error("XML parsing failed: "+i.textContent);let e=a.querySelectorAll("item");if(0===e.length&&(e=a.querySelectorAll("entry")),this.log(`Found ${e.length} items to process`),0===e.length)return[];var n=[];for(let t=0;t<Math.min(e.length,5);t++){var s=this.extractSimpleArticle(e[t],t);s&&n.push(s)}return this.log(`Successfully extracted ${n.length} articles`),n}catch(t){return console.error("RSS parsing failed:",t),[{id:"fallback_"+Date.now(),title:"RSS解析失败",abstract:"无法解析RSS源："+t.message,link:r,publishDate:(new Date).toISOString(),authors:"System",image:null,category:"Error",journal:"Error",isError:!0}]}}}window.simpleRSSParser=new SimpleRSSParser;
+/**
+ * 简化的RSS解析器测试版
+ * 专门用于调试和解决命名空间问题
+ */
+
+class SimpleRSSParser {
+    constructor() {
+        this.corsProxy = 'https://api.allorigins.win/raw?url=';
+        this.debug = true;
+    }
+
+    log(...args) {
+        if (this.debug) {
+            console.log('[Simple RSS Parser]', ...args);
+        }
+    }
+
+    /**
+     * 安全的文本提取方法
+     */
+    safeGetText(item, tagName) {
+        try {
+            // 方法1: 直接querySelector (大多数情况有效)
+            let element = item.querySelector(tagName);
+            if (element) {
+                return element.textContent.trim();
+            }
+
+            // 方法2: 如果包含命名空间，尝试不同方法
+            if (tagName.includes(':')) {
+                const parts = tagName.split(':');
+                const localName = parts[parts.length - 1];
+                
+                // 尝试getElementsByTagName
+                const elements = item.getElementsByTagName(tagName);
+                if (elements.length > 0) {
+                    return elements[0].textContent.trim();
+                }
+                
+                // 尝试只使用本地名称
+                const localElements = item.getElementsByTagName(localName);
+                if (localElements.length > 0) {
+                    return localElements[0].textContent.trim();
+                }
+                
+                // 遍历所有子元素查找匹配
+                const allElements = item.querySelectorAll('*');
+                for (const el of allElements) {
+                    if (el.tagName === tagName || el.tagName === localName || 
+                        el.tagName.endsWith(':' + localName) || el.localName === localName) {
+                        return el.textContent.trim();
+                    }
+                }
+            }
+
+            return null;
+        } catch (error) {
+            this.log(`Error getting text for ${tagName}:`, error.message);
+            return null;
+        }
+    }
+
+    /**
+     * 简化的文章提取
+     */
+    extractSimpleArticle(item, index) {
+        try {
+            this.log(`Processing item ${index + 1}:`, item.tagName);
+
+            // 基本信息提取
+            const title = this.safeGetText(item, 'title') || `Article ${index + 1}`;
+            
+            // 链接提取 - 多种方法
+            let link = '#';
+            try {
+                const linkEl = item.querySelector('link');
+                if (linkEl) {
+                    link = linkEl.textContent.trim() || linkEl.getAttribute('href') || '#';
+                }
+                if (link === '#') {
+                    const guidEl = item.querySelector('guid');
+                    if (guidEl && guidEl.textContent.startsWith('http')) {
+                        link = guidEl.textContent.trim();
+                    }
+                }
+            } catch (e) {
+                this.log('Link extraction error:', e.message);
+            }
+
+            // 描述提取
+            const description = this.safeGetText(item, 'description') || 
+                               this.safeGetText(item, 'summary') || 
+                               this.safeGetText(item, 'content') ||
+                               '暂无摘要';
+
+            // 作者提取 - 安全方法
+            let author = 'Unknown Author';
+            try {
+                author = this.safeGetText(item, 'author') ||
+                        this.safeGetText(item, 'creator') ||
+                        this.safeGetText(item, 'managingEditor') ||
+                        'Multiple Authors';
+                
+                // 特别处理dc:creator
+                if (!author || author === 'Multiple Authors') {
+                    const dcCreators = item.getElementsByTagName('creator');
+                    if (dcCreators.length > 0) {
+                        author = dcCreators[0].textContent.trim();
+                    }
+                }
+            } catch (e) {
+                this.log('Author extraction error:', e.message);
+            }
+
+            // 日期提取
+            const pubDate = this.safeGetText(item, 'pubDate') || 
+                           this.safeGetText(item, 'published') ||
+                           this.safeGetText(item, 'updated') ||
+                           new Date().toISOString();
+
+            const article = {
+                id: `simple_article_${Date.now()}_${index}`,
+                title: this.cleanText(title),
+                abstract: this.cleanText(description),
+                link: link,
+                publishDate: this.parseDate(pubDate),
+                authors: this.cleanText(author),
+                image: null, // 暂时跳过图片解析
+                category: this.safeGetText(item, 'category') || 'General',
+                journal: 'Academic Journal'
+            };
+
+            this.log(`Successfully extracted: ${article.title}`);
+            return article;
+
+        } catch (error) {
+            console.error(`Failed to extract article ${index + 1}:`, error);
+            
+            // 返回错误占位符
+            return {
+                id: `error_article_${Date.now()}_${index}`,
+                title: `解析错误 - 文章 ${index + 1}`,
+                abstract: '该文章在解析时发生错误，请稍后重试或直接访问原文。',
+                link: '#',
+                publishDate: new Date().toISOString(),
+                authors: 'System',
+                image: null,
+                category: 'Error',
+                journal: 'Error',
+                isError: true
+            };
+        }
+    }
+
+    /**
+     * 清理文本
+     */
+    cleanText(text) {
+        if (!text) return '';
+        return text
+            .replace(/<[^>]*>/g, '') // 移除HTML标签
+            .replace(/\s+/g, ' ')    // 合并空格
+            .trim()
+            .substring(0, 500);      // 限制长度
+    }
+
+    /**
+     * 解析日期
+     */
+    parseDate(dateString) {
+        try {
+            if (!dateString) return new Date().toISOString();
+            const date = new Date(dateString);
+            return isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+        } catch (e) {
+            return new Date().toISOString();
+        }
+    }
+
+    /**
+     * 简化的RSS解析主方法
+     */
+    async parseRSSSimple(rssUrl) {
+        try {
+            this.log('Parsing RSS:', rssUrl);
+            
+            const response = await fetch(this.corsProxy + encodeURIComponent(rssUrl));
+            const xmlText = await response.text();
+            
+            if (!xmlText || xmlText.length < 100) {
+                throw new Error('Empty or invalid RSS response');
+            }
+
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+            
+            // 检查解析错误
+            const parseError = xmlDoc.querySelector('parsererror');
+            if (parseError) {
+                throw new Error('XML parsing failed: ' + parseError.textContent);
+            }
+
+            // 查找文章项目
+            let items = xmlDoc.querySelectorAll('item');
+            if (items.length === 0) {
+                items = xmlDoc.querySelectorAll('entry');
+            }
+
+            this.log(`Found ${items.length} items to process`);
+
+            if (items.length === 0) {
+                return [];
+            }
+
+            const articles = [];
+            for (let i = 0; i < Math.min(items.length, 5); i++) {
+                const article = this.extractSimpleArticle(items[i], i);
+                if (article) {
+                    articles.push(article);
+                }
+            }
+
+            this.log(`Successfully extracted ${articles.length} articles`);
+            return articles;
+
+        } catch (error) {
+            console.error('RSS parsing failed:', error);
+            return [{
+                id: `fallback_${Date.now()}`,
+                title: 'RSS解析失败',
+                abstract: `无法解析RSS源：${error.message}`,
+                link: rssUrl,
+                publishDate: new Date().toISOString(),
+                authors: 'System',
+                image: null,
+                category: 'Error',
+                journal: 'Error',
+                isError: true
+            }];
+        }
+    }
+}
+
+// 创建简化解析器实例
+window.simpleRSSParser = new SimpleRSSParser();

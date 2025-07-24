@@ -1,1 +1,133 @@
-.section-wrapper{position:relative;overflow:hidden}.section-wrapper.section-alt{background:linear-gradient(to bottom,var(--bg-section-alt) 0,rgba(248,249,250,.8) 50%,var(--bg-section-alt) 100%)}.section-wrapper.hero-section::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:60px;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="white"></path></svg>') no-repeat;background-size:cover;z-index:1}.section-wrapper .section-title{position:relative;text-align:center;margin-bottom:var(--spacing-xl)}.section-wrapper .section-title::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);width:60px;height:3px;background:linear-gradient(90deg,var(--secondary-color),var(--accent-color));border-radius:2px}.section-wrapper .container{max-width:1200px;margin:0 auto;padding:0 var(--spacing-lg)}.section-wrapper .card{margin-bottom:var(--spacing-lg);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2)}@media (max-width:768px){.section-wrapper:not(.hero-section){padding:var(--spacing-xl) 0}.section-wrapper.hero-section{padding:var(--spacing-lg) 0}.section-wrapper .container{padding:0 var(--spacing-md)}}@media (max-width:480px){.section-wrapper:not(.hero-section){padding:var(--spacing-lg) 0}.section-wrapper .container{padding:0 var(--spacing-sm)}}.section-wrapper{opacity:0;transform:translateY(30px);animation:sectionFadeIn .8s ease forwards}.section-wrapper:first-child{animation-delay:.1s}.section-wrapper:nth-child(2){animation-delay:.2s}.section-wrapper:nth-child(3){animation-delay:.3s}.section-wrapper:nth-child(4){animation-delay:.4s}.section-wrapper:nth-child(5){animation-delay:.5s}@keyframes sectionFadeIn{to{opacity:1;transform:translateY(0)}}@media (prefers-reduced-motion:reduce){.section-wrapper{animation:none;opacity:1;transform:none}}@media (prefers-color-scheme:dark){.section-wrapper.section-alt{background:linear-gradient(to bottom,#1a1a1a 0,rgba(26,26,26,.8) 50%,#1a1a1a 100%)}.section-wrapper .card{border-color:rgba(255,255,255,.1)}}
+/* 首页section间距和视觉优化 */
+
+/* 改善首页各section的呼吸感 */
+.section-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 为每个section添加细微的背景渐变 */
+.section-wrapper.section-alt {
+  background: linear-gradient(
+    to bottom,
+    var(--bg-section-alt) 0%,
+    rgba(248, 249, 250, 0.8) 50%,
+    var(--bg-section-alt) 100%
+  );
+}
+
+/* Hero section下方添加波浪分隔 */
+.section-wrapper.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="white"></path></svg>') no-repeat;
+  background-size: cover;
+  z-index: 1;
+}
+
+/* Section标题的统一样式 */
+.section-wrapper .section-title {
+  position: relative;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-wrapper .section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+/* Container在不同section中的一致性 */
+.section-wrapper .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* 卡片在section中的布局优化 */
+.section-wrapper .card {
+  margin-bottom: var(--spacing-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 改善移动端section间距 */
+@media (max-width: 768px) {
+  .section-wrapper:not(.hero-section) {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .section-wrapper.hero-section {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section-wrapper .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-wrapper:not(.hero-section) {
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .section-wrapper .container {
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* 为section添加进入动画 */
+.section-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: sectionFadeIn 0.8s ease forwards;
+}
+
+.section-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.section-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.section-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.section-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.section-wrapper:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes sectionFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 减少动画在移动端的性能影响 */
+@media (prefers-reduced-motion: reduce) {
+  .section-wrapper {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 深色模式下的section样式调整 */
+@media (prefers-color-scheme: dark) {
+  .section-wrapper.section-alt {
+    background: linear-gradient(
+      to bottom,
+      #1a1a1a 0%,
+      rgba(26, 26, 26, 0.8) 50%,
+      #1a1a1a 100%
+    );
+  }
+  
+  .section-wrapper .card {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
