@@ -129,17 +129,6 @@ journals:
     
 
 
-# AI总结配置
-ai_summary:
-  enabled: true
-  provider: "deepseek"  # deepseek, openai, claude, gemini
-  api_url: "https://api.deepseek.com"
-  api_key: "sk-dc3ff3328d0f419f91d4d50def473298"
-  model: "deepseek-chat"
-  max_length: 300
-  language: "zh-CN"
-  focus: "geoscience"  # 专注地球科学内容
-  
 # 显示配置
 display:
   articles_per_journal: 5

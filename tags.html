@@ -1,0 +1,20 @@
+---
+layout: page
+title: Tags
+subtitle: Browse posts by keywords.
+permalink: /tags.html
+---
+
+{% for tag in site.tags %}
+<section id="{{ tag[0] | slugify }}">
+  <h2 class="archive-year">{{ tag[0] }}</h2>
+  <ul class="archive-list">
+    {% for post in tag[1] %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

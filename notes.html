@@ -1,0 +1,47 @@
+---
+layout: page
+title: Notes
+subtitle: A structured index of blog posts, tags, and archived notes.
+permalink: /notes.html
+---
+
+<div class="resource-grid">
+  <article class="resource-card">
+    <h2><a href="{{ '/archive.html' | relative_url }}">Archive</a></h2>
+    <p>All notes and blog posts arranged by year.</p>
+  </article>
+  <article class="resource-card">
+    <h2><a href="{{ '/categories.html' | relative_url }}">Categories</a></h2>
+    <p>Browse notes by research or technical category.</p>
+  </article>
+  <article class="resource-card">
+    <h2><a href="{{ '/tags.html' | relative_url }}">Tags</a></h2>
+    <p>Browse notes by keyword.</p>
+  </article>
+  <article class="resource-card">
+    <h2><a href="{{ '/links.html' | relative_url }}">Research Links</a></h2>
+    <p>External resources, datasets, and operational monitoring tools.</p>
+  </article>
+</div>
+
+<section class="page-section">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">Recent notes</p>
+      <h2>Latest entries</h2>
+    </div>
+  </div>
+  <div class="post-list">
+    {% for post in site.posts limit:8 %}
+    {% assign words = post.content | strip_html | number_of_words %}
+    {% assign minutes = words | divided_by: 220 | plus: 1 %}
+    <article class="post-card">
+      <div class="card-meta">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+        <span>{{ minutes }} min read</span>
+      </div>
+      <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+    </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,36 @@
+---
+layout: page
+title: CV
+subtitle: Curriculum vitae and selected academic record.
+permalink: /cv.html
+---
+
+<p>
+  A PDF version is available here:
+  <a href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener">Download CV</a>.
+</p>
+
+<section class="page-section">
+  <h2 class="archive-year">Research Interests</h2>
+  <ul>
+    <li>Convectively coupled equatorial waves and tropical moist dynamics</li>
+    <li>Tropical precipitation variability and oceanic rainfall regimes</li>
+    <li>Climate model evaluation and CMIP6 diagnostics</li>
+    <li>Machine learning applications in meteorology</li>
+  </ul>
+</section>
+
+<section class="page-section">
+  <h2 class="archive-year">Publications</h2>
+  <div class="publication-list">
+    {% for year_group in site.data.publications %}
+      {% for paper in year_group.papers %}
+      <article class="publication-card">
+        <p class="paper-title">{{ paper.title }}</p>
+        <p>{{ paper.authors }}</p>
+        <p><em>{{ paper.journal }}</em>, {{ year_group.year }}</p>
+      </article>
+      {% endfor %}
+    {% endfor %}
+  </div>
+</section>

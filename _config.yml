@@ -1,16 +1,18 @@
 title: "Xianpu Ji"
 email: xianpuji@hhu.edu.cn
 description: >-
-      我的研究方向包括热带波动（Kelvin waves, MRG 等）的动力学机制、热带降水的时空变率及其与波动的关系，以及气候模式（如CMIP6）下的波动演变特征分析。也关注深度学习在气象与降水预报中的创新应用。
-baseurl: "" 
+  Personal academic website and research blog on tropical atmospheric dynamics,
+  convectively coupled equatorial waves, tropical precipitation variability,
+  climate model evaluation, and meteorological data analysis.
+baseurl: ""
 url: "https://blissful-jasper.github.io"
-theme: minima
+lang: zh-CN
 
 author:
   name: Xianpu Ji
   title: PhD Candidate in Marine Science
   affiliation: Hohai University
-  email:  xianpuji@hhu.edu.cn
+  email: xianpuji@hhu.edu.cn
 
 markdown: kramdown
 kramdown:
@@ -18,171 +20,67 @@ kramdown:
   math_engine: mathjax
   syntax_highlighter: rouge
   syntax_highlighter_opts:
-    css_class: 'highlight'
+    css_class: "highlight"
     span:
       line_numbers: false
     block:
       line_numbers: false
       start_line: 1
+
 highlighter: rouge
 permalink: pretty
-paginate: 3
-paginate_path: "/blog/page:num/"
+future: false
+show_drafts: false
+unpublished: false
+safe: true
 
-# 限制数据处理以提高构建速度
-limit_posts: 50
-
-# MathJax配置
 mathjax:
   enable: true
-  combo: "tex-mml-chtml"
-  tags: "ams"
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-redirect-from
 
-whitelist:
-  - jekyll-redirect-from
-
 collections:
-  projects:
-    output: true
-    permalink: /:collection/:name/
   pages:
     output: true
     permalink: /:name/
 
-# 页面板块显示控制
-page_sections:
-  about:
-    enabled: true
-    title: "关于我"
-    subtitle: "热带大气动力学研究"
-    icon: "fas fa-user"
-  research:
-    enabled: true
-    title: "研究方向"
-    subtitle: "探索热带大气动力学与人工智能的交叉融合"
-    icon: "fas fa-atom"
-  publications:
-    enabled: true
-    title: "学术成果"
-    subtitle: "在国际权威期刊发表的研究论文"
-    icon: "fas fa-scroll"
-  journals:
-    enabled: true
-    title: "期刊订阅"
-    subtitle: "地球科学与大气科学领域的顶级期刊"
-    icon: "fas fa-journal-whills"
-  gallery:
-    enabled: true
-    title: "摄影作品集"
-    subtitle: "记录科研路上的美好瞬间"
-    icon: "fas fa-camera"
-  blog:
-    enabled: true
-    title: "学术博客"
-    subtitle: "研究心得与学术思考"
-    icon: "fas fa-blog"
-  links:
-    enabled: true
-    title: "实用链接"
-    subtitle: "精选的研究、学习和协作资源链接"
-    icon: "fas fa-link"
-  maps:
-    enabled: true
-    title: "研究地图"
-    subtitle: "研究区域与合作网络"
-    icon: "fas fa-map"
-  contact:
-    enabled: true
-    title: "联系方式"
-    subtitle: "学术交流与合作"
-    icon: "fas fa-envelope"
-
-# Section 内容配置
-sections:
-  about:
-    name: "纪献普"
-    title: "博士研究生"
-    affiliation: "河海大学海洋学院海洋科学专业"
-    location: "南京, 中国"
-    bio: "专注于热带大气动力学研究，探索对流耦合赤道波、热带降水变率等关键科学问题。结合机器学习技术，推动气象预报和气候模拟的创新发展。"
-    
-  research:
-    overview: "致力于深入理解热带大气动力学机制，探索对流耦合赤道波、热带降水变率等关键科学问题。结合机器学习技术，推动气象预报和气候模拟的创新发展。"
-    stats:
-      directions: 3
-      papers: 3
-      citations: ""
-      
-  publications:
-    stats:
-      total_papers: 3
-      journal_level: ""
-      total_citations: ""
-      international_journals: 2
-      
-  contact:
-    email: "xianpuji@hhu.edu.cn"
-    phone: ""
-    address: "河海大学海洋学院, 南京, 中国"
-    office: ""
-
-# 不手动设置 layout，交由 theme: minima 自动处理
-
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/
-  - README.md
-  - docs/file-conflict-resolution.md
-
-# Include the pictures directory as static files
 include:
   - pictures
 
-# 安全配置文件，用于存放敏感信息
-# 在 .gitignore 中已被忽略，不会提交到版本库
-# 本地开发时，Jekyll会自动加载此文件
-# 部署时，需要通过环境变量等方式设置
-
 exclude:
-  - assets/main.css
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
   - Gemfile
   - Gemfile.lock
+  - Gemfile.lock.backup
   - node_modules/
   - vendor/
   - README.md
-
-# 性能优化配置
-incremental: true
-future: false
-show_drafts: false
-unpublished: false
-lsi: false
-safe: true
-
-# 限制相关文章计算以提高速度
-lsi: false
-related_posts_limit: 5
-
-# 压缩配置
-compress_html:
-  clippings: all
-  comments: ["<!-- ", " -->"]
-  endings: all
-  ignore:
-    envs: [development]
-  blanklines: false
-  profile: false
-  startings: [html, head, body]
+  - PACKAGE_SCRIPTS_README.md
+  - DEPLOYMENT_SOLUTION.md
+  - _deployment/
+  - jekyll-blog-template/
+  - scripts/
+  - cleanup.bat
+  - cleanup.ps1
+  - cleanup.sh
+  - check-deployment.ps1
+  - fix-gemfile-platforms.bat
+  - fix-gemfile-platforms.sh
+  - fix-github-pages.ps1
+  - fix-github-pages.sh
+  - fix-ruby-version.bat
+  - fix-ruby-version.sh
+  - minify-site.ps1
+  - minify-site.sh
+  - quick-fix-github-actions.bat
+  - quick-fix-github-actions.sh
+  - start-debug-server.bat
+  - start-jekyll.bat
+  - verify-deployment-config.sh
+  - verify-deployment.ps1
+  - .sass-cache/
+  - .jekyll-cache/
+  - .auto-cleanup.log

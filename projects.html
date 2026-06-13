@@ -1,0 +1,19 @@
+---
+layout: page
+title: Projects
+subtitle: Research projects and maintainable work streams.
+permalink: /projects.html
+---
+
+<div class="resource-list">
+  {% for project in site.data.projects %}
+  <article class="resource-card">
+    <div class="card-meta">
+      <span>{{ project.status }}</span>
+      {% if project.tags %}<span>{{ project.tags | join: ' · ' }}</span>{% endif %}
+    </div>
+    <h2><a href="{{ project.link | relative_url }}">{{ project.title }}</a></h2>
+    <p>{{ project.summary }}</p>
+  </article>
+  {% endfor %}
+</div>

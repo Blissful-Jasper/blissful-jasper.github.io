@@ -1,0 +1,15 @@
+- title: Tropical Wave Diagnostics
+  summary: Reproducible diagnostics for convectively coupled equatorial waves using satellite precipitation and reanalysis data.
+  status: Active
+  tags: [Kelvin waves, MRG, precipitation]
+  link: /research.html
+- title: CMIP6 Wave Evaluation
+  summary: Evaluation workflow for tropical wave spectra and precipitation coupling in coupled climate models.
+  status: Active
+  tags: [CMIP6, model evaluation]
+  link: /publications.html
+- title: Oceanic Precipitation Nowcasting
+  summary: Deep learning experiments for short-term oceanic precipitation estimation using Himawari-8 imagery.
+  status: Published
+  tags: [deep learning, nowcasting]
+  link: /publications.html

@@ -1,20 +1,18 @@
-# Jekyll GitHub Pages 部署工作流
-name: Deploy Jekyll site to Pages
+name: Deploy GitHub Pages
 
 on:
   push:
-    branches: ["main", "master"]
+    branches: ["main"]
   workflow_dispatch:
 
-# 设置 GITHUB_TOKEN 的权限，允许部署到 GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -22,35 +20,22 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: false  # 暂时禁用缓存以确保依赖正确安装
-      
-      - name: Add platform support and install dependencies
-        run: |
-          # 添加平台支持
-          bundle lock --add-platform x86_64-linux
-          bundle lock --add-platform x86_64-darwin
-          
-          # 显示关键依赖版本信息
-          echo "Ruby version: $(ruby -v)"
-          echo "Bundler version: $(bundle -v)"
-          
-          # 安装依赖
-          bundle install --jobs 4 --retry 3
-      
+          ruby-version: "3.2"
+          bundler-cache: true
+
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
-      
+        uses: actions/configure-pages@v5
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
-      
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 

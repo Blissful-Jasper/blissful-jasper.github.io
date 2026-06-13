@@ -1,0 +1,20 @@
+---
+layout: page
+title: Categories
+subtitle: Browse posts by research and technical topic.
+permalink: /categories.html
+---
+
+{% for category in site.categories %}
+<section id="{{ category[0] | slugify }}">
+  <h2 class="archive-year">{{ category[0] }}</h2>
+  <ul class="archive-list">
+    {% for post in category[1] %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}

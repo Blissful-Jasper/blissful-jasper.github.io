@@ -1,134 +1,49 @@
 ---
 layout: default
+mathjax: true
 ---
 
-<link rel="stylesheet" href="/assets/post-style.css">
-
-<article class="post-article">
-  <!-- 文章头部 -->
-  <header class="post-header">
-    <div class="post-meta-top">
-      <a href="/blog.html" class="back-to-blog">
-        <i class="fas fa-arrow-left"></i>
-        返回博客
-      </a>
-      <div class="post-share">
-        <button class="share-btn" onclick="sharePost()">
-          <i class="fas fa-share-alt"></i>
-        </button>
-      </div>
-    </div>
-    
-    <h1 class="post-title">{{ page.title | escape }}</h1>
-    
-    <div class="post-meta">
-      <div class="meta-item">
-        <i class="far fa-calendar-alt"></i>
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%Y年%-m月%-d日" }}
-        </time>
-      </div>
-      
-      {% if page.author %}
-      <div class="meta-item">
-        <i class="far fa-user"></i>
-        <span>{{ page.author }}</span>
-      </div>
-      {% endif %}
-      
-      {% if page.reading_time %}
-      <div class="meta-item">
-        <i class="far fa-clock"></i>
-        <span>{{ page.reading_time }} 分钟阅读</span>
-      </div>
-      {% endif %}
-    </div>
-    
-    {% if page.tags and page.tags.size > 0 %}
-    <div class="post-tags">
-      {% for tag in page.tags %}
-      <span class="tag">{{ tag }}</span>
-      {% endfor %}
-    </div>
+<article class="post-shell">
+  <a class="back-link" href="{{ '/blog.html' | relative_url }}">Back to blog</a>
+  <header class="post-hero">
+    {% assign primary_category = page.categories | first %}
+    {% if primary_category %}
+    <p class="eyebrow">{{ primary_category }}</p>
     {% endif %}
+    <h1>{{ page.title | escape }}</h1>
+    <div class="post-meta">
+      {% assign words = content | strip_html | number_of_words %}
+      {% assign minutes = words | divided_by: 220 | plus: 1 %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      <span>{{ minutes }} min read</span>
+      {% if page.author %}<span>{{ page.author }}</span>{% endif %}
+      {% if page.tags and page.tags.size > 0 %}
+      <span>{{ page.tags | join: ' · ' }}</span>
+      {% endif %}
+    </div>
   </header>
 
-  <!-- 文章内容 -->
-  <div class="post-content">
-    {{ content }}
+  <div class="post-layout">
+    <div class="prose post-content" data-toc-content>
+      {{ content }}
+    </div>
+    <nav class="post-toc" aria-label="Table of contents" data-toc>
+      <div class="post-toc-title">On this page</div>
+    </nav>
   </div>
 
-  <!-- 文章底部 -->
-  <footer class="post-footer">
-    <!-- 上一篇/下一篇导航 -->
-    <div class="post-navigation">
-      {% if page.previous.url %}
-      <div class="nav-item nav-prev">
-        <a href="{{ page.previous.url | relative_url }}" class="nav-link">
-          <i class="fas fa-chevron-left"></i>
-          <div class="nav-content">
-            <span class="nav-label">上一篇</span>
-            <span class="nav-title">{{ page.previous.title | truncate: 50 }}</span>
-          </div>
-        </a>
-      </div>
-      {% endif %}
-      
-      {% if page.next.url %}
-      <div class="nav-item nav-next">
-        <a href="{{ page.next.url | relative_url }}" class="nav-link">
-          <div class="nav-content">
-            <span class="nav-label">下一篇</span>
-            <span class="nav-title">{{ page.next.title | truncate: 50 }}</span>
-          </div>
-          <i class="fas fa-chevron-right"></i>
-        </a>
-      </div>
-      {% endif %}
-    </div>
-    
-    <!-- 分享按钮 -->
-    <div class="post-share-section">
-      <h4>分享这篇文章</h4>
-      <div class="share-buttons">
-        <a href="#" class="share-btn weibo" onclick="shareToWeibo()">
-          <i class="fab fa-weibo"></i>
-          微博
-        </a>
-        <a href="#" class="share-btn twitter" onclick="shareToTwitter()">
-          <i class="fab fa-twitter"></i>
-          Twitter
-        </a>
-        <a href="#" class="share-btn copy" onclick="copyUrl()">
-          <i class="fas fa-link"></i>
-          复制链接
-        </a>
-      </div>
-    </div>
+  <footer class="post-footer-nav">
+    {% if page.previous.url %}
+    <a class="post-nav-card" href="{{ page.previous.url | relative_url }}">
+      <span>Previous</span>
+      <strong>{{ page.previous.title }}</strong>
+    </a>
+    {% endif %}
+    {% if page.next.url %}
+    <a class="post-nav-card" href="{{ page.next.url | relative_url }}">
+      <span>Next</span>
+      <strong>{{ page.next.title }}</strong>
+    </a>
+    {% endif %}
   </footer>
 </article>
-
-<!-- 目录悬浮窗 -->
-<div class="toc-container" id="tocContainer">
-  <div class="toc-header">
-    <h4>目录</h4>
-    <button class="toc-toggle" onclick="toggleToc()">
-      <i class="fas fa-times"></i>
-    </button>
-  </div>
-  <div class="toc-content" id="tocContent">
-    <!-- 目录内容将由JavaScript生成 -->
-  </div>
-</div>
-
-<!-- 目录触发按钮 -->
-<button class="toc-trigger" onclick="toggleToc()">
-  <i class="fas fa-list"></i>
-</button>
-
-<!-- 回到顶部按钮 -->
-<button class="back-to-top" onclick="scrollToTop()">
-  <i class="fas fa-chevron-up"></i>
-</button>
-
-<script src="/assets/post-script.js"></script>

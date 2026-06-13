@@ -1,38 +1,18 @@
-<div class="sidebar">
-  <div class="sidebar-section">
-    <h3>📜 News</h3>
-    <ul>
-      {% for item in site.data.news %}
-        <li class="news-item">
-          {% if item.link %}
-            <a href="{{ item.link }}" target="_blank">{{ item.title }}</a>
-          {% else %}
-            {{ item.content }}
-          {% endif %}
-          {% if item.date %}<span class="news-date">{{ item.date }}</span>{% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+<aside class="profile-sidebar" aria-label="Profile">
+  <div class="profile-card">
+    <img class="profile-photo" src="{{ '/assets/profile.jpg' | relative_url }}" alt="Xianpu Ji">
+    <h2>Xianpu Ji</h2>
+    <p class="profile-title">{{ site.author.title }}</p>
+    <p class="profile-affiliation">{{ site.author.affiliation }}</p>
+    <p class="profile-bio">
+      Tropical atmospheric dynamics, convectively coupled equatorial waves,
+      precipitation variability, and data-driven meteorology.
+    </p>
+    <div class="profile-links">
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener">ORCID</a>
+      <a href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV PDF</a>
+    </div>
   </div>
-  <div class="sidebar-section">
-    <h3>📝 Latest Posts</h3>
-    <ul>
-      {% for post in site.posts limit:5 %}
-        <li class="post-item">
-          <a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
-          <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <div class="sidebar-section">
-    <h3>🔗 Quick Links</h3>
-    <ul>
-      <li><a href="/about.html">关于我</a></li>
-      <li><a href="/research.html">研究</a></li>
-      <li><a href="/publications.html">论文</a></li>
-      <li><a href="/blog.html">博客</a></li>
-      <li><a href="/contact.html">联系</a></li>
-    </ul>
-  </div>
-</div>
+</aside>

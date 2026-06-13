@@ -1,125 +1,140 @@
 ---
 layout: default
-title: 
+title: Xianpu Ji
 ---
 
-<!-- 首页专用样式 -->
-<link rel="stylesheet" href="assets/homepage-layout.css">
-<link rel="stylesheet" href="assets/homepage-gallery-journals.css">
+<div class="home-shell">
+  <header class="home-hero">
+    <p class="eyebrow">Academic personal website</p>
+    <h1>Xianpu Ji</h1>
+    <p class="lead">
+      I study tropical atmospheric dynamics, convectively coupled equatorial waves, tropical precipitation
+      variability, and the representation of these processes in climate models. I also work on reproducible
+      meteorological workflows and machine learning applications for precipitation analysis.
+    </p>
+    <div class="stats-row">
+      <span>Hohai University</span>
+      <span>Tropical dynamics</span>
+      <span>Climate model diagnostics</span>
+      <span>Data-driven meteorology</span>
+    </div>
+    <div class="link-row">
+      <a href="mailto:{{ site.author.email }}">Email</a>
+      <a href="https://github.com/Blissful-Jasper" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://orcid.org/0009-0001-5197-4804" target="_blank" rel="noopener">ORCID</a>
+      <a href="{{ '/assets/CV.pdf' | relative_url }}" target="_blank" rel="noopener">CV PDF</a>
+    </div>
+  </header>
 
-<div class="homepage-container">
-  <!-- About section -->
-  {% if site.page_sections.about.enabled %}
-  <div class="homepage-section">
-    {% include about-section-preview.html %}
-  </div>
-  {% endif %}
-
-  <!-- Research section -->
-  {% if site.page_sections.research.enabled %}
-  <div class="homepage-section">
-    {% include research-section-preview.html %}
-  </div>
-  {% endif %}
-
-  <!-- Publications section -->
-  {% if site.page_sections.publications.enabled %}
-  <div class="homepage-section">
-    {% include publications-section-preview.html %}
-  </div>
-  {% endif %}
-
-  <!-- Blog section -->
-  {% if site.page_sections.blog.enabled %}
-  <div class="homepage-section">
-    {% include blog-section-preview.html %}
-  </div>
-  {% endif %}
-
-  <!-- Gallery section -->
-  {% if site.page_sections.gallery.enabled %}
-  <div class="homepage-section">
-    {% include gallery-section-preview.html %}
-  </div>
-  {% endif %}
-
-  <!-- Journals section -->
-  {% if site.page_sections.journals.enabled %}
-  <div class="homepage-section">
-    {% include journals-section-preview.html %}
-  </div>
-  {% endif %}
-
-  <!-- Contact section -->
-  {% if site.page_sections.contact.enabled %}
-  <div class="homepage-section">
-    <div class="section-card">
-      <div class="section-header with-gradient">
-        <div class="container">
-          <h2 class="section-title">
-            <span class="title-icon">
-              <i class="{{ site.page_sections.contact.icon | default: 'fas fa-envelope' }}"></i>
-            </span>
-            {{ site.page_sections.contact.title | default: "Contact" }}
-          </h2>
-          <p class="section-subtitle">{{ site.page_sections.contact.subtitle | default: "Get in Touch" }}</p>
-        </div>
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Research highlights</p>
+        <h2>Current focus</h2>
       </div>
-      
-      <div class="section-preview">
-        <div class="container">
-          <div class="preview-grid">
-            <div class="preview-card">
-              <h3>Email</h3>
-              <p>{{ site.data.contact.email | default: "contact@example.com" }}</p>
-              <div class="preview-meta">
-                <span class="preview-tag">Primary</span>
-              </div>
-            </div>
-            
-            <div class="preview-card">
-              <h3>Office</h3>
-              <p>{{ site.data.contact.office | default: "Research Building, University" }}</p>
-              <div class="preview-meta">
-                <span class="preview-tag">Location</span>
-              </div>
-            </div>
-            
-            <div class="preview-card">
-              <h3>Research Group</h3>
-              <p>{{ site.data.contact.group | default: "Atmospheric Sciences Lab" }}</p>
-              <div class="preview-meta">
-                <span class="preview-tag">Affiliation</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      <a href="{{ '/research.html' | relative_url }}">Research</a>
+    </div>
+    <div class="compact-list">
+      <article class="compact-item">
+        <h3>Convectively coupled equatorial waves</h3>
+        <p>Diagnosing Kelvin waves, MRG waves, and wave-convection coupling from satellite, reanalysis, and model data.</p>
+      </article>
+      <article class="compact-item">
+        <h3>Tropical precipitation variability</h3>
+        <p>Understanding how large-scale dynamics organize precipitation over tropical oceans across multiple time scales.</p>
+      </article>
+      <article class="compact-item">
+        <h3>Climate model and machine learning workflows</h3>
+        <p>Evaluating CMIP6 simulations and developing data-driven tools for meteorological analysis and nowcasting.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Publications</p>
+        <h2>Recent publications</h2>
       </div>
-      
-      <div class="view-more-section">
-        <a href="/contact.html" class="view-more-btn">
-          <span>联系方式</span>
-          <i class="fas fa-arrow-right"></i>
-        </a>
+      <a href="{{ '/publications.html' | relative_url }}">All publications</a>
+    </div>
+    <div class="publication-list">
+      {% assign shown_publications = 0 %}
+      {% for year_group in site.data.publications %}
+        {% for paper in year_group.papers %}
+          {% if shown_publications < 3 %}
+          <article class="publication-card">
+            <p class="paper-title">{{ paper.title }}</p>
+            <p>{{ paper.authors }}</p>
+            <p><em>{{ paper.journal }}</em>{% if year_group.year %}, {{ year_group.year }}{% endif %}</p>
+            <div class="paper-links">
+              {% if paper.doi %}<a href="{{ paper.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+              {% if paper.pdf %}<a href="{{ paper.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+            </div>
+          </article>
+          {% assign shown_publications = shown_publications | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Projects</p>
+        <h2>Featured projects</h2>
+      </div>
+      <a href="{{ '/projects.html' | relative_url }}">Projects</a>
+    </div>
+    <div class="compact-list">
+      {% for project in site.data.projects %}
+      <article class="compact-item">
+        <div class="card-meta"><span>{{ project.status }}</span></div>
+        <h3><a href="{{ project.link | relative_url }}">{{ project.title }}</a></h3>
+        <p>{{ project.summary }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Blog</p>
+        <h2>Recent blog posts</h2>
+      </div>
+      <a href="{{ '/blog.html' | relative_url }}">Blog</a>
+    </div>
+    <div class="post-list">
+      {% for post in site.posts limit:4 %}
+      {% assign words = post.content | strip_html | number_of_words %}
+      {% assign minutes = words | divided_by: 220 | plus: 1 %}
+      <article class="post-card">
+        <div class="card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+          <span>{{ minutes }} min read</span>
+          {% if post.categories %}<span>{{ post.categories | first }}</span>{% endif %}
+        </div>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | strip_newlines | truncate: 170 }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="home-section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Open materials</p>
+        <h2>Research links</h2>
       </div>
     </div>
-  </div>
-  {% endif %}
+    <div class="resource-grid">
+      <article class="resource-card">
+        <h3><a href="{{ '/links.html' | relative_url }}">Links</a></h3>
+        <p>Curated academic links, climate data portals, monitoring tools, documentation, and practical references for daily research work.</p>
+      </article>
+    </div>
+  </section>
 </div>
-
-<!-- Maps section -->
-{% if site.page_sections.maps.enabled %}
-<div class="section-wrapper">
-  {% include maps-section.html %}
-</div>
-{% endif %}
-
-<!-- Contact section -->
-{% if site.page_sections.contact.enabled %}
-<div class="section-wrapper">
-  {% include contact-section.html %}
-</div>
-{% endif %}
-
-<!-- JavaScript文件 -->
-<script src="assets/universal-sections.js"></script>
