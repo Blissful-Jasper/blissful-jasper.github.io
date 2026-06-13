@@ -28,6 +28,8 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
+*.pid
 
 # 安全配置文件
 _config_secure.yml
